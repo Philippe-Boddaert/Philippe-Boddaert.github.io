@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, 'sans-serif';
+    font-size: 14px;
+}
+
+main {
+    background-color: #404040;
+    width: 75%;
+    padding: 30px 20px;
+    margin: auto;
+}
+h1 {
+    text-align: center;
+    color: #ccc;
+    text-shadow: 2px 2px 4px black;
+}
+h2 {
+
+}
+a.menu-item {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    padding:10px;
+}
+a.menu-item:hover {
+    color: #069;
+    background-color: white;
+}
+
+img.license {
+  height: 30px;
+  vertical-align: middle;
+}
+
+footer {
+  height: 40px;
+  padding-top: 10px;
+  background-color: #eee;
+  text-align: center;
+}

@@ -1,0 +1,278 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Noto+Sans|Noto+Serif');
+
+body {
+    margin: 0;
+    font-size:16px;
+    font-family: 'Noto Serif', serif;
+}
+main {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ------------------ PAGE ----------------------*/
+#page {
+    width : 75%;
+    flex-grow: 1;
+    display:flex;
+    flex-direction: column;
+}
+
+/* ------------------ CONTENU PRINCIPAL ----------------------*/
+section {
+    flex-grow: 1;
+    padding:0 6% 10% 6%;
+}
+section h1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 280%;
+    text-align: center;
+    color:#069;
+    text-shadow: 2px 2px 3px #333;
+}
+section h2 {
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 220%;
+    margin:20px 0 20px 0;
+    color:#069;
+    text-shadow: 2px 2px 3px black;
+}
+section h3 {
+    font-size: 180%;
+    font-family: 'Noto Sans', sans-serif;
+    margin:24px 0 0 0;
+}
+
+section h4 {
+    font-size: 110%;
+    font-style: italic;
+    font-family: 'Noto Sans', sans-serif;
+    margin:12px 0 0 0;
+}
+section p {
+    margin:10px 6px 0px 6px;
+}
+section p.decale {
+    padding-left:40px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+section pre {
+    font-size: 90%;
+    border-left:4px solid #666;
+    border-radius:6px;
+}
+section img.block_centre {
+    display: block;
+    margin-left:auto;
+    margin-right: auto;
+}
+section table {
+    border-collapse: collapse;
+    margin:12px 0 20px 50px;
+}
+section td {
+    text-align: center;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+section th {
+    text-align: center;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+    background-color: #f0f0f0
+}
+
+
+section div.boiteLiens {
+    background-color: #cde;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+section div.boiteLiens::before {
+    display: block;
+    text-align: center;
+    content: "Liens";
+    background-color: #069;
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    padding:4px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+section div.boiteConseils {
+    background-color: #FFEEDD;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+section div.boiteConseils::before {
+    display: block;
+    content: "⚠ Conseils";
+    background-color: #fa0;
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    padding:4px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+section div.boiteSynthese {
+    background-color: #FFC0CB;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+section div.boiteSynthese::before {
+    display: block;
+    content: "👍 Synthèse";
+    background-color: red;
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    padding:4px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+section div.boiteHistoire {
+    background-color: #cfc;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+section div.boiteHistoire::before {
+    display: block;
+    text-align: center;
+    content: "Repères historiques";
+    background-color: #090;
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    padding:4px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+section a {
+    text-decoration: none;
+    font-weight: bold;
+    color:#06c;
+}
+section a:hover {
+   color:#039;
+}
+
+.overline {
+    text-decoration: overline;
+}
+sup {
+    position: relative;
+    font-size:80%;
+    top:-0.3em;
+    margin:0 0.2em;
+}
+
+
+/* ------------------ PIED de PAGE ----------------------*/
+footer {
+    height: 40px;
+    padding-top: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
+}
+
+/* ------------------ MENU ----------------------*/
+nav {
+    font-family: Arial, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, 'sans-serif';
+    font-size: 90%;
+    width: 25%;
+    background-color: #333;
+    color:#ccc;
+    padding: 0;
+    display : block;
+}
+nav h1 {
+    width: 25%;
+    font-size:150%;
+    color:#ccc;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
+}
+
+nav h2 {
+    width: 100%;
+    font-size:150%;
+    color:#ccc;
+    text-align:left;
+    text-shadow: 2px 2px 4px black;
+}
+
+nav a {
+    display: block;
+    color:#ccc;
+    text-decoration: none;
+    padding: 0;
+}
+
+nav > div > a {
+    color: #ccc;
+    font-size:140%;
+    padding: 10px 4px;
+}
+
+nav > div > section > a {
+    color:#ccc;
+    padding: 10px 4px 10px 6px;
+    margin-left:12px;
+    border-radius: 6px 0 0 6px;
+}
+
+nav > div > section {
+    display:none;
+    padding:4px 0 8px 4px;
+}
+
+nav a:hover{
+    color:#069;
+}
+
+a.menu-item:hover, nav .active {
+    color: #069;
+    background-color: white;
+}
+
+.rotate {
+  transform-origin: 0 0;
+  transform: rotate(270deg);
+}
+
+.img-container {
+  text-align: center;
+}
+
+.img-container img{
+  width: 33%;
+}
+
+.highlight {
+  font-weight: bold;
+  font-style: italic;
+}
