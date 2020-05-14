@@ -186,6 +186,26 @@ section div.boiteHistoire::before {
     border-radius: 10px 10px 0 0;
 }
 
+section div.boiteQuestions {
+    background-color: #cde;
+    padding-bottom: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+section div.boiteQuestions::before {
+    display: block;
+    text-align: center;
+    content: "Questions";
+    background-color: #069;
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    padding:4px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
 section a {
     text-decoration: none;
     font-weight: bold;
@@ -305,6 +325,7 @@ a.menu-item:hover, nav .active {
 .highlight {
   font-weight: bold;
   font-style: italic;
+  text-decoration: underline;
 }
 
 .hidden {
