@@ -92,7 +92,7 @@ section img.block_centre {
 }
 section table {
     border-collapse: collapse;
-    margin:12px 0 20px 50px;
+    margin:12px auto 20px auto;
 }
 section td {
     text-align: center;
