@@ -8,23 +8,41 @@ body {
     font-size:16px;
     font-family: 'Noto Serif', serif;
 }
+
+/* ------------------ PAGE ----------------------*/
 main {
     display: flex;
     min-height: 100vh;
 }
 
-/* ------------------ PAGE ----------------------*/
 #page {
-    width : 75%;
-    flex-grow: 1;
+    height: 100vh;
+    width : 100vw;
     display:flex;
     flex-direction: column;
+    align-content: space-between;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+/* ------------------ PIED de PAGE ----------------------*/
+footer {
+    flex: 0 0 40px;
+    /*height: 40px;*/
+    padding-top: 20px;
+    background-color: #eee;
+    text-align: center;
+}
+footer a {
+    text-decoration: none;
 }
 
 /* ------------------ CONTENU PRINCIPAL ----------------------*/
 section {
     flex-grow: 1;
-    padding:0 6% 10% 6%;
+    padding:0 6% 0 6%;
 }
 section h1 {
     font-family: 'Noto Sans', sans-serif;
@@ -187,28 +205,36 @@ sup {
     margin:0 0.2em;
 }
 
-
-/* ------------------ PIED de PAGE ----------------------*/
-footer {
-    height: 40px;
-    padding-top: 10px;
-    background-color: #eee;
-    text-align: center;
-}
-footer a {
-    text-decoration: none;
-}
-
 /* ------------------ MENU ----------------------*/
 nav {
     font-family: Arial, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, 'sans-serif';
     font-size: 90%;
-    width: 25%;
+    flex: 0 0 300px;
     background-color: #333;
     color:#ccc;
     padding: 0;
-    display : block;
 }
+
+nav.hidden {
+  flex-basis: auto;
+  display: block;
+}
+
+#toggle {
+    float: right;
+    border : 1px solid #ccc;
+    padding: 5px;
+    background-color: #333;
+}
+
+#toggle:hover{
+  cursor: pointer;
+}
+
+#menu {
+
+}
+
 nav h1 {
     width: 25%;
     font-size:150%;
@@ -223,6 +249,10 @@ nav h2 {
     color:#ccc;
     text-align:left;
     text-shadow: 2px 2px 4px black;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 nav a {
@@ -275,4 +305,8 @@ a.menu-item:hover, nav .active {
 .highlight {
   font-weight: bold;
   font-style: italic;
+}
+
+.hidden {
+  display: none;
 }

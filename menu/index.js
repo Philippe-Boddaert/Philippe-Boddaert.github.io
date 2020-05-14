@@ -2,6 +2,6 @@
 
 //========== MENU ==========
 //-----Construction du menu
-menu = document.querySelector('main');
+menu = document.querySelector('.content');
 
 SOMMAIRE.forEach(item => ajouteLienMenu(menu, item));
