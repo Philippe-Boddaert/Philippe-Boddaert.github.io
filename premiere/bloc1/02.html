@@ -1,0 +1,222 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Ressources sur le programme NSI de 1ère" />
+  <title>Bloc 1 : Représentation des données : types et valeurs de base</title>
+  <link href="../../commun/styles.css" rel="stylesheet">
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <!-- Partie complétée en javascript -->
+        </nav>
+        <div id="page">
+          <div class="content">
+            <div class="reveal">
+              <div class="slides">
+                <section>
+                    <h1>Représentation d'un entier positif</h1>
+                    <hr />
+                    <div class="boiteQuestions">
+                      <p style='text-align : center;'>XLII = 四十二 = 101010 = ?
+                    </div>
+                </section>
+                <section>
+                    </p>
+                    <p>Un même nombre <span class="highlight">s'écrit</span> différement selon le <span class="highlight">système de numération</span> utilisé.
+                    </p>
+                    <p>Un <span class="highlight">système de numération</span> est un ensemble de règles permettant de représenter les nombres, en utilisant un ensemble de chiffres déterminé.</p>
+                    <p>Nous utilisons tous le système de numération <span class="highlight">décimale</span>, qui utilise les chiffres 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 pour écrire les nombres.</p>
+                    <p>Dans une machine, le système de numération utilisée est le système binaire, qui utilise exclusivement les chiffres 0 et 1.</p>
+                    <div class="boiteQuestions">
+                      <ul>
+                        <li>Comment une machine représente les entiers si elle n'utilise pas le système de numération décimale ?</li>
+                        <li>Mais comment est construit notre système de numération décimale ? Pour répondre à cette question à l'apparence simple, reprenons depuis le début : comment avez-vous appris à compter à l'école ?</li>
+                      </ul>
+                    </div>
+                </section>
+                <section>
+                  <h1>Le système décimal</h1>
+                  <p>
+                    Vous penserez peut-être que le système décimal vient du fait qu'on a 10 doigts, mais en tout cas deux choses sont sûres :
+                  </p>
+                    <ul>
+                      <li>Il y a 10 chiffres : $0, 1, 2, 3, 4, 5, 6, 7, 8, 9$ => on dit que ce système est en base 10.</li>
+                      <li>Avec ces derniers, on peut compter jusqu'à 9.</li>
+                    </ul>
+                  <p>
+                    Et si l'on veut aller au-delà de 9, il faut changer de <span class="highlight">rang</span>.
+                    Cela signifie que si le rang des unités est plein, il faut passer à celui des dizaines, puis des centaines, milliers et j'en passe.
+                  </p>
+                  <p>
+                    Dans le nombre $185$, on peut voir trois rangs : centaines, dizaines et unités.
+                    Pour n'importe quelle base, la valeur d'un rang est égale à $b^n$, où $b$ est l'indice de la base (ici, 10) et $n$ la position du rang.
+                    Ici, les unités ont la position 0, les dizaines la position 1 et les centaines la position 2. Nous pouvons donc écrire :
+                    $$ 185 = 1 \times 10^2 + 8 \times 10^1 + 5 \times 10^0 $$
+                    Cette opération consiste à <span class="highlight">décomposer 185 en puissance de 10</span> (unités, dizaines, centaines, etc).
+                  </p>
+                  <div class="boiteSynthese">
+                    <p>
+                    Un nombre est égal à la somme des valeurs de ses rangs, et on peut décomposer n'importe quel nombre en puissance de sa base.
+                  </p>
+                  </div>
+                </section>
+                <section>
+                  <h1>Le système binaire</h1>
+                  <p>
+                    Le binaire, c'est le système de comptage des ordinateurs. Pourquoi le binaire et pas le décimal comme les humains ?
+                    <br>Un ordinateur est composé de circuits électroniques et de composants électriques, alimentés par un signal électrique : 1, il y a du courant, 0, il n'y en a pas. Le plus simple pour compter est donc d'utiliser un système en base 2 (le binaire) car on peut représenter ses deux valeurs possibles (0 et 1).
+                  </p>
+                  <p>
+                    Le nombre $10101$, occupe 5 rangs. On dit qu'il s'écrit sur 5 bits. Chaque rang ne peut avoir que 2 valeurs différentes. Pour la base 10, chaque rang peut prendre 10 valeurs est représente une puissance de 10. Pour la base 2, chaque rang représente une puissance de 2.
+                  </p>
+                  <p>
+                    Et si l'on veut aller au-delà de 1, il faut changer de rang. Cela signifie que si le rang des unités est plein, il faut passer à celui des dizaines, puis des centaines, milliers et j'en passe.
+                  </p>
+                  <p>
+                  <table>
+                    <caption>Représentation des 10 premiers entiers positifs</caption>
+                    <thead>
+                        <tr>
+                          <th>Nombre en décimal</th>
+                          <th>Nombre en binaire</th>
+                          <th>Commentaire</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>Rang des unités : on prend le premier chiffre de la base.</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>Rang des unités : on prend le deuxième chiffre de la base.</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>Le rang des unités est plein. On passe au rang suivant.</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>11</td>
+                        <td>Rang des unités : On prend le deuxième chiffre de la base.</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>100</td>
+                        <td>Le rang des unités et des dizaines sont pleins : On passe au rang suivant.</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>101</td>
+                        <td>Rang des unités : On prend le deuxième chiffre de la base.</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>110</td>
+                        <td>Le rang des unités est plein. On passe au rang suivant.</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>111</td>
+                        <td>Rang des unités : On prend le deuxième chiffre de la base.</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>1000</td>
+                        <td>Le rang des unités, des dizaines et des centaines sont pleins : On passe au rang suivant.</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>1001</td>
+                        <td>Rang des unités : On prend le deuxième chiffre de la base.</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>1010</td>
+                        <td>Le rang des unités est plein. On passe au rang suivant.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </p>
+                <div class="boiteSynthese">
+                  <p>
+                  Entamer le rang suivant quand l'actuel est plein.
+                  </p>
+                </div>
+                <div class="boiteQuestions">
+                  <ul>
+                    <li>Combien de valeurs peut-on coder avec 1 bit ?</li>
+                    <li>Combien de valeurs peut-on coder avec 2 bits ?</li>
+                    <li>Combien de valeurs peut-on coder avec 3 bits ?</li>
+                    <li>Combien de valeurs peut-on coder avec n bits ?</li>
+                  </ul>
+                </div>
+                </section>
+                <section>
+                  <h1>Conversion Décimale en Binaire</h1>
+                  <div class="boiteQuestions">
+                    <p>Ecrire 157 en binaire ?</p>
+                  </div>
+                  <p>Avec la méthode vue précédement, l'opération est fastidieuse, car il faut écrire tous les entiers de 0 à 156 avant de calculer 157.</p>
+                  <p>Il existe plusieurs méthodes (algorithmes) de conversion. La plus connue est la méthode euclidienne : </p>
+                  <ul>
+                    <li>On prend le nombre en base 10,</li>
+                    <li>On le divise par 2 et on note le reste de la division (soit 1 soit 0),</li>
+                    <li>On refait la même chose avec le quotient précédent, et on met de nouveau le reste de côté,</li>
+                    <li>On réitère la division, jusqu'à ce que le quotient soit 0.</li>
+                    <li>Le nombre en binaire apparaît alors : il suffit de prendre tous les restes de bas en haut.</li>
+                  </ul>
+                  $$
+                  \begin{align}
+                  157 & = 2 \times 78 + 1 \\
+                  78 & = 2 \times 39 + 0 \\
+                  39 & = 2 \times 19 + 1 \\
+                  19 & = 2 \times 9 + 1 \\
+                  9 & = 2 \times 4 + 1 \\
+                  4 & = 2 \times 2 + 0 \\
+                  2 & = 2 \times 1 + 0 \\
+                  1 & = 2 \times 0 + 1
+                  \end{align}
+                  $$
+                  <p>Le nombre 157 s'écrit $10011101$ en binaire. La notation est : $(10011101)_2$.</p>
+                </section>
+                <section>
+                  <div class="boiteQuestions">
+                    <p>Ecrire les nombres suivantes en binaire : 21 ? 42 ? 1023 ? 1024 ?</p>
+                  </div>
+                  <div class="boiteQuestions">
+                    <ul>
+                      <li>Que constate-t-on sur les nombres impairs ? </li>
+                      <li>Que constate-t-on entre les nombres multiples de 2 entre eux ?</li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+            <footer>
+                Un site de : <a href="https://philippe-boddaert.github.io">www.philippe-boddaert.github.io</a>
+            </footer>
+        </div>
+    </main>
+    <script src="data.js" type="text/javascript"></script>
+    <script src="competences.js" type="text/javascript"></script>
+    <script src="../../commun/commun.js" type="text/javascript"></script>
+    <script src="../../commun/index.js" type="text/javascript"></script>
+</body>
+</html>
