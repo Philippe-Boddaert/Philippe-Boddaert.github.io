@@ -26,7 +26,7 @@
             <div class="reveal">
               <div class="slides">
                 <section id="1.2.1">
-                    <h1>Représentation d'un entier positif <a href="#haut">&#x21E7;</a></h1>
+                    <h1>Représentation d'un entier naturel <a href="#haut">&#x21E7;</a></h1>
                     <hr />
                     <div class="boiteQuestions">
                       <p style='text-align : center;'>XLII = 四十二 = 101010 = ?
@@ -58,6 +58,9 @@
                   <p>
                     Et si l'on veut aller au-delà de 9, il faut changer de <span class="highlight">rang</span>.
                     Cela signifie que si le rang des unités est plein, il faut passer à celui des dizaines, puis des centaines, milliers et ainsi de suite.
+                  </p>
+                  <p>
+                    Ainsi, le système décimal est un système de numération positionnel, dans lequel un chiffre représente des valeurs différentes selon le rang qu’il occupe dans un nombre.
                   </p>
                   <p>
                     Dans le nombre $185$, on peut voir trois rangs : centaines, dizaines et unités.
@@ -205,6 +208,202 @@
                       <li>Que constate-t-on entre les nombres multiples de 2 entre eux ?</li>
                     </ul>
                   </div>
+                </section>
+                <section id="1.2.5">
+                  <h1>Conversion binaire en décimale <a href="#haut">&#x21E7;</a></h1>
+                  <p>Un nombre s'écrit sur $n$ bits (rangs), en système binaire. Où chaque bit représente une puissance de 2.
+                  <br>Comme vu précédemment, un nombre est égal à la somme des valeurs de ses rangs.
+                  <br>Pour convertir le tout en décimale, on procède de la manière suivante : on multiplie par $2^0$ la valeur du rang 0, par $2^1$ la valeur du rang 1, par $2^2$ la valeur du rang 2, par $2^3$ la valeur du rang 3, ... et on somme le tout.
+                  </p>
+                  <p>
+                    Exemple :
+                    $$
+                    \begin{align}
+                    (10011)_2 & = \boldsymbol{1} \times 2^4 + \boldsymbol{0} \times 2^3 + \boldsymbol{0} \times 2^2 + \boldsymbol{1} \times 2^1 + \boldsymbol{1} \times 2^0 \\
+                     & = 16 + 0 + 0 + 2 + 1 \\
+                     & = 19 \\
+                     & = (19)_{10}
+                    \end{align}
+                    $$
+                  </p>
+                  <div class="boiteQuestions">
+                    <p>Convertir les nombres suivants en base 10 : $(11111)_2$ ? $(101010)_2$ ? $(1010101)_2$ ? $(101011001)_2$ ?</p>
+                  </div>
+                </section>
+                <section id="1.2.6">
+                  <h1>Le système hexadécimal <a href="#haut">&#x21E7;</a></h1>
+                  <p>Le système de numération hexadécimale permet une représentation simplifiée des nombres binaires, à l’usage des humains !
+                    <br>L’écriture et la lecture d’une succession de 0 et de 1 est fastidieuse pour l’homme et source d’erreurs.
+                    <br>Pour raccourcir les mots binaires, un groupe de 4 bits consécutifs est représenté par un chiffre hexadécimal.
+                    <br>Le système se base sur les 16 chifres : 0 1 2 3 4 5 6 7 8 9 A B C D E F
+                  </p>
+                  <table>
+                    <caption>Table de conversions des 16 premiers entiers naturels</caption>
+                    <thead>
+                        <tr>
+                          <th>Nombre en décimal</th>
+                          <th>Nombre en binaire</th>
+                          <th>Nombre en héxadécimal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>11</td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>100</td>
+                        <td>4</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>101</td>
+                        <td>5</td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>110</td>
+                        <td>6</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>111</td>
+                        <td>7</td>
+                      </tr>
+                      <tr>
+                        <td>8</td>
+                        <td>1000</td>
+                        <td>8</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>1001</td>
+                        <td>9</td>
+                      </tr>
+                      <tr>
+                        <td>10</td>
+                        <td>1010</td>
+                        <td>A</td>
+                      </tr>
+                      <tr>
+                        <td>11</td>
+                        <td>1011</td>
+                        <td>B</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td>1100</td>
+                        <td>C</td>
+                      </tr>
+                      <tr>
+                        <td>13</td>
+                        <td>1101</td>
+                        <td>D</td>
+                      </tr>
+                      <tr>
+                        <td>14</td>
+                        <td>1110</td>
+                        <td>E</td>
+                      </tr>
+                      <tr>
+                        <td>15</td>
+                        <td>1111</td>
+                        <td>F</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="boiteQuestions">
+                    Combien de bits sont nécessaires pour coder 16 nombres ?
+                  </div>
+                  <p>
+                  Pour convertir un nombre binaire en base 16, on regroupe les bits 4 à 4, chaque groupe donnant un chiffre hexadécimal.
+                  <br>À l'inverse, passer d'un nombre hexadécimal à sa représentation binaire se fait en remplaçant chaque chiffre pour son équivalent sur 4 bits.
+                  <br>Ainsi, $(11011001)_2 = (1101 \: 1001)_2 = (D9)_{16}$, tandis que $(7F)_{16}= (0111 \: 1111)_2= (01111111)_2$. Attention, si le nombre binaire de départ n'a pas un nombre de bits multiple de 4, il faut ajouter des zéros en tête (ce qui ne change pas sa valeur) afin de pouvoir les regrouper 4 par 4.
+                  </p>
+                  <div class="boiteQuestions">
+                    <p>Convertir les nombres suivants : $(101111011001)_2$ en base 16 ? $(111011)_2$ en base 16 ? $(1A3E)_{16}$ en binaire ?</p>
+                  </div>
+                </section>
+                <section id="1.2.7">
+                  <h1>Conversion décimale en héxadécimale <a href="#haut">&#x21E7;</a></h1>
+                  <p>
+                    Pour convertir un nombre décimal en hexadécimal, la méthode est similaire au binaire (Cf. <a href="#1.2.4">Conversion décimale en binaire</a>), sauf que cette fois on divise par 16.
+
+                    $$
+                    \begin{align}
+                    157 & = 16 \times 9 + 13 \mbox{ Soit D, en base 16}\\
+                    9 & = 16 \times 0 + 9
+                    \end{align}
+                    $$
+                    Le nombre 157 s'écrit $9D$ en hexadécimal. La notation est : $(9D)_{16}$.
+                  </p>
+                  <div class="boiteQuestions">
+                    <p>Convertir les nombres suivants en base 16 : 64 ? 138710 ?</p>
+                  </div>
+                </section>
+                <section id="1.2.8">
+                  <h1>Conversion hexadécimale en décimale <a href="#haut">&#x21E7;</a></h1>
+                  <p>Un nombre s'écrit sur $n$ chiffres, en système hexadécimal. Où chaque chiffre représente une puissance de 16 associée à son rang.
+                  <br>Comme vu précédemment (Cf. <a href="#1.2.2">Système décimal</a>), un nombre est égal à la somme des valeurs de ses rangs.
+                  <br>Pour convertir le tout en décimale, on procède de la manière suivante : on multiplie par $16^0$ la valeur du rang 0, par $16^1$ la valeur du rang 1, par $16^2$ la valeur du rang 2, par $16^3$ la valeur du rang 3, ... et on somme le tout.
+                  </p>
+                  <p>
+                    Exemple :
+                    $$
+                    \begin{align}
+                    (12B7)_{16} & = \boldsymbol{1} \times 16^3 + \boldsymbol{2} \times 16^2 + \boldsymbol{B} \times 16^1 + \boldsymbol{7} \times 2^0 \\
+                     & = \boldsymbol{1} \times 16^3 + \boldsymbol{2} \times 16^2 + \boldsymbol{11} \times 16^1 + \boldsymbol{7} \times 2^0 \\
+                     & = \boldsymbol{1} \times 4096 + \boldsymbol{2} \times 256 + \boldsymbol{11} \times 16 + \boldsymbol{7} \times 1 \\
+                     & = 4096 + 512 + 176 + 7 \\
+                     & = 4791
+                    \end{align}
+                    $$
+                  </p>
+                  <div class="boiteQuestions">
+                    <p>Convertir les nombres suivants en base 10 : $(1B7)_{16}$ ? $(ABE)_{16}$ ?</p>
+                  </div>
+                </section>
+                <section id="1.2.9">
+                  <h1>Généralisation pour une base $b$ <a href="#haut">&#x21E7;</a></h1>
+                  <p>Soient :</p>
+                    <ul>
+                      <li>$x$ la représentation du nombre en base 10,</li>
+                      <li>$r$ la représentation du nombre en base $b$, </li>
+                      <li>$r$ étant écrit en utilisant $n$ chiffres : $c_0, c_1...c_{n−1}$,</li>
+                    </ul>
+                  <p>Nous avons alors :
+$$ r = c_{n−1}c_{n−2}...c_2c_1c_0$$
+$$ x = \sum_{i = 0}^{n - 1} c_i \times b_i = c_{n−1} \times b_{n−1} + c_{n−2} \times b_{n−2} + ... + c_2 \times b_2 + c_1 \times b_1 + c_0 \times b_0 $$
+                  </p>
+                  <p>Pour convertir un nombre $n$ (en base 10) en sa représentation en base $b$, il faut suivre l'algorithme suivant :</p>
+                  <ul>
+                  <li>On appelle $D$ la liste des chiffres (le résultat).</li>
+                  <li>Tant que $n > 0$
+                    <ul>
+                      <li>Faire la division euclidienne de $n$ par $b$</li>
+                      <li>Ajouter le reste à $D$</li>
+                      <li>Mettre le quotient dans $n$</li>
+                    </ul>
+                  </li>
+                  <li>Inverser l'ordre de $D$</li>
+                  </ul>
                 </section>
               </div>
             </div>
