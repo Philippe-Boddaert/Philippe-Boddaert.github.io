@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <meta name="description" content="Ressources sur le programme NSI de 1ère" />
   <title>Bloc 1 : Représentation des données : types et valeurs de base</title>
+<!--
+  <link rel="stylesheet" href="../../Lib/reveal/css/reveal.css">
+  <link rel="stylesheet" href="../../Lib/reveal/css/theme/white.css" id="theme">
+-->
   <link href="../../commun/styles.css" rel="stylesheet">
   <script>
   MathJax = {
@@ -76,17 +80,21 @@
                   </div>
                 </section>
                 <section id="1.2.3">
+                  <section>
                   <h1>Le système binaire <a href="#haut">&#x21E7;</a></h1>
-                  <p>
-                    Le binaire, c'est le système de comptage des ordinateurs. Pourquoi le binaire et pas le décimal comme les humains ?
+                  <p>Le binaire, c'est le système de comptage des ordinateurs. Pourquoi le binaire et pas le décimal comme les humains ?
                     <br>Un ordinateur est composé de circuits électroniques et de composants électriques, alimentés par un signal électrique : 1, il y a du courant, 0, il n'y en a pas. Le plus simple pour compter est donc d'utiliser un système en base 2 (le binaire) car on peut représenter ses deux valeurs possibles (0 et 1).
                   </p>
+                </section>
+                  <section>
                   <p>
                     Le nombre $10101$, occupe 5 rangs. On dit qu'il s'écrit sur 5 bits. Chaque rang ne peut avoir que 2 valeurs différentes. Pour la base 10, chaque rang peut prendre 10 valeurs est représente une puissance de 10. Pour la base 2, chaque rang représente une puissance de 2.
                   </p>
                   <p>
                     Et si l'on veut aller au-delà de 1, il faut changer de rang. Cela signifie que si le rang des unités est plein, il faut passer à celui des dizaines, puis des centaines, milliers et j'en passe.
                   </p>
+                </section>
+                <section>
                   <p>
                   <table>
                     <caption>Représentation des 10 premiers entiers positifs</caption>
@@ -156,6 +164,8 @@
                     </tbody>
                   </table>
                 </p>
+              </section>
+              <section>
                 <div class="boiteSynthese">
                   <p>
                   Entamer le rang suivant quand l'actuel est plein.
@@ -169,12 +179,16 @@
                     <li>Combien de valeurs peut-on coder avec n bits ?</li>
                   </ul>
                 </div>
+              </section>
                 </section>
                 <section id="1.2.4">
+                  <section>
                   <h1>Conversion décimale en binaire <a href="#haut">&#x21E7;</a></h1>
                   <div class="boiteQuestions">
                     <p>Ecrire 157 en binaire ?</p>
                   </div>
+                </section>
+                <section>
                   <p>Avec la méthode vue précédement, l'opération est fastidieuse, car il faut écrire tous les entiers de 0 à 156 avant de calculer 157.</p>
                   <p>Il existe plusieurs méthodes (algorithmes) de conversion. La plus connue est la méthode euclidienne : </p>
                   <ul>
@@ -198,6 +212,7 @@
                   $$
                   <p>Le nombre 157 s'écrit $10011101$ en binaire. La notation est : $(10011101)_2$.</p>
                 </section>
+              </section>
                 <section>
                   <div class="boiteQuestions">
                     <p>Ecrire les nombres suivantes en binaire : 21 ? 42 ? 1023 ? 1024 ?</p>
@@ -417,5 +432,22 @@ $$ x = \sum_{i = 0}^{n - 1} c_i \times b_i = c_{n−1} \times b_{n−1} + c_{n�
     <script src="competences.js" type="text/javascript"></script>
     <script src="../../commun/commun.js" type="text/javascript"></script>
     <script src="../../commun/index.js" type="text/javascript"></script>
+<!--
+    <script src="../../lib/reveal/js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+        slideNumber : true,
+				hash: true,
+        transitionSpeed: 'fast',
+				transition: 'slide' // none/fade/slide/convex/concave/zoom
+			});
+
+		</script>
+  -->
 </body>
 </html>
