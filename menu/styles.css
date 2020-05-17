@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ------------------ PAGE ----------------------*/
+main {
+    flex-direction: column;
+    color:#ccc;
+}
+
+img.license {
+  height: 30px;
+  vertical-align: middle;
+}
+
+.content {
+  margin : auto;
+  background-color: #404040;
+  width: 50%;
+  padding: 30px 20px;
+}
+
+footer {
+  color:black;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color:#ccc;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 4px black;
+}
+
+h2 {
+  text-shadow: 2px 2px 4px black;
+}
+
+.rubrique {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.rubrique div {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.rubrique a {
+  color:#069;
+}
