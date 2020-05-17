@@ -41,14 +41,73 @@
                       La première idée qui pourrait nous venir à l'esprit est, sur un nombre comportant $n$ bits, d'utiliser 1 bit pour représenter le signe et $n-1$ bit pour représenter la valeur absolue du nombre à représenter.
                       <br>Le bit de signe étant le bit dit "de poids fort" (c'est à dire le bit le plus à gauche), ce bit de poids fort serait à 0 dans le cas d'un nombre positif et à 1 dans le cas d'un nombre négatif.
                     </p>
-                    <div class="boiteQuestions">
+                    <div class="boiteTravail">
                       <p>
-                        Représenter le nombre l'entier 5 sur 8 bits ? et -5 en utilisant la méthode décrite ci-dessus ?
+                        Représenter l'entier 5 sur 8 bits et -5 en utilisant la méthode décrite ci-dessus.
                       </p>
                     </div>
                     <p>
-                      Soit un entier $a \in \mathbb{Z}$ alors $a - a = 0$.
+                      Soit $a \in \mathbb{R}$, alors $a - a = 0$. Notons que $a + (-a) = 0$.
+                      <br>Regardons si cette règle est vérifiée pour 13 et - 13 sur 8 bits :
+                      $$
+                      \begin{align}
+                      &  & 0 \: 0 \: 0 \: 0 \: 1 \: 1 \: 0 \: 1 \\
+                      + &  & 1 \: 0 \: 0 \: 0 \: 1 \: 1 \: 0 \: 1 \\
+                      \hline
+                      = &  & 1 \: 0 \: 0 \: 1 \: 1 \: 0 \: 1 \: 0
+                      \end{align}
+                      $$
+                      Or $(10011010)_2 = -26$ en représentation binaire signé. La règle n'est pas respectée.
+                      <br>De plus, l'entier 0 a 2 représentations possibles : $(00000000)_2$ et $(10000000)_2$.
                     </p>
+                </section>
+                <section id="1.3.3">
+                  <section>
+                    <h1>Complément à 2 <a href="#haut">&#x21E7;</a></h1>
+                    Le principe du complément à 2 d'un entier relatif est le suivant :
+                    <ul>
+                      <li>Représenter la valeur absolue de l'entier relatif sur $n$ bits,</li>
+                      <li>Inverser tous les bits (les bits à 1 passent à 0 et vice versa),</li>
+                      <li>Ajouter 1 au nombre obtenu à l'étape précédente</li>
+                    </ul>
+                    Le résultat de cette dernière opération est la représentation sur $n$ bits de l'entier relatif.
+                    <div class="boiteTravail">
+                      <p>
+                        Représenter l'entier -5 en utilisant la méthode décrite ci-dessus.
+                      </p>
+                    </div>
+                  </section>
+                  <section>
+                    <p>Vérifions que la représentation par le complément à 2 satisfait la règle vue précédemment (Cf. <a href="#1.3.2">Binaire signé</a>). Exemple avec les entiers 13 et -13 :</p>
+                    $$
+                    \begin{align}
+                    &  & \: 0 \: 0 \: 0 \: 0 \: 1 \: 1 \: 0 \: 1 \\
+                    + &  & \: 1 \: 1 \: 1 \: 1 \: 0 \: 0 \: 1 \: 1 \\
+                    \hline
+                    = &  & 1 \: 0 \: 0 \: 0 \: 0 \: 0 \: 0 \: 0 \: 0
+                    \end{align}
+                    $$
+                    <p>Dans l'opération ci-dessus, nous avons un 1 pour le 9<sup>ième</sup> bit, mais comme notre représentation se limite à 8 bits, il nous reste bien (00000000)_2.</p>
+                  </section>
+                  <section>
+                    <div class="boiteTravail">
+                      <p>Représenter sur 8 bits l'entier 4 puis représenter, toujours sur 8 bits, l'entier -5. <br>Additionner ces 2 nombres, vérifier que vous obtenez bien -1.</p>
+                    </div>
+                    <div class="boiteQuestions">
+                      <p>Quel est le plus petit entier négatif que l'on peut représenter sur 8 bits ?<br>Quel est le plus grand entier positif que l'on peut représenter sur 8 bits ?
+
+</p>
+                    </div>
+                  </section>
+                  <section>
+                    <p>
+                      Aux questions précédentes, vous avez dû normalement trouver $(10000000)_2$ (soit -128) et $(01111111)_2$ (soit 127).
+                      Plus généralement, nous pouvons dire que pour une représentation sur $n$ bits, il sera possible de coder des valeurs comprises entre $-2^{n-1}$ et $+2^{n-1} - 1$.
+                    </p>
+                    <div class="boiteQuestions">
+                      <p>Quelles sont les bornes inférieure et supérieure d'un entier relatif codé sur 16 bits ?</p>
+                    </div>
+                  </section>
                 </section>
                 <section id="1.3.4">
                     <h1>Opérations sur 2 entiers <a href="#haut">&#x21E7;</a></h1>
