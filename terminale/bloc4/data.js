@@ -5,5 +5,5 @@ SOMMAIRE = [
               { "url" : "02.html", "titre" : "4.2 - Calculabilité / Décidabilité"},
               { "url" : "#", "titre" : "4.3 - Récursivité"},
               { "url" : "#", "titre" : "4.4 - Programmation Orienté Objet"},
-              { "url" : "#", "titre" : "4.5 - Mise au point des programmes.Gestion des bugs"}
+              { "url" : "05.html", "titre" : "4.5 - Mise au point des programmes.Gestion des bugs"}
             ];
