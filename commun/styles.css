@@ -217,6 +217,10 @@ section div.boiteQuestions::before, section div.boiteQuestionsReponse:before {
     border-radius: 10px 10px 0 0;
 }
 
+section div.boiteQuestions div.code-toolbar,  section div.boiteQuestionsReponse div.code-toolbar{
+  margin : 0 20px 0 20px;
+}
+
 section div.boiteReponses {
     background-color: #cde;
     padding-bottom: 0px;
@@ -241,7 +245,10 @@ section div.boiteReponses::before {
 
 section div.boiteReponses .reponse {
   display: none;
+  align-items: top;
+  margin:10px 6px 0px 6px;
 }
+
 section div.boiteTravail {
     background-color: #eee;
     padding-bottom: 20px;
@@ -376,6 +383,7 @@ a.menu-item:hover, nav .active {
 
 .img-container img{
   width: 33%;
+  vertical-align: text-top;
 }
 
 .responsive {
@@ -391,4 +399,12 @@ a.menu-item:hover, nav .active {
 
 .hidden {
   display: none;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
 }

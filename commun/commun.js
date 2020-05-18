@@ -35,7 +35,7 @@ function toogleMenu() {
 function toogleReponse(event){
   let reponse = this.querySelector('.reponse');
   if (reponse.style.display === '' || reponse.style.display === 'none'){
-    reponse.style.display = 'block';
+    reponse.style.display = 'flex';
     this.style.paddingBottom = '20px';
   } else {
     reponse.style.display = 'none';
