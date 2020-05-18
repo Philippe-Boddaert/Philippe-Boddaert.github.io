@@ -115,7 +115,7 @@ section th {
 
 
 section div.boiteLiens {
-    background-color: #cde;
+    background-color: #9cfe7b;
     padding-bottom: 20px;
     margin: 20px 0;
     border-radius: 10px;
@@ -124,7 +124,7 @@ section div.boiteLiens::before {
     display: block;
     text-align: center;
     content: "Liens";
-    background-color: #069;
+    background-color: green;
     color: white;
     font-size: 110%;
     font-weight: bold;
@@ -192,13 +192,18 @@ section div.boiteHistoire::before {
     border-radius: 10px 10px 0 0;
 }
 
-section div.boiteQuestions {
+section div.boiteQuestions, section div.boiteQuestionsReponse {
     background-color: #cde;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     margin: 20px 0;
     border-radius: 10px;
 }
-section div.boiteQuestions::before {
+
+section div.boiteQuestions {
+  padding-bottom: 20px;
+}
+
+section div.boiteQuestions::before, section div.boiteQuestionsReponse:before {
     display: block;
     text-align: center;
     content: "Questions";
@@ -212,6 +217,31 @@ section div.boiteQuestions::before {
     border-radius: 10px 10px 0 0;
 }
 
+section div.boiteReponses {
+    background-color: #cde;
+    padding-bottom: 0px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+section div.boiteReponses::before {
+    display: block;
+    text-align: center;
+    content: "Réponse";
+    background-color: #069;
+    color: white;
+    font-size: 110%;
+    font-weight: bold;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    padding:4px;
+    margin-bottom: 0px;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+}
+
+section div.boiteReponses .reponse {
+  display: none;
+}
 section div.boiteTravail {
     background-color: #eee;
     padding-bottom: 20px;

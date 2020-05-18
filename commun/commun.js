@@ -31,3 +31,14 @@ function toogleMenu() {
   }
 
 }
+
+function toogleReponse(event){
+  let reponse = this.querySelector('.reponse');
+  if (reponse.style.display === '' || reponse.style.display === 'none'){
+    reponse.style.display = 'block';
+    this.style.paddingBottom = '20px';
+  } else {
+    reponse.style.display = 'none';
+    this.style.paddingBottom = '0px';
+  }
+}
