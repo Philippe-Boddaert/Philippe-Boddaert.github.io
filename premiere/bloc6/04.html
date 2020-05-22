@@ -31,10 +31,24 @@
                       Exécuter l'algorithme sur quelques cas ne permet pas de valider qu'il effectue correctement ce qui est attendu de lui.
                       <br>Il faut donc pouvoir utiliser un système de preuve de programme.
                     </p>
+                    <div class='boiteQuestions'>
+                      <p>
+                        Illustration avec l'algorithme de gonflage de ballon.
+                        <pre><code class="language-python">Algorithme gonflerBallon(ballon)
+    Entrée : ballon
+    Sortie : &Oslash;
+    Effet de bord : A la fin de l'algorithme, le ballon est gonflé.
+    Début
+      Tant que ballon non gonflé faire
+        soufflerDans(ballon)
+      Fin
+    Fin</code></pre>
+                      </p>
+                    </div>
                     <div class="boiteSynthese">
                       <p>Face à un algorithme, il faut se poser et répondre à 3 questions :</p>
                       <ul>
-                        <li>Est-ce-qu’il donne un résultat ? <i>ou bien est-ce-qu’il ne s’arrête jamais ?</i></li>
+                        <li>Est-ce-qu’il donne un résultat ? <i>S'arrête-t-il ?</i></li>
                         <li>Est-ce-qu’il donne le résultat attendu ? <i>ou bien est-ce-qu’il calcule n’importe quoi ?</i></li>
                         <li>Est-ce-qu’il donne le résultat en un temps raisonnable ? <i>ou bien est-ce-qu’il faut attendre plusieurs siècles ?</i></li>
                       </ul>
@@ -57,6 +71,8 @@
                       <p>
                         Est-ce que l'algorithme suivant termine ? Est-ce qu'il est correct ?
                         <pre><code class="language-python">Algorithme fois2(x)
+    Entrée : x, entier
+    Sortie : entier, correspondant à 2 * x
     Début
       resultat <- 2 * x
       Renvoyer : resultat
