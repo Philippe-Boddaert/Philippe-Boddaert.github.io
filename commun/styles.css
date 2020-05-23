@@ -117,7 +117,7 @@ section th {
     background-color: #f0f0f0
 }
 
-section th.rotate {
+section th.rotate, section th.no-rotate {
     border-right: none;
     border-bottom: solid 1px black;
     background-color: transparent;
