@@ -1,8 +1,8 @@
 // JavaScript Document
-let tabFiltres = document.querySelector('#base thead').getElementsByTagName('tr');
+let tabFiltres = document.getElementsByTagName('input');
 let tabExercices = document.querySelector('#base tbody').getElementsByTagName('tr');
 let nbExercices = tabExercices.length;
-let nbFiltres = tabFiltres[1].getElementsByTagName('td').length;
+let nbFiltres = tabFiltres.length;
 
 //Construction du tableau correspondant aux cases cochées (1) ou non cochées (0)
 
@@ -26,7 +26,7 @@ function actualise() {
 	for(let i = 0; i < nbExercices; i++) {
 		let test = true;
 		for (let filtre = 0; filtre < nbFiltres; filtre++) {
-			if (document.getElementsByTagName('input')[filtre].checked && tab[i][filtre] == false) {
+			if (tabFiltres[filtre].checked && tab[i][filtre] == false) {
 				test = false;
 			}
 		}
@@ -40,5 +40,5 @@ function actualise() {
 
 //Création des événements sur les cases à cocher
 for (var k = 0; k < nbFiltres; k++) {
-	document.querySelectorAll('input')[k].addEventListener("click", actualise);
+	tabFiltres[k].addEventListener("click", actualise);
 }
