@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Ressources sur le programme NSI de 1ère" />
+  <title>Bloc 6 : Algorithmique</title>
+  <link href="../../commun/styles.css" rel="stylesheet">
+  <script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <!-- Partie complétée en javascript -->
+        </nav>
+        <div id="page">
+          <div class="content">
+            <div class="reveal">
+              <div class="slides">
+                <section>
+                    <h1>Tri par sélection</h1>
+                    <hr />
+                    <p><span class="highlight">Principe</span> :</p>
+                    <p>Quand on considère une liste $l$ de $n$ éléments, triée dans l'ordre croissant :</p>
+                    <ul class="mt-0">
+                      <li>Celui a l'indice 0 est le minimum des $n$ éléments, i.e $l[0:n-1]$,</li>
+                      <li>Celui a l'indice 1 est le minimum des $n - 1$ éléments suivants, i.e $l[1:n-1]$,</li>
+                      <li>Celui a l'indice 2, le minimum des $n - 2$ suivants, i.e $l[2:n-1]$,</li>
+                      <li>etc...</li>
+                    </ul>
+                    <div>
+                      <div class="sort-container">
+                        <div class="sort-item sort-content" id="item-1" style='order : 1;'>1</div>
+                        <div class="sort-item sort-content" id="item-2" style='order : 2;'>2</div>
+                        <div class="sort-item sort-content" id="item-3" style='order : 3;'>3</div>
+                        <div class="sort-item sort-content" id="item-4" style='order : 4;'>4</div>
+                        <div class="sort-item sort-content" id="item-5" style='order : 5;'>5</div>
+                        <div class="sort-item sort-content" id="item-6" style='order : 6;'>6</div>
+                      </div>
+                      <div class="sort-container">
+                        <div class="sort-item sort-cursor" id="flow-1"><div id="cursor">&#8679;</div></div>
+                        <div class="sort-item sort-cursor" id="flow-2"></div>
+                        <div class="sort-item sort-cursor" id="flow-3"></div>
+                        <div class="sort-item sort-cursor" id="flow-4"></div>
+                        <div class="sort-item sort-cursor" id="flow-5"></div>
+                        <div class="sort-item sort-cursor" id="flow-6"></div>
+                      </div>
+                      <div class="sort-container sort-controller">
+                        <button id="sort-play">&#9658;</button>
+                        <button id="sort-stop">&#9724;</button>
+                        <button id="sort-new">&#8634;</button>
+                      </div>
+                    </div>
+                </section>
+                <section>
+                  <div class="boiteTravail">
+                    <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri par sélection.</p>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <footer>
+              Un site de : <a href="https://philippe-boddaert.github.io">www.philippe-boddaert.github.io</a>
+          </footer>
+        </div>
+    </main>
+    <script src="../../commun/commun.js" type="text/javascript"></script>
+    <script src="data-03.js" type="text/javascript"></script>
+    <script src="../../commun/index.js" type="text/javascript"></script>
+</body>
+</html>

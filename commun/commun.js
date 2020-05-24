@@ -1,3 +1,6 @@
+// Variables globales
+const STEPS = { "COMPARAISON" : 1, "SWAP" : 2 };
+
 //-----Fonctions pour la construction du menu
 function ajouteLienMenu(menu_ul, item, current = null, level = 1) {
     let h = document.createElement("h" + (level + 1));
@@ -40,5 +43,61 @@ function toogleReponse(event){
   } else {
     reponse.style.display = 'none';
     this.style.paddingBottom = '0px';
+  }
+}
+
+function shuffle(array){
+  let len = array.length - 1;
+  for(let i = len; i > 0; i--) {
+    const j = Math.floor(Math.random() * i)
+    const temp = array[i]
+    array[i] = array[j]
+    array[j] = temp
+  }
+}
+
+function clearChildren(element){
+  // Supprime tous les enfant d'un élément
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
+function formatStep(array, step){
+  let item = document.getElementById("item-" + step.parameters[0]);
+  let minimum = document.getElementById("item-" + step.parameters[1]);
+  let cursor = document.getElementById('cursor');
+  switch(step.type){
+    case STEPS.SWAP :
+      let tmp = item.style.order;
+      item.style.order = minimum.style.order;
+      minimum.style.order = tmp;
+      addClass(minimum, "sorted");
+      return "Echange entre [" + step.parameters[0] + "] <-> [" + step.parameters[1] + "]";
+    case STEPS.COMPARAISON :
+      removeClass(document.getElementsByClassName("compared")[0], "compared");
+      removeClass(document.getElementsByClassName("minimum")[0], "minimum");
+      addClass(minimum, "minimum");
+      addClass(item, "compared");
+      document.getElementById("flow-" + step.parameters[2]).appendChild(cursor);
+      return "Comparaison entre [" + step.parameters[1] + "] et [" + step.parameters[0] + "]";
+  }
+}
+
+function swap(array, i, j){
+  let tmp = array[i];
+  array[i] = array[j];
+  array[j] = tmp;
+}
+
+function addClass(element, clazz){
+  if (typeof element !== 'undefined' && element.className.indexOf(clazz) == -1){
+    element.className += ' ' + clazz;
+  }
+}
+
+function removeClass(element, clazz){
+  if (typeof element !== 'undefined'){
+    element.className = element.className.replace(new RegExp(clazz, 'gi'), '');
   }
 }

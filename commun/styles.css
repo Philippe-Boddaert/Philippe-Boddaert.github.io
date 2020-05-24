@@ -478,3 +478,57 @@ a.menu-item:hover, nav .active {
    top: 0;
    width: 100%;
 }
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.sort-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort-controller {
+  margin-top : 0px;
+}
+
+.sort-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex : 0 0 50px;
+}
+
+.sort-content {
+  height: 50px;
+  border: 1px solid black;
+}
+
+.sort-cursor {
+  color: #069;
+  font-size: 1.5em;
+}
+
+.sort-container button {
+  width: 35px;
+  height: 35px;
+  font-size: 1.5em;
+}
+
+.sorted {
+  background-color: black;
+  color : white;
+  border-color: #eee;
+}
+
+.compared {
+  border-color: blue;
+  border-width: medium;
+}
+
+.minimum {
+  border-color: red;
+  border-width: medium;
+}
