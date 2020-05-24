@@ -51,6 +51,7 @@ function shuffle(array){
     array[i] = array[j]
     array[j] = temp
   }
+  return array;
 }
 
 function clearChildren(element){

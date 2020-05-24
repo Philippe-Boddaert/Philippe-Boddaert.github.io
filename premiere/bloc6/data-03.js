@@ -2,9 +2,10 @@ SOMMAIRE = [
               { "url" : "index.html", "titre" : "Sommaire"},
               { "url" : "03-1.html", "titre" : "6.3.1 - Tri par insertion" },
               { "url" : "03-2.html", "titre" : "6.3.2 - Tri par sélection" },
+              { "url" : "03-3.html", "titre" : "6.3.3 - Autres Tri" }
             ];
 
-var array = [1, 2, 3, 4, 5, 6];
+var array;
 var states;
 var stepByStep = false;
 var currentStep = 0;
@@ -23,8 +24,8 @@ function highlightAsMinimum(element){
   addClass(element, "minimum");
 }
 
-function initTri(){
-  shuffle(array);
+function initTri(data){
+  array = data;
 
   for (let i = 0; i < array.length; i++){
     let item = document.getElementById("item-" + array[i]);
@@ -40,7 +41,7 @@ function initTri(){
 }
 
 document.getElementById("sort-new").addEventListener('click', function(){
-  initTri();
+  initTri(shuffle([1, 2, 3, 4, 5, 6]));
   tri(array);
   divStates.innerHTML = states[0];
 });

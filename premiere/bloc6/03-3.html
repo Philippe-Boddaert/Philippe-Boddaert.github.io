@@ -24,20 +24,20 @@ MathJax = {
           <div class="content">
             <div class="reveal">
               <div class="slides">
-                <section id="6.3.2.1">
-                    <h1>Tri par sélection <a href="#haut">&#x21E7;</a></h1>
+                <section id="6.3.3.1">
+                    <h1>Autres tris <a href="#haut">&#x21E7;</a></h1>
                     <hr />
-                    <h1>Principe <a href="#haut">&#x21E7;</a></h1>
-                    <p>Quand on considère une collection $l$ de $n$ éléments, triée dans l'ordre croissant :</p>
+                </section>
+                <section id="6.3.3.2">
+                    <h1>Tri à bulle <a href="#haut">&#x21E7;</a></h1>
+                    <h2>Principe</h2>
+                    <p>Quand on considère une collection $l$ de $n$ éléments, non triée :</p>
                     <ul class="mt-0">
-                      <li>Celui a l'indice 0 est le minimum des $n$ éléments, i.e $l[0:n-1]$,</li>
-                      <li>Celui a l'indice 1 est le minimum des $n - 1$ éléments suivants, i.e $l[1:n-1]$,</li>
-                      <li>Celui a l'indice 2, le minimum des $n - 2$ suivants, i.e $l[2:n-1]$,</li>
-                      <li>etc...</li>
+                      <li>Si on compare répétitivement les éléments consécutifs de $l$,</li>
+                      <li>En les permutant lorsqu'ils sont mal triés,</li>
+                      <li>A la fin du processus, l'élément en dernière position est celui ayant la valeur maximale de $l$.</li>
                     </ul>
-                  </section>
-                  <section id="6.3.2.2">
-                    <h1>Illustration <a href="#haut">&#x21E7;</a></h1>
+                    <h2>Illustration</h2>
                     <div>
                       <div id="sort-states">
                         <div class="sort-container">
@@ -67,7 +67,7 @@ MathJax = {
                     </div>
                     <section>
                       <div class="boiteTravail">
-                        <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri par sélection.</p>
+                        <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri à bulle.</p>
                       </div>
                     </section>
                 </section>
@@ -81,7 +81,7 @@ MathJax = {
     </main>
     <script src="../../commun/commun.js" type="text/javascript"></script>
     <script src="data-03.js" type="text/javascript"></script>
-    <script src="data-03-2.js" type="text/javascript"></script>
+    <script src="data-03-3.js" type="text/javascript"></script>
     <script src="../../commun/index.js" type="text/javascript"></script>
 </body>
 </html>

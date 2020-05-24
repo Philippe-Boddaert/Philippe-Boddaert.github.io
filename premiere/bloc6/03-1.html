@@ -15,7 +15,7 @@ MathJax = {
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
-<body>
+<body id="haut">
     <main>
         <nav>
             <!-- Partie complétée en javascript -->
@@ -24,19 +24,22 @@ MathJax = {
           <div class="content">
             <div class="reveal">
               <div class="slides">
-                <section>
-                    <h1>Tri par insertion</h1>
+                <section id="6.3.1.1">
+                    <h1>Tri par insertion <a href="#haut">&#x21E7;</a></h1>
                     <hr />
-                    <p><span class="highlight">Principe</span> :</p>
+                    <h1>Principe <a href="#haut">&#x21E7;</a></h1>
                     <p>
-                      Quand on considère une liste $l$ de $n$ éléments, dont les $i - 1$ premiers sont triés.
-                      <br>Placer le $i^{ème}$ élément, consiste à le déplacer dans la sous-liste triée jusqu'à sa "bonne" place.
+                      Quand on considère une collection $l$ de $n$ éléments, dont les $i - 1$ premiers sont triés.
+                      <br>Placer le $i^{ème}$ élément, consiste à le déplacer dans la sous-collection triée jusqu'à sa "bonne" place.
                     </p>
                     <p>La "bonne" place est l'indice $j$ où :</p>
                     <ul class="mt-0">
                       <li>tous les éléments de $l[0:j]$ sont $\lt$ à l'élément $i$ et,</li>
                       <li>tous les éléments de $l[j + 1:i - 1]$ sont $\gt$ à l'élément $i$.</li>
                     </ul>
+                </section>
+                <section id="6.3.1.2">
+                  <h1>Illustration <a href="#haut">&#x21E7;</a></h1>
                     <div id="sort-states">
                       <div class="sort-container">
                         <div class="sort-item sort-content" id="item-1" style='order : 1;'>1</div>
@@ -55,7 +58,7 @@ MathJax = {
                         <div class="sort-item sort-cursor" id="flow-6"></div>
                       </div>
                     </div>
-                    <div class="sort-container sort-controller">
+                    <div class="sort-container sort-controller" data-for="sort-states">
                       <button id="sort-start">go to start</button>
                       <button id="sort-backward">backward</button>
                       <button id="sort-forward">forward</button>
@@ -63,11 +66,11 @@ MathJax = {
                       <button id="sort-new">new</button>
                     </div>
                     <p id="log"></p>
-                </section>
-                <section>
-                  <div class="boiteTravail">
-                    <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri par insertion.</p>
-                  </div>
+                    <section>
+                      <div class="boiteTravail">
+                        <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri par insertion.</p>
+                      </div>
+                    </section>
                 </section>
               </div>
             </div>

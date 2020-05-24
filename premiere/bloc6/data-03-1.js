@@ -44,6 +44,6 @@ function tri(array){
   }
 }
 
-initTri();
+initTri(shuffle([1, 2, 3, 4, 5, 6]));
 steps = tri(array);
 divStates.innerHTML = states[0];
