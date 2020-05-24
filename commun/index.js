@@ -18,7 +18,8 @@ toggle.addEventListener('click', toogleMenu);
 nav.appendChild(toggle);
 nav.appendChild(menu);
 
-SOMMAIRE.forEach(item => ajouteLienMenu(menu, item, current));
+if (typeof SOMMAIRE !== 'undefined')
+  SOMMAIRE.forEach(item => ajouteLienMenu(menu, item, current));
 
 //-----Construction des boites Questions/Reponses
 let boiteReponses = document.querySelectorAll('.boiteReponses');

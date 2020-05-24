@@ -40,32 +40,7 @@ MathJax = {
                 </section>
                 <section id="6.3.1.2">
                   <h1>Illustration <a href="#haut">&#x21E7;</a></h1>
-                    <div id="sort-states">
-                      <div class="sort-container">
-                        <div class="sort-item sort-content" id="item-1" style='order : 1;'>1</div>
-                        <div class="sort-item sort-content" id="item-2" style='order : 2;'>2</div>
-                        <div class="sort-item sort-content" id="item-3" style='order : 3;'>3</div>
-                        <div class="sort-item sort-content" id="item-4" style='order : 4;'>4</div>
-                        <div class="sort-item sort-content" id="item-5" style='order : 5;'>5</div>
-                        <div class="sort-item sort-content" id="item-6" style='order : 6;'>6</div>
-                      </div>
-                      <div class="sort-container">
-                        <div class="sort-item sort-cursor" id="flow-1"><div id="cursor">&#8679;</div></div>
-                        <div class="sort-item sort-cursor" id="flow-2"></div>
-                        <div class="sort-item sort-cursor" id="flow-3"></div>
-                        <div class="sort-item sort-cursor" id="flow-4"></div>
-                        <div class="sort-item sort-cursor" id="flow-5"></div>
-                        <div class="sort-item sort-cursor" id="flow-6"></div>
-                      </div>
-                    </div>
-                    <div class="sort-container sort-controller" data-for="sort-states">
-                      <button id="sort-start">go to start</button>
-                      <button id="sort-backward">backward</button>
-                      <button id="sort-forward">forward</button>
-                      <button id="sort-auto">play</button>
-                      <button id="sort-new">new</button>
-                    </div>
-                    <p id="log"></p>
+                    <div id="tri-insertion"></div>
                     <section>
                       <div class="boiteTravail">
                         <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri par insertion.</p>
@@ -82,7 +57,10 @@ MathJax = {
     </main>
     <script src="../../commun/commun.js" type="text/javascript"></script>
     <script src="data-03.js" type="text/javascript"></script>
-    <script src="data-03-1.js" type="text/javascript"></script>
+    <script src="sorter.js" type="text/javascript"></script>
     <script src="../../commun/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      new InsertSorter([1, 2, 3, 4, 5, 6], { "container" : "tri-insertion"});
+    </script>
 </body>
 </html>
