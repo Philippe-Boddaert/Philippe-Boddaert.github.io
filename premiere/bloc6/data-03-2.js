@@ -1,12 +1,8 @@
 function compareElement(current, min, index){
-  let item = document.getElementById("item-" + current);
-  let minimum = document.getElementById("item-" + min);
-  let cursor = document.getElementById('cursor');
-  removeClass(document.getElementsByClassName("compared")[0], "compared");
-  removeClass(document.getElementsByClassName("minimum")[0], "minimum");
-  addClass(minimum, "minimum");
-  addClass(item, "compared");
-  document.getElementById("flow-" + index).appendChild(cursor);
+  highlightAsCompared(document.getElementById("item-" + current));
+  highlightAsMinimum(document.getElementById("item-" + min));
+
+  document.getElementById("flow-" + index).appendChild(document.getElementById('cursor'));
   //return "Comparaison entre [" + minimum + "] et [" + current + "]";
   states.push(divStates.innerHTML);
 }

@@ -6,14 +6,26 @@ SOMMAIRE = [
 
 var array = [1, 2, 3, 4, 5, 6];
 var states;
+var stepByStep = false;
 var currentStep = 0;
 //var log = document.getElementById("log");
 var divStates = document.getElementById('sort-states');
 var log = document.getElementById("log");
+var interval;
+
+function highlightAsCompared(element){
+  removeClass(document.getElementsByClassName("compared")[0], "compared");
+  addClass(element, "compared");
+}
+
+function highlightAsMinimum(element){
+  removeClass(document.getElementsByClassName("minimum")[0], "minimum");
+  addClass(element, "minimum");
+}
 
 function initTri(){
-  //shuffle(array);
-  array = [4, 3, 5, 6, 1, 2];
+  shuffle(array);
+
   for (let i = 0; i < array.length; i++){
     let item = document.getElementById("item-" + array[i]);
     item.style.order = (i + 1);
@@ -50,4 +62,26 @@ document.getElementById("sort-backward").addEventListener('click', function(){
 document.getElementById("sort-start").addEventListener('click', function(){
     currentStep = 0;
     divStates.innerHTML = states[currentStep];
+});
+
+document.getElementById("sort-auto").addEventListener('click', function(){
+  let me = this;
+  if (this.innerHTML === 'play'){
+    this.innerHTML = 'pause';
+    stepByStep = true;
+    interval = setInterval(function(){
+      if (stepByStep && (currentStep < states.length - 1)){
+        currentStep++;
+        divStates.innerHTML = states[currentStep];
+      } else {
+        me.innerHTML = 'play';
+        stepByStep = false;
+        clearInterval(interval);
+      }
+    }, 500);
+  } else {
+    this.innerHTML = 'play';
+    stepByStep = false;
+    clearInterval(interval);
+  }
 });
