@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -38,7 +37,7 @@ MathJax = {
                       <li>tous les éléments de $l[0:j]$ sont $\lt$ à l'élément $i$ et,</li>
                       <li>tous les éléments de $l[j + 1:i - 1]$ sont $\gt$ à l'élément $i$.</li>
                     </ul>
-                    <div>
+                    <div id="sort-states">
                       <div class="sort-container">
                         <div class="sort-item sort-content" id="item-1" style='order : 1;'>1</div>
                         <div class="sort-item sort-content" id="item-2" style='order : 2;'>2</div>
@@ -55,11 +54,13 @@ MathJax = {
                         <div class="sort-item sort-cursor" id="flow-5"></div>
                         <div class="sort-item sort-cursor" id="flow-6"></div>
                       </div>
-                      <div class="sort-container sort-controller">
-                        <button id="sort-play">&#9658;</button>
-                        <button id="sort-stop">&#9724;</button>
-                        <button id="sort-new">&#8634;</button>
-                      </div>
+                    </div>
+                    <div class="sort-container sort-controller">
+                      <button id="sort-start">start</button>
+                      <button id="sort-backward">backward</button>
+                      <button id="sort-forward">forward</button>
+                      <button id="sort-stop" style="display:none;">&#9724;</button>
+                      <button id="sort-new">new</button>
                     </div>
                     <p id="log"></p>
                 </section>

@@ -36,26 +36,30 @@ MathJax = {
                       <li>etc...</li>
                     </ul>
                     <div>
-                      <div class="sort-container">
-                        <div class="sort-item sort-content" id="item-1" style='order : 1;'>1</div>
-                        <div class="sort-item sort-content" id="item-2" style='order : 2;'>2</div>
-                        <div class="sort-item sort-content" id="item-3" style='order : 3;'>3</div>
-                        <div class="sort-item sort-content" id="item-4" style='order : 4;'>4</div>
-                        <div class="sort-item sort-content" id="item-5" style='order : 5;'>5</div>
-                        <div class="sort-item sort-content" id="item-6" style='order : 6;'>6</div>
-                      </div>
-                      <div class="sort-container">
-                        <div class="sort-item sort-cursor" id="flow-1"><div id="cursor">&#8679;</div></div>
-                        <div class="sort-item sort-cursor" id="flow-2"></div>
-                        <div class="sort-item sort-cursor" id="flow-3"></div>
-                        <div class="sort-item sort-cursor" id="flow-4"></div>
-                        <div class="sort-item sort-cursor" id="flow-5"></div>
-                        <div class="sort-item sort-cursor" id="flow-6"></div>
+                      <div id="sort-states">
+                        <div class="sort-container">
+                          <div class="sort-item sort-content" id="item-1" style='order : 1;'>1</div>
+                          <div class="sort-item sort-content" id="item-2" style='order : 2;'>2</div>
+                          <div class="sort-item sort-content" id="item-3" style='order : 3;'>3</div>
+                          <div class="sort-item sort-content" id="item-4" style='order : 4;'>4</div>
+                          <div class="sort-item sort-content" id="item-5" style='order : 5;'>5</div>
+                          <div class="sort-item sort-content" id="item-6" style='order : 6;'>6</div>
+                        </div>
+                        <div class="sort-container">
+                          <div class="sort-item sort-cursor" id="flow-1"><div id="cursor">&#8679;</div></div>
+                          <div class="sort-item sort-cursor" id="flow-2"></div>
+                          <div class="sort-item sort-cursor" id="flow-3"></div>
+                          <div class="sort-item sort-cursor" id="flow-4"></div>
+                          <div class="sort-item sort-cursor" id="flow-5"></div>
+                          <div class="sort-item sort-cursor" id="flow-6"></div>
+                        </div>
                       </div>
                       <div class="sort-container sort-controller">
-                        <button id="sort-play">&#9658;</button>
-                        <button id="sort-stop">&#9724;</button>
-                        <button id="sort-new">&#8634;</button>
+                        <button id="sort-start">start</button>
+                        <button id="sort-backward">backward</button>
+                        <button id="sort-forward">forward</button>
+                        <button id="sort-stop" style="display:none;">&#9724;</button>
+                        <button id="sort-new">new</button>
                       </div>
                     </div>
                 </section>

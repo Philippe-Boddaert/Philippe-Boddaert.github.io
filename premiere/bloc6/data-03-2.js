@@ -1,63 +1,47 @@
-var array = [1, 2, 3, 4, 5, 6];
-var steps;
-var currentStep = 0;
-//var log = document.getElementById("log");
+function compareElement(current, min, index){
+  let item = document.getElementById("item-" + current);
+  let minimum = document.getElementById("item-" + min);
+  let cursor = document.getElementById('cursor');
+  removeClass(document.getElementsByClassName("compared")[0], "compared");
+  removeClass(document.getElementsByClassName("minimum")[0], "minimum");
+  addClass(minimum, "minimum");
+  addClass(item, "compared");
+  document.getElementById("flow-" + index).appendChild(cursor);
+  //return "Comparaison entre [" + minimum + "] et [" + current + "]";
+  states.push(divStates.innerHTML);
+}
 
 function minimum(array, start){
-  let steps = [];
   let min = start;
   for (let i = start + 1; i < array.length; i++){
-    steps.push({ "type" : STEPS.COMPARAISON, "parameters" : [array[i], array[min], start + 1]});
+    compareElement(array[i], array[min], start + 1);
     if (array[i] < array[min]){
       min = i;
     }
   }
-  return [min, steps];
+  return min;
+}
+
+function swapElement(current, min){
+  let item = document.getElementById("item-" + current);
+  let minimum = document.getElementById("item-" + min);
+  tmp = item.style.order;
+  item.style.order = minimum.style.order;
+  minimum.style.order = tmp;
+  addClass(item, "sorted");
+  //return "Echange entre [" + array[i] + "] <-> [" + array[min] + "]";
+  states.push(divStates.innerHTML);
 }
 
 function tri(array){
-  let steps = [];
   for (let i = 0; i < array.length; i++){
-    let result = minimum(array, i);
-    let min = result[0];
-    steps = steps.concat(result[1]);
-    steps.push({ "type" : STEPS.SWAP, "parameters" : [array[i], array[min]]});
+    let min = minimum(array, i);
+    // swap
     swap(array, i, min);
+    swapElement(array[i], array[min]);
   }
-  return steps;
-}
-
-function initTri(){
-  shuffle(array);
-
-  for (let i = 0; i < array.length; i++){
-    let item = document.getElementById("item-" + array[i]);
-    item.style.order = (i + 1);
-    removeClass(item, "sorted");
-  }
-  removeClass(document.getElementsByClassName("compared")[0], "compared");
-  removeClass(document.getElementsByClassName("minimum")[0], "minimum");
-  //log.innerHTML = "";
-  currentStep = 0;
-  document.getElementById("flow-1").appendChild(document.getElementById('cursor'));
-}
-
-function showStep(){
-  //log.innerHTML = formatStep(array, steps[currentStep]);
-  formatStep(array, steps[currentStep]);
 }
 
 initTri();
 steps = tri(array);
-
-document.getElementById("sort-new").addEventListener('click', function(){
-  initTri();
-  steps = tri(array);
-});
-
-document.getElementById("sort-play").addEventListener('click', function(){
-  if (currentStep < steps.length){
-    showStep();
-    currentStep++;
-  }
-});
+divStates.innerHTML = states[0];

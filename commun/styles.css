@@ -512,9 +512,9 @@ a.menu-item:hover, nav .active {
 }
 
 .sort-container button {
-  width: 35px;
-  height: 35px;
-  font-size: 1.5em;
+  width: 100px;
+  height: 25px;
+  font-size: 1em;
   cursor: pointer;
 }
 

@@ -1,6 +1,3 @@
-// Variables globales
-const STEPS = { "COMPARAISON" : 1, "SWAP" : 2, "PLACEMENT" : 3, "MOVE" : 4 , "CURSOR" : 5};
-
 //-----Fonctions pour la construction du menu
 function ajouteLienMenu(menu_ul, item, current = null, level = 1) {
     let h = document.createElement("h" + (level + 1));
@@ -60,46 +57,6 @@ function clearChildren(element){
   // Supprime tous les enfant d'un élément
   while (element.firstChild) {
     element.removeChild(element.firstChild);
-  }
-}
-
-function formatStep(array, step){
-  let item = document.getElementById("item-" + step.parameters[0]);
-  let minimum = document.getElementById("item-" + step.parameters[1]);
-  let cursor = document.getElementById('cursor');
-  let tmp;
-
-  switch(step.type){
-    case STEPS.SWAP :
-      tmp = item.style.order;
-      item.style.order = minimum.style.order;
-      minimum.style.order = tmp;
-      addClass(minimum, "sorted");
-      return "Echange entre [" + step.parameters[0] + "] <-> [" + step.parameters[1] + "]";
-    case STEPS.COMPARAISON :
-      removeClass(document.getElementsByClassName("compared")[0], "compared");
-      removeClass(document.getElementsByClassName("minimum")[0], "minimum");
-      addClass(minimum, "minimum");
-      addClass(item, "compared");
-      document.getElementById("flow-" + step.parameters[2]).appendChild(cursor);
-      return "Comparaison entre [" + step.parameters[1] + "] et [" + step.parameters[0] + "]";
-    case STEPS.PLACEMENT :
-      item.innerHTML = step.parameters[0];
-      addClass(item, "sorted");
-      return "Placement de [" + step.parameters[0] + "] en indice " + step.parameters[1];
-    case STEPS.MOVE :
-      removeClass(document.getElementsByClassName("minimum")[0], "minimum");
-      tmp = item.style.order;
-      item.style.order = minimum.style.order;
-      minimum.style.order = tmp;
-      item.innerHTML = minimum.innerHTML;
-      addClass(item, "minimum");
-      return "Echange entre [" + step.parameters[0] + "] <-> [" + step.parameters[1] + "]";
-    case STEPS.CURSOR :
-      removeClass(document.getElementsByClassName("compared")[0], "compared");
-      addClass(minimum, "compared");
-      document.getElementById("flow-" + step.parameters[2]).appendChild(cursor);
-      return "Element courant [" + step.parameters[0] + "]";
   }
 }
 
