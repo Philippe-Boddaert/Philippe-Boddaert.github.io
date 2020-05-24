@@ -224,8 +224,8 @@ class Sorter {
   }
 }
 
-// QuickSorter
-class QuickSorter extends Sorter {
+// BubbleSorter
+class BubbleSorter extends Sorter {
 
   tri(array){
     for (let i = array.length - 1; i >= 0; i--) {
