@@ -330,3 +330,46 @@ class InsertSorter extends Sorter {
     }
   }
 }
+
+class QuickSorter extends Sorter {
+
+  partitionner(l, a, b) {
+    let fin = b - 1;
+    let pivot = a;
+    let debut = a + 1;
+
+    this.placeCursor(l[pivot]);
+
+    while (fin - debut >= 0){
+        if (this.compare(l[pivot], l[debut]) > 0){
+            swap(l, debut, pivot);
+            this.swapItem(l[debut], l[pivot]);
+            pivot = debut;
+            this.placeCursor(l[pivot]);
+            debut++;
+        } else{
+            swap(l, debut, fin);
+            this.swapItem(l[debut], l[fin]);
+            fin--;
+        }
+    }
+    return pivot;
+}
+
+  tri(array, start, end){
+    if (typeof start === 'undefined'){
+      start = 0;
+    }
+    if (typeof end === 'undefined'){
+      end = array.length;
+    }
+
+    if (start < end){
+      let pivot = this.partitionner(array, start, end);
+      this.highlightAsSorted(array[pivot]);
+      this.saveState();
+      this.tri(array, start, pivot);
+      this.tri(array, pivot + 1, end);
+    }
+  }
+}
