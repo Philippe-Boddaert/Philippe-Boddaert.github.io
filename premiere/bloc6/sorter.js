@@ -346,25 +346,23 @@ class InsertSorter extends Sorter {
     let tmp = item.style.order;
     item.style.order = minimum.style.order;
     minimum.style.order = tmp;
-    item.innerHTML = minimum.innerHTML;
 
     this.highlightAsMinimum(current);
-    //return "Echange entre [" + step.parameters[0] + "] <-> [" + step.parameters[1] + "]";
+    
     this.saveState();
   }
 
   place(current){
-    this.getItem(current).innerHTML = current;
     this.highlightAsSorted(current);
-    //return "Placement de [" + current + "] en indice " + position;
     this.saveState();
   }
 
   tri(array){
+    this.highlightAsSorted(array[0]);
     for (let i = 1; i < array.length; i++){
+      this.placeCursor(i + 1);
       let element = array[i];
       let j = i - 1;
-      this.placeCursor(i + 1);
       while (j >= 0 && this.compare(array[j], element) > 0) {
         // déplacer le nombre
         this.move(element, array[j]);
