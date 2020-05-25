@@ -331,8 +331,13 @@ class SelectSorter extends Sorter {
       this.placeCursor(i + 1);
       let min = this.minimum(array, i);
       // swap
-      swap(array, i, min);
-      this.swapItem(array[i], array[min]);
+      if (min != i){
+        swap(array, i, min);
+        this.swapItem(array[i], array[min]);
+      } else {
+        this.highlightAsSorted(array[min]);
+        this.saveState();
+      }
     }
   }
 }
