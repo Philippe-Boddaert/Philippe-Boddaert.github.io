@@ -5,7 +5,6 @@ class Sorter {
   __states = [];
   __currentStep = 0;
   __statesContainer;
-  __stepByStep = false;
   __interval;
   __default = {
     "interval" : 300,
@@ -21,14 +20,30 @@ class Sorter {
     "templateIdCursor" : "cursor",
     "classSorted" : "sorted",
     "classCompared" : "compared",
-    "classMinimum" : "minimum"
+    "classMinimum" : "minimum",
+    "classLegend" : "sort-legend",
+    "legend" : {
+      "cursor" : "Indice où l'élément $i$ sera placé",
+      "compared" : "Element à comparer",
+      "minimum" : "Element à comparer",
+      "sorted" : "Elements triés"
+    },
+    "buttons" : {
+      "play" : '<i class="fas fa-play"></i>',
+      "pause" : '<i class="fas fa-pause"></i>',
+      "forward" : '<i class="fas fa-step-forward"></i>',
+      "back" : '<i class="fas fa-step-backward"></i>',
+      "start" : '<i class="fas fa-fast-backward"></i>',
+      "new" : '<i class="fas fa-random"></i>'
+    }
   };
   constructor(array, options){
     this.__original = array;
     this.__array = [...this.__original];
-    this.__options = Object.assign(this.__default, options);
+    this.__options = _.merge(this.__default, options);
     this.__container = document.getElementById(this.__options.container);
     this.constructContent();
+    this.new(array);
   }
 
   start(event, caller){
@@ -53,23 +68,23 @@ class Sorter {
   }
 
   auto(event, caller){
-    if (caller.innerHTML === 'play'){
-      caller.innerHTML = 'pause';
-      this.__stepByStep = true;
+    if (caller.dataset.launch === 'false'){
+      caller.innerHTML = this.__options.buttons.pause;
+      caller.dataset.launch = 'true';
       let me = this;
       this.__interval = setInterval(function(){
-        if (me.__stepByStep && (me.__currentStep < me.__states.length - 1)){
+        if (caller.dataset.launch === 'true' && (me.__currentStep < me.__states.length - 1)){
           me.__currentStep++;
           me.__statesContainer.innerHTML = me.__states[me.__currentStep];
         } else {
-          caller.innerHTML = 'play';
-          me.__stepByStep = false;
+          caller.innerHTML = me.__options.buttons.play;
+          caller.dataset.launch = 'false';
           clearInterval(me.__interval);
         }
       }, this.__options.interval);
     } else {
-      caller.innerHTML = 'play';
-      this.__stepByStep = false;
+      caller.innerHTML = this.__options.buttons.play;
+      caller.dataset.launch = 'false';
       clearInterval(this.__interval);
     }
   }
@@ -77,28 +92,23 @@ class Sorter {
   tri(array){}
 
   setArray(array){
-    if (typeof array === 'undefined'){
-      this.__array = shuffle([...this.__original]);
-    } else {
-      this.__original = array;
-      this.__array = [...this.__original];
-    }
+    this.__array = array;
 
     for (let i = 0; i < this.__array.length; i++){
       let item = this.getItem(this.__array[i]);
       item.style.order = (i + 1);
       removeClass(item, this.__options.classSorted);
     }
-    removeClass(this.__container.getElementsByClassName("compared")[0], "compared");
-    removeClass(this.__container.getElementsByClassName("minimum")[0], "minimum");
+    removeClass(this.__statesContainer.getElementsByClassName("compared")[0], "compared");
+    removeClass(this.__statesContainer.getElementsByClassName("minimum")[0], "minimum");
     //log.innerHTML = "";
     this.__currentStep = 0;
     document.getElementById(this.__options.container + '-' + this.__options.templateIdItemCursor + '1').appendChild(document.getElementById(this.__options.container + '-' + this.__options.templateIdCursor));
     this.__states = [this.__statesContainer.innerHTML];
   }
 
-  new(event, caller){
-    this.setArray();
+  new(newArray, event, caller){
+    this.setArray(newArray);
     //this.setArray([2, 3, 5, 6, 4, 1]);
     this.tri(this.__array);
     if (this.__states.length > 0){
@@ -114,6 +124,27 @@ class Sorter {
     divItemContainer.className = this.__options.classContainer;
     let divCursorContainer = document.createElement('div');
     divCursorContainer.className = this.__options.classContainer;
+
+    // Constructs legend
+    let divLegendContainer = document.createElement('div');
+    divLegendContainer.className = this.__options.classContainer + ' ' + this.__options.classLegend;
+
+    let cursorLegend = document.createElement('p');
+    cursorLegend.innerHTML = '<span class=\'sort-cursor\'>&#8679;</span> ' + this.__options.legend.cursor;
+
+    let comparedLegend = document.createElement('p');
+    comparedLegend.innerHTML = '<span class=\'sort-content sort-label compared\'>&nbsp;&nbsp;</span> ' + this.__options.legend.compared;
+
+    let minimumLegend = document.createElement('p');
+    minimumLegend.innerHTML = '<span class=\'sort-content sort-label minimum\'>&nbsp;&nbsp;</span> ' + this.__options.legend.minimum;
+
+    let sortedLegend = document.createElement('p');
+    sortedLegend.innerHTML = '<span class=\'sort-content sort-label sorted\'>&nbsp;&nbsp;</span> ' + this.__options.legend.sorted;
+
+    divLegendContainer.appendChild(cursorLegend);
+    divLegendContainer.appendChild(comparedLegend);
+    divLegendContainer.appendChild(minimumLegend);
+    divLegendContainer.appendChild(sortedLegend);
 
     // Constructs item
     this.__array.forEach((item, i) => {
@@ -137,37 +168,43 @@ class Sorter {
     var me = this;
     // button : start
     let buttonStart = document.createElement('button');
-    buttonStart.innerHTML = 'go to start';
+    buttonStart.innerHTML = this.__options.buttons.start;
+    buttonStart.title = 'Revenir au départ';
     buttonStart.addEventListener('click', function(event){
-      me.start(event, this);
+      me.start();
     });
 
     // button : backward
     let buttonBack = document.createElement('button');
-    buttonBack.innerHTML = 'back';
+    buttonBack.innerHTML = this.__options.buttons.back;
+    buttonBack.title = 'Revenir à l\'instruction précédente';
     buttonBack.addEventListener('click', function(event){
       me.back(event, this);
     });
 
     // button : forward
     let buttonForward = document.createElement('button');
-    buttonForward.innerHTML = 'forward';
+    buttonForward.innerHTML = this.__options.buttons.forward;
+    buttonForward.title = 'Aller à l\'instruction suivante';
     buttonForward.addEventListener('click', function(event){
       me.forward(event, this);
     });
 
     // button : auto
     let buttonAuto = document.createElement('button');
-    buttonAuto.innerHTML = 'play';
+    buttonAuto.innerHTML = this.__options.buttons.play;
+    buttonAuto.title = 'Exécuter les instructions automatiquement';
+    buttonAuto.dataset.launch = false;
     buttonAuto.addEventListener('click', function(event){
       me.auto(event, this);
     });
 
     // button : new
     let buttonNew = document.createElement('button');
-    buttonNew.innerHTML = 'new';
+    buttonNew.innerHTML = this.__options.buttons.new;
+    buttonNew.title = 'Générer un nouveau tableau';
     buttonNew.addEventListener('click', function(event){
-      me.new(event, this);
+      me.new(shuffle([...me.__original]), event, this);
     });
 
     divControllerContainer.appendChild(buttonStart);
@@ -179,6 +216,7 @@ class Sorter {
     divStates.appendChild(divItemContainer);
     divStates.appendChild(divCursorContainer);
 
+    this.__container.appendChild(divLegendContainer);
     this.__container.appendChild(divStates);
     this.__container.appendChild(divControllerContainer);
 
@@ -192,12 +230,12 @@ class Sorter {
   }
 
   highlightAsCompared(position){
-    removeClass(this.__container.getElementsByClassName(this.__options.classCompared)[0], this.__options.classCompared);
+    removeClass(this.__statesContainer.getElementsByClassName(this.__options.classCompared)[0], this.__options.classCompared);
     addClass(this.getItem(position), this.__options.classCompared);
   }
 
   highlightAsMinimum(position){
-    removeClass(this.__container.getElementsByClassName(this.__options.classMinimum)[0], this.__options.classMinimum);
+    removeClass(this.__statesContainer.getElementsByClassName(this.__options.classMinimum)[0], this.__options.classMinimum);
     addClass(this.getItem(position), this.__options.classMinimum);
   }
 
@@ -257,6 +295,11 @@ class BubbleSorter extends Sorter {
 }
 
 class SelectSorter extends Sorter {
+
+  constructor(array, options){
+    let opt = _.merge({ "legend" : { "cursor" : "Indice de l'élément $i$ à placer"}}, options);
+    super(array, opt);
+  }
 
   minimum(array, start){
     let min = start;
