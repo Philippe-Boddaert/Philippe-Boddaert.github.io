@@ -35,7 +35,10 @@ class Sorter {
       "back" : '<i class="fas fa-step-backward"></i>',
       "start" : '<i class="fas fa-fast-backward"></i>',
       "new" : '<i class="fas fa-random"></i>'
-    }
+    },
+    "showLegend" : true,
+    "showController" : true,
+    "showCursor" : true
   };
   constructor(array, options){
     this.__original = array;
@@ -123,11 +126,11 @@ class Sorter {
     let divItemContainer = document.createElement('div');
     divItemContainer.className = this.__options.classContainer;
     let divCursorContainer = document.createElement('div');
-    divCursorContainer.className = this.__options.classContainer;
+    divCursorContainer.className = this.__options.classContainer + (this.__options.showLegend?'':' hidden');;
 
     // Constructs legend
     let divLegendContainer = document.createElement('div');
-    divLegendContainer.className = this.__options.classContainer + ' ' + this.__options.classLegend;
+    divLegendContainer.className = this.__options.classContainer + ' ' + this.__options.classLegend + (this.__options.showLegend?'':' hidden');
 
     let cursorLegend = document.createElement('p');
     cursorLegend.innerHTML = '<span class=\'sort-cursor\'>&#8679;</span> ' + this.__options.legend.cursor;
@@ -163,7 +166,7 @@ class Sorter {
 
     // Constructs Flow buttons
     let divControllerContainer = document.createElement('div');
-    divControllerContainer.className = this.__options.classContainer + ' ' + this.__options.classController;
+    divControllerContainer.className = this.__options.classContainer + ' ' + this.__options.classController + (this.__options.showController?'':' hidden');
 
     var me = this;
     // button : start
