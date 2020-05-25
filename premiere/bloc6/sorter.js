@@ -229,6 +229,13 @@ class Sorter {
     //return "Echange entre [" + array[i] + "] <-> [" + array[min] + "]";
     this.saveState();
   }
+
+  compare(a, b){
+    this.highlightAsCompared(a);
+    this.highlightAsMinimum(b);
+    this.saveState();
+    return a - b;
+  }
 }
 
 // BubbleSorter
@@ -238,32 +245,23 @@ class BubbleSorter extends Sorter {
     for (let i = array.length - 1; i >= 0; i--) {
         this.placeCursor(i + 1);
         for (let j = 0; j < i; j++) {
-          this.highlightAsCompared(array[j]);
-          this.highlightAsMinimum(array[j + 1]);
-          this.saveState();
-            if (array[j] > array[j + 1]) {
+            if (this.compare(array[j], array[j + 1]) > 0) {
                 swap(array, j, j + 1);
                 this.swapItem(array[j], array[j + 1]);
             }
         }
         this.highlightAsSorted(i + 1);
     }
+    this.saveState();
   }
 }
 
 class SelectSorter extends Sorter {
 
-  compareElement(current, min, index){
-    this.highlightAsCompared(current);
-    this.highlightAsMinimum(min);
-    this.placeCursor(index);
-  }
-
   minimum(array, start){
     let min = start;
     for (let i = start + 1; i < array.length; i++){
-      this.compareElement(array[i], array[min], start + 1);
-      if (array[i] < array[min]){
+      if (this.compare(array[min], array[i]) > 0){
         min = i;
       }
     }
@@ -320,10 +318,8 @@ class InsertSorter extends Sorter {
       let element = array[i];
       let j = i - 1;
       this.placeCursor(i + 1);
-      this.highlightAsCompared(array[j]);
-      while (j >= 0 && array[j] > element) {
+      while (j >= 0 && this.compare(array[j], element) > 0) {
         // déplacer le nombre
-        this.highlightAsCompared(array[j]);
         this.move(element, array[j]);
         array[j + 1] = array[j];
         j--;
