@@ -357,11 +357,6 @@ nav {
     padding: 0;
 }
 
-nav.hidden {
-  flex-basis: auto;
-  display: block;
-}
-
 #toggle {
     float: right;
     border : 1px solid #ccc;
@@ -449,10 +444,6 @@ a.menu-item:hover, nav .active {
   font-weight: bold;
   font-style: italic;
   text-decoration: underline;
-}
-
-.hidden {
-  display: none;
 }
 
 .row {
@@ -546,4 +537,13 @@ a.menu-item:hover, nav .active {
 .minimum {
   border-color: red;
   border-width: medium;
+}
+
+nav.hidden {
+  flex-basis: auto;
+  display: block;
+}
+
+.hidden {
+  display: none;
 }
