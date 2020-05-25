@@ -8,7 +8,7 @@ class Sorter {
   __stepByStep = false;
   __interval;
   __default = {
-    "interval" : 500,
+    "interval" : 300,
     "container" : "sorter",
     "templateIdStates" : "sort-states",
     "classContainer" : "sort-container",
@@ -24,7 +24,8 @@ class Sorter {
     "classMinimum" : "minimum"
   };
   constructor(array, options){
-    this.__array = array;
+    this.__original = array;
+    this.__array = [...this.__original];
     this.__options = Object.assign(this.__default, options);
     this.__container = document.getElementById(this.__options.container);
     this.constructContent();
