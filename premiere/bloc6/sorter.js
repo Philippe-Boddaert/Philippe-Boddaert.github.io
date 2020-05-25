@@ -75,7 +75,7 @@ class Sorter {
     }
   }
 
-  auto(event, caller, next = {}){
+  auto(event, caller, next = function(){}){
     if (caller.dataset.launch === 'false'){
       caller.innerHTML = this.__options.buttons.pause;
       caller.dataset.launch = 'true';
