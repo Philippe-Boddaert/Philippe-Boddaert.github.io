@@ -300,7 +300,7 @@ class Sorter {
     logger.innerHTML = (init)?0:(parseInt(logger.innerHTML) + 1);
   }
 
-  swapItem(current, min){
+  swapItem(current, min, saveState = true){
     this.logSwap();
 
     let item = this.getItem(current);
@@ -310,7 +310,8 @@ class Sorter {
     item.style.order = minimum.style.order;
     minimum.style.order = tmp;
     //return "Echange entre [" + array[i] + "] <-> [" + array[min] + "]";
-    this.saveState();
+    if (saveState)
+      this.saveState();
   }
 
   compare(a, b){
@@ -432,21 +433,22 @@ class QuickSorter extends Sorter {
     let pivot = a;
     let debut = a + 1;
 
-    this.placeCursor(l[pivot]);
+    this.placeCursor(debut);
 
     while (fin - debut >= 0){
         if (this.compare(l[pivot], l[debut]) > 0){
             swap(l, debut, pivot);
-            this.swapItem(l[debut], l[pivot]);
+            this.swapItem(l[debut], l[pivot], false);
             pivot = debut;
-            this.placeCursor(l[pivot]);
             debut++;
         } else{
             swap(l, debut, fin);
-            this.swapItem(l[debut], l[fin]);
+            this.swapItem(l[debut], l[fin], false);
             fin--;
         }
+        this.placeCursor(debut);
     }
+
     return pivot;
 }
 
