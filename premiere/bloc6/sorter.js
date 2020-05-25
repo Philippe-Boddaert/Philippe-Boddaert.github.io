@@ -282,6 +282,7 @@ class SelectSorter extends Sorter {
 
   tri(array){
     for (let i = 0; i < array.length; i++){
+      this.placeCursor(i + 1);
       let min = this.minimum(array, i);
       // swap
       swap(array, i, min);
