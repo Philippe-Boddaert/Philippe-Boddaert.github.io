@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Ressources sur le programme NSI de 1ère" />
+  <title>Bloc 6 : Algorithmique</title>
+  <link href="../../commun/styles.css" rel="stylesheet">
+  <style>
+  .sort-content {
+    height : 25px;
+  }
+  .sort-item {
+    flex-basis : 25px;
+  }
+  table {
+    width : 100%;
+  }
+  section td, section th {
+    border : none;
+    vertical-align: top;
+    background-color: transparent;
+  }
+  </style>
+  <script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+  <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+</head>
+
+<body id="haut">
+    <main>
+        <nav>
+            <!-- Partie complétée en javascript -->
+        </nav>
+        <div id="page">
+          <div class="content">
+            <div class="reveal">
+              <div class="slides">
+                <section id="6.3.4">
+                    <h1>Comparatif <a href="#haut">&#x21E7;</a></h1>
+                    <hr />
+                    <table>
+                      <tr><th>Tri par insertion</th><td><div id="tri-insertion"></div></td></tr>
+                      <tr><th>Tri par sélection</th><td><div id="tri-selection"></div></td></tr>
+                      <tr><th>Tri à bulle</th><td><div id="tri-bubble"></div></td></tr>
+                      <tr><th>Tri rapide</th><td><div id="tri-quicksort"></div></td></tr>
+                      <tr><td></td><td><div class="sort-container sort-controller">
+                        <button id="start" title="Revenir au départ"><i class="fas fa-fast-backward" aria-hidden="true"></i></button>
+                        <button id="back" title="Revenir à l'instruction précédente"><i class="fas fa-step-backward" aria-hidden="true"></i></button>
+                        <button id="forward" title="Aller à l'instruction suivante"><i class="fas fa-step-forward" aria-hidden="true"></i></button>
+                        <button id="auto" title="Exécuter les instructions automatiquement" data-launch="false"><i class="fas fa-play" aria-hidden="true"></i></button>
+                        <button id="new" title="Générer un nouveau tableau"><i class="fas fa-random" aria-hidden="true"></i></button>
+                      </div></td>
+                    </table>
+                </section>
+              </div>
+            </div>
+          </div>
+          <footer>
+              Un site de : <a href="https://philippe-boddaert.github.io">www.philippe-boddaert.github.io</a>
+          </footer>
+        </div>
+    </main>
+    <script src="../../commun/commun.js" type="text/javascript"></script>
+    <script src="sorter.js" type="text/javascript"></script>
+    <script src="data-03.js" type="text/javascript"></script>
+    <script src="../../commun/index.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      let array = shuffle(Array.from(Array(25).keys(), x => x + 1));
+      let algorithms = [
+        new InsertSorter([...array], { "container" : "tri-insertion", "showLegend" : false, "showController" : false, "showCursor" : false, "interval" : 50}),
+        new SelectSorter([...array], { "container" : "tri-selection", "showLegend" : false, "showController" : false, "showCursor" : false, "interval" : 50}),
+        new BubbleSorter([...array], { "container" : "tri-bubble", "showLegend" : false, "showController" : false, "showCursor" : false, "interval" : 50}),
+        new QuickSorter([...array], { "container" : "tri-quicksort", "showLegend" : false, "showController" : false, "showCursor" : false, "interval" : 50})
+      ];
+      document.getElementById('start').addEventListener('click', function(){
+        algorithms.forEach((sorter, i) => {
+          sorter.start();
+        });
+      });
+      document.getElementById('back').addEventListener('click', function(){
+        algorithms.forEach((sorter, i) => {
+          sorter.back();
+        });
+      });
+      document.getElementById('forward').addEventListener('click', function(){
+        algorithms.forEach((sorter, i) => {
+          sorter.forward();
+        });
+      });
+      document.getElementById('auto').addEventListener('click', function(event){
+        let buttons = document.querySelectorAll('button[data-launch]:not(#auto)');
+        algorithms.forEach((sorter, i) => {
+          sorter.auto(event, buttons[i]);
+        });
+      });
+      document.getElementById('new').addEventListener('click', function(event){
+        let array = shuffle(Array.from(Array(25).keys(), x => x + 1));
+        algorithms.forEach((sorter, i) => {
+          sorter.new([...array]);
+        });
+      });
+    </script>
+</body>
+</html>
