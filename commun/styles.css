@@ -486,6 +486,7 @@ a.menu-item:hover, nav .active {
 .sort-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
