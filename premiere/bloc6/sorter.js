@@ -6,6 +6,7 @@ class Sorter {
   __currentStep = 0;
   __statesContainer;
   __interval;
+  __logger;
   __default = {
     "interval" : 300,
     "container" : "sorter",
@@ -18,10 +19,13 @@ class Sorter {
     "templateIdItem" : "item-",
     "templateIdItemCursor" : "flow-",
     "templateIdCursor" : "cursor",
+    "templateIdLoggerCompare" : "logger-compare",
+    "templateIdLoggerSwap" : "logger-swap",
     "classSorted" : "sorted",
     "classCompared" : "compared",
     "classMinimum" : "minimum",
     "classLegend" : "sort-legend",
+    "classLogger" : "sort-logger",
     "legend" : {
       "cursor" : "Indice où l'élément $i$ sera placé",
       "compared" : "Element à comparer",
@@ -38,7 +42,8 @@ class Sorter {
     },
     "showLegend" : true,
     "showController" : true,
-    "showCursor" : true
+    "showCursor" : true,
+    "showLogger" : false
   };
   constructor(array, options){
     this.__original = array;
@@ -70,7 +75,7 @@ class Sorter {
     }
   }
 
-  auto(event, caller){
+  auto(event, caller, next = {}){
     if (caller.dataset.launch === 'false'){
       caller.innerHTML = this.__options.buttons.pause;
       caller.dataset.launch = 'true';
@@ -84,6 +89,7 @@ class Sorter {
           caller.dataset.launch = 'false';
           clearInterval(me.__interval);
         }
+        next(event, caller, me);
       }, this.__options.interval);
     } else {
       caller.innerHTML = this.__options.buttons.play;
@@ -106,6 +112,8 @@ class Sorter {
     removeClass(this.__statesContainer.getElementsByClassName("minimum")[0], "minimum");
     //log.innerHTML = "";
     this.__currentStep = 0;
+    this.logCompare(true);
+    this.logSwap(true);
     document.getElementById(this.__options.container + '-' + this.__options.templateIdItemCursor + '1').appendChild(document.getElementById(this.__options.container + '-' + this.__options.templateIdCursor));
     this.__states = [this.__statesContainer.innerHTML];
   }
@@ -210,12 +218,34 @@ class Sorter {
       me.new(shuffle([...me.__original]), event, this);
     });
 
+    // Constructs logger
+    let divLoggerContainer = document.createElement('div');
+    divLoggerContainer.className = this.__options.classContainer + ' ' + this.__options.classLogger + (this.__options.showLogger?'':' hidden');
+
+    let pLoggerCompare = document.createElement('div');
+    let pLoggerSwap = document.createElement('div');
+    let loggerCompare = document.createElement('span');
+    let loggerSwap = document.createElement('span');
+
+    pLoggerCompare.innerHTML = 'Compteur de comparaisons :';
+    pLoggerSwap.innerHTML = 'Compteur d\'échanges :';
+    loggerCompare.id = this.__options.container + '-' + this.__options.templateIdLoggerCompare;
+    loggerCompare.innerHTML = 0;
+    loggerSwap.id = this.__options.container + '-' + this.__options.templateIdLoggerSwap;
+    loggerSwap.innerHTML = 0;
+
+    pLoggerCompare.appendChild(loggerCompare);
+    pLoggerSwap.appendChild(loggerSwap);
+    divLoggerContainer.appendChild(pLoggerCompare);
+    divLoggerContainer.appendChild(pLoggerSwap);
+
     divControllerContainer.appendChild(buttonStart);
     divControllerContainer.appendChild(buttonBack);
     divControllerContainer.appendChild(buttonForward);
     divControllerContainer.appendChild(buttonAuto);
     divControllerContainer.appendChild(buttonNew);
 
+    divStates.appendChild(divLoggerContainer);
     divStates.appendChild(divItemContainer);
     divStates.appendChild(divCursorContainer);
 
@@ -260,7 +290,19 @@ class Sorter {
     return document.getElementById(this.__options.container + '-' + this.__options.templateIdItem + position);
   }
 
+  logCompare(init = false){
+    let logger = document.getElementById(this.__options.container + '-' + this.__options.templateIdLoggerCompare);
+    logger.innerHTML = (init)?0:(parseInt(logger.innerHTML) + 1);
+  }
+
+  logSwap(init = false){
+    let logger = document.getElementById(this.__options.container + '-' + this.__options.templateIdLoggerSwap);
+    logger.innerHTML = (init)?0:(parseInt(logger.innerHTML) + 1);
+  }
+
   swapItem(current, min){
+    this.logSwap();
+
     let item = this.getItem(current);
     let minimum = this.getItem(min);
 
@@ -272,6 +314,7 @@ class Sorter {
   }
 
   compare(a, b){
+    this.logCompare();
     this.highlightAsCompared(a);
     this.highlightAsMinimum(b);
     this.saveState();
@@ -315,6 +358,7 @@ class SelectSorter extends Sorter {
   }
 
   swapItem(current, min){
+    this.logSwap();
     let item = this.getItem(current);
     let minimum = this.getItem(min);
 
@@ -345,6 +389,7 @@ class SelectSorter extends Sorter {
 class InsertSorter extends Sorter {
 
   move(current, after){
+    this.logSwap();
     let item = this.getItem(current);
     let minimum = this.getItem(after);
 
@@ -353,7 +398,7 @@ class InsertSorter extends Sorter {
     minimum.style.order = tmp;
 
     this.highlightAsMinimum(current);
-    
+
     this.saveState();
   }
 

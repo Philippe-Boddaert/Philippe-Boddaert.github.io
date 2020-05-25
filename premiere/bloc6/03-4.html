@@ -46,10 +46,10 @@ MathJax = {
                     <h1>Comparatif <a href="#haut">&#x21E7;</a></h1>
                     <hr />
                     <table>
-                      <tr><th>Tri par insertion</th><td><div id="tri-insertion"></div></td></tr>
-                      <tr><th>Tri par sélection</th><td><div id="tri-selection"></div></td></tr>
-                      <tr><th>Tri à bulle</th><td><div id="tri-bubble"></div></td></tr>
-                      <tr><th>Tri rapide</th><td><div id="tri-quicksort"></div></td></tr>
+                      <tr><th>Tri par insertion<br>C : <span id="tri-insertion-compare">0</span> / E : <span id="tri-insertion-swap">0</span></th><td><div id="tri-insertion"></div></td></tr>
+                      <tr><th>Tri par sélection<br>C : <span id="tri-selection-compare">0</span> / E : <span id="tri-selection-swap">0</span></th><td><div id="tri-selection"></div></td></tr>
+                      <tr><th>Tri à bulle<br>C : <span id="tri-bubble-compare">0</span> / E : <span id="tri-bubble-swap">0</span></th><td><div id="tri-bubble"></div></td></tr>
+                      <tr><th>Tri rapide<br>C : <span id="tri-quicksort-compare">0</span> / E : <span id="tri-quicksort-swap">0</span></th><td><div id="tri-quicksort"></div></td></tr>
                       <tr><td></td><td><div class="sort-container sort-controller">
                         <button id="start" title="Revenir au départ"><i class="fas fa-fast-backward" aria-hidden="true"></i></button>
                         <button id="back" title="Revenir à l'instruction précédente"><i class="fas fa-step-backward" aria-hidden="true"></i></button>
@@ -79,31 +79,50 @@ MathJax = {
         new BubbleSorter([...array], { "container" : "tri-bubble", "showLegend" : false, "showController" : false, "showCursor" : false, "interval" : 50}),
         new QuickSorter([...array], { "container" : "tri-quicksort", "showLegend" : false, "showController" : false, "showCursor" : false, "interval" : 50})
       ];
+
+      function updateLogger(sorter){
+        document.getElementById(sorter.__options.container + '-compare').innerHTML = document.getElementById(sorter.__options.container + '-' + sorter.__options.templateIdLoggerCompare).innerHTML;
+        document.getElementById(sorter.__options.container + '-swap').innerHTML = document.getElementById(sorter.__options.container + '-' + sorter.__options.templateIdLoggerSwap).innerHTML;
+      }
+
       document.getElementById('start').addEventListener('click', function(){
         algorithms.forEach((sorter, i) => {
           sorter.start();
+          updateLogger(sorter);
         });
       });
       document.getElementById('back').addEventListener('click', function(){
         algorithms.forEach((sorter, i) => {
           sorter.back();
+          updateLogger(sorter);
         });
       });
       document.getElementById('forward').addEventListener('click', function(){
         algorithms.forEach((sorter, i) => {
           sorter.forward();
+          updateLogger(sorter);
         });
       });
       document.getElementById('auto').addEventListener('click', function(event){
+        if (this.dataset.launch === 'false'){
+          this.dataset.launch = 'true';
+          this.innerHTML = this.innerHTML.replace('fa-play', 'fa-pause');
+        } else {
+          this.dataset.launch = 'false';
+          this.innerHTML = this.innerHTML.replace('fa-pause', 'fa-play');
+        }
         let buttons = document.querySelectorAll('button[data-launch]:not(#auto)');
         algorithms.forEach((sorter, i) => {
-          sorter.auto(event, buttons[i]);
+          sorter.auto(event, buttons[i], function(){
+            updateLogger(sorter);
+          });
         });
       });
       document.getElementById('new').addEventListener('click', function(event){
         let array = shuffle(Array.from(Array(25).keys(), x => x + 1));
         algorithms.forEach((sorter, i) => {
           sorter.new([...array]);
+          updateLogger(sorter);
         });
       });
     </script>

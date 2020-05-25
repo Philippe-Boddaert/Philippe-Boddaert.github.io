@@ -482,6 +482,10 @@ a.menu-item:hover, nav .active {
   align-items: center;
 }
 
+.sort-logger {
+  justify-content: space-evenly;
+}
+
 .sort-controller {
   margin-top : 0px;
 }
