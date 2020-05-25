@@ -227,8 +227,8 @@ class Sorter {
     let loggerCompare = document.createElement('span');
     let loggerSwap = document.createElement('span');
 
-    pLoggerCompare.innerHTML = 'Compteur de comparaisons :';
-    pLoggerSwap.innerHTML = 'Compteur d\'échanges :';
+    pLoggerCompare.innerHTML = 'Nombre de comparaisons : ';
+    pLoggerSwap.innerHTML = 'Nombre d\'échanges : ';
     loggerCompare.id = this.__options.container + '-' + this.__options.templateIdLoggerCompare;
     loggerCompare.innerHTML = 0;
     loggerSwap.id = this.__options.container + '-' + this.__options.templateIdLoggerSwap;
