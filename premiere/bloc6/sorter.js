@@ -76,8 +76,13 @@ class Sorter {
 
   tri(array){}
 
-  setArray(data){
-    this.__array = data;
+  setArray(array){
+    if (typeof array === 'undefined'){
+      this.__array = shuffle([...this.__original]);
+    } else {
+      this.__original = array;
+      this.__array = [...this.__original];
+    }
 
     for (let i = 0; i < this.__array.length; i++){
       let item = this.getItem(this.__array[i]);
@@ -93,7 +98,8 @@ class Sorter {
   }
 
   new(event, caller){
-    this.setArray(shuffle([1, 2, 3, 4, 5, 6]));
+    this.setArray();
+    //this.setArray([2, 3, 5, 6, 4, 1]);
     this.tri(this.__array);
     if (this.__states.length > 0){
       this.__statesContainer.innerHTML = this.__states[0];
