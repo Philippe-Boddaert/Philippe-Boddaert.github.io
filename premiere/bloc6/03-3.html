@@ -13,6 +13,8 @@ MathJax = {
 };
 </script>
   <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="haut">
@@ -39,10 +41,31 @@ MathJax = {
                     </ul>
                     <h2>Illustration</h2>
                     <div id="tri-bubble"></div>
-                    <div id="tri-quicksort"></div>
                     <section>
                       <div class="boiteTravail">
                         <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri à bulle.</p>
+                      </div>
+                    </section>
+                </section>
+                <section id="6.3.3.3">
+                    <h1>Tri rapide <a href="#haut">&#x21E7;</a></h1>
+                    <h2>Principe</h2>
+                    <p>Quand on considère une collection $l$ de $n$ éléments, non triée :</p>
+                    <ul class="mt-0">
+                      <li>Si on partitionne $l$ en fonction d'un pivot (le premier élément par exemple),</li>
+                      <li>En plaçant le pivot à la "bonne" place,</li>
+                      <li>Il ne reste qu'à trier récursivement chaque collection à la gauche et à la droite du pivot.</li>
+                    </ul>
+                    <p>La "bonne" place du pivot est l'indice $j$ où :</p>
+                    <ul class="mt-0">
+                      <li>tous les éléments de $l[0:j]$ sont $\lt$ au pivot,</li>
+                      <li>tous les éléments de $l[j + 1:i - 1]$ sont $\gt$ au pivot.</li>
+                    </ul>
+                    <h2>Illustration</h2>
+                    <div id="tri-quicksort"></div>
+                    <section>
+                      <div class="boiteTravail">
+                        <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri rapide.</p>
                       </div>
                     </section>
                 </section>
@@ -59,8 +82,8 @@ MathJax = {
     <script src="data-03.js" type="text/javascript"></script>
     <script src="../../commun/index.js" type="text/javascript"></script>
     <script type="text/javascript">
-      new BubbleSorter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], { "container" : "tri-bubble"});
-      new QuickSorter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], { "container" : "tri-quicksort"});
+      new BubbleSorter([6, 4, 1, 8, 5, 10, 7, 3, 2, 9], { "container" : "tri-bubble"});
+      new QuickSorter([6, 4, 1, 8, 5, 10, 7, 3, 2, 9], { "container" : "tri-quicksort"});
     </script>
 </body>
 </html>
