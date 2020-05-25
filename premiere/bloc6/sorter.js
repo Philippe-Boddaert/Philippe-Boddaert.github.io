@@ -134,7 +134,7 @@ class Sorter {
     let divItemContainer = document.createElement('div');
     divItemContainer.className = this.__options.classContainer;
     let divCursorContainer = document.createElement('div');
-    divCursorContainer.className = this.__options.classContainer + (this.__options.showLegend?'':' hidden');;
+    divCursorContainer.className = this.__options.classContainer + (this.__options.showCursor?'':' hidden');;
 
     // Constructs legend
     let divLegendContainer = document.createElement('div');
