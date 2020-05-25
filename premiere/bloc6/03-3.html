@@ -46,6 +46,16 @@ MathJax = {
                         <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri à bulle.</p>
                       </div>
                     </section>
+                    <h2>Complexité</h3>
+                    <div id="tri-bubble-meilleur"></div>
+                    <div id="tri-bubble-pire"></div>
+                    <section>
+                      <div class="boiteTravail">
+                        <p>Y-a-t-il un meilleur des cas ? pire des cas ?</p>
+                        <p>Exprimer la complexité, en fonction de la taille de la collection et du nombre de comparaisons.</p>
+                        <p>Calculer la complexité, en fonction de la taille de la collection et du nombre d'échanges.</p>
+                      </div>
+                    </section>
                 </section>
                 <section id="6.3.3.3">
                     <h1>Tri rapide <a href="#haut">&#x21E7;</a></h1>
@@ -68,6 +78,16 @@ MathJax = {
                         <p>En fonction du principe énoncé ci-dessus, &eacute;crire l'algorithme de tri rapide.</p>
                       </div>
                     </section>
+                    <h2>Complexité</h3>
+                    <div id="tri-quicksort-meilleur"></div>
+                    <div id="tri-quicksort-pire"></div>
+                    <section>
+                      <div class="boiteTravail">
+                        <p>Y-a-t-il un meilleur des cas ? pire des cas ?</p>
+                        <p>Exprimer la complexité, en fonction de la taille de la collection et du nombre de comparaisons.</p>
+                        <p>Calculer la complexité, en fonction de la taille de la collection et du nombre d'échanges.</p>
+                      </div>
+                    </section>
                 </section>
               </div>
             </div>
@@ -83,7 +103,11 @@ MathJax = {
     <script src="../../commun/index.js" type="text/javascript"></script>
     <script type="text/javascript">
       new BubbleSorter([6, 4, 1, 8, 5, 10, 7, 3, 2, 9], { "container" : "tri-bubble"});
+      new BubbleSorter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], { "container" : "tri-bubble-meilleur", 'showLegend' : false, "showLogger" : true});
+      new BubbleSorter([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], { "container" : "tri-bubble-pire", 'showLegend' : false, "showLogger" : true});
       new QuickSorter([6, 4, 1, 8, 5, 10, 7, 3, 2, 9], { "container" : "tri-quicksort"});
+      new QuickSorter([5, 3, 4, 1, 2, 9, 8, 10, 7, 6], { "container" : "tri-quicksort-meilleur", 'showLegend' : false, "showLogger" : true});
+      new QuickSorter([10, 9, 8, 7, 6, 5, 4, 3, 2, 1], { "container" : "tri-quicksort-pire", 'showLegend' : false, "showLogger" : true});
     </script>
 </body>
 </html>
