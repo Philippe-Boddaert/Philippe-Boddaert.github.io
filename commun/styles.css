@@ -515,7 +515,6 @@ a.menu-item:hover, nav .active {
 
 .sort-container button {
   width: 100px;
-  height: 25px;
   font-size: 1em;
   cursor: pointer;
 }
