@@ -7,10 +7,6 @@ body {
     margin: 0;
     font-size:16px;
     font-family: "Trebuchet MS", "Source Sans Pro", Helvetica, sans-serif;
-}
-
-/* ------------------ PAGE ----------------------*/
-main {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
@@ -18,41 +14,41 @@ main {
     width : 100vw;
 }
 
+/* ------------------ PAGE ----------------------*/
+.slide-menu-wrapper {
+  display: flex;
+  flex : 1 1 25%;
+  transition: flex-basis 0.3s;
+}
+
+.slide-menu-wrapper .slide-menu {
+	background-color: #333;
+	z-index: 200;
+	height: 100%;
+  width: 25%;
+	/*overflow-y: scroll;*/
+	transition: transform 0.3s;
+  font-size: 16px;
+  font-weight: normal;
+}
+
 .reveal {
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
-  justify-content: center;
-}
-
-/* ------------------ PIED de PAGE ----------------------*/
-footer {
-    flex: 0 0 40px;
-    /*height: 40px;*/
-    padding-top: 20px;
-    background-color: #eee;
-    text-align: center;
-}
-footer a {
-    text-decoration: none;
-    color:#069;
+  flex: 1 1 75%;
+  transition: flex-basis 0.3s;
 }
 
 /* ------------------ CONTENU PRINCIPAL ----------------------*/
 section {
-    flex-grow: 1;
+    flex: 1 0 auto;
     padding:0 6% 0 6%;
-}
-
-section.icontainer {
-    padding:3% 6% 0 6%;
 }
 
 section section {
   padding : 0;
 }
 section h1 {
-    font-family: 'Noto Sans', sans-serif;
     font-size: 280%;
     text-align: center;
     color:#069;
@@ -60,7 +56,6 @@ section h1 {
 }
 section h2 {
     text-align: center;
-    font-family: 'Noto Sans', sans-serif;
     font-size: 220%;
     margin:20px 0 20px 0;
     color:#069;
@@ -68,14 +63,12 @@ section h2 {
 }
 section h3 {
     font-size: 180%;
-    font-family: 'Noto Sans', sans-serif;
     margin:24px 0 0 0;
 }
 
 section h4 {
     font-size: 110%;
     font-style: italic;
-    font-family: 'Noto Sans', sans-serif;
     margin:12px 0 0 0;
 }
 section p {
@@ -185,7 +178,6 @@ section div.boiteLiens::before {
     color: white;
     font-size: 110%;
     font-weight: bold;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     padding:4px;
     margin-bottom: 20px;
     border-radius: 10px 10px 0 0;
@@ -204,7 +196,6 @@ section div.boiteConseils::before {
     color: white;
     font-size: 110%;
     font-weight: bold;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     padding:4px;
     margin-bottom: 20px;
     border-radius: 10px 10px 0 0;
@@ -223,7 +214,6 @@ section div.boiteSynthese::before {
     color: white;
     font-size: 110%;
     font-weight: bold;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     padding:4px;
     margin-bottom: 20px;
     border-radius: 10px 10px 0 0;
@@ -243,7 +233,6 @@ section div.boiteHistoire::before {
     color: white;
     font-size: 110%;
     font-weight: bold;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     padding:4px;
     margin-bottom: 20px;
     border-radius: 10px 10px 0 0;
@@ -268,7 +257,6 @@ section div.boiteQuestions::before, section div.boiteQuestionsReponse:before {
     color: white;
     font-size: 110%;
     font-weight: bold;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     padding:4px;
     margin-bottom: 20px;
     border-radius: 10px 10px 0 0;
@@ -293,7 +281,6 @@ section div.boiteReponses::before {
     color: white;
     font-size: 110%;
     font-weight: bold;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     padding:4px;
     margin-bottom: 0px;
     border-radius: 0 0 10px 10px;
@@ -320,7 +307,6 @@ section div.boiteTravail::before {
     color: white;
     font-size: 110%;
     font-weight: bold;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     padding:4px;
     margin-bottom: 20px;
     border-radius: 10px 10px 0 0;
@@ -347,7 +333,6 @@ sup {
 
 /* ------------------ MENU ----------------------*/
 nav {
-    font-family: Arial, 'Gill Sans', 'Gill Sans MT', 'Myriad Pro', 'DejaVu Sans Condensed', Helvetica, 'sans-serif';
     font-size: 90%;
     flex: 0 0 300px;
     background-color: #333;
@@ -568,8 +553,9 @@ a.menu-item:hover, nav .active {
   position: fixed;
   z-index: 2;
   top : 0px;
-  width: 100%;
+  width: 75%;
   background-color: white;
+  transform: width 0.3s;
   }
 .print-pdf .fe-persistent-header { display: none; }
 @media print { .fe-persistent-header { display: none; } }
@@ -577,4 +563,9 @@ a.menu-item:hover, nav .active {
 .fe-persistent-header a {
     float: right;
     margin: 0px 10px 0px;
+}
+
+.slide-menu-wrapper .slide-menu-panel a {
+  display: inline-block;
+  text-decoration: none;
 }
