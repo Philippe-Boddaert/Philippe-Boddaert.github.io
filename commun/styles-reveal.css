@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css?family=Lato|Noto+Sans|Noto+Serif');
+
+.reveal .slide-menu-button {
+    position: fixed;
+    left: 30px;
+    top: 10px;
+    z-index: 30;
+    font-size: 24px;
+}
+
+.reveal .slide-home-button {
+    position: fixed;
+    right: 30px;
+    top: 10px;
+    z-index: 30;
+    font-size: 24px;
+}
+
+.fe-persistent-header {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  }
+.print-pdf .fe-persistent-header { display: none; }
+@media print { .fe-persistent-header { display: none; } }
+
+.fe-persistent-header a {
+    float: right;
+    margin: 0px 10px 0px;
+}
+
+  img.license {
+    height: 30px;
+    vertical-align: middle;
+  }
+
+  p {
+    text-align : left;
+  }
+
+  .img-container {
+    text-align: center;
+  }
+  
+  section div.boiteTravail {
+      background-color: #eee;
+      padding-bottom: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+  }
+  section div.boiteTravail::before {
+      display: block;
+      text-align: center;
+      content: "Travail à faire";
+      background-color: black;
+      color: white;
+      font-size: 110%;
+      font-weight: bold;
+      padding:4px;
+      margin-bottom: 20px;
+      border-radius: 10px 10px 0 0;
+  }
+  .sort-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sort-logger {
+    justify-content: space-evenly;
+  }
+
+  .sort-controller {
+    margin-top : 0px;
+  }
+
+  .sort-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex : 1 1 50px;
+  }
+
+  .sort-legend {
+    flex-direction: column;
+    align-items: baseline;
+    margin-left : 25%;
+  }
+
+  .sort-content {
+    /*height: 50px;*/
+    border: 1px solid black;
+  }
+
+  .sort-cursor {
+    color: #069;
+    font-size: 1.5em;
+  }
+
+  .sort-container button {
+    width: 100px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+
+  .sort-label {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-width: medium;
+  }
+
+  .sorted {
+    background-color: black;
+    color : white;
+    border-color: #eee;
+  }
+
+  .compared {
+    border-color: blue;
+    border-width: medium;
+  }
+
+  .minimum {
+    border-color: red;
+    border-width: medium;
+  }
+
+  .hidden {
+    display: none;
+  }
