@@ -99,61 +99,79 @@ function addMenuButton(container){
   container.appendChild(menuButton);
 }
 
-if (paramStyle == 'reveal'){
-  Reveal.initialize({
-    width : '100%',
-    progress: true,
-    slideNumber : true,
-    hash: true,
-    dependencies: [
-      { src: '../../lib/reveal/plugin/menu/menu.js' },
-      { src: '../../lib/reveal/plugin/title-footer/title-footer.js',
-            async: true,
-            callback: function()
-            {
-                title_footer.initialize('<a href=\'https://creativecommons.org/licenses/by-nc-sa/3.0/fr/\'><img class=\"license\" src=\'https://upload.wikimedia.org/wikipedia/commons/b/bd/CC-BY-NC-SA.svg\'></a>Un site de : <a href=\"https://philippe-boddaert.github.io\">www.philippe-boddaert.github.io</a>');
-            }
-        }
-    ],
-    menu: {
-      custom: [
-              { title: 'Menu', icon: '<i class="fa fa-home">', fn: function(){
-                document.location = "index.html?style=reveal";
-              } },
-          ],
-      width: 'normal',
-      hideMissingTitles:true,
-      titleSelector : '',
-      themes: true,
-      themesPath: '../../lib/reveal/css/theme/',
-      openOnInit: false,
-      loadIcons : false
-    }
-  });
-} else {
-  // Ajout Menu
-  addMenu();
-  addMenuButton(document.getElementsByClassName('reveal')[0]);
-}
-addHead(document.getElementsByClassName('reveal')[0]);
 
-function addHead(container){
+function initMode(paramStyle, header, menu = []){
+  paramStyle = (paramStyle == null)?'full':paramStyle;
+  let content = '<ul class="slide-menu-items">';
+
+  menu.forEach((item, i) => {
+    content += '<li class="slide-menu-item future"><i class="far fa-circle fa-fw future" aria-hidden="true"></i><span class="slide-menu-item-title"><a href="' + item.src + '?style=' + paramStyle + '">' + item.title + '</a></span></li>';
+  });
+  content += '</ul>';
+
+  if (paramStyle == 'reveal'){
+    let custom = [];
+    if (menu.length > 0)
+      custom.push({ title: 'Cours', icon: '<i class="fa fa-images">', content : content});
+    custom.push({ title: 'Menu', icon: '<i class="fa fa-home">', fn: function(){
+      document.location = "index.html?style=reveal";
+      }
+    });
+    Reveal.initialize({
+      width : '100%',
+      progress: true,
+      slideNumber : true,
+      hash: true,
+      dependencies: [
+        { src: '../../lib/reveal/plugin/menu/menu.js' },
+        { src: '../../lib/reveal/plugin/title-footer/title-footer.js',
+              async: true,
+              callback: function()
+              {
+                  title_footer.initialize('<a href=\'https://creativecommons.org/licenses/by-nc-sa/3.0/fr/\'><img class=\"license\" src=\'https://upload.wikimedia.org/wikipedia/commons/b/bd/CC-BY-NC-SA.svg\'></a>Un site de : <a href=\"https://philippe-boddaert.github.io\">www.philippe-boddaert.github.io</a>');
+              }
+          }
+      ],
+      menu: {
+        custom: custom,
+        width: 'normal',
+        hideMissingTitles:true,
+        titleSelector : '',
+        themes: true,
+        themesPath: '../../lib/reveal/css/theme/',
+        openOnInit: false,
+        loadIcons : false
+      }
+    });
+
+    Reveal.addEventListener( 'menu-ready', function( event ) {
+  	   console.log("Menu ready");
+    });
+  } else {
+    // Ajout Menu
+    addMenu(content, menu.length == 0);
+    addMenuButton(document.getElementsByClassName('reveal')[0]);
+  }
+  addHead(document.getElementsByClassName('reveal')[0], header);
+}
+
+function addHead(container, header){
   let home = create('div', {class : 'slide-home-button'});
 
   let title = (paramStyle == 'reveal')?'page entière':'présentation';
-  let style = (paramStyle == 'reveal')?'page':'reveal';
+  let style = (paramStyle == 'reveal')?'full':'reveal';
   let mode = create('a', {"href" : "?style=" + style, "title" : "Mode " + title}, '<i class="fa fa-desktop"></i>');
   mode.style.marginRight = '10px';
-  let back = create('a', {"href" : "../index.html?style=" + paramStyle, "title" : "Retour à l'accueil"}, '<i class="fa fa-home"></i>');
+  let back = create('a', {"href" : "index.html?style=" + paramStyle, "title" : "Retour à l'accueil"}, '<i class="fa fa-home"></i>');
 
   home.appendChild(mode);
   home.appendChild(back);
 
-  container.appendChild(create('div', {class : "fe-persistent-header"}, '<h4>Titre template</h4>'));
+  container.appendChild(create('div', {class : "fe-persistent-header"}, '<h4>' + header + '</h4>'));
   container.appendChild(home);
 }
 
-function addMenu(){
+function addMenu(content, useSection = true){
   let menuWrapper = document.createElement('div');
   menuWrapper.id = 'menu';
   menuWrapper.className = 'slide-menu-wrapper';
@@ -163,22 +181,35 @@ function addMenu(){
   toolbar.className = 'slide-menu-toolbar';
   toolbar.innerHTML = '<li class="toolbar-panel-button active-toolbar-button"><i class="fas fa-images" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Cours</span></li><li class="toolbar-panel-button"><i class="fa fa-home" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Menu</span></li><li id="close" class="toolbar-panel-button"><i class="fas fa-times" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Fermer</span></li>';
   let panel = document.createElement('div');
-  panel.className = "slide-menu-panel active-menu-panel";
-  let items = document.createElement('ul');
-  items.className = 'slide-menu-items';
-  panel.appendChild(items);
+  panel.className = "slide-menu-panel slide-menu-custom-panel active-menu-panel";
 
-  selectAll('.slides > section').forEach(function(section, h) {
-    let subsections = selectAll('section', section);
-    if (subsections.length > 0) {
-      subsections.forEach(function(subsection, v) {
-        var type = (v === 0 ? 'slide-menu-item past' : 'slide-menu-item-vertical past');
-        items.appendChild(generateItem(type, subsection));
-      });
-    } else {
-      items.appendChild(generateItem('slide-menu-item past', section));
-    }
-  });
+  if (useSection){
+    let items = document.createElement('ul');
+    items.className = 'slide-menu-items';
+    panel.appendChild(items);
+    selectAll('.slides > section').forEach(function(section, h) {
+      let subsections = selectAll('section', section);
+      if (subsections.length > 0) {
+        subsections.forEach(function(subsection, v) {
+          var type = (v === 0 ? 'slide-menu-item future' : 'slide-menu-item-vertical future');
+          let item = generateItem(type, subsection);
+          if (item)
+            items.appendChild(item);
+        });
+      } else {
+        let item = generateItem('slide-menu-item future', section);
+        if (item)
+          items.appendChild(item);
+      }
+    });
+  } else {
+    panel.innerHTML = content;
+    selectAll('ul.slide-menu-items li.slide-menu-item', panel).forEach(function(item, i) {
+      item.setAttribute('data-item', i+1);
+      item.onclick = clicked;
+      item.addEventListener("mouseenter", handleMouseHighlight);
+    });
+  }
 
   menu.appendChild(toolbar);
   menu.appendChild(panel);
@@ -197,26 +228,31 @@ function generateItem(type, section) {
   var title = section.getAttribute('data-menu-title') ||
     text('.menu-title', section);
 
+  if (!title)
+    return '';
+
   var item = create('li', {
     class: type
   });
 
-  item.appendChild(create('i', {class: 'fas fa-check-circle fa-fw past'}));
-  item.appendChild(create('i', {class: 'fas fa-arrow-alt-circle-right fa-fw active'}));
   item.appendChild(create('i', {class: 'far fa-circle fa-fw future'}));
 
-  let a = create('a', { "href" : '#' + section.id});
-  let span = create('span', {class: 'slide-menu-item-title'}, title);
+  let a = create('a', { "href" : '#' + section.id}, title);
+  let span = create('span', {class: 'slide-menu-item-title'});
   span.appendChild(a);
   item.appendChild(span);
 
   item.addEventListener("mouseenter", handleMouseHighlight);
-  item.addEventListener('click', function(event){
-    if (event.target.nodeName == "LI")
-      a.click();
-  });
+  item.addEventListener('click', clicked);
 
   return item;
+}
+
+function clicked(event) {
+  if (event.target.nodeName !== "A") {
+    event.preventDefault();
+  }
+  select('a', event.currentTarget).click();
 }
 
 function create(tagName, attrs, content) {

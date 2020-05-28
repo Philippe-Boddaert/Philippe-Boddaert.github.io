@@ -566,6 +566,6 @@ a.menu-item:hover, nav .active {
 }
 
 .slide-menu-wrapper .slide-menu-panel a {
-  display: inline-block;
+  display: inline;
   text-decoration: none;
 }

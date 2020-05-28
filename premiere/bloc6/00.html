@@ -1,52 +1,83 @@
-
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="Ressources sur le programme NSI de 1ère" />
-  <title>Bloc 6 : Algorithmique</title>
-  <link href="../../commun/styles.css" rel="stylesheet">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<body>
-    <main>
-        <nav>
-            <!-- Partie complétée en javascript -->
-        </nav>
-        <div id="page">
-          <div class="content">
-            <div class="reveal">
-              <div class="slides">
-                <section>
-                    <h1>But du cours</h1>
-                    <hr />
-                    <ul>
-                      <li>Prendre conscience de l’importance de l’algorithmique en programmation,</li>
-                      <li>Acquérir de bons réflexes face à un problème à résoudre,</li>
-                      <li>La démarche générale est très systématique :
-                        <ul>
-                          <li>spécifier un problème précisément,</li>
-                          <li>décrire un algorithme, éventuellement par raffinements successifs</li>
-                          <li>analyser l’algorithme puis le comparer à d’autres qui résolvent le même problème.</li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <div class="boiteSynthese">
-                      <p>Pourquoi apprendre l’algorithmique pour apprendre à programmer ?</p>
-                      <p style="font-size : x-large;"><b>Parce que l’algorithmique exprime les instructions résolvant un problème donné indépendamment des particularités de tel ou tel langage.</b></p>
-                    </div>
-                </section>
-              </div>
-            </div>
-          </div>
-            <footer>
-                Un site de : <a href="https://philippe-boddaert.github.io">www.philippe-boddaert.github.io</a>
-            </footer>
-        </div>
-    </main>
-    <script src="data.js" type="text/javascript"></script>
-    <script src="competences.js" type="text/javascript"></script>
+		<title>Bloc 6 - Algorithmique</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script type="text/javascript">
+			const urlParams = new URLSearchParams(window.location.search);
+			const paramStyle = urlParams.get('style');
+			if (paramStyle == 'reveal'){
+				document.write('<link rel="stylesheet" href="../../lib/reveal/css/reset.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/css/reveal.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/css/theme/white.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/title-footer/title-footer.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+				document.write('<link rel="stylesheet" href="../../commun/styles-reveal.css">');
+				let link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = window.location.search.match( /print-pdf/gi ) ? '../../lib/reveal/css/print/pdf.css' : '../../lib/reveal/css/print/paper.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			} else {
+				document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/menu/menu.css">');
+				document.write('<link rel="stylesheet" href="../../commun/styles-full.css">');
+			}
+			MathJax = {
+				tex: {
+					inlineMath: [['$', '$'], ['\\(', '\\)']]
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+						<h1>But du cours</h1>
+						<hr />
+						<ul>
+							<li>Prendre conscience de l’importance de l’algorithmique en programmation,</li>
+							<li>Acquérir de bons réflexes face à un problème à résoudre,</li>
+							<li>La démarche générale est très systématique :
+								<ul>
+									<li>spécifier un problème précisément,</li>
+									<li>décrire un algorithme, éventuellement par raffinements successifs</li>
+									<li>analyser l’algorithme puis le comparer à d’autres qui résolvent le même problème.</li>
+								</ul>
+							</li>
+						</ul>
+				</section>
+				<section>
+						<div class="boiteSynthese">
+							<p>Pourquoi apprendre l’algorithmique pour apprendre à programmer ?</p>
+							<p style="font-size : x-large;"><b>Parce que l’algorithmique exprime les instructions résolvant un problème donné indépendamment des particularités de tel ou tel langage.</b></p>
+						</div>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
     <script src="../../commun/commun.js" type="text/javascript"></script>
-    <script src="../../commun/index.js" type="text/javascript"></script>
-</body>
+		<script type="text/javascript">
+			initMode(paramStyle, 'Bloc 6 - Algorithmique', [
+			              { "src" : "../index.html", "title" : "Sommaire"},
+			              { "src" : "00.html", "title" : "6.0 - Objectifs"},
+			              { "src" : "01.html", "title" : "6.1 - Compétences"},
+			              { "src" : "02.html", "title" : "6.2 - Présentation"},
+			              { "src" : "03.html", "title" : "6.3 - Les tris"},
+			              { "src" : "04.html", "title" : "6.4 - Preuve de programme"},
+			              { "src" : "#", "title" : "6.5 - Algorithmes des k plus proches voisins"},
+			              { "src" : "#", "title" : "6.6 - Algorithmes gloutons"}
+			            ]);
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
 </html>
