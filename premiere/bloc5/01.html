@@ -1,79 +1,77 @@
-
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="Ressources sur le programme NSI de 1ère" />
-  <title>Bloc 5 : Langages et Programmation</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" integrity="sha256-cuvic28gVvjQIo3Q4hnRpQSNB0aMw3C+kjkR0i+hrWg=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/toolbar/prism-toolbar.min.css" integrity="sha256-P45OhhEWm49G8sadt2n5rDaWLa3xZbDOQhJliuaojH0=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha256-Afz2ZJtXw+OuaPX10lZHY7fN1+FuTE/KdCs+j7WZTGc=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/command-line/prism-command-line.min.css" integrity="sha256-QViEGvwX/42OrD49huSb2mGZtUQwVKNA5Ux58tMWLOs=" crossorigin="anonymous" />
-  <link href="../../commun/styles.css" rel="stylesheet">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<body>
-    <main>
-        <nav>
-            <!-- Partie complétée en javascript -->
-        </nav>
-        <div id="page">
-          <div class="content">
-            <div class="reveal">
-              <div class="slides">
-                <section>
-                    <h1>Présentation de Python</h1>
-                    <h2>Un Langage</h2>
-                </section>
-                <section>
-                    <p>Très simplement, si vous arrivez à comprendre ces suites de symboles étranges et déconcertants que sont les lettres de l'alphabet, c'est parce que nous respectons certaines <span class="highlight">conventions, dans le langage</span> et dans l'écriture. En français, il y a des règles de grammaire et d'orthographe, je ne vous apprends rien. Vous communiquez en connaissant plus ou moins consciemment ces règles et en les appliquant plus ou moins bien, selon les cas.</p>
-                    <p>Cependant, ces règles peuvent être aisément contournées : personne ne peut prétendre connaître l'ensemble des règles de la grammaire et de l'orthographe françaises, et peu de gens s'en soucient. Après tout, même si vous faites des fautes, les personnes avec qui vous communiquez pourront facilement vous comprendre.
-    Quand on communique avec un ordinateur, cependant, c'est très différent.</p>
-                    <p class="img-container"><img src="../computer-problem-152211_640.png"/></p>
-                </section>
-                <section>
-                    <p>Mais bon, vous pouvez vous en douter, parler avec l'ordinateur en <span class="highlight">langage machine</span>, qui ne comprend que le <span class="highlight">binaire</span>, ce n'est ni très enrichissant, ni très pratique, et en tous cas pas très marrant.
-    On a donc inventé des <span class="highlight">langages de programmation</span> pour faciliter la communication avec l'ordinateur.</p>
-                    <p>Les langages de programmation sont des langages bien plus faciles à comprendre pour nous. Le mécanisme reste le même, mais le langage est bien plus compréhensible. Au lieu d'écrire les instructions dans une suite assez peu intelligible de 0 et de 1, les ordres donnés à l'ordinateur sont écrits dans un « langage », souvent en anglais, avec une syntaxe particulière qu'il est nécessaire de respecter. Mais avant que l'ordinateur puisse comprendre ce langage, celui-ci doit être traduit en langage machine</p>
-                    <p class="img-container"><img src="../langage.png"/></p>
-                </section>
-                <section>
-                    <h2>Caractéristiques</h2>
-                    <div class="boiteHistoire">
-                      <p>Crée en 1989 par le hollandais Guido van Rossum</p>
-                    </div>
-                    <p>Python est :
-                      <ul>
-                        <li>un langage de programmation gratuit et portable (pc, unix, mac),</li>
-                        <li>simple (lisible, il gère ses ressources et dynamiquement typé) orienté objet et extensible (utilisation de bibliothèque C)</li>
-                        <li>langage de programmation <span class="highlight">interprété</span>, c'est-à-dire que les instructions que vous lui envoyez sont « transcrites » en langage machine au fur et à mesure de leur lecture. D'autres langages (comme le C / C++) sont appelés langages <span class="highlight">compilés</span> car, avant de pouvoir les exécuter, un logiciel spécialisé se charge de transformer le code du programme en langage machine. On appelle cette étape la « compilation ». À chaque modification du code, il faut rappeler une étape de compilation.</li>
-                      </ul>
-                    </p>
-                </section>
-                <section>
-                    <p class="img-container"><img src="../wordle.png"/></p>
-                    <div class="boiteSynthese">
-                      <p>Python est un langage de programmation, compréhensible par l'homme et interprété en langage machine.</p>
-                    </div>
-                </section>
-              </div>
-            </div>
-          </div>
-            <footer>
-                Un site de : <a href="https://philippe-boddaert.github.io">www.philippe-boddaert.github.io</a>
-            </footer>
-        </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-core.min.js" integrity="sha256-D05OTvzyl8h0SDpcQF6UNo3gl2rKDMmRuqX8ZZ06pNE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js" integrity="sha256-YZQM6/hLBZYkb01VYf17isoQM4qpaOP+aX96hhYrWhg=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-python.min.js" integrity="sha256-z1w1HLignub5kA0f24TCzv765MT4114LEgW/oIYuLag=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/command-line/prism-command-line.min.js" integrity="sha256-pySw63TmypHJ7LQU3ycJreLDfrxg59cI+famzPcGH5Q=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/toolbar/prism-toolbar.min.js" integrity="sha256-SyBDbq8Z29N+/5vK9bf2HpTtvAEGUIiLKw0iepvhLQg=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" integrity="sha256-5F8rynXScCOEtnwlm5P293TlCvTT1beoEJcmWHCg4BU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha256-hep5s8952MqR7Y79JYfCXZD6vQjVHs7sOu/ZGrs1OEQ=" crossorigin="anonymous"></script>
-    <script src="data.js" type="text/javascript"></script>
-    <script src="../../commun/commun.js" type="text/javascript"></script>
-    <script src="../../commun/index.js" type="text/javascript"></script>
-</body>
+		<title>Bloc 5 : Langages et Programmation</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script src="../../commun/commun.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+						<h1>Présentation de Python</h1>
+						<h2>Un Langage</h2>
+				</section>
+				<section>
+					<section>
+						<p>Très simplement, si vous arrivez à comprendre ces suites de symboles étranges et déconcertants que sont les lettres de l'alphabet, c'est parce que nous respectons certaines <span class="highlight">conventions, dans le langage</span> et dans l'écriture. En français, il y a des règles de grammaire et d'orthographe, je ne vous apprends rien. Vous communiquez en connaissant plus ou moins consciemment ces règles et en les appliquant plus ou moins bien, selon les cas.</p>
+					</section>
+					<section>
+						<p>Cependant, ces règles peuvent être aisément contournées : personne ne peut prétendre connaître l'ensemble des règles de la grammaire et de l'orthographe françaises, et peu de gens s'en soucient. Après tout, même si vous faites des fautes, les personnes avec qui vous communiquez pourront facilement vous comprendre.
+Quand on communique avec un ordinateur, cependant, c'est très différent.</p>
+						<p class="img-container"><img src="../computer-problem-152211_640.png"/></p>
+				</section>
+				<section>
+						<p>Mais bon, vous pouvez vous en douter, parler avec l'ordinateur en <span class="highlight">langage machine</span>, qui ne comprend que le <span class="highlight">binaire</span>, ce n'est ni très enrichissant, ni très pratique, et en tous cas pas très marrant.
+On a donc inventé des <span class="highlight">langages de programmation</span> pour faciliter la communication avec l'ordinateur.</p>
+				</section>
+				<section>
+					<p>Les langages de programmation sont des langages bien plus faciles à comprendre pour nous. Le mécanisme reste le même, mais le langage est bien plus compréhensible. Au lieu d'écrire les instructions dans une suite assez peu intelligible de 0 et de 1, les ordres donnés à l'ordinateur sont écrits dans un « langage », souvent en anglais, avec une syntaxe particulière qu'il est nécessaire de respecter. Mais avant que l'ordinateur puisse comprendre ce langage, celui-ci doit être traduit en langage machine</p>
+						<p class="img-container"><img src="../langage.png"/></p>
+				</section>
+				<section>
+						<h2>Caractéristiques</h2>
+						<div class="boiteHistoire">
+							<p>Crée en 1989 par le hollandais Guido van Rossum</p>
+						</div>
+						<p>Python est :
+							<ul>
+								<li>un langage de programmation gratuit et portable (pc, unix, mac),</li>
+								<li>simple (lisible, il gère ses ressources et dynamiquement typé) orienté objet et extensible (utilisation de bibliothèque C)</li>
+								<li>langage de programmation <span class="highlight">interprété</span>, c'est-à-dire que les instructions que vous lui envoyez sont « transcrites » en langage machine au fur et à mesure de leur lecture. D'autres langages (comme le C / C++) sont appelés langages <span class="highlight">compilés</span> car, avant de pouvoir les exécuter, un logiciel spécialisé se charge de transformer le code du programme en langage machine. On appelle cette étape la « compilation ». À chaque modification du code, il faut rappeler une étape de compilation.</li>
+							</ul>
+						</p>
+				</section>
+				<section>
+						<p class="img-container"><img src="../wordle.png"/></p>
+						<div class="boiteSynthese">
+							<p>Python est un langage de programmation, compréhensible par l'homme et interprété en langage machine.</p>
+						</div>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
+		<script type="text/javascript">
+			initMode({
+				header : 'Bloc 5 : Langages et Programmation',
+				menu : [ { "src" : "00.html", "title" : "5.0 - Compétences"},
+				{ "src" : "01.html", "title" : "5.1 - Présentation"},
+				{ "src" : "02.html", "title" : "5.2 - Variables"},
+				{ "src" : "03.html", "title" : "5.3 - Opérateurs"},
+				{ "src" : "04.html", "title" : "5.4 - Fonctions"},
+				{ "src" : "05.html", "title" : "5.5 - Structures conditionnelles"},
+				{ "src" : "06.html", "title" : "5.6 - Structures itératives"},
+				{ "src" : "07.html", "title" : "5.7 - Les modules"},
+				{ "src" : "08.html", "title" : "Base d'exercices"},
+				{ "src" : "sandbox.html", "title" : "Bac à sable"}]
+			});
+		</script>
+	</body>
 </html>
