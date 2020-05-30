@@ -100,21 +100,22 @@ function addMenuButton(container){
 }
 
 
-function initMode(header, menu = []){
+function initMode(options){
+  let opt = Object.assign({ 'header' : 'Untitled', 'menu' : [], 'home' : 'index.html'}, options);
   let pStyle = (paramStyle == null)?'full':paramStyle;
   let content = '<ul class="slide-menu-items">';
 
-  menu.forEach((item, i) => {
+  opt.menu.forEach((item, i) => {
     content += '<li class="slide-menu-item future"><i class="far fa-circle fa-fw future" aria-hidden="true"></i><span class="slide-menu-item-title"><a href="' + item.src + '?style=' + pStyle + '">' + item.title + '</a></span></li>';
   });
   content += '</ul>';
 
   if (pStyle == 'reveal'){
     let custom = [];
-    if (menu.length > 0)
+    if (opt.menu.length > 0)
       custom.push({ title: 'Cours', icon: '<i class="fa fa-images">', content : content});
-    custom.push({ title: 'Menu', icon: '<i class="fa fa-home">', fn: function(){
-      document.location = "index.html?style=reveal";
+      custom.push({ title: 'Menu', icon: '<i class="fa fa-home">', fn: function(){
+        document.location = opt.home  + "?style=reveal";
       }
     });
     Reveal.initialize({
@@ -145,20 +146,20 @@ function initMode(header, menu = []){
     });
   } else {
     // Ajout Menu
-    addMenu(content, menu.length == 0);
+    addMenu(content, opt.home, pStyle, opt.menu.length == 0);
     addMenuButton(document.getElementsByClassName('reveal')[0]);
   }
-  addHead(pStyle, document.getElementsByClassName('reveal')[0], header);
+  addHead(pStyle, document.getElementsByClassName('reveal')[0], opt.header, opt.home);
 }
 
-function addHead(paramStyle, container, header){
+function addHead(paramStyle, container, header, homePath){
   let home = create('div', {class : 'slide-home-button'});
 
   let title = (paramStyle == 'reveal')?'page entière':'présentation';
   let style = (paramStyle == 'reveal')?'full':'reveal';
   let mode = create('a', {"href" : "?style=" + style, "title" : "Mode " + title}, '<i class="fa fa-desktop"></i>');
   mode.style.marginRight = '10px';
-  let back = create('a', {"href" : "index.html?style=" + paramStyle, "title" : "Retour à l'accueil"}, '<i class="fa fa-home"></i>');
+  let back = create('a', {"href" : homePath + "?style=" + paramStyle, "title" : "Retour à l'accueil"}, '<i class="fa fa-home"></i>');
 
   home.appendChild(mode);
   home.appendChild(back);
@@ -167,7 +168,7 @@ function addHead(paramStyle, container, header){
   container.appendChild(home);
 }
 
-function addMenu(content, useSection = true){
+function addMenu(content, home, paramStyle, useSection = true){
   let menuWrapper = document.createElement('div');
   menuWrapper.id = 'menu';
   menuWrapper.className = 'slide-menu-wrapper';
@@ -175,7 +176,22 @@ function addMenu(content, useSection = true){
   menu.className = 'slide-menu slide-menu--left slide-menu--normal active'
   let toolbar = document.createElement('ol');
   toolbar.className = 'slide-menu-toolbar';
-  toolbar.innerHTML = '<li class="toolbar-panel-button active-toolbar-button"><i class="fas fa-images" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Cours</span></li><li class="toolbar-panel-button"><i class="fa fa-home" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Menu</span></li><li id="close" class="toolbar-panel-button"><i class="fas fa-times" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Fermer</span></li>';
+  let toolBarPanel = document.createElement('li');
+  toolBarPanel.className = "toolbar-panel-button active-toolbar-button";
+  toolBarPanel.innerHTML = '<i class="fas fa-images" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Cours</span>';
+  toolbar.appendChild(toolBarPanel);
+  toolBarPanel = document.createElement('li');
+  toolBarPanel.className = "toolbar-panel-button";
+  toolBarPanel.innerHTML = '<i class="fa fa-home" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Menu</span>';
+  toolBarPanel.addEventListener('click', function(){
+    document.location = home  + "?style=" + paramStyle;
+  })
+  toolbar.appendChild(toolBarPanel);
+  toolBarPanel = document.createElement('li');
+  toolBarPanel.className = "toolbar-panel-button";
+  toolBarPanel.id = 'close';
+  toolBarPanel.innerHTML = '<i class="fas fa-times" aria-hidden="true"></i><br><span class="slide-menu-toolbar-label">Fermer</span>';
+  toolbar.appendChild(toolBarPanel);
   let panel = document.createElement('div');
   panel.className = "slide-menu-panel slide-menu-custom-panel active-menu-panel";
 
