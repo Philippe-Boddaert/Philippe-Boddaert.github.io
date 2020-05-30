@@ -18,6 +18,10 @@
     z-index: 30;
     font-size: 24px;
 }
+.reveal blockquote {
+  text-align: left;
+  width : 100%;
+}
 
 .fe-persistent-header {
   text-align: center;
@@ -44,7 +48,12 @@
   .img-container {
     text-align: center;
   }
-  
+
+  .img-container img {
+    width: 33%;
+    vertical-align: text-top;
+}
+
   section div.boiteTravail {
       background-color: #eee;
       padding-bottom: 20px;
@@ -103,7 +112,7 @@
   }
 
   .sort-container button {
-    width: 100px;
+    width: 150px;
     font-size: 1em;
     cursor: pointer;
   }

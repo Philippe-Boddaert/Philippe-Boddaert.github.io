@@ -42,7 +42,7 @@ body {
 /* ------------------ CONTENU PRINCIPAL ----------------------*/
 section {
     flex: 1 0 auto;
-    padding:0 6% 0 6%;
+    padding:0 5% 0 5%;
 }
 
 section section {
@@ -312,12 +312,12 @@ section div.boiteTravail::before {
     border-radius: 10px 10px 0 0;
 }
 
-section a {
-    text-decoration: none;
-    font-weight: bold;
-    color:#06c;
+a {
+  text-decoration: none;
+  color: #069;
 }
-section a:hover {
+
+a:hover {
    color:#039;
 }
 
@@ -398,15 +398,6 @@ nav > div > section > a {
 nav > div > section {
     display:none;
     padding:4px 0 8px 4px;
-}
-
-nav a:hover{
-    color:#069;
-}
-
-a.menu-item:hover, nav .active {
-    color: #069;
-    background-color: white;
 }
 
 .img-container {
@@ -568,4 +559,11 @@ a.menu-item:hover, nav .active {
 .slide-menu-wrapper .slide-menu-panel a {
   display: inline;
   text-decoration: none;
+}
+
+blockquote {
+  text-align: left;
+  width : 100%;
+  margin-left: 10px;
+  font-style: italic;
 }

@@ -143,10 +143,6 @@ function initMode(paramStyle, header, menu = []){
         loadIcons : false
       }
     });
-
-    Reveal.addEventListener( 'menu-ready', function( event ) {
-  	   console.log("Menu ready");
-    });
   } else {
     // Ajout Menu
     addMenu(content, menu.length == 0);
@@ -288,3 +284,9 @@ function handleMouseHighlight(event) {
   });
   event.currentTarget.classList.add('selected');
 }
+
+let boiteReponses = document.querySelectorAll('.boiteReponses');
+
+boiteReponses.forEach(function(boiteReponse) {
+  boiteReponse.addEventListener('click', toogleReponse);
+});

@@ -1,186 +1,198 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description" content="Ressources sur le programme NSI de 1ère" />
-  <title>Bloc 6 : Algorithmique</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism.min.css" integrity="sha256-cuvic28gVvjQIo3Q4hnRpQSNB0aMw3C+kjkR0i+hrWg=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/toolbar/prism-toolbar.min.css" integrity="sha256-P45OhhEWm49G8sadt2n5rDaWLa3xZbDOQhJliuaojH0=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha256-Afz2ZJtXw+OuaPX10lZHY7fN1+FuTE/KdCs+j7WZTGc=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/command-line/prism-command-line.min.css" integrity="sha256-QViEGvwX/42OrD49huSb2mGZtUQwVKNA5Ux58tMWLOs=" crossorigin="anonymous" />
-  <link href="../../commun/styles.css" rel="stylesheet">
-</head>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<body id="haut">
-    <main>
-        <nav>
-            <!-- Partie complétée en javascript -->
-        </nav>
-        <div id="page">
-          <div class="content">
-            <div class="reveal">
-              <div class="slides">
-                <section id="6.4.1">
-                    <section>
-                      <h1>Preuve de programme <a href="#haut">&#x21E7;</a></h1>
-                      <hr />
-
-                  </section>
-                  <section>
-                    <p>
-                      Exécuter l'algorithme sur quelques cas ne permet pas de valider qu'il effectue correctement ce qui est attendu de lui.
-                      <br>Il faut donc pouvoir utiliser un système de preuve de programme.
-                    </p>
-                    <div class='boiteQuestions'>
-                      <p>
-                        Illustration avec l'algorithme de gonflage de ballon.
-                        <pre><code class="language-python">Algorithme gonflerBallon(ballon)
-    Entrée : ballon
-    Sortie : &Oslash;
-    Effet de bord : A la fin de l'algorithme, le ballon est gonflé.
-    Début
-      Tant que ballon non gonflé faire
-        soufflerDans(ballon)
-      Fin
-    Fin</code></pre>
-                      </p>
-                    </div>
-                    <div class="boiteSynthese">
-                      <p>Face à un algorithme, il faut se poser et répondre à 3 questions :</p>
-                      <ul>
-                        <li>Est-ce-qu’il donne un résultat ? <i>S'arrête-t-il ?</i></li>
-                        <li>Est-ce-qu’il donne le résultat attendu ? <i>ou bien est-ce-qu’il calcule n’importe quoi ?</i></li>
-                        <li>Est-ce-qu’il donne le résultat en un temps raisonnable ? <i>ou bien est-ce-qu’il faut attendre plusieurs siècles ?</i></li>
-                      </ul>
-                    </div>
-                  </section>
-                </section>
-                <section id="6.4.2">
-                  <section>
-                    <h1>Terminaison / Correction <a href="#haut">&#x21E7;</a></h1>
-                    <p>
-                      Un algorithme :
-                      <ul>
-                        <li>Termine si l'ensemble de ses instructions terminent.</li>
-                        <li>Est correct s'il effectue sans se tromper la tâche qui lui est confiée et ce dans tous les cas possibles.</li>
-                      </ul>
-                    </p>
-                  </section>
-                  <section>
-                    <div class='boiteQuestionsReponse'>
-                      <p>
-                        Est-ce que l'algorithme suivant termine ? Est-ce qu'il est correct ?
-                        <pre><code class="language-python">Algorithme fois2(x)
-    Entrée : x, entier
-    Sortie : entier, correspondant à 2 * x
-    Début
-      resultat <- 2 * x
-      Renvoyer : resultat
-    Fin</code></pre>
-                      </p>
-                      <div class="boiteReponses">
-                        <div class="reponse column">
-                          <p><b>Terminaison</b> : le nombre d’instructions à effectuer est connu à l’avance. L'algorithme est composé de 3 opérations élémentaires (*, <- et un renvoi) qui terminent.</p>
-                          <p><b>Correction</b> : l’algorithme reproduit directement la spécification. La preuve de la correction est triviale.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <section>
-                    <div class='boiteQuestionsReponse'>
-                      <p>
-                        Est-ce que l'algorithme suivant termine ?
-                        <pre><code class="language-python">Algorithme ageHumain(x)
-    Début
-      Si x ≥ 19 alors
-        y <- 10 * x − 90
+		<title>Title Template</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script type="text/javascript">
+			const urlParams = new URLSearchParams(window.location.search);
+			const paramStyle = urlParams.get('style');
+			if (paramStyle == 'reveal'){
+				document.write('<link rel="stylesheet" href="../../lib/reveal/css/reset.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/css/reveal.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/css/theme/white.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/title-footer/title-footer.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+				document.write('<link rel="stylesheet" href="../../commun/styles-reveal.css">');
+				let link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = window.location.search.match( /print-pdf/gi ) ? '../../lib/reveal/css/print/pdf.css' : '../../lib/reveal/css/print/paper.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			} else {
+				document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+				document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/menu/menu.css">');
+				document.write('<link rel="stylesheet" href="../../commun/styles-full.css">');
+			}
+			MathJax = {
+				tex: {
+					inlineMath: [['$', '$'], ['\\(', '\\)']]
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section >
+						<section id="6.4.1" data-menu-title='6.4.1 - Preuve de programme'>
+							<h1>Preuve de programme <a href="#haut">&#x21E7;</a></h1>
+							<hr />
+					</section>
+					<section>
+						<p>
+							Exécuter l'algorithme sur quelques cas ne permet pas de valider qu'il effectue correctement ce qui est attendu de lui.
+							<br>Il faut donc pouvoir utiliser un système de preuve de programme.
+						</p>
+						<div class='boiteQuestions'>
+							<p>
+								Illustration avec l'algorithme de gonflage de ballon.
+								<pre><code class="language-python">Algorithme gonflerBallon(ballon)
+Entrée : ballon
+Sortie : &Oslash;
+Effet de bord : A la fin de l&#39;algorithme, le ballon est gonflé.
+  Début
+    Tant que ballon non gonflé faire
+      soufflerDans(ballon)
+    FinTantQue
+  Fin</code></pre>
+							</p>
+						</div>
+						<div class="boiteSynthese">
+							<p>Face à un algorithme, il faut se poser et répondre à 3 questions :</p>
+							<ul>
+								<li>Est-ce-qu’il donne un résultat ? <i>S'arrête-t-il ?</i></li>
+								<li>Est-ce-qu’il donne le résultat attendu ? <i>ou bien est-ce-qu’il calcule n’importe quoi ?</i></li>
+								<li>Est-ce-qu’il donne le résultat en un temps raisonnable ? <i>ou bien est-ce-qu’il faut attendre plusieurs siècles ?</i></li>
+							</ul>
+						</div>
+					</section>
+				</section>
+				<section >
+					<section id="6.4.2" data-menu-title="6.4.2 - Terminaison / Correction">
+						<h1>Terminaison / Correction <a href="#haut">&#x21E7;</a></h1>
+						<p>
+							Un algorithme :
+							<ul>
+								<li>Termine si l'ensemble de ses instructions terminent.</li>
+								<li>Est correct s'il effectue sans se tromper la tâche qui lui est confiée et ce dans tous les cas possibles.</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<div class='boiteQuestionsReponse'>
+							<p>
+								Est-ce que l'algorithme suivant termine ? Est-ce qu'il est correct ?
+								<pre><code class="language-python">Algorithme fois2(x)
+Entrée : x, entier
+Sortie : entier, correspondant à 2 * x
+  Début
+    resultat <- 2 * x
+    Renvoyer resultat
+  Fin</code></pre>
+							</p>
+							<div class="boiteReponses">
+								<div class="reponse column">
+									<p><b>Terminaison</b> : le nombre d’instructions à effectuer est connu à l’avance. L'algorithme est composé de 3 opérations élémentaires (*, <- et un renvoi) qui terminent.</p>
+									<p><b>Correction</b> : l’algorithme reproduit directement la spécification. La preuve de la correction est triviale.</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class='boiteQuestionsReponse'>
+							<p>
+								Est-ce que l'algorithme suivant termine ?
+								<pre><code class="language-python">Algorithme ageHumain(x)
+Entrée : x, entier
+Sortie : entier, correspondant à l'age animal
+  Début
+    Si x ≥ 19 alors
+      y <- 10 * x − 90
+    Sinon
+      Si x ≥ 17 alors
+        y <- 6 * x − 14
       Sinon
-        Si x ≥ 17 alors
-          y <- 6 * x − 14
+        Si x ≥ 2 alors
+          y <- 4 * x + 20
         Sinon
-          Si x ≥ 2 alors
-            y <- 4 * x + 20
-          Sinon
-            y <- 8 * x + 12
-          Fin
-        Fin
-      Fin
-      Renvoyer : y
-    Fin</code></pre>
-                      </p>
-                      <div class="boiteReponses">
-                        <div class="reponse column">
-                          <p><b>Terminaison</b> : L'algorithme n'est composé que d'opérations élémentaires qui terminent.</p>
-                          <p><b>Correction</b> : l’algorithme reproduit directement les formules de calcul de la spécification.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                  <section>
-                    <div class='boiteQuestions'>
-                      <p>
-                        Est-ce que l'algorithme suivant termine ?
-                        <pre><code class="language-python">Algorithme somme(n)
-    Début
-      s <- 0
-      Pour i de 1 à n faire
-        s <- s + i
-      Fin
-      Renvoyer : s
-    Fin</code></pre>
-                      </p>
-                    </div>
-                  </section>
-                  <section>
-                    <div class='boiteQuestions'>
-                      <p>
-                        Est-ce que l'algorithme suivant termine ?
-                        <pre><code class="language-python">Algorithme mystere(x)
-    Début
+          y <- 8 * x + 12
+        FinSi
+      FinSi
+    FinSi
+    Renvoyer y
+  Fin</code></pre>
+							</p>
+							<div class="boiteReponses">
+								<div class="reponse column">
+									<p><b>Terminaison</b> : L'algorithme n'est composé que d'opérations élémentaires qui terminent.</p>
+									<p><b>Correction</b> : l’algorithme reproduit directement les formules de calcul de la spécification.</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section>
+						<div class='boiteQuestions'>
+							<p>
+								Est-ce que l'algorithme suivant termine ?
+								<pre><code class="language-python">Algorithme somme(n)
+  Début
+    s <- 0
+    Pour i de 1 à n faire
+      s <- s + i
+    FinPour
+    Renvoyer s
+  Fin</code></pre>
+							</p>
+						</div>
+					</section>
+					<section>
+						<div class='boiteQuestions'>
+							<p>
+								Est-ce que l'algorithme suivant termine ?
+								<pre><code class="language-python">Algorithme mystere(x)
+Début
 
-    Fin</code></pre>
-                      </p>
-                    </div>
-                  </section>
-                  <section>
-                    <div class="boiteQuestionsReponse">
-                      <p>
-                        Existe-t-il un algorithme qui permet de dire si un algorithme termine ?
-                      </p>
-                      <div class="boiteReponses">
-                        <div class="reponse row">
-                          <img src='../turing.jpg' width="20%"></img>
-                          <p>Alan Turing en 1936 a prouvé que le problème de l'arrêt est indécidable, c'est-à-dire qu'il n'existe pas de programme informatique qui prend comme entrée une description d'un programme informatique avec toutes ses entrées et qui, grâce à la seule analyse de ce code, répond VRAI si le programme s'arrête sur son paramètre et FAUX sinon.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <p>Déterminer si un algorithme termine</p>
-                    <p>Il n’existe pas de suite infinie d'entiers naturels strictement décroissante. Autrement dit, une suite strictement décroissante d’entiers naturels est toujours finie.</p>
-                    <p>Pour prouver la terminaison d'un algorithme, il suffit de trouver un entier naturel</p>
-                  </section>
-                </section>
-                <section id="6.4.3">
-                  <h1>Complexité <a href="#haut">&#x21E7;</a></h1>
-                  <p></p>
-                </section>
-              </div>
-            </div>
-          </div>
-            <footer>
-                Un site de : <a href="https://philippe-boddaert.github.io">www.philippe-boddaert.github.io</a>
-            </footer>
-        </div>
-    </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-core.min.js" integrity="sha256-D05OTvzyl8h0SDpcQF6UNo3gl2rKDMmRuqX8ZZ06pNE=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js" integrity="sha256-YZQM6/hLBZYkb01VYf17isoQM4qpaOP+aX96hhYrWhg=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-python.min.js" integrity="sha256-z1w1HLignub5kA0f24TCzv765MT4114LEgW/oIYuLag=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/command-line/prism-command-line.min.js" integrity="sha256-pySw63TmypHJ7LQU3ycJreLDfrxg59cI+famzPcGH5Q=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/toolbar/prism-toolbar.min.js" integrity="sha256-SyBDbq8Z29N+/5vK9bf2HpTtvAEGUIiLKw0iepvhLQg=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" integrity="sha256-5F8rynXScCOEtnwlm5P293TlCvTT1beoEJcmWHCg4BU=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha256-hep5s8952MqR7Y79JYfCXZD6vQjVHs7sOu/ZGrs1OEQ=" crossorigin="anonymous"></script>
-    <script src="data-04.js" type="text/javascript"></script>
+Fin</code></pre>
+							</p>
+						</div>
+					</section>
+					<section>
+						<div class="boiteQuestionsReponse">
+							<p>
+								Existe-t-il un algorithme qui permet de dire si un algorithme termine ?
+							</p>
+							<div class="boiteReponses">
+								<div class="reponse row">
+									<img src='../turing.jpg' width="20%"></img>
+									<p>Alan Turing en 1936 a prouvé que le problème de l'arrêt est indécidable, c'est-à-dire qu'il n'existe pas de programme informatique qui prend comme entrée une description d'un programme informatique avec toutes ses entrées et qui, grâce à la seule analyse de ce code, répond VRAI si le programme s'arrête sur son paramètre et FAUX sinon.</p>
+								</div>
+							</div>
+						</div>
+						<p>Déterminer si un algorithme termine</p>
+						<p>Il n’existe pas de suite infinie d'entiers naturels strictement décroissante. Autrement dit, une suite strictement décroissante d’entiers naturels est toujours finie.</p>
+						<p>Pour prouver la terminaison d'un algorithme, il suffit de trouver un entier naturel</p>
+					</section>
+				</section>
+				<section id="6.4.3" data-menu-title="6.4.3 - Complexité">
+					<h1>Complexité <a href="#haut">&#x21E7;</a></h1>
+					<p></p>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
     <script src="../../commun/commun.js" type="text/javascript"></script>
-    <script src="../../commun/index.js" type="text/javascript"></script>
-</body>
+    <script src="sorter.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			initMode(paramStyle, '6.4 - Preuves de programme');
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
 </html>
