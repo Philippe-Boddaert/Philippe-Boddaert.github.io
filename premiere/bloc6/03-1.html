@@ -6,32 +6,7 @@
 
 		<title>Bloc 6 : Algorithmique</title>
 		<!-- Gestion des scripts en fonction du mode de présentation -->
-		<script type="text/javascript">
-			const urlParams = new URLSearchParams(window.location.search);
-			const paramStyle = urlParams.get('style');
-			if (paramStyle == 'reveal'){
-				document.write('<link rel="stylesheet" href="../../lib/reveal/css/reset.css">');
-				document.write('<link rel="stylesheet" href="../../lib/reveal/css/reveal.css">');
-				document.write('<link rel="stylesheet" href="../../lib/reveal/css/theme/white.css">');
-				document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/title-footer/title-footer.css">');
-				document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
-				document.write('<link rel="stylesheet" href="../../commun/styles-reveal.css">');
-				let link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = window.location.search.match( /print-pdf/gi ) ? '../../lib/reveal/css/print/pdf.css' : '../../lib/reveal/css/print/paper.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
-			} else {
-				document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
-				document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/menu/menu.css">');
-				document.write('<link rel="stylesheet" href="../../commun/styles-full.css">');
-			}
-			MathJax = {
-				tex: {
-					inlineMath: [['$', '$'], ['\\(', '\\)']]
-				}
-			};
-		</script>
+		<script src="../../commun/commun.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div class="reveal">
@@ -139,10 +114,9 @@ Effet de bord : l est triée
 		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
 		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
 		<script src="../../lib/reveal/js/reveal.js"></script>
-    <script src="../../commun/commun.js" type="text/javascript"></script>
     <script src="sorter.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			initMode(paramStyle, '6.3.1 - Tri par insertion');
+			initMode('6.3.1 - Tri par insertion');
 			hljs.initHighlightingOnLoad();
 			new InsertSorter([6, 4, 1, 8, 5, 10, 7, 3, 2, 9], { "container" : "tri-insertion", 'showLegend' : false});
       new InsertSorter([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], { "container" : "tri-meilleur", 'showLegend' : false, "showLogger" : true});

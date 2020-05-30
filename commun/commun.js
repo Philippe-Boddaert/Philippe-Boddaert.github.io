@@ -100,16 +100,16 @@ function addMenuButton(container){
 }
 
 
-function initMode(paramStyle, header, menu = []){
-  paramStyle = (paramStyle == null)?'full':paramStyle;
+function initMode(header, menu = []){
+  let pStyle = (paramStyle == null)?'full':paramStyle;
   let content = '<ul class="slide-menu-items">';
 
   menu.forEach((item, i) => {
-    content += '<li class="slide-menu-item future"><i class="far fa-circle fa-fw future" aria-hidden="true"></i><span class="slide-menu-item-title"><a href="' + item.src + '?style=' + paramStyle + '">' + item.title + '</a></span></li>';
+    content += '<li class="slide-menu-item future"><i class="far fa-circle fa-fw future" aria-hidden="true"></i><span class="slide-menu-item-title"><a href="' + item.src + '?style=' + pStyle + '">' + item.title + '</a></span></li>';
   });
   content += '</ul>';
 
-  if (paramStyle == 'reveal'){
+  if (pStyle == 'reveal'){
     let custom = [];
     if (menu.length > 0)
       custom.push({ title: 'Cours', icon: '<i class="fa fa-images">', content : content});
@@ -148,10 +148,10 @@ function initMode(paramStyle, header, menu = []){
     addMenu(content, menu.length == 0);
     addMenuButton(document.getElementsByClassName('reveal')[0]);
   }
-  addHead(document.getElementsByClassName('reveal')[0], header);
+  addHead(pStyle, document.getElementsByClassName('reveal')[0], header);
 }
 
-function addHead(container, header){
+function addHead(paramStyle, container, header){
   let home = create('div', {class : 'slide-home-button'});
 
   let title = (paramStyle == 'reveal')?'page entière':'présentation';
@@ -285,8 +285,32 @@ function handleMouseHighlight(event) {
   event.currentTarget.classList.add('selected');
 }
 
-let boiteReponses = document.querySelectorAll('.boiteReponses');
-
-boiteReponses.forEach(function(boiteReponse) {
+document.querySelectorAll('.boiteReponses').forEach(function(boiteReponse) {
   boiteReponse.addEventListener('click', toogleReponse);
 });
+
+/* */
+const urlParams = new URLSearchParams(window.location.search);
+const paramStyle = urlParams.get('style');
+if (paramStyle == 'reveal'){
+  document.write('<link rel="stylesheet" href="../../lib/reveal/css/reset.css">');
+  document.write('<link rel="stylesheet" href="../../lib/reveal/css/reveal.css">');
+  document.write('<link rel="stylesheet" href="../../lib/reveal/css/theme/white.css">');
+  document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/title-footer/title-footer.css">');
+  document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+  document.write('<link rel="stylesheet" href="../../commun/styles-reveal.css">');
+  let link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? '../../lib/reveal/css/print/pdf.css' : '../../lib/reveal/css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+} else {
+  document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+  document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/menu/menu.css">');
+  document.write('<link rel="stylesheet" href="../../commun/styles-full.css">');
+}
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
