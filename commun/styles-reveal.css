@@ -54,12 +54,54 @@
     vertical-align: text-top;
 }
 
+  section div.il {
+      background-color: #eee;
+      padding-bottom: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+  }
+
+  section div.boiteQuestions, section div.boiteQuestionsReponse {
+      background-color: #cde;
+      padding-bottom: 0px;
+      margin: 20px 0;
+      border-radius: 10px;
+  }
+  
+  section div.boiteQuestions::before, section div.boiteQuestionsReponse:before {
+      display: block;
+      text-align: center;
+      content: "Questions";
+      background-color: #069;
+      color: white;
+      font-size: 110%;
+      font-weight: bold;
+      padding:4px;
+      margin-bottom: 20px;
+      border-radius: 10px 10px 0 0;
+  }
+
+  section div.boiteReponses::before {
+      display: block;
+      text-align: center;
+      content: "Réponse";
+      background-color: #069;
+      color: white;
+      font-size: 110%;
+      font-weight: bold;
+      padding:4px;
+      margin-bottom: 0px;
+      border-radius: 0 0 10px 10px;
+      cursor: pointer;
+  }
+
   section div.boiteTravail {
       background-color: #eee;
       padding-bottom: 20px;
       margin: 20px 0;
       border-radius: 10px;
   }
+
   section div.boiteTravail::before {
       display: block;
       text-align: center;
