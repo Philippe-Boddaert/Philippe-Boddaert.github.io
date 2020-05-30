@@ -67,7 +67,7 @@
       margin: 20px 0;
       border-radius: 10px;
   }
-  
+
   section div.boiteQuestions::before, section div.boiteQuestionsReponse:before {
       display: block;
       text-align: center;
@@ -114,6 +114,44 @@
       margin-bottom: 20px;
       border-radius: 10px 10px 0 0;
   }
+
+  section div.boiteSynthese {
+      background-color: #FFC0CB;
+      padding-bottom: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+  }
+  section div.boiteSynthese::before {
+      display: block;
+      content: "👍 Synthèse";
+      background-color: red;
+      color: white;
+      font-size: 110%;
+      font-weight: bold;
+      padding:4px;
+      margin-bottom: 20px;
+      border-radius: 10px 10px 0 0;
+  }
+
+  section div.boiteHistoire {
+      background-color: #cfc;
+      padding-bottom: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+  }
+  section div.boiteHistoire::before {
+      display: block;
+      text-align: center;
+      content: "Repères historiques";
+      background-color: #090;
+      color: white;
+      font-size: 110%;
+      font-weight: bold;
+      padding:4px;
+      margin-bottom: 20px;
+      border-radius: 10px 10px 0 0;
+  }
+
   .sort-container {
     display: flex;
     flex-direction: row;

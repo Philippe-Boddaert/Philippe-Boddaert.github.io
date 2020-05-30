@@ -521,7 +521,7 @@ nav > div > section {
 }
 
 .slides {
-  margin-top : 20px;
+  margin-top : 50px;
 }
 .reveal .slide-menu-button {
     position: fixed;
@@ -547,6 +547,7 @@ nav > div > section {
   width: 75%;
   background-color: white;
   transform: width 0.3s;
+  height: 50px;
   }
 .print-pdf .fe-persistent-header { display: none; }
 @media print { .fe-persistent-header { display: none; } }
