@@ -85,46 +85,47 @@ Fin</code></pre>
 		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
 		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
 		<script src="../../lib/reveal/js/reveal.js"></script>
+		<script type="text/javascript">
+			initMode('6.2 - Présentation');
+		</script>
 		<script src="../../lib/viz/viz.js" type="text/javascript"></script>
     <script src="../../lib/viz/lite.render.js" type="text/javascript"></script>
 		<script type="text/javascript">
 			var viz = new Viz();
+				viz.renderImageElement(`
+					digraph G {
+							rankdir="LR";
+							"Algorithme" [shape=square, label="Algorithme\n\n\n\n\nune suite finie d'opérations élémentaires\nobéissant à un enchainement déterminé"]
+							"Valeurs d'entrée" [shape=circle]
+							"Valeurs de sortie" [shape=circle]
+					 "Valeurs d'entrée" -> "Algorithme";
+					 "Algorithme" -> "Valeurs de sortie"
+					}
+					`)
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e1').appendChild(element);
+				});
 
-			viz.renderImageElement(`
-				digraph G {
-						rankdir="LR";
-						"Algorithme" [shape=square, label="Algorithme\n\n\n\n\nune suite finie d'opérations élémentaires\nobéissant à un enchainement déterminé"]
-						"Valeurs d'entrée" [shape=circle]
-						"Valeurs de sortie" [shape=circle]
-				 "Valeurs d'entrée" -> "Algorithme";
-				 "Algorithme" -> "Valeurs de sortie"
-				}
-				`)
-			.then(function(element) {
-				element.className = 'responsive';
-				document.getElementById('e1').appendChild(element);
-			});
-
-			viz.renderImageElement(`
-				digraph G {
-						rankdir="LR";
-						"Problème" [shape=square, fixedsize=true, width=1]
-						"Analyse" [shape=square, fixedsize=true, width=1]
-						"Algorithme" [shape=square, fixedsize=true, width=1]
-						"Programme" [shape=square, fixedsize=true, width=1]
-						"Exécution" [shape=square, fixedsize=true, width=1]
-				 "Problème" -> "Analyse";
-				 "Analyse" -> "Algorithme";
-				 "Algorithme" -> "Programme";
-				 "Programme" -> "Exécution";
-				}
-				`)
-			.then(function(element) {
-				element.className = 'responsive';
-				document.getElementById('workflow').appendChild(element);
-			});
-			initMode('6.2 - Présentation');
-			hljs.initHighlightingOnLoad();
+				viz.renderImageElement(`
+					digraph G {
+							rankdir="LR";
+							"Problème" [shape=square, fixedsize=true, width=1]
+							"Analyse" [shape=square, fixedsize=true, width=1]
+							"Algorithme" [shape=square, fixedsize=true, width=1]
+							"Programme" [shape=square, fixedsize=true, width=1]
+							"Exécution" [shape=square, fixedsize=true, width=1]
+					 "Problème" -> "Analyse";
+					 "Analyse" -> "Algorithme";
+					 "Algorithme" -> "Programme";
+					 "Programme" -> "Exécution";
+					}
+					`)
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('workflow').appendChild(element);
+				});
+				hljs.initHighlightingOnLoad();
 		</script>
 	</body>
 </html>
