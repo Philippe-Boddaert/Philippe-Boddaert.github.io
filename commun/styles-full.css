@@ -498,6 +498,7 @@ nav > div > section {
   height: 25px;
   display: inline-block;
   border-width: medium;
+  vertical-align: middle;
 }
 
 .sorted {

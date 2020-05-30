@@ -140,16 +140,16 @@ class Sorter {
     let divLegendContainer = document.createElement('div');
     divLegendContainer.className = this.__options.classContainer + ' ' + this.__options.classLegend + (this.__options.showLegend?'':' hidden');
 
-    let cursorLegend = document.createElement('p');
-    cursorLegend.innerHTML = '<span class=\'sort-cursor\'>&#8679;</span> ' + this.__options.legend.cursor;
+    let cursorLegend = document.createElement('div');
+    cursorLegend.innerHTML = '<span class=\'sort-cursor sort-label\'>&#8679;</span> ' + this.__options.legend.cursor;
 
-    let comparedLegend = document.createElement('p');
+    let comparedLegend = document.createElement('div');
     comparedLegend.innerHTML = '<span class=\'sort-content sort-label compared\'>&nbsp;&nbsp;</span> ' + this.__options.legend.compared;
 
-    let minimumLegend = document.createElement('p');
+    let minimumLegend = document.createElement('div');
     minimumLegend.innerHTML = '<span class=\'sort-content sort-label minimum\'>&nbsp;&nbsp;</span> ' + this.__options.legend.minimum;
 
-    let sortedLegend = document.createElement('p');
+    let sortedLegend = document.createElement('div');
     sortedLegend.innerHTML = '<span class=\'sort-content sort-label sorted\'>&nbsp;&nbsp;</span> ' + this.__options.legend.sorted;
 
     divLegendContainer.appendChild(cursorLegend);
