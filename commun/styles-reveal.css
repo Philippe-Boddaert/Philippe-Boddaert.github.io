@@ -223,3 +223,11 @@
   .hidden {
     display: none;
   }
+
+  .row {
+    flex-direction: row;
+  }
+
+  .column {
+    flex-direction: column;
+  }

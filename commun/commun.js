@@ -150,6 +150,9 @@ function initMode(options){
     addMenuButton(document.getElementsByClassName('reveal')[0]);
   }
   addHead(pStyle, document.getElementsByClassName('reveal')[0], opt.header, opt.home);
+  document.querySelectorAll('.boiteReponses').forEach(function(boiteReponse) {
+    boiteReponse.addEventListener('click', toogleReponse);
+  });
 }
 
 function addHead(paramStyle, container, header, homePath){
@@ -300,10 +303,6 @@ function handleMouseHighlight(event) {
   });
   event.currentTarget.classList.add('selected');
 }
-
-document.querySelectorAll('.boiteReponses').forEach(function(boiteReponse) {
-  boiteReponse.addEventListener('click', toogleReponse);
-});
 
 /* */
 const urlParams = new URLSearchParams(window.location.search);
