@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bloc 1 : Structures de données</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script src="../../commun/commun.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section id="1.4.1" data-menu-title="1.4.1 - Contexte">
+							<h1>Contexte</h1>
+							<hr />
+							<p>Imaginons un réseau social ayant 6 abonnés (A, B, C, D, E et F) où :</p>
+							<ul>
+								<li>A est ami avec B, C et D</li>
+								<li>B est ami avec A et D</li>
+								<li>C est ami avec A, E et D</li>
+								<li>D est ami avec tous les autres abonnés</li>
+								<li>E est ami avec C, D et F</li>
+								<li>F est ami avec E et D</li>
+							</ul>
+					</section>
+					<section>
+						<p>La description de ce réseau social, malgré son faible nombre d'abonnés, est déjà quelque peu rébarbative, alors imaginez cette même description avec un réseau social comportant des millions d'abonnés !
+							<br>Il existe un moyen plus "visuel" pour représenter ce réseau social : on peut représenter chaque abonné par un cercle (avec le nom de l'abonné situé dans le cercle) et chaque relation "X est ami avec Y" par un segment de droite reliant X et Y ("X est ami avec Y" et "Y est ami avec X" étant représenté par le même segment de droite).
+						</p>
+					</section>
+				</section>
+				<section>
+					<p>Voici ce que cela donne avec le réseau social décrit ci-dessus :</p>
+					<p id="e1" class="img-container full"></p>
+				</section>
+				<section id="1.4.2" data-menu-title="1.4.2 - Définition">
+					<h1>Définition</h1>
+					<p>Un graphe $G$ est un couple $G = (V,E)$ avec :</p>
+					<ul>
+						<li>$V$ un ensemble de sommets, et </li>
+						<li>$E$ un ensemble d'arêtes.</li>
+					</ul>
+					<p>
+						$V = \{A, B, C, D, E, F\}$ et
+						$E = \{ \{A, B\}, \{A, C\}, \{A, D\}, \{B, D\}, \{C, E\}, \{C, D\}, \{D, E\}, \{D, F\}, \{E, F\}\}$
+					</p>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
+		<script type="text/javascript">
+			initMode({ header : '1.4 - Graphes'});
+		</script>
+		<script src="../../lib/viz/viz.js" type="text/javascript"></script>
+    <script src="../../lib/viz/full.render.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			var viz = new Viz();
+				viz.renderSVGElement(`
+					 graph G {
+						 label = "Graphe réseau social";
+						 { rank=same A B }
+						 { rank=same C D }
+						 { rank=same E F }
+							A -- B;
+							A -- C;
+							A -- D;
+							B -- D;
+							C -- D;
+							C -- E;
+							D -- E;
+							D -- F;
+							E -- F;
+					}
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e1').appendChild(element);
+				});
+
+				hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+</html>
