@@ -27,25 +27,83 @@
 					</section>
 					<section>
 						<p>La description de ce réseau social, malgré son faible nombre d'abonnés, est déjà quelque peu rébarbative, alors imaginez cette même description avec un réseau social comportant des millions d'abonnés !
-							<br>Il existe un moyen plus "visuel" pour représenter ce réseau social : on peut représenter chaque abonné par un cercle (avec le nom de l'abonné situé dans le cercle) et chaque relation "X est ami avec Y" par un segment de droite reliant X et Y ("X est ami avec Y" et "Y est ami avec X" étant représenté par le même segment de droite).
+							<br>Il existe un moyen plus "visuel" pour représenter ce réseau social.
 						</p>
+					</section>
+					<section>
+						<ul>
+							<li>On peut représenter chaque abonné par un cercle (avec le nom de l'abonné situé dans le cercle) et,</li>
+							<li>Chaque relation "X est ami avec Y" par un segment de droite reliant X et Y ("X est ami avec Y" et "Y est ami avec X" étant représenté par le même segment de droite).</li>
+						</ul>
+						<p>Voici ce que cela donne avec le réseau social décrit ci-dessus :</p>
+						<p id="e1" class="img-container full"></p>
 					</section>
 				</section>
 				<section>
-					<p>Voici ce que cela donne avec le réseau social décrit ci-dessus :</p>
-					<p id="e1" class="img-container full"></p>
+					<section id="1.4.2" data-menu-title="1.4.2 - Définition">
+						<h1>Définition</h1>
+						<p>Un graphe $G$ est un couple $G = (V,E)$ avec :</p>
+						<ul>
+							<li>$V$ un ensemble de sommets, et </li>
+							<li>$E$ un ensemble d'arêtes.</li>
+						</ul>
+						<p>
+							La définition du graphe de la <a href='#e1'>Fig 1.</a> : <br>
+							$V = \{A, B, C, D, E, F\}$ et
+							$E = \{ \{A, B\}, \{A, C\}, \{A, D\}, \{B, D\}, \{C, E\}, \{C, D\}, \{D, E\}, \{D, F\}, \{E, F\}\}$
+						</p>
+					</section>
+					<section data-menu-title="Travail">
+						<div class="boiteTravail">
+							<p>Définir et faire la représentation du graphe de réseau social à partir des informations suivantes :</p>
+							<ul>
+								<li>A est ami avec B et E</li>
+								<li>B est ami avec A et C</li>
+								<li>C est ami avec B, F et D</li>
+								<li>D est ami avec C, F et E</li>
+								<li>E est ami avec A, D et F</li>
+								<li>F est ami avec C, D et E</li>
+							</ul>
+						</div>
+					</section>
 				</section>
-				<section id="1.4.2" data-menu-title="1.4.2 - Définition">
-					<h1>Définition</h1>
-					<p>Un graphe $G$ est un couple $G = (V,E)$ avec :</p>
-					<ul>
-						<li>$V$ un ensemble de sommets, et </li>
-						<li>$E$ un ensemble d'arêtes.</li>
-					</ul>
-					<p>
-						$V = \{A, B, C, D, E, F\}$ et
-						$E = \{ \{A, B\}, \{A, C\}, \{A, D\}, \{B, D\}, \{C, E\}, \{C, D\}, \{D, E\}, \{D, F\}, \{E, F\}\}$
-					</p>
+				<section>
+					<section id="1.4.3" data-menu-title="1.4.3 - Typologie de graphe">
+						<p>Autre utilisation possible des graphes : les logiciels de cartographie (ces logiciels sont souvent utilisés couplés à des récepteurs GPS). Ces logiciels de cartographie permettant, connaissant votre position grâce à un récepteur GPS, d'indiquer la route à suivre pour se rendre à endroit B. Comment modéliser l'ensemble des lieux et des routes ? Simplement à l'aide d'un graphe ! Chaque lieu est un sommet et les routes qui relient les lieux entre eux sont des arêtes.</p>
+					</section>
+					<section>
+						<p>Soit les lieux suivants : A, B, C, D, E, F et G.Les différents lieux sont reliés par les routes suivantes :</p>
+						<ul>
+							<li>il existe une route entre A et C</li>
+							<li>il existe une route entre A et B</li>
+							<li>il existe une route entre A et D</li>
+							<li>il existe une route entre B et F</li>
+							<li>il existe une route entre B et E</li>
+							<li>il existe une route entre B et G</li>
+							<li>il existe une route entre D et G</li>
+							<li>il existe une route entre E et F</li>
+						</ul>
+						<p id="e2" class="img-container full"></p>
+					</section>
+					<section>
+						<p>Problème : avec cette représentation du réseau routier sous forme de graphe, il est impossible de tenir compte des routes en sens unique (par exemple il est possible d'aller de A vers D mais pas de D vers A). Voici de nouvelles contraintes :</p>
+						<ul>
+							<li>il existe une route entre A et C (double sens)</li>
+							<li>il existe une route entre A et B (sens unique B->A)</li>
+							<li>il existe une route entre A et D (sens unique A->D)</li>
+							<li>il existe une route entre B et F (sens unique B->F)</li>
+							<li>il existe une route entre B et E (sens unique E->B)</li>
+							<li>il existe une route entre B et G (double sens)</li>
+							<li>il existe une route entre D et G (double sens)</li>
+							<li>il existe une route entre E et F (double sens)</li>
+						</ul>
+						<p>Pour tenir compte de ces nouvelles contraintes, on utilisera un graphe orienté :</p>
+						<p id="e3" class="img-container full"></p>
+					</section>
+				</section>
+				<section>
+					<section id="1.4.4" data-menu-title="1.4.4 - Implémentation">
+					</section>
 				</section>
 			</div>
 		</div>
@@ -64,7 +122,7 @@
 			var viz = new Viz();
 				viz.renderSVGElement(`
 					 graph G {
-						 label = "Graphe réseau social";
+						 label = "Fig1. Graphe réseau social";
 						 { rank=same A B }
 						 { rank=same C D }
 						 { rank=same E F }
@@ -82,6 +140,49 @@
 				.then(function(element) {
 					element.className = 'responsive';
 					document.getElementById('e1').appendChild(element);
+				});
+				viz.renderSVGElement(`
+					 graph G {
+						 label = "Fig2. Graphe cartographique";
+						 {rank=min A}
+						 {rank=same D C B F}
+							A -- C;
+							A -- B;
+							A -- D;
+							B -- F;
+							B -- E;
+							B -- G;
+							D -- G;
+							E -- F;
+					}
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e2').appendChild(element);
+				});
+
+				viz.renderSVGElement(`
+					 digraph G {
+						 label = "Fig3. Graphe orienté cartographique";
+						 {rank=min A}
+						 {rank=same D C B F}
+							A -> C;
+							B -> A;
+							A -> D;
+							C -> A;
+							B -> F;
+							E -> B;
+							B -> G;
+							G -> B;
+							D -> G;
+							G -> D;
+							E -> F;
+							F -> E;
+					}
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e3').appendChild(element);
 				});
 
 				hljs.initHighlightingOnLoad();
