@@ -47,6 +47,9 @@
 							<li>$V$ un ensemble de sommets, et </li>
 							<li>$E$ un ensemble d'arêtes.</li>
 						</ul>
+						<p>Une arête est un ensemble $\{s_i, s_j\}$ où $s_i \mbox{ et } s_j \in V$</p>
+					</section>
+					<section>
 						<p>
 							La définition du graphe de la <a href='#e1'>Fig 1.</a> : <br>
 							$V = \{A, B, C, D, E, F\}$ et
@@ -83,6 +86,8 @@
 							<li>il existe une route entre D et G</li>
 							<li>il existe une route entre E et F</li>
 						</ul>
+					</section>
+					<section>
 						<p id="e2" class="img-container full"></p>
 					</section>
 					<section>
@@ -97,25 +102,70 @@
 							<li>il existe une route entre D et G (double sens)</li>
 							<li>il existe une route entre E et F (double sens)</li>
 						</ul>
+					</section>
+					<section>
 						<p>Pour tenir compte de ces nouvelles contraintes, on utilisera un graphe orienté :</p>
 						<p id="e3" class="img-container full"></p>
 					</section>
 				</section>
-				<section id="1.4.4" data-menu-title="1.4.4 - Deuxième définition">
-					<h1>Définition</h1>
-					<p>Un graphe $G$ orienté est un couple $G = (V, A)$ avec :</p>
-					<ul>
-						<li>$V$ un ensemble de sommets, et </li>
-						<li>$A$ un ensemble d'arcs.</li>
-					</ul>
-					<p>
-						La définition du graphe de la <a href='#e1'>Fig 1.</a> : <br>
-						$V = \{A, B, C, D, E, F\}$ et
-						$E = \{ (A, C), (B, A), (A, D), (B, F), (E, B), (B, G), (G, B), (D, G), (G, D), (E, F), (F, E)\}$
-					</p>
+				<section>
+					<section id="1.4.4" data-menu-title="1.4.4 - Deuxième définition">
+						<h1>Définition</h1>
+						<p>Un graphe $G$ orienté est un couple $G = (V, A)$ avec :</p>
+						<ul>
+							<li>$V$ un ensemble de sommets, et </li>
+							<li>$A$ un ensemble d'arcs.</li>
+						</ul>
+						<p>Un arc est un couple $(s_i, s_j)$ où $s_i \mbox{ et } s_j \in V$</p>
+					</section>
+					<section>
+						<p>
+							La définition du graphe de la <a href='#e3'>Fig 3.</a> : <br>
+							$V = \{A, B, C, D, E, F\}$ et
+							$E = \{ (A, C), (B, A), (A, D), (B, F), (E, B), (B, G), (G, B), (D, G), (G, D), (E, F), (F, E)\}$
+						</p>
+					</section>
+					<section>
+						<p>Parfois il est intéressant d'associer aux arêtes ou aux arcs des valeurs, on parle alors de graphes pondérés. Si nous revenons à notre "graphe cartographie", il est possible d'associer à chaque arête la distance en Km entre les 2 lieux :</p>
+					</section>
+					<section>
+						<p id="e4" class="img-container full"></p>
+					</section>
 				</section>
 				<section>
 					<section id="1.4.5" data-menu-title="1.4.5 - Implémentation">
+						<h1>Implémentation</h1>
+					</section>
+					<section data-menu-title="1.4.5.1 - Matrice d'adjacence">
+						<p>Une matrice est un tableau à double entrée :</p>
+						$$\begin{pmatrix}
+							6 & 2 & 9 & 4 \\
+							7 & 1 & 8 & 2 \\
+							4 & 5 & 1 & 2 \\
+							8 & 1 & 14 & 7 \\
+							3 & 5 & 11 & 9
+							\end{pmatrix}$$
+						<p>La matrice A ci-dessus est constitué de 5 lignes et 4 colonnes. On appelle matrice carrée une matrice qui comporte le même nombre de lignes et de colonnes. Les matrices d'adjacences sont des matrices carrées.</p>
+					</section>
+					<section>
+						<p>A chaque ligne correspond un sommet du graphe et qu'à chaque colonne correspond aussi un sommet du graphe.
+							<br>À chaque intersection $(i, j)$ (ligne $i$ correspond au sommet $i$ et colonne $j$ correspond au sommet $j$), on place :
+							<br>un 1 s'il existe une arête entre le sommet $i$ et le sommet $j$, et
+							<br>un 0 s'il n'existe pas d'arête entre le sommet $i$ et le sommet $j$.
+						</p>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Soit la matrice d'adjacence suivante : </p>
+							$$\begin{pmatrix}
+								0 & 1 & 1 & 1 & 0  \\
+								1 & 0 & 0 & 0 & 1  \\
+								1 & 0 & 0 & 1 & 0  \\
+								1 & 1 & 0 & 0 & 0  \\
+								0 & 1 & 0 & 0 & 0  \\
+								\end{pmatrix}$$
+							<p>Déterminer le graphe à laquelle cette matrice correspond.</p>
+						</div>
 					</section>
 				</section>
 			</div>
@@ -196,6 +246,30 @@
 				.then(function(element) {
 					element.className = 'responsive';
 					document.getElementById('e3').appendChild(element);
+				});
+
+				viz.renderSVGElement(`
+					 digraph G {
+						 label = "Fig4. Graphe orienté pondéré cartographique";
+						 {rank=min A}
+						 {rank=same D C B F}
+							A -> C [ label="2"];
+							B -> A [ label="3"];
+							A -> D [ label="4"];
+							C -> A [ label="2"];
+							B -> F [ label="3"];
+							E -> B [ label="4"];
+							B -> G [ label="6"];
+							G -> B [ label="6"];
+							D -> G [ label="5"];
+							G -> D [ label="5"];
+							E -> F [ label="7"];
+							F -> E [ label="6"];
+					}
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e4').appendChild(element);
 				});
 
 				hljs.initHighlightingOnLoad();
