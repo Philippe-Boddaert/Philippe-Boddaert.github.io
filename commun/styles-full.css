@@ -409,6 +409,10 @@ nav > div > section {
   vertical-align: text-top;
 }
 
+.full img {
+  width: auto;
+}
+
 .responsive {
   width: 100%;
   height: auto;
@@ -568,4 +572,13 @@ blockquote {
   width : 100%;
   margin-left: 10px;
   font-style: italic;
+}
+
+table.adjacence th, table.adjacence td {
+  background-color: transparent;
+  border: none;
+}
+
+table.adjacence td.case {
+  border : 1px solid black;
 }

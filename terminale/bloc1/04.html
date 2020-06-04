@@ -136,27 +136,32 @@
 					<section id="1.4.5" data-menu-title="1.4.5 - Implémentation">
 						<h1>Implémentation</h1>
 					</section>
-					<section data-menu-title="1.4.5.1 - Matrice d'adjacence">
-						<p>Une matrice est un tableau à double entrée :</p>
-						$$\begin{pmatrix}
-							6 & 2 & 9 & 4 \\
-							7 & 1 & 8 & 2 \\
-							4 & 5 & 1 & 2 \\
-							8 & 1 & 14 & 7 \\
-							3 & 5 & 11 & 9
-							\end{pmatrix}$$
-						<p>La matrice A ci-dessus est constitué de 5 lignes et 4 colonnes. On appelle matrice carrée une matrice qui comporte le même nombre de lignes et de colonnes. Les matrices d'adjacences sont des matrices carrées.</p>
+					<section id="1.4.5.1" data-menu-title="1.4.5.1 - Matrice d'adjacence">
+						<h1>Matrice d'adjacence</h1>
+						<p>Une matrice est un tableau à double entrée :<br>
+							$$\begin{pmatrix}
+								6 & 2 & 9 & 4 \\
+								7 & 1 & 8 & 2 \\
+								4 & 5 & 1 & 2 \\
+								8 & 1 & 14 & 7 \\
+								3 & 5 & 11 & 9
+								\end{pmatrix}$$</p>
 					</section>
 					<section>
-						<p>A chaque ligne correspond un sommet du graphe et qu'à chaque colonne correspond aussi un sommet du graphe.
-							<br>À chaque intersection $(i, j)$ (ligne $i$ correspond au sommet $i$ et colonne $j$ correspond au sommet $j$), on place :
-							<br>un 1 s'il existe une arête entre le sommet $i$ et le sommet $j$, et
-							<br>un 0 s'il n'existe pas d'arête entre le sommet $i$ et le sommet $j$.
-						</p>
+						<p>On représente un graphe par une matrice "carrée" de $n$ lignes et $n$ colonnes :</p>
+							<ul>
+								<li>A chaque ligne $i$ correspond un sommet du graphe, et à chaque colonne j correspond aussi un sommet du graphe.</li>
+								<li>À chaque intersection $(i, j)$, on place :
+									<ul>
+										<li>1 s'il existe une arête entre le sommet $i$ et le sommet $j$, et</li>
+										<li>0 s'il n'existe pas d'arête entre le sommet $i$ et le sommet $j$.</li>
+									</ul>
+								</li>
+								</ul>
 					</section>
 					<section>
 						<div class="boiteTravail">
-							<p>Soit la matrice d'adjacence suivante : </p>
+							<p>Soit l'ensemble des sommets $\{A, B, C, D, E\}$ et la matrice d'adjacence suivante : </p>
 							$$\begin{pmatrix}
 								0 & 1 & 1 & 1 & 0  \\
 								1 & 0 & 0 & 0 & 1  \\
@@ -164,8 +169,98 @@
 								1 & 1 & 0 & 0 & 0  \\
 								0 & 1 & 0 & 0 & 0  \\
 								\end{pmatrix}$$
-							<p>Déterminer le graphe à laquelle cette matrice correspond.</p>
+							<p>Dessiner le graphe $G$ à laquelle cette matrice correspond.</p>
 						</div>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Soit le graphe $G$ suivant :</p>
+							<p id="e5" class="img-container full"></p>
+							<p>Déterminer la matrice d'adjacence du graphe $G$.</p>
+						</div>
+					</section>
+					<section id="1.4.5.2" data-menu-title="1.4.5.2 - Liste d'adjacence">
+						<h1>Liste d'adjacence</h1>
+						<p>Pour représenter un graphe, on définit une liste des sommets,
+							<br>À chaque élément de cette liste, on associe une autre liste qui contient les sommets lié à cet élément.</p>
+					</section>
+					<section>
+						<div class="row" style='display: flex;align-items: center;'>
+							<div>
+								<p>Graphe avec sa liste d'adjacence associée &rArr;</p>
+								<div id="e6" class="img-container full"></div>
+							</div>
+							<table class="adjacence">
+								<tr>
+									<th class='bord'>A</th>
+									<td>&rArr;</td>
+									<td class="case">B</td>
+									<td class="case">C</td>
+									<td class="case">D</td>
+									<td></td>
+								</tr>
+								<tr>
+									<th>B</th>
+									<td>&rArr;</td>
+									<td class="case">A</td>
+									<td class="case">E</td>
+									<td class="case">F</td>
+									<td class="case">G</td>
+								</tr>
+								<tr>
+									<th>C</th>
+									<td>&rArr;</td>
+									<td class="case">A</td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th>D</th>
+									<td>&rArr;</td>
+									<td class="case">A</td>
+									<td class="case">G</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th>E</th>
+									<td>&rArr;</td>
+									<td class="case">B</td>
+									<td class="case">F</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th>F</th>
+									<td>&rArr;</td>
+									<td class="case">B</td>
+									<td class="case">E</td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th>G</th>
+									<td>&rArr;</td>
+									<td class="case">B</td>
+									<td class="case">D</td>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+					</section>
+					<section>
+						<div class="boiteTravail">&Eacute;crire en python la représentation par liste d'adjacence du graphe $G$ précédent.</div>
+					</section>
+					<section>
+						<h3>Comment choisir l'implémentation à utiliser ?</h3>
+						<ul>
+							<li>Le choix se fait en fonction de la densité du graphe, c'est-à-dire du rapport entre le nombre d'arêtes et le nombre de sommets.</li>
+							<li>Pour un graphe dense on utilisera plutôt une matrice d'adjacence.</li>
+							<li>certains algorithmes travaillent plutôt avec les listes d'adjacences alors que d'autres travaillent plutôt avec les matrices d'adjacences.</li>
+							<li>Le choix doit donc aussi dépendre des algorithmes utilisés (Cf. <a href="../bloc5">Bloc 5.3 - Algorithmes sur les graphes</a>).</li>
+						</ul>
 					</section>
 				</section>
 			</div>
@@ -271,7 +366,46 @@
 					element.className = 'responsive';
 					document.getElementById('e4').appendChild(element);
 				});
-
+				viz.renderSVGElement(`
+					 graph G {
+						 label = "Fig5. Graphe non orienté";
+						 { rank=same A E }
+						 { rank=same B C }
+						 { rank=same D F }
+							A -- A;
+							A -- B;
+							B -- E;
+							B -- C;
+							C -- D;
+							C -- E;
+							D -- F;
+							F -- C;
+					}
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					element.children[0].querySelector('polygon').style.fill='transparent';
+					document.getElementById('e5').appendChild(element);
+				});
+				viz.renderSVGElement(`
+					 graph G {
+						 label = "Fig2. Graphe cartographique";
+						 {rank=min A}
+						 {rank=same D C B F}
+							A -- C;
+							A -- B;
+							A -- D;
+							B -- F;
+							B -- E;
+							B -- G;
+							D -- G;
+							E -- F;
+					}
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e6').appendChild(element);
+				});
 				hljs.initHighlightingOnLoad();
 		</script>
 	</body>

@@ -162,11 +162,11 @@ Fin</code></pre>
 				<section>
 					<section id="6.4.3" data-menu-title="6.4.3 - Complexité">
 						<h1>Complexité</h1>
-						<p class='img-container full'>
+						<p class='img-container'>
 							<img src='../complexité.jpg'/>
 						</p>
 					</section>
-					<section data-menu-title='6.4.3.1 - Définition'>
+					<section id="6.4.3.1" data-menu-title='6.4.3.1 - Définition'>
 						<h1>Définition</h1>
 						<p>La notion de complexité d'un algorithme va rendre compte de son "efficacité". <br>Pour un même problème, par exemple trier un tableau, il existe plusieurs algorithmes, certains algorithmes sont plus "efficaces" que d'autres.</p>
 						<p>Il existe 2 types de complexité : la complexité en temps et la complexité en espace.</p>
@@ -179,7 +179,7 @@ Fin</code></pre>
 						<h2>Comment calculer la complexité ?</h2>
 						<p>Calculer la complexité &#x21E8; Compter le nombre d'opérations exécutées par l'algorithme afin de résoudre le problème donné</p>
 					</section>
-					<section data-menu-title="6.4.3.2 - Illustration">
+					<section id="6.4.3.2" data-menu-title="6.4.3.2 - Illustration">
 						<p>Soit un tableau $T$ un tableau d'entiers et $x$, un entier. Ci dessous, l'algorithme est_present qui détermine si $x$ est présent dans $T$ ?</p>
 						<pre><code class="language-python">Algorithme est_present(T, x)
 Entrée :
@@ -250,8 +250,43 @@ Fin</code></pre>
 							<br>Pour comparer des algorithmes, nous allons donc uniquement nous intéresser à ce que l'on appelle "l'ordre de grandeur asymptotique"
 						</p>
 					</section>
-					<section data-menu-title='6.4.3.3 - Ordre de grandeur'>
+					<section id="6.4.3.3" data-menu-title='6.4.3.3 - Ordre de grandeur'>
 						<h1>Ordre de grandeur asymptotique</h1>
+						<p>C'est une échelle de référence, qui considère les cas où l'ensemble des données en jeu est très grand.
+							<br>On note cet ordre de grandeur avec un $O$ majuscule.
+						</p>
+					</section>
+					<section>
+						<p>En reprenant l'exemple de l'algorithme est_present, le nombre de comparaisons calculé est $3n + 4$.
+						<br>Ce qui correspond à un ordre de grandeur asymptotique en $O(n)$</p>
+					</section>
+					<section>
+						<p>Pour obtenir l'ordre de grandeur à partir d'un polynome :</p>
+						<ul>
+							<li>Supprimer les constantes</li>
+							<li>Garder uniquement le $n$ qui possède l'exposant le plus grand</li>
+							<li>Supprimer le coefficient devant le $n$</li>
+						</ul>
+						<p class="fragment">Exemples : <br>
+							$$3n + 4 \Rightarrow {\color{red}\cancel{3}} n + {\color{red}\cancel{4}} \Rightarrow O(n)$$
+						$$6n^2 + 3n + 5 \Rightarrow {\color{red}\cancel{6}} n^2 + {\color{red}\cancel{3n}} + {\color{red}\cancel{5}} \Rightarrow O(n^2)$$</p>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>1. Écrire une version de l'algorithme est_present avec une boucle while, qui permet de déterminer si $x$ est présent dans le tableau $T$ et renvoyer cette information dès que l'algorithme trouve sa présence.</p>
+							<p>2. Déterminer la complexité de cet algorithme dans le meilleur et le pire des cas.</p>
+						</div>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>1. Écrire un algorithme permettant de trouver le plus grand entier présent dans un tableau. Vous ferez "tourner à la main" votre algorithme en utilisant le tableau t = [3,5,1,8,4,2]. </p>
+							<p>2. Déterminer la complexité de cet algorithme.</p>
+						</div>
+					</section>
+					<section>
+						<p class="img-container full">
+							<img src="../comparaison_complexite.png"/>
+						</p>
 					</section>
 				</section>
 			</div>
@@ -266,6 +301,20 @@ Fin</code></pre>
 		<script type="text/javascript">
 			initMode({ header : '6.4 - Preuves de programme'});
 			hljs.initHighlightingOnLoad();
+
+			function isInView(elem){
+			   return window.scrollY < elem.offsetHeight + elem.offsetTop;
+			}
+
+			window.addEventListener('scroll', function(){
+				let sections = document.querySelectorAll('section[data-menu-title]');
+				i = 0;
+				while (i < sections.length && !isInView(sections[i]))
+					i++;
+				if (i < sections.length)
+ 			  	console.log(sections[i].dataset.menuTitle);
+
+			});
 		</script>
 	</body>
 </html>

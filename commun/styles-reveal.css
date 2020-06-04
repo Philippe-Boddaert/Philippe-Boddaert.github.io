@@ -54,6 +54,10 @@
     vertical-align: text-top;
 }
 
+.full img {
+  width: auto;
+}
+
   section div.il {
       background-color: #eee;
       padding-bottom: 20px;
@@ -230,4 +234,12 @@
 
   .column {
     flex-direction: column;
+  }
+
+  .reveal table.adjacence th, .reveal table.adjacence td {
+    border: none;
+  }
+
+  .reveal table.adjacence td.case {
+    border : 1px solid black;
   }
