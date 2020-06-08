@@ -243,3 +243,15 @@
   .reveal table.adjacence td.case {
     border : 1px solid black;
   }
+
+  .half-width {
+    width : 50%;
+  }
+
+  .third-width, .img-container img.third-width {
+    width : 30%;
+  }
+
+  .center {
+    text-align: center;
+  }

@@ -48,14 +48,10 @@ Effet de bord : A la fin de l&#39;algorithme, le ballon est gonflé.
 					</section>
 				</section>
 				<section >
-					<section id="6.4.2" data-menu-title="6.4.2 - Terminaison / Correction">
-						<h1>Terminaison / Correction <a href="#haut">&#x21E7;</a></h1>
+					<section id="6.4.2" data-menu-title="6.4.2 - Terminaison">
+						<h1>Terminaison</h1>
 						<p>
-							Un algorithme :
-							<ul>
-								<li>Termine si l'ensemble de ses instructions terminent.</li>
-								<li>Est correct s'il effectue sans se tromper la tâche qui lui est confiée et ce dans tous les cas possibles.</li>
-							</ul>
+							Un algorithme termine si l'ensemble de ses instructions terminent.
 						</p>
 					</section>
 					<section>
@@ -72,8 +68,7 @@ Sortie : entier, correspondant à 2 * x
 							</p>
 							<div class="boiteReponses">
 								<div class="reponse column">
-									<p><b>Terminaison</b> : le nombre d’instructions à effectuer est connu à l’avance. L'algorithme est composé de 3 opérations élémentaires (*, <- et un renvoi) qui terminent.</p>
-									<p><b>Correction</b> : l’algorithme reproduit directement la spécification. La preuve de la correction est triviale.</p>
+									<p>Le nombre d’instructions à effectuer est connu à l’avance. L'algorithme est composé de 3 opérations élémentaires (*, &larr; et un renvoi) qui terminent.</p>
 								</div>
 							</div>
 						</div>
@@ -104,8 +99,7 @@ Sortie : entier, correspondant à l'age animal
 							</p>
 							<div class="boiteReponses">
 								<div class="reponse column">
-									<p><b>Terminaison</b> : L'algorithme n'est composé que d'opérations élémentaires qui terminent.</p>
-									<p><b>Correction</b> : l’algorithme reproduit directement les formules de calcul de la spécification.</p>
+									<p>L'algorithme n'est composé que d'opérations élémentaires qui terminent.</p>
 								</div>
 							</div>
 						</div>
@@ -125,8 +119,7 @@ Sortie : entier, correspondant à l'age animal
 							</p>
               <div class="boiteReponses">
                 <div class="reponse column">
-                  <p><b>Terminaison</b> : Il y a une boucle, mais le nombre de passages dans la boucle est connu a priori. Donc l’algorithme se termine toujours.</p>
-                  <p><b>Correction</b> : l’algorithme reproduit directement les formules de calcul de la spécification.</p>
+                  <p>Il y a une boucle, mais le nombre de passages dans la boucle est connu a priori. Donc l’algorithme se termine toujours.</p>
                 </div>
               </div>
             </div>
@@ -143,6 +136,28 @@ Fin</code></pre>
 						</div>
 					</section>
 					<section>
+						<h3>Comment déterminer qu'un algorithme termine ?</h3>
+						<p>On peut voir, par le biais des exemples ci-dessous, qu'en lisant la suite des instructions, nous avons l'intuition que les algorithmes terminent.
+							<br>Pour des algorithmes avec plus d'instructions, il nous faut un moyen formel de prouver la terminaison d'un algorithme.
+						</p>
+					</section>
+					<section>
+						<blockquote>Toute suite d’entiers naturels strictement décroissante est finie.<footer>3ème axiome fondamental de l'arithmétique</footer></blockquote>
+						<p>Il n’existe pas de suite infinie d'entiers naturels strictement décroissante.</p>
+						<p>Pour prouver la terminaison d'un algorithme, il suffit de trouver un entier naturel strictement décroissant pendant l'exécution de l'algorithme.</p>
+					</section>
+					<section>
+						<p>
+							Cet entier est appelé <span class="highlight">variant de boucle</span>. Pour identifier si une boucle se termine effectivement, il faut : </p>
+							<ul>
+								<li>identifier le variant de boucle et vérifier qu’il est positif,</li>
+								<li>vérifier qu’il décroît effectivement et strictement à chaque itération,</li>
+								<li>Dans le cas contraire, on rencontre une boucle infinie.</li>
+							</ul>
+					</section>
+					<section>
+					</section>
+					<section>
 						<div class="boiteQuestionsReponse">
 							<p>
 								Existe-t-il un algorithme qui permet de dire si un algorithme termine ?
@@ -154,33 +169,40 @@ Fin</code></pre>
 								</div>
 							</div>
 						</div>
-						<p>Déterminer si un algorithme termine</p>
-						<p>Il n’existe pas de suite infinie d'entiers naturels strictement décroissante. Autrement dit, une suite strictement décroissante d’entiers naturels est toujours finie.</p>
-						<p>Pour prouver la terminaison d'un algorithme, il suffit de trouver un entier naturel</p>
 					</section>
 				</section>
 				<section>
-					<section id="6.4.3" data-menu-title="6.4.3 - Complexité">
+					<section id='6.4.3' data-menu-title='6.4.3 - Correction'>
+					</section>
+				</section>
+				<section>
+					<section id="6.4.4" data-menu-title="6.4.4 - Complexité">
 						<h1>Complexité</h1>
 						<p class='img-container'>
 							<img src='../complexité.jpg'/>
 						</p>
 					</section>
-					<section id="6.4.3.1" data-menu-title='6.4.3.1 - Définition'>
+					<section id="6.4.4.1" data-menu-title='6.4.4.1 - Définition'>
 						<h1>Définition</h1>
-						<p>La notion de complexité d'un algorithme va rendre compte de son "efficacité". <br>Pour un même problème, par exemple trier un tableau, il existe plusieurs algorithmes, certains algorithmes sont plus "efficaces" que d'autres.</p>
-						<p>Il existe 2 types de complexité : la complexité en temps et la complexité en espace.</p>
+						<ul>
+							<li>Combien de temps prend un algorithme pour s'exécuter ?</li>
+							<li>Quelle quantité de mémoire utilise-t-il au cours de son exécution ?</li>
+						</ul>
+						<p>La notion de complexité d'un algorithme va permettre de répondre à ces 2 questions.
+							<br>La complexité d'un algorithme c'est une mesure d'efficacité (temporelle et spatiale) qui permet de comparer des algorithmes solutionnant le même problème.
+							<br>On dira qu'un algorithme A est plus efficace en temps qu'un algorithme B, si sa complexité en temps est moindre que celui de l'algorithme B.
+						</p>
 					</section>
 					<section>
 						<p>Nous nous intéresserons uniquement à la complexité en temps.
-						<br>On dira qu'un algorithme A est plus efficace en temps qu'un algorithme B, si sa complexité en temps est moindre que celui de l'algorithme B.</p>
+						</p>
 					</section>
 					<section>
 						<h2>Comment calculer la complexité ?</h2>
 						<p>Calculer la complexité &#x21E8; Compter le nombre d'opérations exécutées par l'algorithme afin de résoudre le problème donné</p>
 					</section>
-					<section id="6.4.3.2" data-menu-title="6.4.3.2 - Illustration">
-						<p>Soit un tableau $T$ un tableau d'entiers et $x$, un entier. Ci dessous, l'algorithme est_present qui détermine si $x$ est présent dans $T$ ?</p>
+					<section id="6.4.4.2" data-menu-title="6.4.4.2 - Illustration">
+						<p>Soit un tableau $T$ un tableau d'entiers et $x$, un entier. Ci dessous, l'algorithme est_present qui détermine si $x$ est présent dans $T$.</p>
 						<pre><code class="language-python">Algorithme est_present(T, x)
 Entrée :
 Sortie :
@@ -250,7 +272,7 @@ Fin</code></pre>
 							<br>Pour comparer des algorithmes, nous allons donc uniquement nous intéresser à ce que l'on appelle "l'ordre de grandeur asymptotique"
 						</p>
 					</section>
-					<section id="6.4.3.3" data-menu-title='6.4.3.3 - Ordre de grandeur'>
+					<section id="6.4.4.3" data-menu-title='6.4.4.3 - Ordre de grandeur'>
 						<h1>Ordre de grandeur asymptotique</h1>
 						<p>C'est une échelle de référence, qui considère les cas où l'ensemble des données en jeu est très grand.
 							<br>On note cet ordre de grandeur avec un $O$ majuscule.

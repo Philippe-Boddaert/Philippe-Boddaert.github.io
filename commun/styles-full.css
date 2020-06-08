@@ -169,6 +169,7 @@ section div.boiteLiens {
     padding-bottom: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px green;
 }
 section div.boiteLiens::before {
     display: block;
@@ -188,6 +189,7 @@ section div.boiteConseils {
     padding-bottom: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px #fa0;
 }
 section div.boiteConseils::before {
     display: block;
@@ -206,6 +208,7 @@ section div.boiteSynthese {
     padding-bottom: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px red;
 }
 section div.boiteSynthese::before {
     display: block;
@@ -224,6 +227,7 @@ section div.boiteHistoire {
     padding-bottom: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px #090;
 }
 section div.boiteHistoire::before {
     display: block;
@@ -243,6 +247,7 @@ section div.boiteQuestions, section div.boiteQuestionsReponse {
     padding-bottom: 0px;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px #069;
 }
 
 section div.boiteQuestions {
@@ -298,6 +303,7 @@ section div.boiteTravail {
     padding-bottom: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
 }
 section div.boiteTravail::before {
     display: block;
@@ -593,4 +599,16 @@ table.adjacence td.case {
   flex : 1 1 auto;
   align-items: center;
   flex-direction: column;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.third-width, .img-container img.third-width {
+  width : 30%;
+}
+
+.center {
+  text-align: center;
 }
