@@ -582,3 +582,15 @@ table.adjacence th, table.adjacence td {
 table.adjacence td.case {
   border : 1px solid black;
 }
+
+.algorithm {
+  display: flex;
+  align-items: center;
+}
+
+.algorithm > div {
+  display: flex;
+  flex : 1 1 auto;
+  align-items: center;
+  flex-direction: column;
+}
