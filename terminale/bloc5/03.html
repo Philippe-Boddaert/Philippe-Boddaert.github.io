@@ -21,6 +21,34 @@
 					</ul>
 					<p>Voici quelques problèmes modélisables par un graphe. Nous allons voir dans cette section les algorithmes de résolution à partir de graphe.</p>
 				</section>
+				<section>
+					<section data-menu-title="5.3.2 - Les 7 Ponts de Königsberg">
+						<h2>Les 7 points de Königsberg</h2>
+						<p>La ville de Königsberg (aujourd’hui Kaliningrad en Russie) se situe sur la rivière Pregolia et comporte deux îles. Sept ponts relient les îles entre elles ou aux rives, comme sur la figure ci-dessous.</p>
+						<p class="img-container">
+							<img src='../7ponts.png' />
+						</p>
+					</section>
+					<section>
+						<p><p>Les habitants se posaient la question de savoir s’il existait une promenade permettant de passer une et une seule fois sur chaque pont pour revenir au point de départ.</p>
+						<div class="boiteTravail">
+							<p>Quelle réponse auriez-vous donner aux habitants de Königsberg ?</p>
+						</div>
+					</section>
+					<section>
+						<p>La modélisation de ce problème (graphe ci-dessous) a l’intérêt de se généraliser.</p>
+						<p id="e1" class="img-container full"></p>
+						<p>Recherche de cycle</p>
+						<p>Pour que l’on puisse faire une promenade ramenant le promeneur au point de départ, il faudrait que le nombre de ponts pour chaque île et chaque rive soit pair.</p>
+					</section>
+				</section>
+					<section data-menu-title='5.3.3 - Parcours'>
+						<h2>Parcours de graphe</h2>
+						<p>Ils nous serviront souvent en tant que procédures
+de base pour d'autres algorithmes.</p>
+					</section>
+					<section data-menu-title="5.3.4 - Recherche du plus court chemin">
+					</section>
 			</div>
 		</div>
 
@@ -33,6 +61,29 @@
 			initMode({
 				header : 'Bloc 5 : Algorithmique'
 			});
+		</script>
+		<script src="../../lib/viz/viz.js" type="text/javascript"></script>
+    <script src="../../lib/viz/full.render.js" type="text/javascript"></script>
+		<script type='text/javascript'>
+			var viz = new Viz();
+				viz.renderSVGElement(`
+					graph G {
+					 		{rank=min C}
+							{rank=same D A}
+							C -- A;
+							A -- C;
+							A -- B;
+							B -- A;
+							D -- C;
+							D -- A [style=invis];
+							D -- B;
+							A -- D;
+					}
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e1').appendChild(element);
+				});
     </script>
 	</body>
 </html>

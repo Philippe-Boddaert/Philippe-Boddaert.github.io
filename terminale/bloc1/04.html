@@ -132,6 +132,13 @@
 						<p id="e4" class="img-container full"></p>
 					</section>
 				</section>
+				<section data-menu-title='Vocabulaire'>
+					<h1>Vocabulaire</h1>
+					<p>Sommets adjacents :</p>
+					<p>Degré d'un sommet, noté $deg(s)$ : Nombre d’arêtes qui le relient aux autres sommets.</p>
+					<p>Ordre d’un graphe : Nombre de sommets d'un graphe. </p>
+					<p id="e7" class="img-container full"></p>
+				</section>
 				<section>
 					<section id="1.4.5" data-menu-title="1.4.5 - Implémentation">
 						<h1>Implémentation</h1>
@@ -341,6 +348,32 @@
 				.then(function(element) {
 					element.className = 'responsive';
 					document.getElementById('e3').appendChild(element);
+				});
+
+				viz.renderSVGElement(`
+					digraph G {
+						label = <Fig3. Graphe orienté d'<font color="limegreen">ordre 7</font> >;
+						node [fontcolor=limegreen];
+						{rank=min A}
+						{rank=same D C B F}
+						D [xlabel= < <table BORDER="0" CELLPADDING="0" CELLSPACING="0"><tr><td><font color="black">d<SUP>-</SUP>(D) =</font></td><td><font color="red">2</font></td></tr><tr><td><font color="black">d<SUP>+</SUP>(D) = </font></td><td><font color="blue">1</font></td></tr></table>>];
+						 A -> C;
+						 B -> A;
+						 A -> D [color=red];
+						 C -> A;
+						 B -> F;
+						 E -> B;
+						 B -> G;
+						 G -> B;
+						 D -> G [color=blue];
+						 G -> D [color=red];
+						 E -> F;
+						 F -> E;
+					}				 
+					`, { engine : 'dot'})
+				.then(function(element) {
+					element.className = 'responsive';
+					document.getElementById('e7').appendChild(element);
 				});
 
 				viz.renderSVGElement(`
