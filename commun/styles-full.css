@@ -416,6 +416,10 @@ nav > div > section {
   vertical-align: text-top;
 }
 
+.img-container img.full-width{
+  width : 100%;
+}
+
 .full img {
   width: auto;
 }
@@ -602,6 +606,10 @@ table.adjacence td.case {
   flex-direction: column;
 }
 
+.full-width {
+  width : 100%;
+}
+
 .half-width {
   width: 50%;
 }
@@ -612,4 +620,9 @@ table.adjacence td.case {
 
 .center {
   text-align: center;
+}
+
+svg {
+    height: 100%;
+    width: auto;
 }
