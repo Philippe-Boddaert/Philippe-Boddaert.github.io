@@ -11,7 +11,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-menu-title='5.3.1 - Contexte'>
+				<section id="5.3.1" data-menu-title='5.3.1 - Contexte'>
 					<h1>Contexte</h1>
 					<ul>
 						<li>Sortir d'un labyrinthe,</li>
@@ -24,6 +24,8 @@
 				<section>
 					<section data-menu-title="5.3.2 - Les 7 Ponts de Königsberg">
 						<h2>Les 7 ponts de Königsberg</h2>
+					</section>
+					<section>
 						<p>La ville de Königsberg (aujourd’hui Kaliningrad en Russie) se situe sur la rivière Pregolia et comporte deux îles. Sept ponts relient les îles entre elles ou aux rives, comme sur la figure ci-dessous.</p>
 						<p class="img-container">
 							<img src='../7ponts.png' />
@@ -31,6 +33,11 @@
 					</section>
 					<section>
 						<p><p>Les habitants se posaient la question de savoir s’il existait une promenade permettant de passer une et une seule fois sur chaque pont pour revenir au point de départ.</p>
+						<p class="img-container">
+							<img src='../7ponts.png' />
+						</p>
+					</section>
+					<section>
 						<div class="boiteTravail">
 							<p>Quelle réponse auriez-vous donner aux habitants de Königsberg ?</p>
 						</div>
@@ -51,13 +58,13 @@
 						</p>
 					</section>
 					<section>
+						<p>Répondre au problème des habitants de Königsberg consiste à déterminer si le graphe contient un cycle eulérien ou non.</p>
+						<p id="e1" class="img-container full"></p>
+					</section>
+					<section>
 						<h3>Théorème d'Euler</h3>
 						<blockquote>(i) Un graphe connexe admet une chaîne eulérienne entre les sommets $A$ et $B$ si et seulement si $A$ et $B$ sont les seuls sommets de degré impair.</blockquote>
 						<blockquote>(ii) Un graphe connexe admet un cycle eulérien si et seulement si tous les sommets sont de degré pair.</blockquote>
-					</section>
-					<section>
-						<p>Répondre au problème des habitants de Königsberg consiste à déterminer si le graphe contient un cycle eulérien ou non.</p>
-						<p id="e1" class="img-container full"></p>
 					</section>
 					<section>
 						<div class="boiteTravail">
