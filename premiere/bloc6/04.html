@@ -188,18 +188,18 @@ Fin</code></pre>
 							<li>Combien de temps prend un algorithme pour s'exécuter ?</li>
 							<li>Quelle quantité de mémoire utilise-t-il au cours de son exécution ?</li>
 						</ul>
-						<p>La notion de complexité d'un algorithme va permettre de répondre à ces 2 questions.
-							<br>La complexité d'un algorithme c'est une mesure d'efficacité (temporelle et spatiale) qui permet de comparer des algorithmes solutionnant le même problème.
-							<br>On dira qu'un algorithme A est plus efficace en temps qu'un algorithme B, si sa complexité en temps est moindre que celui de l'algorithme B.
-						</p>
+						<p>La notion de complexité d'un algorithme va permettre de répondre à ces 2 questions.</p>
 					</section>
 					<section>
-						<p>Nous nous intéresserons uniquement à la complexité en temps.
+						<p>La complexité d'un algorithme c'est une mesure d'efficacité (temporelle et spatiale) qui permet de comparer des algorithmes solutionnant le même problème.
+							<br/>On dira qu'un algorithme A est plus efficace en temps qu'un algorithme B, si sa complexité en temps est moindre que celui de l'algorithme B.
+							<br/>Nous nous intéresserons uniquement à la complexité en temps.
 						</p>
 					</section>
 					<section>
 						<h2>Comment calculer la complexité ?</h2>
-						<p>Calculer la complexité &#x21E8; Compter le nombre d'opérations exécutées par l'algorithme afin de résoudre le problème donné</p>
+						<p>Une mesure naturelle de la complexité d'un algorithme serait d'exécuter l'algorithme et calculer le temps d'exécution réel. Il s'agit d'une très mauvaise mesure. En effet, elle dépend de beaucoup de paramètres : le compilateur, le langage de programmation, la machine,...</p>
+						<p>C'est pourquoi la mesure de complexité utilisée est le nombre d'opérations de l'algorithme. Cette mesure a l'avantage d'être indépendante de la machine et du langage, et d'être évaluable sur le papier.</p>
 					</section>
 					<section id="6.4.4.2" data-menu-title="6.4.4.2 - Illustration">
 						<p>Soit un tableau $T$ un tableau d'entiers et $x$, un entier. Ci dessous, l'algorithme est_present qui détermine si $x$ est présent dans $T$.</p>
@@ -309,6 +309,87 @@ Fin</code></pre>
 						<p class="img-container full">
 							<img src="../comparaison_complexite.png"/>
 						</p>
+					</section>
+					<section>
+						<p>Voici un tableau dans lequel le temps de calcul de différentes complexités algorithmiques est présenté, en fonction de la taille des données.</p>
+						<table class='responsive'>
+							<thead>
+								<tr>
+									<th></th>
+									<th>$n = 2$</th>
+									<th>$n = 16$</th>
+									<th>$n = 256$</th>
+									<th>$n = 1024$</th>
+									<th>$n = 1048576$</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>1</th>
+									<td>1 &micro;s</td>
+									<td>1 &micro;s</td>
+									<td>1 &micro;s</td>
+									<td>1 &micro;s</td>
+									<td>1 &micro;s</td>
+								</tr>
+								<tr>
+									<th>$\log n$</th>
+									<td>1 &micro;s</td>
+									<td>4 &micro;s</td>
+									<td>8 &micro;s</td>
+									<td>10 &micro;s</td>
+									<td>20 &micro;s</td>
+								</tr>
+								<tr>
+									<th>$n$</th>
+									<td>2 &micro;s</td>
+									<td>16 &micro;s</td>
+									<td>256 &micro;s</td>
+									<td>1.02 ms</td>
+									<td>1.05 s</td>
+								</tr>
+								<tr>
+									<th>$n \log n$</th>
+									<td>2 &micro;s</td>
+									<td>64 &micro;s</td>
+									<td>2.05 ms</td>
+									<td>10.2 ms</td>
+									<td>21 s</td>
+								</tr>
+								<tr>
+									<th>$n^2$</th>
+									<td>4 &micro;s</td>
+									<td>25.6 &micro;s</td>
+									<td>65.5 ms</td>
+									<td>1.05 ms</td>
+									<td>12.6 jours</td>
+								</tr>
+								<tr>
+									<th>$n^3$</th>
+									<td>8 &micro;s</td>
+									<td>4.1 ms</td>
+									<td>16.8 s</td>
+									<td>17.9 min</td>
+									<td>36559 ans</td>
+								</tr>
+								<tr>
+									<th>$2^n$</th>
+									<td>4 &micro;s</td>
+									<td>65.5 ms</td>
+									<td>366922 ans</td>
+									<td>569654 ans</td>
+									<td>2136138 ans</td>
+								</tr>
+								<tr>
+									<th>$n^n$</th>
+									<td>4 &micro;s</td>
+									<td>584542 ans</td>
+									<td>1024064 ans</td>
+									<td>-</td>
+									<td>-</td>
+								</tr>
+							</tbody>
+						</table>
 					</section>
 				</section>
 			</div>
