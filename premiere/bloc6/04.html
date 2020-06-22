@@ -275,12 +275,12 @@ Fin</code></pre>
 					<section id="6.4.4.3" data-menu-title='6.4.4.3 - Ordre de grandeur'>
 						<h1>Ordre de grandeur asymptotique</h1>
 						<p>C'est une échelle de référence, qui considère les cas où l'ensemble des données en jeu est très grand.
-							<br>On note cet ordre de grandeur avec un $O$ majuscule.
+							<br>On note cet ordre de grandeur avec un $\mathcal{O}$ majuscule.
 						</p>
 					</section>
 					<section>
 						<p>En reprenant l'exemple de l'algorithme est_present, le nombre de comparaisons calculé est $3n + 4$.
-						<br>Ce qui correspond à un ordre de grandeur asymptotique en $O(n)$</p>
+						<br>Ce qui correspond à un ordre de grandeur asymptotique en $\mathcal{O}(n)$</p>
 					</section>
 					<section>
 						<p>Pour obtenir l'ordre de grandeur à partir d'un polynome :</p>
@@ -290,8 +290,8 @@ Fin</code></pre>
 							<li>Supprimer le coefficient devant le $n$</li>
 						</ul>
 						<p class="fragment">Exemples : <br>
-							$$3n + 4 \Rightarrow {\color{red}\cancel{3}} n + {\color{red}\cancel{4}} \Rightarrow O(n)$$
-						$$6n^2 + 3n + 5 \Rightarrow {\color{red}\cancel{6}} n^2 + {\color{red}\cancel{3n}} + {\color{red}\cancel{5}} \Rightarrow O(n^2)$$</p>
+							$$3n + 4 \Rightarrow {\color{red}\cancel{3}} n + {\color{red}\cancel{4}} \Rightarrow \mathcal{O}(n)$$
+						$$6n^2 + 3n + 5 \Rightarrow {\color{red}\cancel{6}} n^2 + {\color{red}\cancel{3n}} + {\color{red}\cancel{5}} \Rightarrow \mathcal{O}(n^2)$$</p>
 					</section>
 					<section>
 						<div class="boiteTravail">
@@ -316,16 +316,16 @@ Fin</code></pre>
 							<thead>
 								<tr>
 									<th></th>
-									<th>$n = 2$</th>
-									<th>$n = 16$</th>
-									<th>$n = 256$</th>
-									<th>$n = 1024$</th>
-									<th>$n = 1048576$</th>
+									<th>$n = 1$</th>
+									<th>$n = 10$</th>
+									<th>$n = 100$</th>
+									<th>$n = 1000$</th>
+									<th>$n = 1000000$</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<th>1</th>
+									<th>$\mathcal{O}(1)$</th>
 									<td>1 &micro;s</td>
 									<td>1 &micro;s</td>
 									<td>1 &micro;s</td>
@@ -333,58 +333,58 @@ Fin</code></pre>
 									<td>1 &micro;s</td>
 								</tr>
 								<tr>
-									<th>$\log n$</th>
+									<th>$\mathcal{O}(\log{}n)$</th>
 									<td>1 &micro;s</td>
 									<td>4 &micro;s</td>
-									<td>8 &micro;s</td>
+									<td>7 &micro;s</td>
 									<td>10 &micro;s</td>
 									<td>20 &micro;s</td>
 								</tr>
 								<tr>
-									<th>$n$</th>
+									<th>$\mathcal{O}(n)$</th>
+									<td>1 &micro;s</td>
+									<td>10 &micro;s</td>
+									<td>100 &micro;s</td>
+									<td>1 ms</td>
+									<td>1 s</td>
+								</tr>
+								<tr>
+									<th>$\mathcal{O}(n\log{}n)$</th>
+									<td>1 &micro;s</td>
+									<td>4 &micro;s</td>
+									<td>700 &micro;s</td>
+									<td>10 ms</td>
+									<td>20 s</td>
+								</tr>
+								<tr>
+									<th>$\mathcal{O}(n^2)$</th>
+									<td>1 &micro;s</td>
+									<td>100 &micro;s</td>
+									<td>10 ms</td>
+									<td>1 s</td>
+									<td>11.57 jours</td>
+								</tr>
+								<tr>
+									<th>$\mathcal{O}(n^3)$</th>
+									<td>1 &micro;s</td>
+									<td>1 ms</td>
+									<td>1 s</td>
+									<td>16.67 min</td>
+									<td>31709 ans</td>
+								</tr>
+								<tr>
+									<th>$\mathcal{O}(2^n)$</th>
 									<td>2 &micro;s</td>
-									<td>16 &micro;s</td>
-									<td>256 &micro;s</td>
-									<td>1.02 ms</td>
-									<td>1.05 s</td>
+									<td>1.024 ms</td>
+									<td>401969368413314 siècles</td>
+									<td>-</td>
+									<td>-</td>
 								</tr>
 								<tr>
-									<th>$n \log n$</th>
-									<td>2 &micro;s</td>
-									<td>64 &micro;s</td>
-									<td>2.05 ms</td>
-									<td>10.2 ms</td>
-									<td>21 s</td>
-								</tr>
-								<tr>
-									<th>$n^2$</th>
-									<td>4 &micro;s</td>
-									<td>25.6 &micro;s</td>
-									<td>65.5 ms</td>
-									<td>1.05 ms</td>
-									<td>12.6 jours</td>
-								</tr>
-								<tr>
-									<th>$n^3$</th>
-									<td>8 &micro;s</td>
-									<td>4.1 ms</td>
-									<td>16.8 s</td>
-									<td>17.9 min</td>
-									<td>36559 ans</td>
-								</tr>
-								<tr>
-									<th>$2^n$</th>
-									<td>4 &micro;s</td>
-									<td>65.5 ms</td>
-									<td>366922 ans</td>
-									<td>569654 ans</td>
-									<td>2136138 ans</td>
-								</tr>
-								<tr>
-									<th>$n^n$</th>
-									<td>4 &micro;s</td>
-									<td>584542 ans</td>
-									<td>1024064 ans</td>
+									<th>$\mathcal{O}(n!)$</th>
+									<td>1 &micro;s</td>
+									<td>3.62 s</td>
+									<td>2.9e+142 siècles</td>
 									<td>-</td>
 									<td>-</td>
 								</tr>
