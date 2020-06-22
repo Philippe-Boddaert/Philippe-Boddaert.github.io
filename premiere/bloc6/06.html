@@ -11,10 +11,158 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section id="6.6" data-menu-title="6.6.1 - Algorithmes gloutons">
+				<section id="6.6.1" data-menu-title="6.6.1 - Algorithmes gloutons">
 						<h1>Algorithmes gloutons</h1>
 						<hr />
 						<p class="img-container"><img src="./pacman.gif"/></p>
+				</section>
+				<section>
+					<section id="6.6.2" data-menu-title="6.6.2 - Illustration">
+						<h1>Illustration</h1>
+						<h2>Problème du sac à dos</h2>
+						<p>Un cambrioleur possède un sac à dos d'une contenance maximum de 30 Kg. Au cours d'un de ses cambriolages, il a la possibilité de dérober 4 objets A, B, C et D.
+							Voici un tableau qui résume les caractéristiques de ces objets :
+						</p>
+						<table>
+							<thead>
+								<tr>
+									<th>objet</th>
+									<th>A</th>
+									<th>B</th>
+									<th>C</th>
+									<th>D</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Masse</th>
+									<td>13 kg</td>
+									<td>12 kg</td>
+									<td>8 kg</td>
+									<td>10 kg</td>
+								</tr>
+								<tr>
+									<th>Valeur marchande</th>
+									<td>700 €</td>
+									<td>400 €</td>
+									<td>300 €</td>
+									<td>300 €</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Déterminer les objets que le cambrioleur aura intérêt à dérober, sachant que :</p>
+							<ul>
+								<li>Tous les objets dérobés devront tenir dans le sac à dos (30 Kg maxi),</li>
+								<li>le cambrioleur cherche à obtenir un gain maximum.</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<p>
+							Ce genre de problème est un grand classique en informatique, on parle de problème d'optimisation. Il existe toujours plusieurs solutions possibles à un problème d'optimisation (dans le problème du sac à dos, on peut choisir A+B ou A+C ou B+C+D... toutes les combinaisons sont possibles à partir du moment où la masse totale ne dépasse pas 30 Kg), mais on ne cherche pas n'importe quelle solution, on cherche une solution dite optimale : dans notre exemple on cherche le plus grand gain possible. Souvent, dans les problèmes d'optimisation, il n'existe pas une solution optimale, mais plusieurs solutions optimales, résoudre un problème d'optimisation c'est donc trouver une des solutions optimales.
+						</p>
+					</section>
+					<section>
+						<div class="boiteQuestions">
+							<p>Quel est l'algorithme qui permet de trouver une solution optimale au problème du sac à dos ?</p>
+						</div>
+					</section>
+					<section>
+						<p>En apparence, la solution la plus simple dans le cas du sac à dos serait d'écrire un algorithme qui calcule toutes les combinaisons d'objets possibles et qui retient les solutions qui offrent un gain maximum.</p>
+						<div class="boiteTravail">
+							<p>Lister les combinaisons à tester dans l'illustration du problème du sac à dos avec 4 objets ?</p>
+						</div>
+					</section>
+					<section>
+						<p>En généralisant le résultat obtenu, soit $C_{sac}$, le nombre de combinaisons à tester pour le problème du sac à objets avec $n$ objets est définit par :
+						$$ C_{sac} = \sum_{i = 0}^{n} C_{i}^{n} = \sum_{i = 0}^{n} \dfrac{n!}{i!\,(n - i)!}$$
+						Or, d'après la formule du binôme de Newton,
+						$$ \sum_{i = 0}^{n} C_i^n = a^n \mbox{, où } a \mbox{ est une constante.}$$</p>
+					</section>
+					<section>
+						<p>Autrement dit, un algorithme qui testerait toutes les combinaisons possibles aurait une complexité en $\mathcal{O}(a^n)$, ce qui est inefficace dans la pratique (Cf. <a href="04.html?style=full#6.4.4.3">Complexité</a>).</p>
+						<p>À la place de cette méthode "je teste toutes les possibilités", il est possible d'utiliser une méthode dite gloutonne (greedy en anglais).</p>
+					</section>
+				</section>
+				<section>
+					<section id="6.6.3" data-menu-title="6.6.3 - Définition">
+						<h1>Définition</h1>
+						<p>La résolution d'un problème d'optimisation se fait généralement par étapes : à chaque étape on doit faire un choix. Par exemple, dans le problème du sac à dos, nous ajoutons les objets un par un, chaque ajout d'un objet constitue une étape: à chaque étape on doit choisir un objet à mettre dans le sac.</p>
+					</section>
+					<section>
+						<p>Le principe de la méthode gloutonne est de, à chaque étape de la résolution du problème, faire le choix qui semble le plus pertinent sur le moment, avec l'espoir qu'au bout du compte, cela nous conduira vers une solution optimale du problème à résoudre.</p>
+						<p>Autrement dit, on fait des choix localement optimaux dans l'espoir que ces choix mèneront à une solution globalement optimale.</p>
+					</section>
+				</section>
+				<section>
+					<p>Appliquons une méthode gloutonne à la résolution du problème du sac à dos, sachant que l'on cherche à maximiser le gain.</p>
+					<p>1 - commençons par établir un tableau nous donnant la "valeur massique" de chaque objet (pour chaque objet on divise sa valeur par sa masse) :</p>
+					<table>
+						<thead>
+							<tr>
+								<th>objet</th>
+								<th>A</th>
+								<th>B</th>
+								<th>C</th>
+								<th>D</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Valeur massique</th>
+								<td>54 €/kg</td>
+								<td>33 €/kg</td>
+								<td>38 €/kg</td>
+								<td>30 €/kg</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<p>2 - On classe ensuite les objets par ordre décroissant de valeur massique,</p>
+					<p>3 - Enfin, on remplit le sac en prenant les objets dans l'ordre et en s'arrêtant dès que la masse limite est atteinte.</p>
+					<p>&rArr; C'est ici que ce fait "le choix glouton", à chaque étape, on prend l'objet ayant le rapport "valeur-masse" le plus intéressant au vu des objectifs.</p>
+				</section>
+				<section>
+					<div class="boiteTravail">
+						<p>Selon la démarche ci-dessus, écrire l'algorithme remplir_sac, qui prend un tableau d'objets (poids, valeur) et renvoie la collection d'objets sélectionnés.</p>
+						<p>Calculer la complexité de l'algorithme en fonction du nombre de tests</p>
+					</div>
+				</section>
+				<section>
+					<p>En appliquant l'algorithme sur l'exemple de départ, le sac est composé de 2 objets : A et C pour un montant total de 1000 € et une masse totale de 21 Kg.</p>
+					<div class="boiteQuestions">
+						<p>La solution trouvée ci-dessus est-elle optimale ?</p>
+					</div>
+				</section>
+				<section>
+					<p>On constate rapidement que la réponse est non, car le couple A + B permet d'atteindre une valeur de 1100 € pour une masse de 25 Kg.
+						<br>Dans notre problème, la méthode gloutonne ne nous donne pas une solution optimale.
+					</p>
+					<p>
+						Plus généralement , il est important de bien comprendre qu'un algorithme glouton ne donne pas forcement une solution optimale. Pour certains types de problèmes, il est possible de démontrer qu'un algorithme glouton donnera toujours une solution optimale, mais cela dépasse largement le cadre de ce cours.
+					</p>
+				</section>
+				<section>
+					<section id="6.6.4" data-menu-title="6.6.4 - Problème du rendu de monnaie">
+						<h2>Problème du rendu de monnaie</h2>
+						<p>Vous êtes des commerçants, vous avez à votre disposition un nombre illimité de pièces de :</p>
+						<figure class="img-container">
+							<img src="monnaie.png"  aria-label="1, 2, 5, 10, 20, 50 centimes et 1, 2 €."/>
+							<figcaption>1, 2, 5, 10, 20, 50 centimes et 1, 2 €.</figcaption>
+						</figure>
+						<p>Vous devez rendre la monnaie à un client à l'aide de ces pièces. La contrainte est d'utiliser le moins de pièces possible.</p>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Trouver une méthode gloutonne et écrire l'algorithme permettant d'effectuer un rendu de monnaie (en utilisant le moins possible de pièces).
+								<br/>Vous devez rendre la somme de 2,63 €, appliquez la méthode que vous venez de mettre au point.
+								<br/>Combien de pièces avez-vous utilisées ?
+							</p>
+					</section>
 				</section>
 			</div>
 		</div>
@@ -25,15 +173,7 @@
 		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
 		<script src="../../lib/reveal/js/reveal.js"></script>
 		<script type="text/javascript">
-			initMode({ header : 'Bloc 6 - Algorithmique', menu : [,
-								{ "src" : "00.html", "title" : "6.0 - Objectifs"},
-								{ "src" : "01.html", "title" : "6.1 - Compétences"},
-								{ "src" : "02.html", "title" : "6.2 - Présentation"},
-								{ "src" : "03.html", "title" : "6.3 - Les tris"},
-								{ "src" : "04.html", "title" : "6.4 - Preuve de programme"},
-								{ "src" : "#", "title" : "6.5 - Algorithmes des k plus proches voisins"},
-								{ "src" : "06.html", "title" : "6.6 - Algorithmes gloutons"}
-							]});
+			initMode({ header : 'Bloc 6 - Algorithmique'});
 			hljs.initHighlightingOnLoad();
 		</script>
 	</body>
