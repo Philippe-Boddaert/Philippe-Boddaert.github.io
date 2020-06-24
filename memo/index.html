@@ -15,42 +15,68 @@
           <h1>NSI</h1>
           <div class="content">
             <section>
+              <h1>Les suites</h1>
+            <section>
               <h1>Suite arithmétique</h1>
-              <blockquote> Définition : Une suite $u_n$ est une suite arithmétique s'il existe un nombre $r$ tel que pour tout entier $n$, on a : $u_{n + 1} = u_n + r$.
+              <h2>Définition</h2>
+              <blockquote>Une suite $u_n$ est une suite arithmétique s'il existe un nombre $r$ tel que pour tout entier $n$, on a : $$ u_{n + 1} = u_n + r $$
                 Le nombre $r$ est appelé raison de la suite.
               </blockquote>
+              <h2>Terme général</h2>
               <blockquote>
-                Propriété : $u_n$ est une suite arithmétique de raison $r$ et de premier terme $u_0$. Pour tout entier naturel $n$, on a : $u_n = u_0 + n\,r$.
+                 $u_n$ est une suite arithmétique de raison $r$ et de premier terme $u_0$.<br/>Pour tout entier naturel $n$, on a : $$ u_n = u_0 + n\,r $$.
               </blockquote>
+              <h2>Somme des termes consécutifs</h2>
               <blockquote>
-                Somme des termes consécutifs : $n$ est un entier naturel non nul alors on a : $1 + 2 + 3 + \dots + n = \frac{n \times (n + 1)}{2}$.
+                 Soit $n$ est un entier naturel non nul alors on a : $$ S_n = 1 + 2 + 3 + \dots + n = \frac{n \times (n + 1)}{2} $$.
+                 En généralisant,
+                 $$ S_n = \mbox{nombre de termes} \times \dfrac{\mbox{premier terme} + \mbox{dernier terme}}{2} $$
               </blockquote>
             </section>
             <section>
               <h1>Suite géométrique</h1>
-              <blockquote> Définition : : Une suite $u_n$ est une suite géométrique s'il existe un nombre $q$ tel que pour tout entier $n$, on a : $u_{n + 1} = q \times u_n$. Le nombre $q$ est appelé raison de la suite.
+              <h2>Définition</h2>
+              <blockquote>Une suite $u_n$ est une suite géométrique s'il existe un nombre $q$ tel que pour tout entier $n$, on a : $$u_{n + 1} = q \times u_n$$
+                Le nombre $q$ est appelé raison de la suite.
               </blockquote>
+              <h2>Terme général</h2>
               <blockquote>
-                Propriété : $u_n$ est une suite géométrique de raison $q$ et de premier terme $u_0$. Pour tout entier naturel $n$, on a : $u_n = u_0 \times q^n$.
+                $u_n$ est une suite géométrique de raison $q$ et de premier terme $u_0$. Pour tout entier naturel $n$, on a : $$u_n = u_0 \times q^n$$
               </blockquote>
+              <h2>Somme des termes consécutifs</h2>
               <blockquote>
-                Somme des termes consécutifs : $n$ est un entier naturel non nul et $q$ un réel différent de 1 alors on a : $1 + q + q^2 + \dots + q^n = \frac{1 − q^{n + 1}}{1 - q}$.
+                Soit $n$ est un entier naturel non nul et $q$ un réel différent de 1 alors on a : $$ S_n = 1 + q + q^2 + \dots + q^n = \frac{1 − q^{n + 1}}{1 - q} $$
+                En généralisant,
+                $$ S_n = \mbox{premier terme} \times \dfrac{1 - q^{\mbox{nombre de termes}}}{1 - q} $$
               </blockquote>
             </section>
             <section>
               <h1>Suite arithmético-géométrique</h1>
-              <blockquote> Définition : Une suite $u_n \in \mathbb{N}$ à valeurs dans $K$ est dite arithmético-géométrique s'il existe deux éléments $a$ et $b$ de $K$ tels que la suite vérifie la relation de récurrence suivante :
+              <h2>Définition</h2>
+              <blockquote>Une suite $u_n \in \mathbb{N}$ à valeurs dans $K$ est dite arithmético-géométrique s'il existe deux éléments $a$ et $b$ de $K$ tels que la suite vérifie la relation de récurrence suivante :
                 $\forall n\in \mathbb {N}$ ,$u_{n+1}=a\,u_{n}+b.$
               </blockquote>
+              <h2>Terme général</h2>
               <blockquote>
-                Propriété : En posant $r={\frac {b}{1-a}}$, on a :
+                En posant $r={\frac {b}{1-a}}$, on a :
                 $\forall n\in \mathbb{N}$ ,$u_{n} = a^{n}(u_{0}-r)+r$.
               </blockquote>
+              <h2>Somme des termes consécutifs</h2>
               <blockquote>
-                Somme des termes consécutifs : Si $a \neq 1$, toujours en posant $r = \frac{b}{1 – a}$, la somme des $n$ premiers termes (de $0$ à $n – 1$) est :
+                Si $a = 1$, on a affaire à une suite arithmétique, donc : $$ S_n = \dfrac{n \times (n + 1)}{2} $$
+              </blockquote>
+              <blockquote>
+                Si $a \neq 1$, toujours en posant $r = \frac{b}{1 – a}$, la somme des $n$ premiers termes (de $0$ à $n – 1$) est :
                 $$ S_{n}=\sum_{k=0}^{n-1}u_{k}=(u_{0}-r){\dfrac {1-a^{n}}{1-a}}+nr $$.
               </blockquote>
             </section>
+          </section>
+          <section>
+            <h1>Combinatoire</h1>
+            <section>
+              <h1>Permutation</h1>
+            </section>
+          </section>
           </div>
       		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
       		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
