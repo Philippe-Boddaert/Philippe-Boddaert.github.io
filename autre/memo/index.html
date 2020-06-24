@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Mémo</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script src="../../commun/commun.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+          <section>
+						<section data-menu-title="Suites">
+            	<h1>Les suites</h1>
+						</section>
+	          <section data-menu-title="Arithmétique">
+	            <h1>Suite arithmétique</h1>
+	            <h2>Définition</h2>
+	            <blockquote>Une suite $u_n$ est une suite arithmétique s'il existe un nombre $r$ tel que pour tout entier $n$, on a : $$ u_{n + 1} = u_n + r $$
+	              Le nombre $r$ est appelé raison de la suite.
+	            </blockquote>
+						</section>
+						<section>
+	            <h2>Terme général</h2>
+	            <blockquote>
+	               $u_n$ est une suite arithmétique de raison $r$ et de premier terme $u_0$.<br/>Pour tout entier naturel $n$, on a : $$ u_n = u_0 + n\,r $$
+	            </blockquote>
+						</section>
+						<section>
+	            <h2>Somme des termes consécutifs</h2>
+	            <blockquote>
+	               Soit $n$ est un entier naturel non nul alors on a : $$ S_n = 1 + 2 + 3 + \dots + n = n \times \dfrac{(n + 1)}{2} $$
+	               En généralisant,
+	               $$ S_n = \mbox{nombre de termes} \times \dfrac{\mbox{premier terme} + \mbox{dernier terme}}{2} $$
+	            </blockquote>
+	          </section>
+	          <section data-menu-title="Géométrique">
+	            <h1>Suite géométrique</h1>
+	            <h2>Définition</h2>
+	            <blockquote>Une suite $u_n$ est une suite géométrique s'il existe un nombre $q$ tel que pour tout entier $n$, on a : $$u_{n + 1} = q \times u_n$$
+	              Le nombre $q$ est appelé raison de la suite.
+	            </blockquote>
+						</section>
+						<section>
+	            <h2>Terme général</h2>
+	            <blockquote>
+	              $u_n$ est une suite géométrique de raison $q$ et de premier terme $u_0$. Pour tout entier naturel $n$, on a : $$u_n = u_0 \times q^n$$
+	            </blockquote>
+						</section>
+						<section>
+	            <h2>Somme des termes consécutifs</h2>
+	            <blockquote>
+	              Soit $n$ est un entier naturel non nul et $q$ un réel différent de 1 alors on a : $$ S_n = 1 + q + q^2 + \dots + q^n = \frac{1 − q^{n + 1}}{1 - q} $$
+	              En généralisant,
+	              $$ S_n = \mbox{premier terme} \times \dfrac{1 - q^{\mbox{nombre de termes}}}{1 - q} $$
+	            </blockquote>
+	          </section>
+	          <section data-menu-title='Arithmético-géométrique'>
+	            <h1>Suite arithmético-géométrique</h1>
+	            <h2>Définition</h2>
+	            <blockquote>Une suite $u_n \in \mathbb{N}$ à valeurs dans $K$ est dite arithmético-géométrique s'il existe deux éléments $a$ et $b$ de $K$ tels que la suite vérifie la relation de récurrence suivante :
+	              $\forall n\in \mathbb {N}$ ,$u_{n+1}=a\,u_{n}+b.$
+	            </blockquote>
+						</section>
+						<section>
+	            <h2>Terme général</h2>
+	            <blockquote>
+	              En posant $r={\frac {b}{1-a}}$, on a :
+	              $\forall n\in \mathbb{N}$ ,$u_{n} = a^{n}(u_{0}-r)+r$.
+	            </blockquote>
+						</section>
+						<section>
+	            <h2>Somme des termes consécutifs</h2>
+	            <blockquote>
+	              Si $a = 1$, on a affaire à une suite arithmétique, donc : $$ S_n = n \times \dfrac{(n + 1)}{2} $$
+	            </blockquote>
+	            <blockquote>
+	              Si $a \neq 1$, toujours en posant $r = \frac{b}{1 – a}$, la somme des $n$ premiers termes (de $0$ à $n – 1$) est :
+	              $$ S_{n}=\sum_{k=0}^{n-1}u_{k}=(u_{0}-r){\dfrac {1-a^{n}}{1-a}}+nr $$.
+	            </blockquote>
+	          </section>
+        </section>
+        <section>
+					<section data-menu-title="Combinatoire">
+          	<h1>Combinatoire</h1>
+					</section>
+          <section data-menu-title="Permutation">
+            <h1>Permutation</h1>
+						<blockquote>
+							Tous les mélanges possibles d'un ensemble de $n$ éléments.
+							$$ P_n = n!$$
+						</blockquote>
+						<p>Exemple : Combien de jeux différents avec 32 cartes ?</p>
+						<p>$$ 32! = 32 \times 31 \times \dots \times 2 \times 1 $$</p>
+          </section>
+					<section data-menu-title="Arrangement">
+            <h1>Arrangement</h1>
+						<blockquote>
+							Tirage d'une quantité $p$ d'objets dans l'ordre parmi un ensemble de $n$ éléments.
+							$$ A_n^p = \dfrac{n!}{(n - p)!} $$
+						</blockquote>
+						<p>Exemple : Combien de fois 3 chevaux dans l'ordre avec 10 au départ ?</p>
+						<p>$$ A_{10}^3 = \dfrac{10!}{(10 - 3)!} = 10 \times 9 \times 8 $$</p>
+          </section>
+					<section data-menu-title="Combinaison">
+            <h1>Combinaison</h1>
+						<blockquote>
+							Tirage d'une quantité $p$ d'objets sans ordre parmi un ensemble de $n$ éléments.
+							$$ C_n^p = \dfrac{n!}{p!\,(n - p)!} = \dfrac{A_n^p}{p!}$$
+						</blockquote>
+						<p>Exemple : Combien de possibilités de 5 numéros parmi 49 ?</p>
+						<p>$$ C_{49}^5 = \dfrac{49!}{5!\,(49 - 5)!} = 10 \times 9 \times 8 $$</p>
+          </section>
+        </section>
+        </div>
+        <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+    		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+    		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+    		<script src="../../lib/reveal/js/reveal.js"></script>
+    		<script type="text/javascript">
+    			initMode({ header : 'Bloc Mémo' });
+    		</script>
+      </div>
+  </body>
+</html>
