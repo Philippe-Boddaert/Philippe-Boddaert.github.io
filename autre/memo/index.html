@@ -12,10 +12,10 @@
 		<div class="reveal">
 			<div class="slides">
           <section>
-						<section data-menu-title="Suites">
+						<section id="A" data-menu-title="Suites">
             	<h1>Les suites</h1>
 						</section>
-	          <section data-menu-title="Arithmétique">
+	          <section id="A.1" data-menu-title="Arithmétique">
 	            <h1>Suite arithmétique</h1>
 	            <h2>Définition</h2>
 	            <blockquote>Une suite $u_n$ est une suite arithmétique s'il existe un nombre $r$ tel que pour tout entier $n$, on a : $$ u_{n + 1} = u_n + r $$
@@ -36,7 +36,7 @@
 	               $$ S_n = \mbox{nombre de termes} \times \dfrac{\mbox{premier terme} + \mbox{dernier terme}}{2} $$
 	            </blockquote>
 	          </section>
-	          <section data-menu-title="Géométrique">
+	          <section id="A.2" data-menu-title="Géométrique">
 	            <h1>Suite géométrique</h1>
 	            <h2>Définition</h2>
 	            <blockquote>Une suite $u_n$ est une suite géométrique s'il existe un nombre $q$ tel que pour tout entier $n$, on a : $$u_{n + 1} = q \times u_n$$
@@ -57,7 +57,7 @@
 	              $$ S_n = \mbox{premier terme} \times \dfrac{1 - q^{\mbox{nombre de termes}}}{1 - q} $$
 	            </blockquote>
 	          </section>
-	          <section data-menu-title='Arithmético-géométrique'>
+	          <section id="A.3" data-menu-title='Arithmético-géométrique'>
 	            <h1>Suite arithmético-géométrique</h1>
 	            <h2>Définition</h2>
 	            <blockquote>Une suite $u_n \in \mathbb{N}$ à valeurs dans $K$ est dite arithmético-géométrique s'il existe deux éléments $a$ et $b$ de $K$ tels que la suite vérifie la relation de récurrence suivante :
@@ -83,10 +83,10 @@
 	          </section>
         </section>
         <section>
-					<section data-menu-title="Combinatoire">
+					<section id="B" data-menu-title="Combinatoire">
           	<h1>Combinatoire</h1>
 					</section>
-          <section data-menu-title="Permutation">
+          <section id="B.1" data-menu-title="Permutation">
             <h1>Permutation</h1>
 						<blockquote>
 							Tous les mélanges possibles d'un ensemble de $n$ éléments.
@@ -95,7 +95,7 @@
 						<p>Exemple : Combien de jeux différents avec 32 cartes ?</p>
 						<p>$$ 32! = 32 \times 31 \times \dots \times 2 \times 1 $$</p>
           </section>
-					<section data-menu-title="Arrangement">
+					<section id="B.2" data-menu-title="Arrangement">
             <h1>Arrangement</h1>
 						<blockquote>
 							Tirage d'une quantité $p$ d'objets dans l'ordre parmi un ensemble de $n$ éléments.
@@ -104,7 +104,7 @@
 						<p>Exemple : Combien de fois 3 chevaux dans l'ordre avec 10 au départ ?</p>
 						<p>$$ A_{10}^3 = \dfrac{10!}{(10 - 3)!} = 10 \times 9 \times 8 $$</p>
           </section>
-					<section data-menu-title="Combinaison">
+					<section id="B.3" data-menu-title="Combinaison">
             <h1>Combinaison</h1>
 						<blockquote>
 							Tirage d'une quantité $p$ d'objets sans ordre parmi un ensemble de $n$ éléments.
@@ -115,7 +115,7 @@
           </section>
         </section>
 				<section>
-					<section data-menu-title="Complexité">
+					<section id="C" data-menu-title="Complexité">
 						<h1>Théorème sur les récurrences de partition</h1>
 						<p>Autrement nommé, "Master Theorem", il permet d'obtenir une solution en termes asymptotiques pour des relations de récurrence d'un certain type rencontrées dans l'analyse de complexité d'algorithmes qui sont régis par le paradigme "diviser pour régner".</p>
 					</section>
