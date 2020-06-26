@@ -78,7 +78,7 @@
 	            </blockquote>
 	            <blockquote>
 	              Si $a \neq 1$, toujours en posant $r = \frac{b}{1 – a}$, la somme des $n$ premiers termes (de $0$ à $n – 1$) est :
-	              $$ S_{n}=\sum_{k=0}^{n-1}u_{k}=(u_{0}-r){\dfrac {1-a^{n}}{1-a}}+nr $$.
+	              $$ S_{n}=(u_{0}-r){\dfrac {1-a^{n}}{1-a}}+nr $$.
 	            </blockquote>
 	          </section>
         </section>
@@ -114,6 +114,73 @@
 						<p>$$ C_{49}^5 = \dfrac{49!}{5!\,(49 - 5)!} = 10 \times 9 \times 8 $$</p>
           </section>
         </section>
+				<section>
+					<section data-menu-title="Complexité">
+						<h1>Théorème sur les récurrences de partition</h1>
+						<p>Autrement nommé, "Master Theorem", il permet d'obtenir une solution en termes asymptotiques pour des relations de récurrence d'un certain type rencontrées dans l'analyse de complexité d'algorithmes qui sont régis par le paradigme "diviser pour régner".</p>
+					</section>
+					<section>
+						<p>Soient $a \geq 1$, $b > 1$ et T la relation de récurrence suivante :
+						$$ T(n)=a\;T\left({\frac {n}{b}}\right)+\mathcal{O}(n^{c})$$
+
+						Les différents paramètres s'interprètent comme suit :
+					</p>
+						<ul>
+							<li>$n$ est la taille du problème,</li>
+							<li>$a$ est le nombre de sous-problèmes,</li>
+							<li>$\frac{n}{b}$ est le taille de chaque sous-problèmes.</li>
+							<li>$\mathcal{O(n^c)}$ est le coût de la subdivision et de la combinaison des solutions des sous-problèmes.</li>
+						</ul>
+					</section>
+					<section>
+						<p>Le "Master Theorem" permet d'obtenir une expression de la complexité de $T(n)$ comme suit :</p>
+						<ol>
+							<li>Si $a < b^c$ alors $T(n)=\mathcal{O}(n^c)$.</li>
+							<li>Si $a = b^c$ alors $T(n)=\mathcal{O}(n^{c}\log n)$.</li>
+							<li>Si $a > b^c$ alors $T(n)=\mathcal{O}(n^{\log_b a})$.</li>
+						</ol>
+						</p>
+					</section>
+					<section>
+						<h2>Application à des algorithmes courants</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Algorithme</th>
+			<th>Relation de récurrence</th>
+			<th>Complexité en temps</th>
+			<th>Commentaire</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Recherche dichotomique</td>
+			<td>$T(n) = T\left(\frac{n}{2}\right) + O(1)$</td>
+			<td>$\mathcal{O}(\log n)$</td>
+			<td>Appliquer le « master theorem » avec $ a = 1, b = 2, c = 0$, le cas 3 s'applique.</td>
+		</tr>
+		<tr>
+			<td>Parcours d'arbre binaire</td>
+			<td>$T(n) = 2\,T\left(\frac{n}{2}\right) + O(1)$</td>
+			<td>$\mathcal{O}(n)$</td>
+			<td>Appliquer le « master theorem » avec $ a = 2, b = 2, c = 0$, le cas 2 s'applique.</td>
+		</tr>
+		<tr>
+			<td>Trouver la valeur médiane</td>
+			<td>$T(n) = T\left(\frac{n}{2}\right) + O(n)$</td>
+			<td>$\mathcal{O}(n)$</td>
+			<td>Appliquer le « master theorem » avec $ a = 1, b = 2, c = 1$, le cas 1 s'applique.</td>
+		</tr>
+		<tr>
+			<td>Tri fusion</td>
+			<td>$T(n) = 2\,T\left(\frac{n}{2}\right) + O(n)$</td>
+			<td>$\mathcal{O}(n \log n)$</td>
+			<td>Appliquer le « master theorem » avec $ a = 2, b = 2, c = 1$, le cas 2 s'applique.</td>
+		</tr>
+	</tbody>
+</table>
+					</section>
+				</section>
         </div>
         <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
