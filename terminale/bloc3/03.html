@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bloc 3 : Architectures matérielles, systèmes d’exploitation et réseaux</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script src="../../commun/commun.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section id="3.1" data-menu-title="3.1 - Contexte">
+							<p class="img-container full">
+								<img src="file attente - supermarché.png" />
+								<div class="boiteQuestions">
+									<p>Comment s'organise une <b>caisse de supermarché</b>, pour gérer la <b>file d'attente des clients</b>, sachant que celle-ci ne traite qu'un client à un instant $T$ donné ?</p>
+								</div>
+							</p>
+					</section>
+					<section>
+						<p>Si on fait une analogie entre une caisse de supermarché et un système d'exploitation, la problématique est la même...</p>
+					</section>
+					<section>
+							<p class="img-container full">
+								<img src="file attente - processus.png" />
+								<div class="boiteQuestions">
+									<p>Comment s'organise un <b>Système d'exploitation</b>, pour gérer la file d'attente des <b>processus</b>, sachant qu'<b>un processeur</b> ne traite qu'un <b>processus</b> à un instant $T$ donné ?</p>
+								</div>
+							</p>
+					</section>
+				</section>
+				<section>
+					<section id="3.2" data-menu-title="3.2 - Définition">
+						<h1>Définition</h1>
+						<table class="">
+							<thead>
+								<tr>
+									<th>Terme</th>
+									<th>Définition</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Programme</th>
+									<td>Entité <i>statique</i>, composée d'une suite d'instructions.</td>
+								</tr>
+								<tr>
+									<th>Processus</th>
+									<td>Entité <i>dynamique</i> qui matérialise un <i>programme en cours d'exécution</i> avec ses propres ressources physiques et logiques.</td>
+								</tr>
+								<tr>
+									<th>Ressource</th>
+									<td>Élement qui contribue à la progression d'un processus (matériel ou logiciel)</td>
+								</tr>
+								<tr>
+									<th>Processeur</th>
+									<td>Composant <i>matériel</i> responsable de l'exécution des instructions d'un <i>processus</i> chargé en <i>mémoire</i>. Il est capable d'effectuer des opérations arithmétiques et logiques.</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>Processeur</h2>
+						<ul>
+							<li>Caractéristique principale : <i>Fréquence</i>.</li>
+							<li>Exemple : un processeur cadencé à 300 MHz possède 300 millions de cycles d'horloge par seconde.</li>
+							<li><i>Cycle d'horloge</i> : Unité élémentaire de temps d'un ordinateur, correspond à un battement du microprocesseur.</li>
+							<li>Chaque instruction nécessite au moins un cycle d'horloge pour s'exécuter.</li>
+						</ul>
+					</section>
+				</section>
+				<section id="3.3" data-menu-title="3.3 - Etat et cycle de vie du processus">
+					<h2>Etat et cycle de vie du processus</h2>
+					<ul>
+						<li><i>Élu</i> : en train de s’exécuter sur un processeur,</li>
+						<li><i>Éligible</i> : en attente d’un processeur pour s’exécuter,</li>
+						<li><i>Bloqué</i> : en attente d’un événement (ex: interruption) ; ne peut donc pas s’exécuter pour l’instant.</li>
+					</ul>
+					<p class="img-container">
+						<img src="processus-state.png" />
+					</p>
+				</section>
+				<section id="3.4" data-menu-title="3.4 - Structure d'un processus">
+					<h2>Structure d'un processus</h2>
+					<p>Un processus est représenté par une structure appelée <i>Bloc de contrôle</i> (BCP / Process Control Block (PCB))
+						<br/>Cette structure se situe dans une zone mémoire accessible uniquement par le Système d'Exploitation.
+					</p>
+					<p class="img-container">
+						<img src="pcb.png" />
+					</p>
+				</section>
+				<section>
+					<section id="3.5" data-menu-title="3.5 - Gestion de processus">
+						<h2>Gestion de Processus</h2>
+						<p>Un système d’exploitation dispose de 2 modules pour gérer les processus :</p>
+						<ul>
+							<li><i>Ordonnanceur</i> :
+								<ul>
+									<li>Met en ordre des processus qui demandent le processeur,</li>
+									<li>Sélectionne celui qui peut disposer du temps processeur.</li>
+								</ul>
+							</li>
+							<li><i>Dispatcheur</i> :
+								<ul>
+	  							<li>Intervient quand un processus se termine ou se bloque,</li>
+	  							<li>Commutation de contexte : consiste à sauvegarder l'état d'un processus pour restaurer à la place celui d'un autre.</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<p class="img-container">
+							<img src="commutation.png" />
+						</p>
+						<p>Les objectifs sont :</p>
+						<ul>
+							<li>Maximiser l’utilisation du processeur,</li>
+							<li>Présenter un temps de réponse acceptable,</li>
+							<li>Respecter l’équité entre les processus selon le critère d’ordonnancement utilisé.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section id="3.6" data-menu-title="3.6 - Algorithmes d'ordonnancement">
+						<h2>Algorithme d'ordonnancement</h2>
+							<p>Les algorithmes d'ordonnancement de processus sont classés en deux types de stratégie :</p>
+							<ul>
+								<li>Ordonnancement <i>coopératif (sans réquisition)</i> : les processus ne sont pas interrompus, l'ordonnanceur ne choisit un nouveau processus que dans le cas où le processus en cours termine son exécution ou attend une entrée/sortie,</li>
+								<li>Ordonnancement <i>préemptif (avec réquisition)</i> : l’ordonnanceur peut interrompre un processus encours d’exécution si un nouveau processus de priorité plus élevée est inséré dans la file des Prêts.</li>
+							</ul>
+					</section>
+					<section id="3.6.1" data-menu-title="3.6.1 - FCFS">
+						<h2>FCFS  -  First-come First-served</h2>
+						<p>Etant donné un ensemble $E$ de processus éligibles : </p>
+  					<ul>
+							<li>Le premier arrivé est admis immédiatement et s'exécute tant qu'il n'est pas bloqué ou terminé.</li>
+  						<li>Lorsqu'il se bloque, le processus suivant commence à s'exécuter et le processus bloqué va se mettre au bout de la file d'attente.</li>
+						</ul>
+						<p>Utilisations : Mac OS < 9, première version de MS DOS, Windows 3.1x</p>
+					</section>
+					<section>
+						<p>Soit l'ensemble $E$ de processus suivant : </p>
+						<table>
+							<thead><tr><th>Processus</th><th>Durée (en ms)</th></tr></thead>
+							<tbody>
+								<tr><td>P1</td><td>21</td></tr>
+								<tr><td>P2</td><td>3</td></tr>
+								<tr><td>P3</td><td>6</td></tr>
+								<tr><td>P4</td><td>2</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Établir le diagramme de séquences d'exécutions des processus.</p>
+							<p>Calculer le temps d'attente moyen des processus.</p>
+						</div>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Avantages</th>
+									<th>Inconvénients</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>l'algorithme est simple (c'est une simple liste chaînée), l'ordonnancement est équitable.</td>
+									<td>pas de minimisation du temps moyen d'attente des processus.</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section id="3.6.2" data-menu-title="3.6.2 - SJF">
+						<h2>SJF  -  Shorted Job First</h2>
+						<p>Etant donné un ensemble $E$ de processus éligibles : sera élu par l'ordonnanceur, le processus dont on suppose que le traitement sera le plus court.</p>
+					</section>
+					<section>
+						<p>Soit l'ensemble $E$ de processus suivant : </p>
+						<table>
+							<thead><tr><th>Processus</th><th>Durée (en ms)</th></tr></thead>
+							<tbody>
+								<tr><td>P1</td><td>21</td></tr>
+								<tr><td>P2</td><td>3</td></tr>
+								<tr><td>P3</td><td>6</td></tr>
+								<tr><td>P4</td><td>2</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Établir le diagramme de séquences d'exécutions des processus.</p>
+							<p>Calculer le temps d'attente moyen des processus.</p>
+						</div>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Avantages</th>
+									<th>Inconvénients</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Temps d'attente minimal (Plus de processus sont exécutés dans un temps plus court).</td>
+									<td>Basé sur la connaissance à priori du temps d'exécution des processus.</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section id="3.6.3" data-menu-title="3.6.3 - RR">
+						<h2>RR - Round Robin</h2>
+						<p>Autrement appelé Algorithme du Tourniquet.</p>
+						<p>Etant donné un ensemble $E$ de processus éligibles, chaque processus reçoit tour à tour un intervalle de temps appelé <i>quantum</i>.
+							<br/>Au terme de ce quantum ou, si le processus s'achève ou se bloque avant cet instant, l'ordonnanceur attribue directement le processeur au processus suivant.
+						</p>
+					</section>
+					<section>
+						<p>Soit l'ensemble $E$ de processus suivant : </p>
+						<table>
+							<thead><tr><th>Processus</th><th>Durée (en ms)</th></tr></thead>
+							<tbody>
+								<tr><td>P1</td><td>21</td></tr>
+								<tr><td>P2</td><td>3</td></tr>
+								<tr><td>P3</td><td>6</td></tr>
+								<tr><td>P4</td><td>2</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Établir le diagramme de séquences d'exécutions des processus, en considérant un quantum de 5ms.</p>
+							<p>Calculer le temps d'attente moyen des processus.</p>
+						</div>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Avantages</th>
+									<th>Inconvénients</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Equité d'exécution des processus, chacun a un temps fixe pour s'exécuter.</td>
+									<td>Très dépend du choix du quantum.
+										<br/>Des quanta courts provoqueraient trop de commutations de processus et la proportion du temps consacré à ces changements de contexte deviendrait trop importante.
+										<br/>Des quanta longs, ce seraient les temps de réponse aux processus interactifs qui en pâtiraient.
+										<br/>La valeur du quantum est couramment fixée aux alentours de 20 à 50 ms.</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+					<section id="3.6.4" data-menu-title="3.6.4 - Ordonnancement avec priorité">
+						<h2>Priority CPU Scheduling = ordonnancement avec priorité</h2>
+						<p>Une valeur de priorité est assignée à chaque processus,
+							<br/>Etant un ensemble $E$ de processus éligibles, est élu celui qui a la priorité la plus élevée.
+						</p>
+					</section>
+					<section>
+						<p>Soit l'ensemble $E$ de processus suivant : </p>
+						<table>
+							<thead><tr><th>Processus</th><th>Durée (en ms)</th><th>Priorité</th></tr></thead>
+							<tbody>
+								<tr><td>P1</td><td>21</td><td>2</td></tr>
+								<tr><td>P2</td><td>3</td><td>1</td></tr>
+								<tr><td>P3</td><td>6</td><td>4</td></tr>
+								<tr><td>P4</td><td>2</td><td>3</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Établir le diagramme de séquences d'exécutions des processus.</p>
+							<p>Calculer le temps d'attente moyen des processus.</p>
+						</div>
+					</section>
+					<section>
+						<p>
+							Phénomène de famine possible lorsqu'un processus de priorité haute s'exécute alors qu'un processus de priorité faible est déjà exécuté.
+							<br/>En 1973, quand l'ordinateur IBM 7904 du MIT fut arrêté, un processus de priorité faible fut découvert, soumis en 1967, soit 6 ans plus tôt, n'ayant pas encore été exécuté.
+						</p>
+					</section>
+					<section id="3.6.5" data-menu-title="3.6.5 - Multilevel feedback queue">
+						<h2>Ordonnancement avec priorité dynamique multi-niveaux</h2>
+						<ul>
+							<li>Algorithme basé sur plusieurs files, ordonnées par priorité,</li>
+							<li>Lorsqu’un processus se bloque, il retourne dans la même file,</li>
+							<li>Lorsqu’il épuise son quantum, il passe dans la file prioritaire suivante,</li>
+							<li>Pour chaque file d'attente, on applique l'algorithme du Tourniquet (avec potentiellement un quantum différent)</li>
+							<li>Utilisation : Windows > 2000, mac OS</li>
+						</ul>
+					</section>
+				</section>
+				<section id='3.7' data-menu-title='3.7 - Gestion des ressources'>
+					<h1>Gestion des ressources</h1>
+					<p>
+						L’exécution d’un processus nécessite un ensemble de ressources (mémoire principale, disques, fichiers, périphériques, etc.) qui lui sont attribuées par le système d’exploitation.
+						<br/>L’utilisation d’une ressource passe par les étapes suivantes :
+					</p>
+					<ul>
+						<li>Demande de la ressource,</li>
+						<li>Utilisation de la ressource,</li>
+						<li>Libération de la ressource.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Situation d'interblocage</h2>
+					<ul>
+						<li>4 voitures arrivent à un croisement, sans signalisation particulière, et veulent passer,</li>
+						<li>Si les conducteurs appliquent tous le code de la route, avec la règle de la priorité à droite, aucune n'avance,</li>
+						<li>La route est bloquée indéfiniment.</li>
+					</ul>
+					<p class="img-container">
+						<img src="voiture.png" />
+					</p>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
+		<script type="text/javascript">
+			initMode({
+				header : 'Bloc 3 : Les processus'
+			});
+    </script>
+	</body>
+</html>
