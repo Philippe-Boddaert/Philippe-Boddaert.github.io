@@ -52,15 +52,22 @@
 						</p>
 					</section>
 					<section>
+						<div id="c0"></div>
+					</section>
+					<section>
 					<p>
 						Ainsi, le système décimal est un système de numération positionnel, dans lequel un chiffre représente des valeurs différentes selon le rang qu’il occupe dans un nombre.
 					</p>
+				</section>
+				<section>
 					<p>
 						Dans le nombre $185$, on peut voir trois rangs : centaines, dizaines et unités.
-						Pour n'importe quelle base, la valeur d'un rang est égale à $b^n$, où $b$ est l'indice de la base (ici, 10) et $n$ la position du rang.
 						Ici, les unités ont la position 0, les dizaines la position 1 et les centaines la position 2. Nous pouvons donc écrire :
 						$$ 185 = 1 \times 10^2 + 8 \times 10^1 + 5 \times 10^0 $$
 					</p>
+				</section>
+				<section>
+					<div id="c1"></div>
 				</section>
 				<section>
 					<p>
@@ -89,75 +96,7 @@
 					</p>
 				</section>
 				<section>
-					<p>
-					<table>
-						<caption>Représentation des 10 premiers entiers positifs</caption>
-						<thead>
-								<tr>
-									<th>Nombre en décimal</th>
-									<th>Nombre en binaire</th>
-									<th>Commentaire</th>
-								</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>0</td>
-								<td>0</td>
-								<td>Rang des unités : on prend le premier chiffre de la base.</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>1</td>
-								<td>Rang des unités : on prend le deuxième chiffre de la base.</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>10</td>
-								<td>Le rang des unités est plein. On passe au rang suivant.</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>11</td>
-								<td>Rang des unités : On prend le deuxième chiffre de la base.</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>100</td>
-								<td>Le rang des unités et des dizaines sont pleins : On passe au rang suivant.</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>101</td>
-								<td>Rang des unités : On prend le deuxième chiffre de la base.</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>110</td>
-								<td>Le rang des unités est plein. On passe au rang suivant.</td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td>111</td>
-								<td>Rang des unités : On prend le deuxième chiffre de la base.</td>
-							</tr>
-							<tr>
-								<td>8</td>
-								<td>1000</td>
-								<td>Le rang des unités, des dizaines et des centaines sont pleins : On passe au rang suivant.</td>
-							</tr>
-							<tr>
-								<td>9</td>
-								<td>1001</td>
-								<td>Rang des unités : On prend le deuxième chiffre de la base.</td>
-							</tr>
-							<tr>
-								<td>10</td>
-								<td>1010</td>
-								<td>Le rang des unités est plein. On passe au rang suivant.</td>
-							</tr>
-						</tbody>
-					</table>
-				</p>
+					<div id="c2"></div>
 			</section>
 			<section>
 				<div class="boiteSynthese">
@@ -458,11 +397,15 @@ Sortie : d : une liste de chiffres
 		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
 		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
 		<script src="../../lib/reveal/js/reveal.js"></script>
+		<script src="../../commun/converter.js"></script>
 		<script type="text/javascript">
 			initMode({
 				header : 'Bloc 1'
 			});
 			hljs.initHighlightingOnLoad();
+			new Converter(10, 3, { "container" : "c0", "modeLegend" : 1}).convert(9);
+			new Converter(10, 5, { "container" : "c1", "modeLegend" : 2, "showController" : false}).convert(185);
+			new Converter(2, 5, { "container" : "c2", "modeLegend" : 1, "showController" : false, "showCaption" : false}).convert(21);
 		</script>
 	</body>
 </html>

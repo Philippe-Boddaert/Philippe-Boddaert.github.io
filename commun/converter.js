@@ -18,6 +18,7 @@ class Converter {
     "modeLegend" : 0, // 0 = none, 1 = rang, 2 = power, 3 = value
     "showController" : true,
     "showLogger" : true,
+    "showCaption" : true,
     "buttons" : {
       "forward" : '<i class="fas fa-plus"></i>',
       "back" : '<i class="fas fa-minus"></i>',
@@ -188,7 +189,8 @@ class Converter {
   convert(n){
     this.__value = n;
     this.raz();
-    document.querySelector('#' + this.__default.container + ' table caption').innerHTML = "Représentation de " + n + " en base " + this.__base + ".";
+    if (this.__options.showCaption)
+      document.querySelector('#' + this.__default.container + ' table caption').innerHTML = "Représentation de " + n + " en base " + this.__base + ".";
     let trs = document.querySelectorAll('#' + this.__default.container + ' table tbody tr');
     let footer = document.querySelectorAll('#' + this.__default.container + ' table tfoot th');
     let i = this.__heapnumber - 1;

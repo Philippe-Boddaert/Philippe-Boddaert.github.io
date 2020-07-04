@@ -255,7 +255,7 @@
     align-items: center;
     flex-direction: column;
   }
-  
+
   .half-width {
     width : 50%;
   }
@@ -266,4 +266,28 @@
 
   .center {
     text-align: center;
+  }
+
+  .reveal .converter-table {
+    border-collapse: separate;
+    border-spacing: 5px;
+  }
+
+  .reveal .converter-table tbody td {
+    width : 60px;
+    height: 5px;
+    border : 1px solid black;
+  }
+
+  .filled {
+    background-color: #069;
+  }
+
+  .empty {
+    border : none;
+    background-color: transparent;
+  }
+
+  caption {
+    caption-side: bottom;
   }
