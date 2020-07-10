@@ -69,7 +69,7 @@
 					</p>
 				</section>
 				<section>
-					<p>Pour encoder les caractères Unicode, UTF-8 utilise un nombre variable d'octets : </p>
+					<p>Pour encoder les caractères Unicode, UTF-8 utilise un nombre variable d'octets (jusque 4) : </p>
 					<ul>
 						<li>Les caractères de numéro 0 à 127 sont codés sur un octet dont le bit de poids fort est toujours nul,</li>
 						<li>Les caractères de numéro supérieur à 127 sont codés sur plusieurs octets.</li>
@@ -91,6 +91,37 @@
 					</table>
 				</section>
 				<section>
+					<h2>Méthode pour obtenir la représentation binaire en UTF-8 d'un caractère</h2>
+					<ul>
+						<li>Représenter le numéro du caractère en binaire</li>
+						<li>En fonction du nombre de bits, définir le nombre d'octets nécessaires pour une réprésentation en UTF-8</li>
+						<li>Découper les blocs de bits en autant d'octets nécessaires.</li>
+					</ul>
+				</section>
+				<section>
+					<p>Exemple : le caractère A est le 65<sup>ème</sup> de la table Unicode.</p>
+					<ul>
+						<li>Représentation binaire de 65 : <tt>100 0001</tt></li>
+						<li>7 bits sont nécessaires &rArr; 1 octet nécessaire pour le représenter en UTF-8</li>
+						<li>Représentation en UTF-8 : <tt><b>0</b>1000001</tt> ou $(41)_{16}$</li>
+					</ul>
+				</section>
+				<section>
+					<p>Exemple : le caractère &#339; est le 339<sup>ème</sup> de la table Unicode.</p>
+					<ul>
+						<li>Représentation binaire de 339 : <tt>1 0101 0011</tt></li>
+						<li>9 bits sont nécessaires &rArr; 2 octets nécessaires pour le représenter en UTF-8</li>
+						<li>l'octet de poids faible codant les 6 bits de poids faible, l'octet poids fort codant les 3 bits de poids forts</p>
+						<li>Représentation en UTF-8 : <tt><b>110</b>0101 <b>10</b>010011</tt> ou $(C5\,93)_{16}$</li>
+					</ul>
+				</section>
+				<section>
+					<div class="boiteQuestions">
+						<p>Quelle est la représentation binaire du "b" minuscule Unicode codé avec UTF-8 ?</p>
+						<p>Quelle est la place du caractère représenté par $(C2\,80)_{16}$ en UTF-8 ?</p>
+					</div>
+				</section>
+				<section>
 					<table class="responsive">
 						<caption><b>Exemples de codage UTF-8</b></caption>
 						<thead>
@@ -102,9 +133,9 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>A</td>
-								<td>65</td>
-								<td><tt><b>0</b>1000001</tt></td>
+								<td>B</td>
+								<td>66</td>
+								<td><tt><b>0</b>1000010</tt></td>
 							</tr>
 							<tr>
 								<td>é</td>
@@ -131,11 +162,6 @@
 						<li>tout octet de bits de poids fort valant 11 est le premier octet d'un caractère codé sur plusieurs octets,</li>
 						<li>tout octet de bits de poids fort valant 10 est à l'intérieur d'un caractère codé sur plusieurs octets.</li>
 					</ul>
-				</section>
-				<section>
-					<div class="boiteQuestions">
-						<p>Quel est le code binaire du "B" minuscule Unicode codé avec UTF-8 ?</p>
-					</div>
 				</section>
 			</div>
 		</div>
