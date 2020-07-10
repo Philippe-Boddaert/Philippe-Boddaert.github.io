@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bloc 3 : Architectures matérielles, systèmes d’exploitation et réseaux</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script src="../../commun/commun.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="3.4.1" data-menu-title="3.4.1 - Mise en situation">
+					<h1>Sécurité des communications</h1>
+					<p class='img-container'><img src="man-in-the-middle.jpg"/></p>
+				</section>
+				<section>
+					<div class="boiteQuestions">
+						<ul>
+							<li>Quelles situations nécessitent d'échanger des données de manière confidentielle ?</li>
+							<li>Comment communiquer secrètement ? </li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<div class="boiteTravail">
+						<p>Par binôme ou plus : Réfléchir à un code vous permettant de communiquer (échanger des messages écrits) secrètement.</p>
+					</div>
+				</section>
+				<section>
+					<p>De ce travail, il est possible d'introduire la "cryptographie", discipline qui vise à protéger l'échange de messages.
+				</section>
+				<section>
+					<section id="3.4.3" data-menu-title="3.4.3 - Définitions">
+						<h1>Définitions</h1>
+						<blockquote><span style="color:green;"><i class="fas fa-check"></i></span> <b>Cryptographie</b> est une discipline s’attachant à protéger des messages en s’aidant souvent de secrets ou clés.</blockquote>
+						<blockquote><span style="color:green;"><i class="fas fa-check"></i></span> <b>Chiffrement</b> est un procédé de cryptographie grâce auquel on souhaite rendre la compréhension d’un document impossible à toute personne qui n’a pas la clé de (dé)chiffrement.</blockquote>
+					</section>
+					<section>
+						<blockquote><span style="color:green;"><i class="fas fa-check"></i></span> <b>Chiffrer</b> : consiste à procéder à un chiffrement.</blockquote>
+						<blockquote><span style="color:green;"><i class="fas fa-check"></i></span> <b>Déchiffrer</b> : consiste à retrouver le texte original (aussi appelé clair) d’un message chiffré dont on possède la clé de (dé)chiffrement.</blockquote>
+						<blockquote><span style="color:green;"><i class="fas fa-check"></i></span> <b>Décrypter</b> : consiste à retrouver le texte original à partir d’un message chiffré sans posséder la clé de (dé)chiffrement.</blockquote>
+						<blockquote><span style="color:red;"><i class="fas fa-times"></i></span> <b>Crypter / Cryptage</b> : le Référentiel Général de Sécurité de l’ANSSI qualifie d’incorrect « cryptage ». En effet, la terminologie de cryptage reviendrait à chiffrer un fichier sans en connaître la clé et donc sans pouvoir le déchiffrer ensuite. Le terme n’est par ailleurs pas reconnu par le dictionnaire de l’Académie française.</blockquote>
+					</section>
+					<section>
+						<blockquote><span style="color:red;"><i class="fas fa-times"></i></span> <b>Encrypter / Déencrypter / Désencrypter</b> : Le terme « encrypter » et ses dérivés sont des anglicismes. Donc, on ne les utilise pas non plus.</blockquote>
+						<blockquote><span style="color:red;"><i class="fas fa-times"></i></span> <b>Chiffrage</b> : c’est évaluer le coût de quelque chose. ABSOLUMENT RIEN à voir avec le chiffrement.</blockquote>
+						<blockquote><span style="color:red;"><i class="fas fa-times"></i></span> <b>Coder / Encoder / Décoder</b> : Façon d’écrire les mêmes données, mais de manière différente (ex. en binaire, en hexadécimal,...). Il n’y a aucune vocation à assurer la confidentialité, ce n’est donc pas du chiffrement.</blockquote>
+					</section>
+				</section>
+				<section>
+					<p>On peut dès lors se poser la question des « bonnes » propriétés d'un chiffrement :</p>
+				<ul>
+					<li>doit permettre de communiquer (les 2 protagonistes se comprennent-ils ? y a-t-il des ambiguïtés ?)</li>
+					<li>doit être facile à apprendre et à utiliser</li>
+					<li>doit être difficile à « casser » pour une personne extérieure qui ne connaîtrait pas la clé.</li>
+				</ul>
+				</section>
+				<section>
+					<div class="boiteTravail">
+						<p>Pouvez-vous décrypter les messages suivants ?</p>
+						<ul>
+							<li>Message 1: SERTTEL SEL RESREVNI D TIFFUS LI</li>
+							<li>Message 2: RUDSULPTSECSECAPSESELSNAS</li>
+							<li>Message 3: 1511202103151414010919120112160801020520</li>
+						</ul>
+					</div>
+				</section>
+				<section>
+					<section id="3.4.4" data-menu-title="3.4.4 - Chiffrement Symétrique">
+						<h1>Chiffrement Symétrique</h1>
+						<div class="boiteTravail">
+							<p>Par binôme : Tenter de décrypter le message QLBKP, H TPKP, KLZ YLUMVYAZ CPLUULUA WHY SH TLY</p>
+						</div>
+					</section>
+					<section>
+						<figure class="img-container">
+							<img src="jules-cesar.png"/>
+							<figcaption>Jules César<br />Source : Wikipédia.</figcaption>
+						</figure>
+					</section>
+					<section>
+						<p>Le chiffrement utilisé est le chiffrement de César, car Jules César l’utilisait fréquemment pour transmettre des messages secrets diplomatiques ou militaires.
+							<br/>Il consiste à décaler les lettres de l’alphabet d’un certain rang (la « clé »). Connaître la valeur de la clé permet de déchiffrer très facilement le message en appliquant un décalage aux lettres dans le sens inverse de l'alphabet.</p>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Créer un <a href="Fiche_B04.pdf">disque à chiffrer</a>. Cet outil est constitué de 2 disques concentriques attachés ensemble par une attache-parisienne. Sur les pourtours des disques ont été placées les lettres de l’alphabet. En faisant pivoter un disque par rapport à l’autre, il est facile de chiffrer et déchiffrer rapidement n’importe quelle lettre.</p>
+							<p>Par binôme, définissez la clé de chiffrement (rang de décalage) et échanger des messages chiffrés. Les autre binômes pouvant intercepter votre message en tentant de les décrypter...</p>
+						</div>
+					</section>
+					<section>
+						<div class="boiteQuestions">
+							<p>Combien y a-t-il de clés possibles dans le chiffrement César ?</p>
+						</div>
+					</section>
+					<section>
+						<p>Le chiffrement de César est un cas particulier du type de chiffrement symétrique, où il est nécessaire pour les interlocuteurs de se mettre d'accord à l'avance sur la clé qui sera utilisée lors des échanges chiffrés.</p>
+					</section>
+				</section>
+				<section>
+					<section id="3.4.5" data-menu-title="3.4.5 - Chiffrement Asymétrique">
+						<h1>Chiffrement Asymétrique</h1>
+						<p>La méthode la plus utilisée en matière de chiffrement symétrique se nomme AES (Advanced Encryption Standard). Cette méthode utilise une technique de chiffrement plus élaborée que ce qui a été vu ci-dessus, mais les grands principes restent identiques.</p>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
+		<script type="text/javascript">
+			initMode({
+				header : 'Bloc 3 : Sécurité'
+			});
+    </script>
+	</body>
+</html>
