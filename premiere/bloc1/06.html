@@ -16,16 +16,113 @@
 					<figure class="img-container"><img class="third-width" src='./martine_utf8.jpg' /><figcaption>Source : http://www.retourdemartine.free.fr/</figcaption></figure>
 				</section>
 				<section>
-					<p>Nous avons tous déjà consulté un site ou ouvert un fichier comportant des caractères difficilement lisible, comme sur l'image précédente.</p>
-					<p>Ce problème a attrait à l'encodage des caractères, autrement dit la manière dont les caractères sont représentés et interprétés par la machine.</p>
+					<p>Prenons l'alphabet courant `A`, `B`, `C`, ... `Z` et plaçons le dans un tableau.</p>
+					<table>
+						<tr>
+							<td>A</td>
+							<td>B</td>
+							<td>C</td>
+							<td>D</td>
+							<td>E</td>
+							<td>F</td>
+							<td>G</td>
+							<td>H</td>
+							<td>I</td>
+							<td>J</td>
+							<td>K</td>
+							<td>L</td>
+							<td>M</td>
+							<td>N</td>
+							<td>O</td>
+							<td>P</td>
+							<td>Q</td>
+							<td>R</td>
+							<td>S</td>
+							<td>T</td>
+							<td>U</td>
+							<td>V</td>
+							<td>W</td>
+							<td>X</td>
+							<td>Y</td>
+							<td>Z</td>
+						</tr>
+					</table>
+					<p>Regardons les indices associés à chaque lettre.</p>
+					<table>
+						<tr>
+							<th>0</th>
+							<th>1</th>
+							<th>2</th>
+							<th>3</th>
+							<th>4</th>
+							<th>5</th>
+							<th>6</th>
+							<th>7</th>
+							<th>8</th>
+							<th>9</th>
+							<th>10</th>
+							<th>11</th>
+							<th>12</th>
+							<th>13</th>
+							<th>14</th>
+							<th>15</th>
+							<th>16</th>
+							<th>17</th>
+							<th>18</th>
+							<th>19</th>
+							<th>20</th>
+							<th>21</th>
+							<th>22</th>
+							<th>23</th>
+							<th>24</th>
+							<th>25</th>
+						</tr>
+						<tr>
+							<td>A</td>
+							<td>B</td>
+							<td>C</td>
+							<td>D</td>
+							<td>E</td>
+							<td>F</td>
+							<td>G</td>
+							<td>H</td>
+							<td>I</td>
+							<td>J</td>
+							<td>K</td>
+							<td>L</td>
+							<td>M</td>
+							<td>N</td>
+							<td>O</td>
+							<td>P</td>
+							<td>Q</td>
+							<td>R</td>
+							<td>S</td>
+							<td>T</td>
+							<td>U</td>
+							<td>V</td>
+							<td>W</td>
+							<td>X</td>
+							<td>Y</td>
+							<td>Z</td>
+						</tr>
+					</table>
+					<p>À un indice correspond une lettre et à une lettre est associée un et un seul indice.</p>
 				</section>
-				<section id="1.6.2" data-menu-title="1.6.2 - Encodage ASCII">
+				<section id="1.6.2" data-menu-title="1.6.2 - Définition">
+					<h2>Définition</h2>
+					<p>En généralisant à l'ensemble des caractères (`,`, `é`, `%`, ...), un caractère peut être représenté par un entier, donc avoir une représentation binaire en machine.</p>
+
+					<p>L'entier associé à un caractère est appelé <span class="highlight">point de code</span> de ce caractère (0 est le point de code de `A`. 25 le point de code de `Z`.)</p>
+					<p>On parle ainsi d'<span class="highlight">encodage de caractères</span> : mécanisme qui gère les points de code en octets dans la mémoire de l’ordinateur, puis lit les octets à nouveau en points de code.</p>
+					<p>Il a existé et existe plusieurs encodages.</p>
+				</section>
+				<section id="1.6.3" data-menu-title="1.6.3 - Encodage ASCII">
 					<h1>Encodage ASCII</h1>
 					<p>En 1960, l'organisation internationale de normalisation (ISO) décide de créer la norme ASCII (American Standard Code for Information Interchange).
 						<br>À chaque caractère est associé un nombre binaire sur 7 bits.
 					</p>
 					<div class='fragment boiteQuestions'>
-						<p>Combien de caractères peuvent être représentés grâce à l'encodage ASCII ?</p>
+						<p>Combien de points de code (et donc de caractères) peuvent être représentés grâce à l'encodage ASCII ?</p>
 					</div>
 				</section>
 				<section>
@@ -36,7 +133,7 @@
 				</section>
 				<section>
 					<div class='boiteQuestions'>
-						<p>Quel est la représentation, en binaire, du caractère "a" ?</p>
+						<p>Quel est le point de code et la représentation en binaire, du caractère "a" ?</p>
 						<p>Comment grâce à la représentation, en binaire, peut-on savoir si une lettre est en majuscule ou minuscule ?<p>
 					</div>
 				</section>
@@ -44,11 +141,11 @@
 					<p>La norme ASCII convient bien à la langue anglaise, mais pose des problèmes dans d'autres langues, par exemple le français.
 						<br />En effet, l'ASCII ne prévoit pas d'encoder les lettres accentuées.</p>
 				</section>
-				<section id="1.6.3" data-menu-title="1.6.3 - Encodage ISO-8859-1">
+				<section id="1.6.4" data-menu-title="1.6.4 - Encodage ISO-8859-1">
 					<h1>Encodage ISO-8859-1</h1>
-					<p>Cette norme reprend les mêmes principes que l'ASCII, mais les nombres binaires associés à chaque caractère sont codés sur 8 bits.</p>
+					<p>Cette norme reprend les mêmes principes que l'ASCII, mais les points de code associés à chaque caractère sont codés sur 8 bits.</p>
 					<div class="boiteQuestions">
-						<p>Combien de caractères peuvent être représentés grâce à l'encodage ASCII ?</p>
+						<p>Combien de points de code (et donc de caractères) peuvent être représentés grâce à l'encodage ASCII ?</p>
 					</div>
 				</section>
 				<section>
@@ -58,13 +155,13 @@
 					<p>Problème, il existe beaucoup d'autres langues dans le monde qui n'utilisent pas l'alphabet dit "latin", par exemple le chinois ou le japonais ! D'autres normes ont donc dû voir le jour.</p>
 					<p>Des changements de configuration sont nécessaires pour afficher un texte dans l'encodage adéquat.</p>
 				</section>
-				<section id="1.6.4" data-menu-title="1.6.4 - Encodage Unicode">
+				<section id="1.6.5" data-menu-title="1.6.5 - Encodage Unicode">
 					<h1>Encodage Unicode</h1>
 					<p>Pour éviter ces problèmes, en 1991, une nouvelle norme a vu le jour : Unicode.</p>
 					<p>Unicode a pour ambition de rassembler tous les caractères existant afin qu'une personne utilisant Unicode puisse, sans changer la configuration de son traitement de texte, à la fois lire des textes en français ou en japonais</p>
 				</section>
 				<section>
-					<p>Unicode est uniquement une table qui regroupe tous les caractères existant au monde. Unicode accepte plusieurs systèmes de codage : UTF-8, UTF-16, UTF-32.
+					<p>Unicode est une table qui regroupe tous les caractères existant au monde. Unicode accepte plusieurs systèmes de codage : UTF-8, UTF-16, UTF-32.
 						<br/>Le plus utilisé, notamment sur le Web, est UTF-8.
 					</p>
 				</section>
@@ -93,13 +190,13 @@
 				<section>
 					<h2>Méthode pour obtenir la représentation binaire en UTF-8 d'un caractère</h2>
 					<ul>
-						<li>Représenter le numéro du caractère en binaire</li>
+						<li>Représenter le point de code associé au caractère en binaire</li>
 						<li>En fonction du nombre de bits, définir le nombre d'octets nécessaires pour une réprésentation en UTF-8</li>
 						<li>Découper les blocs de bits en autant d'octets nécessaires.</li>
 					</ul>
 				</section>
 				<section>
-					<p>Exemple : le caractère A est le 65<sup>ème</sup> de la table Unicode.</p>
+					<p>Exemple : le caractère `A` a pour point de code 65 dans la table Unicode.</p>
 					<ul>
 						<li>Représentation binaire de 65 : <tt>100 0001</tt></li>
 						<li>7 bits sont nécessaires &rArr; 1 octet nécessaire pour le représenter en UTF-8</li>
@@ -107,7 +204,7 @@
 					</ul>
 				</section>
 				<section>
-					<p>Exemple : le caractère &#339; est le 339<sup>ème</sup> de la table Unicode.</p>
+					<p>Exemple : le caractère &#339; a pour point de code 339 dans la table Unicode.</p>
 					<ul>
 						<li>Représentation binaire de 339 : <tt>1 0101 0011</tt></li>
 						<li>9 bits sont nécessaires &rArr; 2 octets nécessaires pour le représenter en UTF-8</li>
@@ -117,8 +214,8 @@
 				</section>
 				<section>
 					<div class="boiteQuestions">
-						<p>Quelle est la représentation binaire du "b" minuscule Unicode codé avec UTF-8 ?</p>
-						<p>Quelle est la place du caractère représenté par $(C2\,80)_{16}$ en UTF-8 ?</p>
+						<p>Quelle est la représentation binaire du "b" (point de code : 98) en UTF-8 ?</p>
+						<p>Quel est le point de code représenté par $(C2\,80)_{16}$ en UTF-8 ?</p>
 					</div>
 				</section>
 				<section>
@@ -126,30 +223,30 @@
 						<caption><b>Exemples de codage UTF-8</b></caption>
 						<thead>
 							<tr>
+								<th>Point de code</th>
 								<th>Caractère</th>
-								<th>Numéro du caractère</th>
-								<th>Codage binaire UTF-8</th>
+								<th>Représentation binaire UTF-8</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>B</td>
 								<td>66</td>
+								<td>B</td>
 								<td><tt><b>0</b>1000010</tt></td>
 							</tr>
 							<tr>
-								<td>é</td>
 								<td>233</td>
+								<td>é</td>
 								<td><tt><b>110</b>00011 <b>10</b>101001</tt></td>
 							</tr>
 							<tr>
-								<td>€</td>
 								<td>8364</td>
+								<td>€</td>
 								<td><tt><b>1110</b>0010 <b>10</b>000010 <b>10</b>101100</tt></td>
 							</tr>
 							<tr>
-								<td>𝄞</td>
 								<td>119070</td>
+								<td>𝄞</td>
 								<td><tt><b>11110</b>000 <b>10</b>011101 <b>10</b>000100 <b>10</b>011110</tt></td>
 							</tr>
 						</tbody>
