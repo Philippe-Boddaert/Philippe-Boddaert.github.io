@@ -40,7 +40,7 @@
 							<li>Chaque relation "X est ami avec Y" par un segment de droite reliant X et Y ("X est ami avec Y" et "Y est ami avec X" étant représenté par le même segment de droite).</li>
 						</ul>
 						<p>Voici ce que cela donne avec le réseau social décrit ci-dessus :</p>
-						<p id="e1" class="img-container full"></p>
+						<p id="e1" class="img-container"></p>
 					</section>
 				</section>
 				<section>
@@ -92,7 +92,7 @@
 						</ul>
 					</section>
 					<section>
-						<p id="e2" class="img-container full"></p>
+						<p id="e2" class="img-container"></p>
 					</section>
 					<section>
 						<p>Problème : avec cette représentation du réseau routier sous forme de graphe, il est impossible de tenir compte des routes en sens unique (par exemple il est possible d'aller de A vers D mais pas de D vers A). Voici de nouvelles contraintes :</p>
@@ -109,7 +109,7 @@
 					</section>
 					<section>
 						<p>Pour tenir compte de ces nouvelles contraintes, on utilisera un graphe orienté :</p>
-						<p id="e3" class="img-container full"></p>
+						<p id="e3" class="img-container"></p>
 					</section>
 				</section>
 				<section>
@@ -133,7 +133,7 @@
 						<p>Parfois il est intéressant d'associer aux arêtes ou aux arcs des valeurs, on parle alors de graphes pondérés. Si nous revenons à notre "graphe cartographie", il est possible d'associer à chaque arête la distance en Km entre les 2 lieux :</p>
 					</section>
 					<section>
-						<p id="e4" class="img-container full"></p>
+						<p id="e4" class="img-container"></p>
 					</section>
 				</section>
 				<section data-menu-title='Vocabulaire'>
@@ -141,7 +141,7 @@
 					<p>Sommets adjacents :</p>
 					<p>Degré d'un sommet, noté $deg(s)$ : Nombre d’arêtes qui le relient aux autres sommets.</p>
 					<p>Ordre d’un graphe : Nombre de sommets d'un graphe. </p>
-					<p id="e7" class="img-container full"></p>
+					<p id="e7" class="img-container"></p>
 				</section>
 				<section>
 					<section id="1.4.5" data-menu-title="1.4.5 - Implémentation">
@@ -186,7 +186,7 @@
 					<section>
 						<div class="boiteTravail">
 							<p>Soit le graphe $G$ suivant :</p>
-							<p id="e5" class="img-container full"></p>
+							<p id="e5" class="img-container"></p>
 							<p>Déterminer la matrice d'adjacence du graphe $G$.</p>
 						</div>
 					</section>
@@ -199,7 +199,7 @@
 						<div class="row" style='display: flex;align-items: center;'>
 							<div>
 								<p>Graphe avec sa liste d'adjacence associée &rArr;</p>
-								<div id="e6" class="img-container full"></div>
+								<div id="e6" class="img-container"></div>
 							</div>
 							<table class="adjacence">
 								<tr>
@@ -307,7 +307,7 @@
 					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					document.getElementById('e1').appendChild(element);
 				});
 				viz.renderSVGElement(`
@@ -326,7 +326,7 @@
 					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					document.getElementById('e2').appendChild(element);
 				});
 
@@ -350,7 +350,7 @@
 					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					document.getElementById('e3').appendChild(element);
 				});
 
@@ -373,10 +373,10 @@
 						 G -> D [color=red];
 						 E -> F;
 						 F -> E;
-					}				 
+					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					document.getElementById('e7').appendChild(element);
 				});
 
@@ -400,7 +400,7 @@
 					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					document.getElementById('e4').appendChild(element);
 				});
 				viz.renderSVGElement(`
@@ -420,7 +420,7 @@
 					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					element.children[0].querySelector('polygon').style.fill='transparent';
 					document.getElementById('e5').appendChild(element);
 				});
@@ -440,7 +440,7 @@
 					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					document.getElementById('e6').appendChild(element);
 				});
 				hljs.initHighlightingOnLoad();

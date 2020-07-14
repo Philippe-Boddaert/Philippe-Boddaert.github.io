@@ -75,27 +75,9 @@ Sortie : entier, correspondant à 2 * x
 					</section>
 					<section>
 						<div class='boiteQuestionsReponse'>
-							<p>
-								Est-ce que l'algorithme suivant termine ?
-								<pre><code class="language-python">Algorithme ageHumain(x)
-Entrée : x, entier
-Sortie : entier, correspondant à l'age animal
-  Début
-    Si x ≥ 19 alors
-      y <- 10 * x − 90
-    Sinon
-      Si x ≥ 17 alors
-        y <- 6 * x − 14
-      Sinon
-        Si x ≥ 2 alors
-          y <- 4 * x + 20
-        Sinon
-          y <- 8 * x + 12
-        FinSi
-      FinSi
-    FinSi
-    Renvoyer y
-  Fin</code></pre>
+							<p>Est-ce que l'algorithme suivant termine ?</p>
+							<p class="img-container">
+								<img class="auto-width" src="./algo-age_animal_en_humain.jpeg"/>
 							</p>
 							<div class="boiteReponses">
 								<div class="reponse column">
@@ -106,16 +88,9 @@ Sortie : entier, correspondant à l'age animal
 					</section>
 					<section>
 						<div class='boiteQuestionsReponse'>
-							<p>
-								Est-ce que l'algorithme suivant termine ?
-								<pre><code class="language-python">Algorithme somme(n)
-  Début
-    s <- 0
-    Pour i de 1 à n faire
-      s <- s + i
-    FinPour
-    Renvoyer s
-  Fin</code></pre>
+							<p>Est-ce que l'algorithme suivant termine ?</p>
+							<p class="img-container">
+								<img class="auto-width" src='./algo-somme.jpeg'/>
 							</p>
               <div class="boiteReponses">
                 <div class="reponse column">
@@ -201,19 +176,9 @@ Fin</code></pre>
 					</section>
 					<section id="6.4.4.2" data-menu-title="6.4.4.2 - Illustration">
 						<p>Soit un tableau $T$ un tableau d'entiers et $x$, un entier. Ci dessous, l'algorithme est_present qui détermine si $x$ est présent dans $T$.</p>
-						<pre><code class="language-python">Algorithme est_present(T, x)
-Entrée :
-Sortie :
-Début
-  present &larr; FAUX
-  n &larr; taille(T)
-  Pour i variant de 0 à n
-    Si T[i] = x alors
-      present &larr; VRAI
-    FinSi
-  FinPour
-  Renvoyer present
-Fin</code></pre>
+						<p class='img-container'>
+							<img class='auto-width' src='./algo-est_present.jpeg' />
+						</p>
 					</section>
 					<section>
 						<div class="boiteQuestionsReponse">
@@ -232,36 +197,12 @@ Fin</code></pre>
 					</section>
 					<section>
 						<p>Cas 1 : $x$ n'est pas présent dans $T$</p>
-						<pre><code class="language-python">Algorithme est_present(T, x)
-Entrée :
-Sortie :
-Début
-  present &larr; FAUX               # 1 opération
-  n &larr; taille(T)                # 1 opération<sup>*</sup>
-  Pour i variant de 0 à n - 1   # n opérations
-    Si T[i] = x alors           # 2 * n opérations
-      present &larr; VRAI
-    FinSi
-  FinPour
-  Renvoyer present              # 1 opération
-Fin</code></pre>
+						<p class="img-container"><img class="auto-width" src="./algo-est_present-cas1.jpeg"/></p>
 						<p class="fragment">Le nombre total d'opérations $= 1 + 1 + 3 \times n + 1 = 3n + 3$</p>
 					</section>
 					<section>
 						<p>Cas 2 : $x$ est présent dans $T$</p>
-						<pre><code class="language-python">Algorithme est_present(T, x)
-Entrée :
-Sortie :
-Début
-  present &larr; FAUX               # 1 opération
-  n &larr; taille(T)                # 1 opération<sup>*</sup>
-  Pour i variant de 0 à n - 1   # n opérations
-    Si T[i] = x alors           # 2 * n opérations
-      present &larr; VRAI           # 1 opération
-    FinSi
-  FinPour
-  Renvoyer present              # 1 opération
-Fin</code></pre>
+						<p class="img-container"><img class="auto-width" src="./algo-est_present-cas2.jpeg"/></p>
 						<p class="fragment">Le nombre total d'opérations $= 1 + 1 + 3 \times n + 1 + 1 = 3n + 4$, ce, quelque ce soit la position de $x$ dans $T$</p>
 					</section>
 					<section>
@@ -304,8 +245,8 @@ Fin</code></pre>
 						</div>
 					</section>
 					<section>
-						<p class="img-container full">
-							<img src="../comparaison_complexite.png"/>
+						<p class="img-container">
+							<img class="auto-width" src="../comparaison_complexite.png"/>
 						</p>
 					</section>
 					<section>

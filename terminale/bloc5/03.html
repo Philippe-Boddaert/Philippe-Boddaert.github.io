@@ -47,7 +47,7 @@
 						</ul>
 					</section>
 					<section>
-						<p class="img-container full">
+						<p class="img-container">
 							<img class='third-width' src='./chaine.png'/>
 							<img class='third-width' src='./cycle.png'/>
 							<img class='third-width' src='./euler.png'/>
@@ -55,7 +55,7 @@
 					</section>
 					<section>
 						<p>Répondre au problème des habitants de Königsberg consiste à déterminer si le graphe contient un cycle eulérien ou non.</p>
-						<p id="e1" class="img-container full"></p>
+						<p id="e1" class="img-container"></p>
 					</section>
 					<section>
 						<h3>Théorème d'Euler</h3>
@@ -79,16 +79,16 @@ de base pour d'autres algorithmes.</p>
 						</section>
 						<section>
 							<p>Mettons-nous dans la place d'un livreur Super-eats qui se déplace en vélo. Il se situe actuellement aux abords d'un restaurant, situé au point $D$, et doit livrer une commande à un client situé au point $G$.</p>
-							<figure class="img-container"><img src='../livraison-1.png'/><figcaption>© les contributeurs d’OpenStreetMap</figcaption></figure>
+							<figure class="img-container"><img class="half-width" src='../livraison-1.png'/><figcaption>© les contributeurs d’OpenStreetMap</figcaption></figure>
 						</section>
 						<section>
 							<p>En tant que cycliste, le livreur se déplace uniquement sur les pistes cyclables. La carte suivante indique les pistes permettant de relier le point d'arrivée, ainsi que les temps pour atteindre les points intermédiaires.</p>
-							<figure class="img-container"><img src='../livraison-3.png'/><figcaption>© les contributeurs d’OpenStreetMap</figcaption></figure>
+							<figure class="img-container"><img class="half-width" src='../livraison-3.png'/><figcaption>© les contributeurs d’OpenStreetMap</figcaption></figure>
 						</section>
 						<section>
 							<div class="boiteQuestions">
 								<p>Quel est le le plus court chemin entre $D$ et $G$ ?</p>
-								<figure class="img-container"><img src='../livraison-3.png'/><figcaption>© les contributeurs d’OpenStreetMap</figcaption></figure>
+								<figure class="img-container"><img class="half-width" src='../livraison-3.png'/><figcaption>© les contributeurs d’OpenStreetMap</figcaption></figure>
 							</div>
 						</section>
 						<section>
@@ -265,7 +265,7 @@ de base pour d'autres algorithmes.</p>
 					}
 					`, { engine : 'dot'})
 				.then(function(element) {
-					element.className = 'responsive';
+					element.className = 'responsive auto-width';
 					document.getElementById('e1').appendChild(element);
 				});
 				viz.renderSVGElement(`

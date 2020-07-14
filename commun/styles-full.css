@@ -416,14 +416,6 @@ nav > div > section {
   vertical-align: text-top;
 }
 
-.img-container img.full-width{
-  width : 100%;
-}
-
-.full img {
-  width: auto;
-}
-
 .responsive {
   width: 100%;
   height: auto;
@@ -606,11 +598,15 @@ table.adjacence td.case {
   flex-direction: column;
 }
 
-.full-width {
+.auto-width img, .img-container img.auto-width {
+  width: auto;
+}
+
+.full-width, .img-container img.full-width {
   width : 100%;
 }
 
-.half-width {
+.half-width, .img-container img.half-width {
   width: 50%;
 }
 
