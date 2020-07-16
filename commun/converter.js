@@ -1,32 +1,29 @@
 class Converter {
-  ALPHABET = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q'];
-  MODE = ['', 'Rang', 'Puissance', 'Valeur du Rang'];
-  __options;
-  __base;
-  __value;
-  __heapnumber;
-  __default = {
-    "container" : "converter",
-    "classContainer" : "sort-container",
-    "classLegend" : "sort-legend",
-    "classController" : "sort-controller",
-    "classLogger" : "sort-logger",
-    "classTable" : "converter-table",
-    "classFill" : "filled",
-    "templateIdHeaps" : "heap-",
-    "base" : 10,
-    "modeLegend" : 0, // 0 = none, 1 = rang, 2 = power, 3 = value
-    "showController" : true,
-    "showLogger" : true,
-    "showCaption" : true,
-    "buttons" : {
-      "forward" : '<i class="fas fa-plus"></i>',
-      "back" : '<i class="fas fa-minus"></i>',
-      "mode" : '<i class="fas fa-info-circle"></i>'
-    },
-  }
 
   constructor(base, heapnumber, options){
+    this.ALPHABET = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q'];
+    this.MODE = ['', 'Rang', 'Puissance', 'Valeur du Rang'];
+    this.__value;
+    this.__default = {
+      "container" : "converter",
+      "classContainer" : "sort-container",
+      "classLegend" : "sort-legend",
+      "classController" : "sort-controller",
+      "classLogger" : "sort-logger",
+      "classTable" : "converter-table",
+      "classFill" : "filled",
+      "templateIdHeaps" : "heap-",
+      "base" : 10,
+      "modeLegend" : 0, // 0 = none, 1 = rang, 2 = power, 3 = value
+      "showController" : true,
+      "showLogger" : true,
+      "showCaption" : true,
+      "buttons" : {
+        "forward" : '<i class="fas fa-plus"></i>',
+        "back" : '<i class="fas fa-minus"></i>',
+        "mode" : '<i class="fas fa-info-circle"></i>'
+      },
+    }
     this.__base = base;
     this.__heapnumber = heapnumber;
     this.__options = _.merge(this.__default, options);
