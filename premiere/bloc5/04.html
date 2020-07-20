@@ -11,11 +11,129 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
+				<section id="5.4.1" data-menu-title="Rappel mathématique">
 					<h1>Fonctions</h1>
-					<div>
-
-					</div>
+					<figure class="img-container"><img class="auto-width" src='./lechat.png'/><figcaption>Source : Journal Le soir</figcaption></figure>
+				</section>
+				<section>
+					<h1>Rappel mathématique</h1>
+					<p>Vous connaissez certainement la notion de fonction par le biais des mathématiques, notamment la définition ensembliste.</p>
+					<blockquote>Une fonction est une relation entre deux ensembles pour laquelle chaque élément du premier (appelé ensemble de départ ou source) est relié à un unique élément du second (l’ensemble d'arrivée ou but).</blockquote>
+				</section>
+				<section>
+					<p>Pour une même fonction, il existe plusieurs notations possibles, toutes équivalentes :</p>
+					<ul>
+						<li>par diagramme : $ \begin{array}[t]{ccc}\mathbb{R} & \to & \mathbb{R}_{+} \\ x & \mapsto & x^2 \end{array} $</li>
+						<li>par notation formelle : $ \forall x \in \mathbb{R}, f(x) = x^2$, où $f(x) \in \mathbb{R}_{+}$</li>
+						<li>par langage naturelle : La fonction carré est la fonction qui à un nombre réel $x$ associe son carré, noté $x^2$</li>
+					</ul>
+				</section>
+				<section>
+					<p>Une fonction est un objet mathématique tel que si $x$ est un élément de $E$, alors $f(x)$ est un élément de $F$. La fonction s'attache à donner une définition de la valeur de sortie pour chaque entrée.</p>
+					<p>Pour toute variable de l'ensemble de départ, la fonction f exprime l'image de cette variable sur l'ensemble d'arrivée.</p>
+					<p>Quand on parle de fonction, au sens mathématique du terme, on s’intéresse aux fonctionnalités, à l’objectif.</p>
+				</section>
+				<section>
+					<p>Je vais juste prendre un exemple très courant, les fonctions de tri. On a une série de valeurs, des nombres, et en résultat, on veut les mêmes valeurs, mais ordonnées de la plus petite à la plus grande. Cette fonction que l'on appelle TRI() est parfaitement décrite en ces 2 ou 3 lignes. Tant que je parle de fonction mathématique, je ne m’intéresse pas à la mécanique pour mettre en place le tri.</p>
+				</section>
+				<section id="5.4.2" data-menu-title="Définition">
+					<h1>Définition</h1>
+					<p>Le rappel sur la définition d'une fonction au sens mathématique nous donne une orientation et éclaire sur la définition d'une fonction au sens informatique, ses différences et similitudes avec les mathématiques.</p>
+					<blockquote>Une fonction est une séquence d'instructions effectuant un traitement spécifique bien identifié relativement indépendant du reste du programme, et qui peut être réutilisé dans le même programme, ou dans un autre.</blockquote>
+				</section>
+				<section>
+					<p>Si la fonction mathématique définit l'objectif (le Quoi ?), la fonction informatique définit la route suivie pour atteindre cet objectif (le Comment ?). Autrement dit, au sens informatique, une fonction est un algorithme, dont les résultats vérifient les propriétés d'une fonction mathématique.</p>
+				</section>
+				<section>
+					<p>Pour illustrer, reprenons l'exemple de la fonction mathématique carré :</p>
+					<table>
+						<thead>
+							<tr><th>Mathématique</th><th>Informatique</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>le quoi ?</td><td>le comment ?</td></tr>
+							<tr><td>$ \begin{array}[t]{ccc}\mathbb{R} & \to & \mathbb{R}_{+} \\ x & \mapsto & x^2 \end{array} $</td><td><figure class="img-container"><img class="auto-width" src='./algo-carré.jpeg' /></figure></td></tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<p>Si cet exemple peut paraitre trivial, qu'en est-il de la fonction suivante :
+						$$ \begin{array}[t]{ccc}\mathbb{R} & \to & [-1, 1] \\ x & \mapsto & \cos x \end{array} $$
+						Savez-vous décrire la suite d'instructions (i.e fonction informatique) qui permette de calculer le cosinus d'un angle ?
+						<br/>Si l'on sait ce qu'est le cosinus d'un angle, c'est une autre affaire de décrire comment le calculer directement à partir d'un angle...
+					</p>
+				</section>
+				<section>
+					<section id="5.4.3" data-menu-title="Implantation en Python">
+						<h1>Implantation en Python</h1>
+						<p>Implanter une fonction consiste à coder l'algorithme de la fonction dans un langage de programmation, en l'occurrence python.</p>
+					</section>
+					<section id="5.4.3.1" data-menu-title="Déclaration">
+						<h2>Déclaration d'une fonction</h2>
+						<p>Voici la syntaxe employée en Python pour déclarer une fonction :</p>
+						<pre><code class="language-python">def nom_de_la_fonction(parametres):
+  "Emplacement de la docstring"
+  instruction1
+  instruction2
+  ...
+  return y</code></pre>
+	<p>On peut décomposer la définition en 2 blocs :</p>
+	<ul>
+		<li>la signature (ou spécification) : nom, paramètres et docstring,</li>
+		<li>le corps de la fonction : ensemble des instructions, renvoi de la fonction.</li>
+	</ul>
+					</section>
+					<section>
+						<p>Illustration :</p>
+						<pre><code class="language-python">def calculer_valeur(x):
+  y = 3 * x + 2
+  return y</code></pre>
+					</section>
+					<section id="5.4.3.2" data-menu-title="Appel">
+						<h2>Appel d'une fonction</h2>
+						<p>Une fois déclarée, une fonction peut être appelée. C'est-à-dire exécutée autant que nécessaire, avec des valeurs de paramètres, pour obtenir le résultat.</p>
+						<pre><code class="language-python">>>> calculer_valeur(4)
+14
+>>> calculer_valeur(0)
+2</code></pre>
+<p>Pour appeler une fonction, on écrit une instruction avec son nom et les paramètres entre parenthèses.</p>
+					</section>
+					<section>
+						<div class="boiteTravail">
+							<p>Implanter en Python la fonction $y = x^2 + 2x + 10$</p>
+						</div>
+					</section>
+					<section id="5.4.3.3" data-menu-title="Paramètres">
+						<section>
+							<h2>Paramètres</h2>
+							<p>Il est possible de définir plusieurs paramètres à une fonction, selon les besoins et la spécification.</p>
+							<div class="boiteTravail">
+								<p>L'indice de masse corporelle (IMC) est calculé en divisant le poids par la taille au carré. Quels sont les paramètres d'une fonction qui effectue le calcul de l'IMC ?</p>
+								<p>Écrire cette fonction en python.</p>
+							</div>
+						</section>
+						<section>
+							<p>Il est possible de déclarer une fonction sans paramètres.</p>
+							<pre><code class="language-python">def dit_bonjour():
+  return "voici une fonction qui dit bonjour"</code></pre>
+						</section>
+					</section>
+					<section id="5.4.3.4" data-menu-title="Valeur de renvoi">
+						<h2>Valeur de renvoi</h2>
+						<p>Nous l'avons déjà vu avec les exemples précédents, le mot clé `return` permet de renvoyer la valeur souhaitée.</p>
+						<p>la valeur renvoyée peut être de tout type : int, str, bool, list,...</p>
+						<p>Il faut aussi savoir qu'une fonction ne renvoie pas forcément de valeur (le mot clé return n'est pas obligatoire). Mais si elle ne renvoie pas de valeur, que fait-elle ? Elle peut faire plein de choses, par exemple elle peut tout simplement afficher une chaîne de caractères à l'aide d'un "print".</p>
+						<p>Une fonction qui ne renvoie rien est appelé communément `procédure`</p>
+					</section>
+					<section id="5.4.3.5" data-menu-title="Docstring">
+						<h2>Docstring</h2>
+					</section>
+					<section id="5.4.3.6" data-menu-title="Portée des variables">
+						<h2>Portée des variables</h2>
+					</section>
+					<section id="5.4.3.7" data-menu-title="Fonction anonyme">
+						<h2>Fonction anonyme</h2>
+					</section>
 				</section>
 			</div>
 		</div>
@@ -27,17 +145,7 @@
 		<script src="../../lib/reveal/js/reveal.js"></script>
 		<script type="text/javascript">
 			initMode({
-				header : 'Bloc 5 : Langages et Programmation',
-				menu : [ { "src" : "00.html", "title" : "5.0 - Compétences"},
-				{ "src" : "01.html", "title" : "5.1 - Présentation"},
-				{ "src" : "02.html", "title" : "5.2 - Variables"},
-				{ "src" : "03.html", "title" : "5.3 - Opérateurs"},
-				{ "src" : "04.html", "title" : "5.4 - Fonctions"},
-				{ "src" : "05.html", "title" : "5.5 - Structures conditionnelles"},
-				{ "src" : "06.html", "title" : "5.6 - Structures itératives"},
-				{ "src" : "07.html", "title" : "5.7 - Les modules"},
-				{ "src" : "08.html", "title" : "Base d'exercices"},
-				{ "src" : "sandbox.html", "title" : "Bac à sable"}]
+				header : 'Bloc 5 : Langages et Programmation'
 			});
 			hljs.initHighlightingOnLoad();
 		</script>

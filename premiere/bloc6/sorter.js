@@ -1,51 +1,51 @@
 "use strict"; // on utilise le mode strict
 
 class Sorter {
-  __array;
-  __states = [];
-  __currentStep = 0;
-  __statesContainer;
-  __interval;
-  __logger;
-  __default = {
-    "interval" : 300,
-    "container" : "sorter",
-    "templateIdStates" : "sort-states",
-    "classContainer" : "sort-container",
-    "classItem" : "sort-item",
-    "classContent" : "sort-content",
-    "classCursor" : "sort-cursor",
-    "classController" : "sort-controller",
-    "templateIdItem" : "item-",
-    "templateIdItemCursor" : "flow-",
-    "templateIdCursor" : "cursor",
-    "templateIdLoggerCompare" : "logger-compare",
-    "templateIdLoggerSwap" : "logger-swap",
-    "classSorted" : "sorted",
-    "classCompared" : "compared",
-    "classMinimum" : "minimum",
-    "classLegend" : "sort-legend",
-    "classLogger" : "sort-logger",
-    "legend" : {
-      "cursor" : "Indice où l'élément $i$ sera placé",
-      "compared" : "Element à comparer",
-      "minimum" : "Element à comparer",
-      "sorted" : "Elements triés"
-    },
-    "buttons" : {
-      "play" : '<i class="fas fa-play"></i>',
-      "pause" : '<i class="fas fa-pause"></i>',
-      "forward" : '<i class="fas fa-step-forward"></i>',
-      "back" : '<i class="fas fa-step-backward"></i>',
-      "start" : '<i class="fas fa-fast-backward"></i>',
-      "new" : '<i class="fas fa-random"></i>'
-    },
-    "showLegend" : true,
-    "showController" : true,
-    "showCursor" : true,
-    "showLogger" : false
-  };
+
   constructor(array, options){
+    this.__states = [];
+    this.__currentStep = 0;
+    this.__statesContainer;
+    this.__interval;
+    this.__logger;
+    this.__default = {
+      "interval" : 300,
+      "container" : "sorter",
+      "templateIdStates" : "sort-states",
+      "classContainer" : "sort-container",
+      "classItem" : "sort-item",
+      "classContent" : "sort-content",
+      "classCursor" : "sort-cursor",
+      "classController" : "sort-controller",
+      "templateIdItem" : "item-",
+      "templateIdItemCursor" : "flow-",
+      "templateIdCursor" : "cursor",
+      "templateIdLoggerCompare" : "logger-compare",
+      "templateIdLoggerSwap" : "logger-swap",
+      "classSorted" : "sorted",
+      "classCompared" : "compared",
+      "classMinimum" : "minimum",
+      "classLegend" : "sort-legend",
+      "classLogger" : "sort-logger",
+      "legend" : {
+        "cursor" : "Indice où l'élément $i$ sera placé",
+        "compared" : "Element à comparer",
+        "minimum" : "Element à comparer",
+        "sorted" : "Elements triés"
+      },
+      "buttons" : {
+        "play" : '<i class="fas fa-play"></i>',
+        "pause" : '<i class="fas fa-pause"></i>',
+        "forward" : '<i class="fas fa-step-forward"></i>',
+        "back" : '<i class="fas fa-step-backward"></i>',
+        "start" : '<i class="fas fa-fast-backward"></i>',
+        "new" : '<i class="fas fa-random"></i>'
+      },
+      "showLegend" : true,
+      "showController" : true,
+      "showCursor" : true,
+      "showLogger" : false
+    };
     this.__original = array;
     this.__array = [...this.__original];
     this.__options = _.merge(this.__default, options);
