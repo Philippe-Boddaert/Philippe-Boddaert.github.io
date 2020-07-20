@@ -365,6 +365,55 @@
 							<p>En base 16, ${\color{blue}A - (4 {\color{red}+ 1}) = 5}$. Il y a assez de chiffres pour soustraire 5 à A. On pose 5, aucune retenue n'est à considérer.<br /> &rArr; Il n'y a plus de rang à considérer, la soustraction est terminée.</p>
 					</section>
 				</section>
+				<section>
+					<section id="1.3.4" data-menu-title="1.3.4 - Multiplication">
+						<h1>Multiplication</h1>
+						<div class="boiteTravail">
+							<p>Le travail suivant semble trivial également mais...posez la multiplication $(349)_{10} \times (21)_{10}$, et décrivez l'algorithme qui calcule le produit de 2 entiers.</p>
+						</div>
+					</section>
+					<section id="1.3.4.1" data-menu-title="1.3.4.1 - Base 10">
+						<p>Regardons les opérations effectuées successivement pour multiplier 2 entiers.</p>
+						<p>
+							$$
+							\begin{align}
+							&  &  3 \: 4 \: 9  \\
+							\times &  & \: \: 2 \: 1 \\
+							\hline
+							= &
+							\end{align}
+							$$
+							</p>
+					</section>
+					<section>
+						<p>On considère les chiffres au rang ${\color{blue} 0}$ du multiplicateur et de la multiplicande :</p>
+						<p>
+							$$
+							\begin{align}
+							  &  & 3 \: 4 \: {\color{blue} 9} \\
+							\times &  &  \: 2 \: {\color{blue} 1} \\
+							\hline
+							= &  & \: \:  \: {\color{blue} 9}
+							\end{align}
+							$$
+							</p>
+							<p>En base 10, ${\color{blue}1 \times 9 = 9}$. Il y a assez de chiffres pour écrire 9.<br/> &rArr; On pose 9.</p>
+					</section>
+					<section>
+						<p>On considère les chiffres au rang ${\color{blue} 0}$ du multiplicateur et au rang ${\color{blue} 1}$ de la multiplicande :</p>
+						<p>
+							$$
+							\begin{align}
+							  &  & 3 \: {\color{blue} 4} \: 9 \\
+							\times &  &  \: 2 \: {\color{blue} 1} \\
+							\hline
+							= &  & \: \:  \: {\color{blue} 9}
+							\end{align}
+							$$
+							</p>
+							<p>En base 10, ${\color{blue}1 \times 9 = 9}$. Il y a assez de chiffres pour écrire 9.<br/> &rArr; On pose 9.</p>
+					</section>
+				</section>
 			</div>
 		</div>
 
