@@ -312,7 +312,7 @@ if (paramStyle == 'reveal'){
   document.write('<link rel="stylesheet" href="../../lib/reveal/css/reveal.css">');
   document.write('<link rel="stylesheet" href="../../lib/reveal/css/theme/white.css">');
   document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/title-footer/title-footer.css">');
-  document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+  document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/github.css">');
   document.write('<link rel="stylesheet" href="../../commun/styles-reveal.css">');
   let link = document.createElement( 'link' );
   link.rel = 'stylesheet';
@@ -320,7 +320,7 @@ if (paramStyle == 'reveal'){
   link.href = window.location.search.match( /print-pdf/gi ) ? '../../lib/reveal/css/print/pdf.css' : '../../lib/reveal/css/print/paper.css';
   document.getElementsByTagName( 'head' )[0].appendChild( link );
 } else {
-  document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/monokai.css">');
+  document.write('<link rel="stylesheet" href="../../lib/reveal/lib/css/github.css">');
   document.write('<link rel="stylesheet" href="../../lib/reveal/plugin/menu/menu.css">');
   document.write('<link rel="stylesheet" href="../../commun/styles-full.css">');
 }
