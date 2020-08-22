@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bloc 1 : Représentation des données : types et valeurs de base</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script src="../../commun/commun.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section id="1.6.1" data-menu-title="1.6.1 - Valeurs et expressions booléennes">
+					<h1>Valeurs booléennes</h1>
+					<figure class='img-container'>
+						<img src='./switch.jpg' />
+						<figcaption>Source : Pixabay</figcaption>
+					</figure>
+				</section>
+				<section>
+					<p>On rencontre des valeurs booléennes quotidiennement : un interrupteur (ouvert / fermé), un jeter de pièce de monnaie (pile / face), ...</p>
+					<blockquote>En informatique, un booléen est une variable à deux états : Vrai ou Faux (1 ou 0, une autre notation possible).</blockquote>
+					<p><p>L'algèbre de Boole, ou calcul booléen, est la partie des mathématiques qui s'intéresse à une approche algébrique de la logique, vue en termes de variables, d'opérateurs et de fonctions sur les variables logiques, ce qui permet d'utiliser des techniques algébriques pour traiter les expressions à deux valeurs du calcul des propositions.</p>
+				</section>
+				<section>
+					<section id="1.6.2" data-menu-title="1.6.2 - Opérateurs booléens">
+						<h1>Opérateurs booléens</h1>
+						<p>Les variables booléennes peuvent être reliées entre elles à l’aide d’opérateurs, autrement appelés fonctions.<br />Il en existe 3 de bases :</p>
+						<table>
+							<thead></thead>
+								<tr><th rowspan="2">Opérateur</th><th colspan="3">Représentation</th></tr>
+								<tr><th>International</th><th>Français</th><th>Signe mathématique</th></tr>
+							<tbody>
+								<tr><td>NON<br />(NOT)</td><td><img src="porte-not.jpg" /></td><td></td><td>&not;</td></tr>
+								<tr><td>ET<br />(AND)</td><td><img src="porte-and.jpg" /></td><td></td><td>$&and;$</td></tr>
+								<tr><td>OU<br />(OR)</td><td><img src="porte-or.jpg" /></td><td></td><td>$&or;$</td></tr>
+							</tbody>
+						</table>
+						<p>On représente les valeurs d'entrées et sorties par une table de vérité</p>
+					</section>
+					<section>
+						<h2>Opérateur NON</h2>
+						<figure class="img-container">
+							<img class="third-width" src="porte-not.jpg"/>
+							<figcaption>Porte NON (NOT)</figcaption>
+						</figure>
+						<table>
+							<thead>
+								<tr><th>Entrée</th><th>Sortie</th></tr>
+								<tr><th>a</th><th>$S = &not;a$</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>0</td><td>1</td></tr>
+								<tr><td>1</td><td>0</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>Opérateur ET (AND)</h2>
+						<figure class="img-container">
+							<img class="third-width" src="porte-and.jpg"/>
+							<figcaption>Porte ET (AND)</figcaption>
+						</figure>
+						<table>
+							<thead>
+								<tr><th colspan="2">Entrée</th><th>Sortie</th></tr>
+								<tr><th>a</th><th>b</th><th>$S = a &and; b$</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>0</td><td>0</td><td>0</td></tr>
+								<tr><td>0</td><td>1</td><td>0</td></tr>
+								<tr><td>1</td><td>0</td><td>0</td></tr>
+								<tr><td>1</td><td>1</td><td>1</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h2>Opérateur OU (OR)</h2>
+						<figure class="img-container">
+							<img class="third-width" src="porte-or.jpg"/>
+							<figcaption>Porte OU (OR)</figcaption>
+						</figure>
+						<table>
+							<thead>
+								<tr><th colspan="2">Entrée</th><th>Sortie</th></tr>
+								<tr><th>a</th><th>b</th><th>$S = a &or; b$</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>0</td><td>0</td><td>0</td></tr>
+								<tr><td>0</td><td>1</td><td>1</td></tr>
+								<tr><td>1</td><td>0</td><td>1</td></tr>
+								<tr><td>1</td><td>1</td><td>1</td></tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<p>A partir de ces 3 opérateurs, il est possible d'en décrire d'autres.</p>
+						<div class="boiteTravail">
+							<p>Ecrire les tables de vérité des opérateurs suivants :</p>
+							<ul>
+								<li>NON EST (NAND)</li>
+								<li>NON OU (NOR)</li>
+								<li>OU EXCLUSIF (XOR) : vaut 1 si uniquement une des deux valeurs de a ou de b vaut 1</li>
+							</ul>
+						</div>
+					</section>
+					<section id="1.6.2.1" data-menu-title='1.6.2.1 - Propriétés des opérateurs'>
+						<p>Les opérateurs suivent plusieurs propriétés communes :</p>
+						<ul>
+							<li>Associativité : Comme avec les opérations habituelles, certaines parenthèses sont inutiles. Exemple : $( a &and; b ) &and; c = a &and; (b &and; c) = a &and; b &and; c$</li>
+							<li>Commutativité : L'ordre est sans importance. Exemple : $a &and; b = b &and; a$</li>
+							<li>Distributivité : Exemple : $a &or; ( b &and; c ) = a &and; b &or; a &and; c$</li>
+							<li>Idempotence : Exemple : $a &and; a &and; a &and; [...] &and; a = a$</li>
+						</ul>
+					</section>
+				</section>
+				<section id="1.6.3" data-menu-title="1.6.3 - Expressions booléennes">
+					<p>A l’aide de l'ensemble des opérateurs vus ci-dessus, on peut construire des expressions ou fonctions, que l'on évalue en établissant sa table de vérité.</p>
+					<p>Exemple : $S(a, b) = &not;(a &and; b)$</p>
+					<table>
+						<thead>
+							<tr><th colspan="2">Entrée</th><th colspan="2">Sortie</th></tr>
+							<tr><th>a</th><th>b</th><th>$S_1 = a &and; b$</th><th>$S = &not;S_1$</th></tr>
+						</thead>
+						<tbody>
+							<tr><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+							<tr><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+							<tr><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+							<tr><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<div class="boiteTravail">
+						<p>Ecrire les tables de vérité des expressions booléennes suivantes :</p>
+						<ol>
+							<li>S(a, b) = (NOT(a) AND b)</li>
+							<li>S(a, b) = b OR (a AND b)</li>
+							<li>S(a, b) = a AND (a OR b)</li>
+							<li>S(a, b, c) = (NOT(a) AND b) OR (a AND c)</li>
+							<li>Communication = Émetteur ET Récepteur</li>
+							<li>Décrocher = (Sonnerie ET Décision de répondre) OU décision d'appeler</li>
+						</ol>
+					</div>
+				</section>
+				<section>
+					<div class="boiteTravail">
+						<ol>
+							<li>Montrer que (a AND b) = NOT(NOT(a) OR NOT(b))</li>
+							<li>Montrer que (a OR b) = NOT(NOT(a) AND NOT(b))</li>
+						</ol>
+					</div>
+				</section>
+				<section>
+					<div class="boiteTravail">
+						<p>Trouver l'expression booléenne, notée ssi(a, b) à partir de sa table de vérité :</p>
+						<table>
+							<thead>
+								<tr><th colspan="2">Entrée</th><th>Sortie</th></tr>
+								<tr><th>a</th><th>b</th><th>ssi(a, b)</th></tr>
+							</thead>
+							<tbody>
+								<tr><td>0</td><td>0</td><td>1</td></tr>
+								<tr><td>0</td><td>1</td><td>0</td></tr>
+								<tr><td>1</td><td>0</td><td>0</td></tr>
+								<tr><td>1</td><td>1</td><td>1</td></tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
+		<script type="text/javascript">
+			initMode({
+				header : 'Bloc 1'
+			});
+			hljs.initHighlightingOnLoad();
+		</script>
+	</body>
+</html>
