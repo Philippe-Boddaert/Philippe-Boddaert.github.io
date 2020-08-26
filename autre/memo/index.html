@@ -179,13 +179,13 @@
 			<td>Recherche dichotomique</td>
 			<td>$T(n) = T\left(\frac{n}{2}\right) + O(1)$</td>
 			<td>$\mathcal{O}(\log n)$</td>
-			<td>Appliquer le « master theorem » avec $ a = 1, b = 2, c = 0$, le cas 3 s'applique.</td>
+			<td>Appliquer le « master theorem » avec $ a = 1, b = 2, c = 0$, le cas 2 s'applique.</td>
 		</tr>
 		<tr>
 			<td>Parcours d'arbre binaire</td>
 			<td>$T(n) = 2\,T\left(\frac{n}{2}\right) + O(1)$</td>
 			<td>$\mathcal{O}(n)$</td>
-			<td>Appliquer le « master theorem » avec $ a = 2, b = 2, c = 0$, le cas 2 s'applique.</td>
+			<td>Appliquer le « master theorem » avec $ a = 2, b = 2, c = 0$, le cas 3 s'applique.</td>
 		</tr>
 		<tr>
 			<td>Trouver la valeur médiane</td>
@@ -201,6 +201,51 @@
 		</tr>
 	</tbody>
 </table>
+					</section>
+				</section>
+				<section>
+					<section id="E" data-menu-title="Preuve">
+						<h1>Raisonnement par récurrence</h1>
+					</section>
+					<section data-menu-title="Principe">
+						<h2>Principe</h2>
+						<p>On note $\mathcal{P}_n$ la proposition que l'on veut démontrer. Pour démontrer par récurrence que $\mathcal{P}_n$ est vraie pour tout entier naturel $n$ supérieur ou égal à un entier $n_0$ fixé , on procède en 3 étapes.</p>
+						<ol>
+							<li>Initialisation</li>
+							<li>Hérédité</li>
+							<li>Conclusion</li>
+						</ol>
+						<p class="illustration">Montrons que pour tout entier naturel $n$, $ 1 + 2 + \dots + n = \dfrac{n(n + 1)}{2}$.<br />Notons $\mathcal{P_n}$ la proposition : $1 + 2 + \dots + n = \dfrac{n(n + 1)}{2}$.</p>
+					</section>
+					<section>
+						<h2>1 - Initialisation</h2>
+						<p>On vérifie que $\mathcal{P}_{n_0}$ est vraie, c'est-à-dire que la proposition est vraie pour le premier indice $n_0$. On dit alors que l'on a initialisé la récurrence.</p>
+						<p class="illustration">Soit $n_0 = 1$, $\mathcal{P}_{n_0} = \dfrac{n_0(n_0 + 1)}{2} = \dfrac{1(1 + 1)}{2} = 1 = n_0$. Ainsi, $\mathcal{P_{n_0}}$ est vraie.</p>
+					</section>
+					<section>
+						<h2>2 - Hérédité</h2>
+						<p>On suppose que $\mathcal{P}_{n}$ est vraie pour tout entier $ n > n_0$, et sous cette hypothèse on démontre que la proposition $\mathcal{P_{n + 1}}$ est vraie. On a ainsi prouvé que l'hypothèse de récurrence "$\mathcal{P_n}$ vraie" est héréditaire.</p>
+						<p class="illustration">On conçoit et on admet que si "$\mathcal{P_n}$ vraie" implique "$\mathcal{P_{n+1}}$ vraie", alors la proposition est vraie pour tout $n$ ($n > 0$).</br>
+						Supposons donc que $\mathcal{P_n}$ est vraie pour un entier $n > n_0$, c'est-à-dire que pour cet entier $n$ :
+						$$ 1 + 2 + \dots + n = \dfrac{n(n + 1)}{2} $$ <br />
+						Montrons que la proposition est vraie au rang supérieur, c'est-à-dire que $\mathcal{P_{n + 1}}$ est vraie.<br />
+						Autrement dit, montrons que :
+						$$ 1 + 2 + \dots + (n + 1) = \dfrac{(n + 1)(n + 2)}{2} $$ <br />
+						Comme $\mathcal{P_n}$ est vraie, la somme $1 + 2 + \dots + n$ peut être remplacée par $\dfrac{n(n + 1)}{2}$, ainsi :
+						$$1 + 2 + \dots + (n + 1) = \dfrac{n(n + 1)}{2} + (n + 1)$$
+						$$1 + 2 + \dots + (n + 1) = \dfrac{n(n + 1)}{2} + \dfrac{2(n + 1)}{2}$$<br />
+						Donc, il suit que $1 + 2 + \dots + (n + 1) = \dfrac{(n + 1)(n + 2)}{2} $.<br />
+						La proposition $\mathcal{P_{n + 1}}$ est ainsi vraie. On a donc bien montré que si $\mathcal{P_n}$ est vraie alors $\mathcal{P_{n + 1}}$ l’est aussi.
+						</p>
+					</section>
+					<section>
+						<h2>3 - Conclusion</h2>
+						<p>Lorsque les 2 premières étapes ont été réalisées, on conclut : par récurrence, la proposition $\mathcal{P_n}$ est vraie pour tout entier naturel $n$ ($n > n_0$)</p>
+						<p class="illustration">
+							les deux étapes précédentes permettent de conclure que la propriété est vraie pour tous les entiers $n$.<br />
+							En effet, la proposition est vraie au rang 0 donc avec l’étape d’hérédité, elle devient vraie au rang 1. On peut alors réappliquer l’étape d’hérédité au rang 1 et la propriété devient vraie au rang 2.<br />
+							En réappliquant l’étape d’hérédité de proche de proche, il suit que la propriété est vraie pour tous les entiers $n$.
+						</p>
 					</section>
 				</section>
         </div>
