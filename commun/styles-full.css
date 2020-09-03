@@ -669,3 +669,7 @@ caption {
   content: "Illustration";
   font-weight: bold;
 }
+
+.d-flex {
+  display : flex;
+}

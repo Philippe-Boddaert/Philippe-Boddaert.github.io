@@ -7,65 +7,12 @@
 		<title>Bloc 1 : Converter</title>
 		<!-- Gestion des scripts en fonction du mode de présentation -->
 		<script src="../../commun/commun.js" type="text/javascript"></script>
-		<style type="text/css">
-		.converter-table {
-			border-collapse: separate;
-			border-spacing: 5px;
-		}
-
-		.converter-table tbody td {
-			width : 60px;
-			height: 5px;
-			border : 1px solid black;
-		}
-
-		.filled {
-			background-color: #069;
-		}
-
-		.empty {
-			border : none;
-			background-color: transparent;
-		}
-
-		caption {
-			caption-side: bottom;
-		}
-		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
 					<div>
-						<div style="display:flex; align-items:center; justify-content: center;">
-							<div>
-								<label for="base">Base</label>
-								<select id="base">
-									<option value=2>2</option>
-									<option value=3>3</option>
-									<option value=4>4</option>
-									<option value=5>5</option>
-									<option value=6>6</option>
-									<option value=7>7</option>
-									<option value=8>8</option>
-									<option value=9>9</option>
-									<option value=10 selected>10</option>
-									<option value=11>11</option>
-									<option value=12>12</option>
-									<option value=13>13</option>
-									<option value=14>14</option>
-									<option value=15>15</option>
-									<option value=16>16</option>
-								</select>
-							</div>
-							<div>
-								<label for="nombre">Entier</label>
-								<input id="nombre" type="text" value="185" />
-							</div>
-								<button id="convert" value="convert"><i class="fas fa-exchange-alt"></i> Convert</button>
-						</div>
-						<div id="c0"></div>
 					</div>
 				</section>
 			</div>
@@ -78,25 +25,12 @@
 		<script src="../../lib/reveal/js/reveal.js"></script>
     <script src="../../commun/converter.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			initMode({ header : '6.1 - Converter'});
+			initMode({ header : 'Converter',
+				menu : [
+					{ "src" : "00.html", "title" : "Binaire"},
+					{ "src" : "01.html", "title" : "Photographie"}]
+			});
 			hljs.initHighlightingOnLoad();
-
-			function log(x, y) {
-			    return Math.floor(Math.log(x) / Math.log(y)) + 1;
-			}
-
-			function convert(){
-				let nombre = document.getElementById('nombre').value;
-				let base = document.getElementById('base').value;
-				document.getElementById('c0').innerHTML = "";
-
-				let c0 = new Converter(base, log(nombre, base), { "container" : "c0", "modeLegend" : 2});
-				c0.convert(nombre);
-			}
-			document.getElementById('convert').addEventListener('click', convert);
-			document.getElementById('base').addEventListener('change', convert);
-
-			convert();
 		</script>
 	</body>
 </html>
