@@ -7,44 +7,56 @@
 		<title>Bloc 1 : Représentation des données : types et valeurs de base</title>
 		<!-- Gestion des scripts en fonction du mode de présentation -->
 		<script src="../../commun/commun.js" type="text/javascript"></script>
+		<style>
+		.logical, .img-container img.logical {
+			width : 120px;
+		}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section id="1.6.1" data-menu-title="1.6.1 - Valeurs et expressions booléennes">
-					<h1>Valeurs booléennes</h1>
+				<section id="1.6.1" data-menu-title="1.6.1 - Contexte">
+					<h1>Contexte</h1>
+					&#x2A7E;
 					<figure class='img-container'>
 						<img src='./switch.jpg' />
 						<figcaption>Source : Pixabay</figcaption>
 					</figure>
 				</section>
 				<section>
-					<p>On rencontre des valeurs booléennes quotidiennement : un interrupteur (ouvert / fermé), un jeter de pièce de monnaie (pile / face), ...</p>
-					<blockquote>En informatique, un booléen est une variable à deux états : Vrai ou Faux (1 ou 0, une autre notation possible).</blockquote>
-					<p><p>L'algèbre de Boole, ou calcul booléen, est la partie des mathématiques qui s'intéresse à une approche algébrique de la logique, vue en termes de variables, d'opérateurs et de fonctions sur les variables logiques, ce qui permet d'utiliser des techniques algébriques pour traiter les expressions à deux valeurs du calcul des propositions.</p>
+					<p>On rencontre des booléens quotidiennement : un interrupteur (ouvert / fermé), un jeter de pièce de monnaie (pile / face), ...</p>
+					<blockquote>Un booléen est un type de variable à deux états, muni des opérations ET, OU, NON.</blockquote>
+					<p>Ce sujet est à la confluence de 3 domaines : électronique, logique et informatique. D'où des notations diverses pour cette notion.</p>
 				</section>
 				<section>
-					<section id="1.6.2" data-menu-title="1.6.2 - Opérateurs booléens">
-						<h1>Opérateurs booléens</h1>
-						<p>Les variables booléennes peuvent être reliées entre elles à l’aide d’opérateurs, autrement appelés fonctions.<br />Il en existe 3 de bases :</p>
+					<section id="1.6.2" data-menu-title="1.6.2 - Notation et représentation">
+						<h1>Notation</h1>
+						<p></p>
 						<table>
 							<thead></thead>
-								<tr><th rowspan="2">Opérateur</th><th colspan="3">Représentation</th></tr>
-								<tr><th>International</th><th>Français</th><th>Signe mathématique</th></tr>
+								<tr><th rowspan="2" colspan="2"></th><th colspan="5">Représentation</th></tr>
+								<tr><th>Français</th><th>Électronique</th><th>Logique</th><th>Ensembliste</th><th>Python</th></tr>
 							<tbody>
-								<tr><td>NON<br />(NOT)</td><td><img src="porte-not.jpg" /></td><td></td><td>&not;</td></tr>
-								<tr><td>ET<br />(AND)</td><td><img src="porte-and.jpg" /></td><td></td><td>$&and;$</td></tr>
-								<tr><td>OU<br />(OR)</td><td><img src="porte-or.jpg" /></td><td></td><td>$&or;$</td></tr>
+								<tr><th rowspan="2">Etat</th><th>Etat Haut</th><td>Vrai</td><td>&top;</td><td>1</td><td>1</td><td>True</td></tr>
+								<tr><th>Etat Bas</th><td>Faux</td><td>&perp;</td><td>0</td><td>0</td><td>False</td></tr>
+								<tr><th rowspan="3">Opérations</th><th>NON</th><td>NON</td><td><img class="logical" src="porte-en-not.jpg" /></td><td>$&not;a$</td><td>$\overline{a}$</td><td>not</td></tr>
+								<tr><th>ET</th><td>ET</td><td><img class="logical" src="porte-en-and.jpg" /></td><td>$a \,. b$</td><td>$a &and; b$</td><td>and</td></tr>
+								<tr><th>OU</th><td>OU</td><td><img class="logical" src="porte-en-or.jpg" /></td><td>$a + b$</td><td>$a &or; b$</td><td>or</td></tr>
 							</tbody>
 						</table>
-						<p>On représente les valeurs d'entrées et sorties par une table de vérité</p>
+						<p>On représente l'ensemble valeurs d'entrées et sorties par une table de vérité. A chaque variable d'entrée correspond une colonne, et chaque ligne, une valeur d'état possible. Une colonne de sortie contient la valeur de l'état de l'opération.</p>
 					</section>
 					<section>
 						<h2>Opérateur NON</h2>
-						<figure class="img-container">
-							<img class="third-width" src="porte-not.jpg"/>
-							<figcaption>Porte NON (NOT)</figcaption>
-						</figure>
+						<table>
+							<thead></thead>
+								<tr><th colspan="3">Représentation</th></tr>
+								<tr><th>Américain</th><th>Européen</th><th>Signe mathématique</th></tr>
+							<tbody>
+								<tr><td><img class="logical" src="porte-en-not.jpg" /></td><td><img class="logical" src="porte-fr-not.jpg" /></td><td>$&not;a$</td></tr>
+							</tbody>
+						</table>
 						<table>
 							<thead>
 								<tr><th>Entrée</th><th>Sortie</th></tr>
@@ -59,7 +71,7 @@
 					<section>
 						<h2>Opérateur ET (AND)</h2>
 						<figure class="img-container">
-							<img class="third-width" src="porte-and.jpg"/>
+							<img class="logical" src="porte-en-and.jpg"/>
 							<figcaption>Porte ET (AND)</figcaption>
 						</figure>
 						<table>
@@ -78,7 +90,7 @@
 					<section>
 						<h2>Opérateur OU (OR)</h2>
 						<figure class="img-container">
-							<img class="third-width" src="porte-or.jpg"/>
+							<img class="logical" src="porte-en-or.jpg"/>
 							<figcaption>Porte OU (OR)</figcaption>
 						</figure>
 						<table>
@@ -98,30 +110,38 @@
 						<p>A partir de ces 3 opérateurs, il est possible d'en décrire d'autres.</p>
 						<div class="boiteTravail">
 							<p>Ecrire les tables de vérité des opérateurs suivants :</p>
-							<ul>
-								<li>NON EST (NAND)</li>
-								<li>NON OU (NOR)</li>
-								<li>OU EXCLUSIF (XOR) : vaut 1 si uniquement une des deux valeurs de a ou de b vaut 1</li>
-							</ul>
+							<table>
+								<thead></thead>
+									<tr><th rowspan="2">Opérateur</th><th colspan="3">Représentation</th></tr>
+									<tr><th>International</th><th>Français</th><th>Signe mathématique</th></tr>
+								<tbody>
+									<tr><td>NON ET<br />(NAND)</td><td><img class="logical" src="porte-en-nand.jpg" /></td><td><img class="logical" src="porte-fr-nand.jpg" /></td><td>$&not;(a &and;b)$</td></tr>
+									<tr><td>NON OU<br />(NOR)</td><td><img class="logical" src="porte-en-nor.jpg" /></td><td><img class="logical" src="porte-fr-nor.jpg" /></td><td>$&not;(a&or;b)$</td></tr>
+									<tr><td>OU EXCLUSIF<sup>*</sup><br />(XOR)</td><td><img class="logical" src="porte-en-xor.jpg" /></td><td><img class="logical" src="porte-fr-xor.jpg" /></td><td>$a \oplus b$</td></tr>
+									<tr><td>NON OU EXCLUSIF<sup>*</sup><br />(XNOR)</td><td><img class="logical" src="porte-en-nxor.jpg" /></td><td><img class="logical" src="porte-fr-nxor.jpg" /></td><td>$&not;(a \oplus b)$</td></tr>
+								</tbody>
+							</table>
+							<p><sup>*</sup>OU EXCLUSIF (XOR) : vaut 1 si uniquement une des deux valeurs de a ou de b vaut 1</p>
 						</div>
 					</section>
 					<section id="1.6.2.1" data-menu-title='1.6.2.1 - Propriétés des opérateurs'>
+						<h2>Propriétés</h2>
 						<p>Les opérateurs suivent plusieurs propriétés communes :</p>
 						<ul>
 							<li>Associativité : Comme avec les opérations habituelles, certaines parenthèses sont inutiles. Exemple : $( a &and; b ) &and; c = a &and; (b &and; c) = a &and; b &and; c$</li>
 							<li>Commutativité : L'ordre est sans importance. Exemple : $a &and; b = b &and; a$</li>
-							<li>Distributivité : Exemple : $a &or; ( b &and; c ) = a &and; b &or; a &and; c$</li>
+							<li>Distributivité : Exemple : $a &or; ( b &and; c ) = ( a &or; b ) &and; ( a &or; c )$</li>
 							<li>Idempotence : Exemple : $a &and; a &and; a &and; [...] &and; a = a$</li>
 						</ul>
 					</section>
 				</section>
 				<section id="1.6.3" data-menu-title="1.6.3 - Expressions booléennes">
 					<p>A l’aide de l'ensemble des opérateurs vus ci-dessus, on peut construire des expressions ou fonctions, que l'on évalue en établissant sa table de vérité.</p>
-					<p>Exemple : $S(a, b) = &not;(a &and; b)$</p>
+					<p>Exemple : $S(a, b) = \mbox{ NOT }(a \mbox{ AND }b)$</p>
 					<table>
 						<thead>
 							<tr><th colspan="2">Entrée</th><th colspan="2">Sortie</th></tr>
-							<tr><th>a</th><th>b</th><th>$S_1 = a &and; b$</th><th>$S = &not;S_1$</th></tr>
+							<tr><th>a</th><th>b</th><th>$S_1 = a \mbox{ AND } b$</th><th>$S = \mbox{ NOT }(S_1)$</th></tr>
 						</thead>
 						<tbody>
 							<tr><td>0</td><td>0</td><td>0</td><td>1</td></tr>
@@ -141,6 +161,7 @@
 							<li>S(a, b, c) = (NOT(a) AND b) OR (a AND c)</li>
 							<li>Communication = Émetteur ET Récepteur</li>
 							<li>Décrocher = (Sonnerie ET Décision de répondre) OU décision d'appeler</li>
+							<li>Bac = Avoir la moyenne OU (NON Avoir la moyenne ET rattrapage)</li>
 						</ol>
 					</div>
 				</section>
@@ -179,7 +200,7 @@
 		<script src="../../lib/reveal/js/reveal.js"></script>
 		<script type="text/javascript">
 			initMode({
-				header : 'Bloc 1'
+				header : 'Bloc 1.6 - Les booléens'
 			});
 			hljs.initHighlightingOnLoad();
 		</script>
