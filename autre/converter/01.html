@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bloc 1 : Converter</title>
+		<!-- Gestion des scripts en fonction du mode de présentation -->
+		<script src="../../commun/commun.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<div class="d-flex row">
+				    <label class="col-sm-2 col-form-label" for="dimension">Dimension (colonnes x lignes)</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text"  id="dimension_colonnes" placeholder="nombre de colonnes" size="6">
+							<span>x</span>
+							<input class="form-control" type="text"  id="dimension_lignes" placeholder="nombre de lignes" size="6">
+						</div>
+					</div>
+					<div class="d-flex row">
+				    <label class="col-sm-2 col-form-label" for="resolution">Résolution (pixels par pouce)</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control" id="resolution" placeholder="nombre de pixels par pouce">
+						</div>
+					</div>
+					<div class="d-flex row">
+				    <label class="col-sm-2 col-form-label" for="taille">Taille (largeur x hauteur)</label>
+						<div class="col-sm-10">
+							<input class="form-control" type="text"  id="taille_largeur" placeholder="largeur" size="6">
+							<span>x</span>
+							<input class="form-control" type="text"  id="taille_hauteur" placeholder="hauteur" size="6">
+						</div>
+					</div>
+					<div class="d-flex row">
+						<button id="calcul_dimension">Calculer la dimension</button>
+						<button id="calcul_resolution">Calculer la résolution</button>
+						<button id="calcul_taille">Calculer la taille</button>
+					</div>
+				</section>
+			</div>
+		</div>
+
+		<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.0.3/build/highlight.min.js"></script>
+		<script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+		<script src="../../lib/reveal/js/reveal.js"></script>
+    <script src="../../commun/converter.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			initMode({ header : '6.1 - Converter'});
+			hljs.initHighlightingOnLoad();
+
+			const dimension_colonnes = document.getElementById('dimension_colonnes');
+			const dimension_lignes = document.getElementById('dimension_lignes');
+			const resolution = document.getElementById('resolution');
+			const taille_largeur = document.getElementById('taille_largeur');
+			const taille_hauteur = document.getElementById('taille_hauteur');
+
+			function compute_dimension(largeur, hauteur, resolution){
+				return [ largeur * resolution, hauteur * resolution];
+			}
+
+			function compute_taille(colonnes, lignes, resolution){
+				return [ colonnes / resolution, lignes / resolution];
+			}
+
+			function compute_resolution(colonnes, lignes, largeur, hauteur){
+				return colonnes / largeur;
+			}
+
+			document.getElementById('calcul_dimension').addEventListener('click', function(){
+				let dimension = compute_dimension(taille_largeur.value, taille_hauteur.value, resolution.value);
+				dimension_colonnes.value = dimension[0];
+				dimension_lignes.value = dimension[1];
+			});
+
+			document.getElementById('calcul_resolution').addEventListener('click', function(){
+				resolution.value = compute_resolution(dimension_colonnes.value, dimension_lignes.value, taille_largeur.value, taille_hauteur.value);
+			});
+
+			document.getElementById('calcul_taille').addEventListener('click', function(){
+				let taille = compute_taille(dimension_colonnes.value, dimension_lignes.value, resolution.value);
+				taille_largeur.value = taille[0];
+				taille_hauteur.value = taille[1];
+			});
+
+		</script>
+	</body>
+</html>

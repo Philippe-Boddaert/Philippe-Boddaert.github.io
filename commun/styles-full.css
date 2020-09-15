@@ -657,3 +657,19 @@ svg {
 caption {
   caption-side: bottom;
 }
+
+.illustration {
+  border : 1px solid black;
+  border-radius: 5px;
+  padding : 5px;
+}
+
+.illustration::before {
+  display: block;
+  content: "Illustration";
+  font-weight: bold;
+}
+
+.d-flex {
+  display : flex;
+}
