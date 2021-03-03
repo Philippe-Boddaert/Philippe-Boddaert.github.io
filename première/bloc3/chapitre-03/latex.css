@@ -1,0 +1,69 @@
+body {
+  background-image: url('http://www.poyntzpass.co.uk/wp-content/uploads/2013/12/old_paper_background2.jpg');
+  background-repeat: repeat;
+  font-family: "Cinzel";
+  color: #2e2e2e;
+}
+
+html {
+  font-size: 1em;
+  width : 100vw;
+  height : 100vh;
+  margin : 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+table {
+    font-size: .875rem;
+    padding: 0;
+    word-break: initial;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table tr {
+    margin: 0;
+    padding: 0;
+}
+
+table tr th {
+    font-weight: bold;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr td {
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+a {
+    color: #1b69b6;
+}
+
+ul {
+  list-style-type: upper-roman;
+}

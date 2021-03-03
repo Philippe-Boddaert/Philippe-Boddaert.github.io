@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Visionneur de Tri par Insertion</title>
+    <link rel="stylesheet" href="./assets/styles-full.css" />
+	</head>
+	<body>
+		<div id="tri"></div>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5432c69a6f.js" crossorigin="anonymous"></script>
+    <script src="./assets/sorter.js" type="text/javascript"></script>
+		<script type="text/javascript">
+      function parse(chaine){
+        return chaine.split(',').map(x => parseInt(x));
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      const algorithm = urlParams.get('a')?urlParams.get('a'):"i";
+      const data = urlParams.get('d')?parse(urlParams.get('d')):[6, 4, 1, 8, 5, 10, 7, 3, 2, 9];
+      const params = {
+        "showLegend" : (urlParams.get('sle') != null)?urlParams.get('sle') === 'true':false,
+        "showController" : (urlParams.get('sco') != null)?urlParams.get('sco') === 'true':true,
+        "showCursor" : (urlParams.get('scu') != null)?urlParams.get('scu') === 'true':true,
+        "showLogger" : (urlParams.get('slo') != null)?urlParams.get('slo') === 'true':false,
+        "container" : "tri"
+      }
+
+      switch(algorithm) {
+        case "i" :
+          new InsertSorter(data, params);
+          break;
+        case "b" :
+          new BubbleSorter(data, params);
+          break;
+        case "s" :
+          new SelectSorter(data, params);
+          break;
+        case "q" :
+          new QuickSorter(data, params);
+          break;
+        default :
+          new InsertSorter(data, params);
+      }
+		</script>
+	</body>
+</html>

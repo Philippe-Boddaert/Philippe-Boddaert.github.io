@@ -1,0 +1,3070 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>Algorithme de Dijsktra - NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#algorithme-de-dijsktra" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../../.." title="NSI" class="md-header-nav__button md-logo" aria-label="NSI">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            NSI
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Algorithme de Dijsktra
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../memento/" class="md-tabs__link">
+        Memento
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../premie%CC%80re/" class="md-tabs__link">
+        Première
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../" class="md-tabs__link md-tabs__link--active">
+        Terminale
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="NSI" class="md-nav__button md-logo" aria-label="NSI">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg>
+
+    </a>
+    NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        Memento
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Memento" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Memento
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../memento/" class="md-nav__link">
+        Avant-Propos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../memento/COMBINATOIRE/" class="md-nav__link">
+        Dénombrement
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../memento/PUISSANCE/" class="md-nav__link">
+        Puissances
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../memento/SUITE/" class="md-nav__link">
+        Les suites
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        Première
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Première" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Première
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/" class="md-nav__link">
+        Organisation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
+        Bloc1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc1" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/" class="md-nav__link">
+        Bloc 1 - Représentation des données : types et valeurs de base
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
+      
+      <label class="md-nav__link" for="nav-3-2-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-01/" class="md-nav__link">
+        Numération et Représentation des nombres
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-01/COURS/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-01/DEBRANCHE/" class="md-nav__link">
+        DEBRANCHE
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" >
+      
+      <label class="md-nav__link" for="nav-3-2-3">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-03/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4" >
+      
+      <label class="md-nav__link" for="nav-3-2-4">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-04/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-5" type="checkbox" id="nav-3-2-5" >
+      
+      <label class="md-nav__link" for="nav-3-2-5">
+        Chapitre 05
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 05" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-05/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-05/PROJET/" class="md-nav__link">
+        Qui est-ce ?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-05/TP/" class="md-nav__link">
+        Mystère
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-6" type="checkbox" id="nav-3-2-6" >
+      
+      <label class="md-nav__link" for="nav-3-2-6">
+        Chapitre 06
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 06" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-06/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc1/chapitre-06/TP/" class="md-nav__link">
+        TP - Détective oulipien
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3">
+        Bloc2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc2" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc2/" class="md-nav__link">
+        Bloc 2 - Représentation des données : types construits
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-3-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc2/chapitre-01/" class="md-nav__link">
+        Tableau
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc2/chapitre-01/COURS/" class="md-nav__link">
+        Tableaux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc2/chapitre-01/TP/" class="md-nav__link">
+        TP : Les Tableaux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3-3">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc2/chapitre-02/" class="md-nav__link">
+        Tuple
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-4" type="checkbox" id="nav-3-3-4" >
+      
+      <label class="md-nav__link" for="nav-3-3-4">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc2/chapitre-03/" class="md-nav__link">
+        Dictionnaire
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-5" type="checkbox" id="nav-3-3-5" >
+      
+      <label class="md-nav__link" for="nav-3-3-5">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc2/chapitre-04/" class="md-nav__link">
+        Traitement des données en Table
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+      
+      <label class="md-nav__link" for="nav-3-4">
+        Bloc3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc3" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-4">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc3/" class="md-nav__link">
+        Bloc 3 - Réseau et Web
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-2" type="checkbox" id="nav-3-4-2" >
+      
+      <label class="md-nav__link" for="nav-3-4-2">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc3/chapitre-02/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc3/chapitre-02/HTML/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" >
+      
+      <label class="md-nav__link" for="nav-3-5">
+        Bloc4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc4" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-5">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc4/" class="md-nav__link">
+        Bloc 4 - Architectures matérielles et systèmes d'exploitation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-2" type="checkbox" id="nav-3-5-2" >
+      
+      <label class="md-nav__link" for="nav-3-5-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-5-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc4/chapitre-01/COURS/" class="md-nav__link">
+        COURS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6" >
+      
+      <label class="md-nav__link" for="nav-3-6">
+        Bloc5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc5" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-6">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc5/" class="md-nav__link">
+        Bloc 5 - Langages et Programmation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-2" type="checkbox" id="nav-3-6-2" >
+      
+      <label class="md-nav__link" for="nav-3-6-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc5/chapitre-01/" class="md-nav__link">
+        Les Variables
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-3" type="checkbox" id="nav-3-6-3" >
+      
+      <label class="md-nav__link" for="nav-3-6-3">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc5/chapitre-02/" class="md-nav__link">
+        Structures conditionnelles
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-4" type="checkbox" id="nav-3-6-4" >
+      
+      <label class="md-nav__link" for="nav-3-6-4">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc5/chapitre-03/" class="md-nav__link">
+        Fonction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-5" type="checkbox" id="nav-3-6-5" >
+      
+      <label class="md-nav__link" for="nav-3-6-5">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc5/chapitre-04/" class="md-nav__link">
+        Structures itératives
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-6" type="checkbox" id="nav-3-6-6" >
+      
+      <label class="md-nav__link" for="nav-3-6-6">
+        Chapitre 07
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 07" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc5/chapitre-07/" class="md-nav__link">
+        Pygame
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7" >
+      
+      <label class="md-nav__link" for="nav-3-7">
+        Bloc6
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc6" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-7">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/" class="md-nav__link">
+        Bloc 6 - Algorithmique
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-2" type="checkbox" id="nav-3-7-2" >
+      
+      <label class="md-nav__link" for="nav-3-7-2">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-02/" class="md-nav__link">
+        Preuve de programme
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-3" type="checkbox" id="nav-3-7-3" >
+      
+      <label class="md-nav__link" for="nav-3-7-3">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-03/" class="md-nav__link">
+        Les tris
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-03/AUTRE/" class="md-nav__link">
+        Autres tris
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-03/INSERTION/" class="md-nav__link">
+        Tri par Insertion
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-03/SELECTION/" class="md-nav__link">
+        Tri par Sélection
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-4" type="checkbox" id="nav-3-7-4" >
+      
+      <label class="md-nav__link" for="nav-3-7-4">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-04/" class="md-nav__link">
+        Algorithme des $k$ plus proches voisins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-04/choixpeau/" class="md-nav__link">
+        Le Choixpeau magique d'Harry Potter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-04/pokemon/" class="md-nav__link">
+        Pokemon
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-5" type="checkbox" id="nav-3-7-5" >
+      
+      <label class="md-nav__link" for="nav-3-7-5">
+        Chapitre 05
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 05" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-05/" class="md-nav__link">
+        Recherche dichotomique
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-05/Le%20tr%C3%A9sor%20et%20la%20pi%C3%A8ce/" class="md-nav__link">
+        Le trésor et la fausse pièce
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-6" type="checkbox" id="nav-3-7-6" >
+      
+      <label class="md-nav__link" for="nav-3-7-6">
+        Chapitre 06
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 06" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../premie%CC%80re/bloc6/chapitre-06/" class="md-nav__link">
+        Algorithmes gloutons
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        Terminale
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Terminale" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Terminale
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        Organisation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+      
+      <label class="md-nav__link" for="nav-4-2">
+        Bloc1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc1" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc1/" class="md-nav__link">
+        Bloc 1 - Structures de données
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2" >
+      
+      <label class="md-nav__link" for="nav-4-2-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc1/chapitre-01/FILE/" class="md-nav__link">
+        Structure : File
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc1/chapitre-01/LISTE/" class="md-nav__link">
+        Structure : Liste
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc1/chapitre-01/PILE/" class="md-nav__link">
+        Structure : Pile
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+      
+      <label class="md-nav__link" for="nav-4-3">
+        Bloc3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc3" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc3/" class="md-nav__link">
+        Bloc 3 - Architectures matérielles, systèmes d’exploitation et réseaux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3-2" type="checkbox" id="nav-4-3-2" >
+      
+      <label class="md-nav__link" for="nav-4-3-2">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc3/chapitre-03/" class="md-nav__link">
+        Protocoles de routage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc3/chapitre-03/COURS/" class="md-nav__link">
+        Protocoles de routage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3-3" type="checkbox" id="nav-4-3-3" >
+      
+      <label class="md-nav__link" for="nav-4-3-3">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc3/chapitre-04/COURS/" class="md-nav__link">
+        Sécurité des communications
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" >
+      
+      <label class="md-nav__link" for="nav-4-4">
+        Bloc4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc4" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-4">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/" class="md-nav__link">
+        Bloc 4 - Langages et Programmation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-2" type="checkbox" id="nav-4-4-2" >
+      
+      <label class="md-nav__link" for="nav-4-4-2">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-02/" class="md-nav__link">
+        Calculabilité / Décidabilité
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-02/COURS/" class="md-nav__link">
+        Calculabilité / Décidabilité
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-02/TURING/" class="md-nav__link">
+        Machine de Turing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-3" type="checkbox" id="nav-4-4-3" >
+      
+      <label class="md-nav__link" for="nav-4-4-3">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-03/" class="md-nav__link">
+        Récursivité
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-4" type="checkbox" id="nav-4-4-4" >
+      
+      <label class="md-nav__link" for="nav-4-4-4">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-04/" class="md-nav__link">
+        Programmation Orientée Objet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-04/COURS/" class="md-nav__link">
+        Programmation Orientée Objet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-04/PRECIEUX/" class="md-nav__link">
+        Mon précieux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-5" type="checkbox" id="nav-4-4-5" >
+      
+      <label class="md-nav__link" for="nav-4-4-5">
+        Chapitre 05
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 05" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bloc4/chapitre-05/" class="md-nav__link">
+        Mise au point de programme / Gestion des bugs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" checked>
+      
+      <label class="md-nav__link" for="nav-4-5">
+        Bloc5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc5" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-5">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5-1" type="checkbox" id="nav-4-5-1" checked>
+      
+      <label class="md-nav__link" for="nav-4-5-1">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-5-1">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Algorithme de Dijsktra
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Algorithme de Dijsktra
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexte" class="md-nav__link">
+    Contexte
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelisation" class="md-nav__link">
+    Modélisation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    Principe
+  </a>
+  
+    <nav class="md-nav" aria-label="Principe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" class="md-nav__link">
+    Initialisation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deroule" class="md-nav__link">
+    Déroulé
+  </a>
+  
+    <nav class="md-nav" aria-label="Déroulé">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-sur-le-graphe-de-la-figure-1" class="md-nav__link">
+    Exemple sur le graphe de la Figure 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-de-lalgorithme-de-dijkstra" class="md-nav__link">
+    Analyse de l'algorithme de Dijkstra
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyse de l'algorithme de Dijkstra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminaison" class="md-nav__link">
+    Terminaison
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correction" class="md-nav__link">
+    Correction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexite" class="md-nav__link">
+    Complexité
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cas-dun-graphe-pondere-avec-poids-negatif" class="md-nav__link">
+    Cas d'un graphe pondéré avec poids négatif
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    Ressources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin" class="md-nav__link">
+    Pour aller plus loin
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#contexte" class="md-nav__link">
+    Contexte
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelisation" class="md-nav__link">
+    Modélisation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    Principe
+  </a>
+  
+    <nav class="md-nav" aria-label="Principe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" class="md-nav__link">
+    Initialisation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deroule" class="md-nav__link">
+    Déroulé
+  </a>
+  
+    <nav class="md-nav" aria-label="Déroulé">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemple-sur-le-graphe-de-la-figure-1" class="md-nav__link">
+    Exemple sur le graphe de la Figure 1
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    Exercices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-de-lalgorithme-de-dijkstra" class="md-nav__link">
+    Analyse de l'algorithme de Dijkstra
+  </a>
+  
+    <nav class="md-nav" aria-label="Analyse de l'algorithme de Dijkstra">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminaison" class="md-nav__link">
+    Terminaison
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correction" class="md-nav__link">
+    Correction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexite" class="md-nav__link">
+    Complexité
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cas-dun-graphe-pondere-avec-poids-negatif" class="md-nav__link">
+    Cas d'un graphe pondéré avec poids négatif
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ressources" class="md-nav__link">
+    Ressources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pour-aller-plus-loin" class="md-nav__link">
+    Pour aller plus loin
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="algorithme-de-dijsktra">Algorithme de Dijsktra</h1>
+<h2 id="contexte">Contexte</h2>
+<p>Mettons-nous dans la place d'un livreur Super-eats qui se déplace en vélo. Il se situe actuellement aux abords d'un restaurant, situé au point <span class="arithmatex">\(D\)</span> , et doit livrer une commande à un client situé au point 
+<span class="arithmatex">\(G\)</span>.</p>
+<figure>
+<img src="./assets/livraison-1.png" />
+<figcaption style='text-align : center;'>Source : les contributeurs d'OpenStreetMap</figcaption>
+</figure>
+
+<p>En tant que cycliste, le livreur se déplace uniquement sur les pistes cyclables. La carte suivante indique les pistes permettant de relier le point d'arrivée, ainsi que les temps pour atteindre les points intermédiaires.</p>
+<figure>
+<img src="./assets/livraison-3.png" />
+<figcaption style='text-align : center;'>Source : les contributeurs d'OpenStreetMap</figcaption>
+</figure>
+<blockquote>
+<p>Quel est le le plus court chemin que doit emprunter le livreur pour effectuer sa livraison ?</p>
+</blockquote>
+<h2 id="modelisation">Modélisation</h2>
+<p>Les données du problème du livreur peuvent être modélisées sous la forme d'un graphe pondéré où :</p>
+<ul>
+<li>chaque <strong><em>sommet</em></strong> est un point d'intersection d'une piste cyclable,</li>
+<li>chaque <strong><em>arête</em></strong>, une piste cyclable,</li>
+<li>le <strong><em>poids</em></strong> de chaque arête, la durée en minutes pour parcourir la distance entre 2 sommets.</li>
+</ul>
+<p><img alt="Alt text" src="https://g.gravizo.com/svg?
+graph G {
+    graph [pad=&quot;1&quot;, ranksep=&quot;0.5&quot;, nodesep=&quot;1&quot;];
+    labelloc=&quot;b&quot;;
+    label=&quot;Fig 1.Graphe non orienté pondéré modélisant le problème de livraison.&quot;;
+    node [width=0.5, shape=circle]
+    {rank=min B E}
+    {rank = same D C G}
+    {rank = same A F}
+    D -- A [label=&quot;14&quot;];
+    D -- B [label=&quot;13&quot;];
+    A -- C [label=&quot;10&quot;];
+    A -- F [label=&quot;15&quot;];
+    B -- C [label=&quot;8&quot;];
+    B -- E [label=&quot;25&quot;];
+    C -- E [label=&quot;5&quot;];
+    C -- F [label=&quot;9&quot;];
+    E -- G [label=&quot;3&quot;];
+    F -- G [label=&quot;12&quot;];
+}" /></p>
+<p>Soit <span class="arithmatex">\(C(x,y)\)</span> un chemin (ou une chaîne) dans un graphe pondéré du sommet <span class="arithmatex">\(x\)</span> vers le sommet <span class="arithmatex">\(y\)</span>. La longueur de ce chemin est égale à la somme des poids de chacun arcs (ou de chacune des arêtes) qui le constituent. Exemple : La chaine <span class="arithmatex">\(D-B-C-F\)</span> a une longueur de <span class="arithmatex">\(13 + 8 + 9 = 30\)</span>.</p>
+<p>Le problème du livreur Super-Eats est de déterminer la plus courte chaîne du graphe pondéré entre le sommet <span class="arithmatex">\(D\)</span> et un sommet <span class="arithmatex">\(G\)</span>.
+Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <strong><em>Dijkstra</em></strong>, créé en 1959.</p>
+<h2 id="principe">Principe</h2>
+<p><img alt="Alt texte" src="../assets/dijkstra.jpeg" /></p>
+<p>L'algorithme dû à Dijkstra est basé sur le principe suivant :</p>
+<p>Si le plus court chemin reliant le sommet de départ <span class="arithmatex">\(s_0\)</span> à un autre sommet <span class="arithmatex">\(s_f\)</span> passe par les sommets <span class="arithmatex">\(s_1, s_2, \dots,  s_k\)</span> alors, les différentes étapes sont aussi les plus courts chemins reliant <span class="arithmatex">\(s_0\)</span> aux différents sommets  <span class="arithmatex">\(s_1, s_2, \dots,  s_k\)</span>.</p>
+<p>On construit de proche en proche le chemin cherché en choisissant à chaque itération de l'algorithme, un sommet <span class="arithmatex">\(s_i\)</span> du graphe parmi ceux qui n'ont pas encore été traités, tel que la longueur connue provisoirement du plus court chemin allant de <span class="arithmatex">\(s_0\)</span> à <span class="arithmatex">\(s_i\)</span> soit la plus courte possible.</p>
+<p>L'algorithme construit un tableau de <span class="arithmatex">\(n\)</span> éléments (où <span class="arithmatex">\(n\)</span> est le nombre de sommets de <span class="arithmatex">\(G\)</span>) qui va contenir pour chaque case <span class="arithmatex">\(i\)</span> le coût du sommet (i.e la distance minimale du sommet de départ au sommet <span class="arithmatex">\(s_i\)</span>) ainsi que le prédécesseur du sommet <span class="arithmatex">\(s_i\)</span>.</p>
+<h3 id="initialisation">Initialisation</h3>
+<p>Au départ :</p>
+<ul>
+<li>Chaque case <span class="arithmatex">\(i\)</span> est initialisée à <span class="arithmatex">\(+\infty\)</span>, le prédécesseur à <span class="arithmatex">\(\emptyset\)</span></li>
+<li>Le coût du sommet de départ <span class="arithmatex">\(s_0\)</span> est initialisée à 0</li>
+<li>L'ensemble des sommets <span class="arithmatex">\(s_i\)</span> sont marqués non visités</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{|c | c | c | c | c | c |}
+\hline
+ D &amp; A &amp; B &amp; C &amp; E &amp; F &amp; G \\
+\hline
+ 0, \emptyset&amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp;  +\infty, \emptyset \\
+\end{array} \\
+\mbox{Tableau à l'initialisation}
+\]</div>
+<h2 id="deroule">Déroulé</h2>
+<p>A chaque étape, </p>
+<ul>
+<li>On choisit le sommet <span class="arithmatex">\(s\)</span>, non visité, de coût minimal,</li>
+<li>On met à jour les coûts des voisins de <span class="arithmatex">\(s\)</span> en ajoutant le coût de <span class="arithmatex">\(s\)</span> au poids des arêtes s'il est inférieur au coût actuel,</li>
+<li>On marque <span class="arithmatex">\(s\)</span> comme prédécesseur de chaque sommet dont le coût a été mis à jour,</li>
+<li>On marque <span class="arithmatex">\(s\)</span> comme sommet visité.</li>
+</ul>
+<h3 id="exemple-sur-le-graphe-de-la-figure-1">Exemple sur le graphe de la Figure 1</h3>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+ D &amp; A &amp; B &amp; C &amp; E &amp; F &amp; G \\
+\hline
+ 0, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp;  +\infty, \emptyset \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'initialisation}
+\]</div>
+<h4>Etape 1</h4>
+<ul>
+<li>on choisit le sommet <span class="arithmatex">\(D\)</span>, non visité car il a le coût minimal parmi l'ensemble des sommets non visités,</li>
+<li>on met à jour les coûts des voisins de <span class="arithmatex">\(D\)</span> en ajoutant le coût de <span class="arithmatex">\(D\)</span> au poids des arêtes de <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span> </li>
+<li>on marque <span class="arithmatex">\(D\)</span> comme prédécesseur de <span class="arithmatex">\(A\)</span> et <span class="arithmatex">\(B\)</span> car leurs coûts ont été mis à jour</li>
+<li>on marque <span class="arithmatex">\(D\)</span> comme sommet visité</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+{\color{red} D} &amp; A &amp; B &amp; C &amp; E &amp; F &amp; G \\
+\hline
+ 0, \emptyset &amp; 14, D &amp; 13, D &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp;  +\infty, \emptyset \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'étape 1}
+\]</div>
+<h4>Etape 2</h4>
+<ul>
+<li>on choisit le sommet <span class="arithmatex">\(B\)</span>, non visité car il a le coût minimal parmi l'ensemble des sommets non visités,</li>
+<li>on met à jour les coûts des voisins de <span class="arithmatex">\(B\)</span> en ajoutant le coût de <span class="arithmatex">\(B\)</span> au poids des arêtes de <span class="arithmatex">\(C\)</span> et <span class="arithmatex">\(E\)</span> </li>
+<li>on marque <span class="arithmatex">\(B\)</span> comme prédécesseur de <span class="arithmatex">\(C\)</span> et <span class="arithmatex">\(E\)</span> car leurs coûts ont été mis à jour</li>
+<li>on marque <span class="arithmatex">\(B\)</span> comme sommet visité</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+{\color{red} D} &amp; A &amp; {\color{red} B} &amp; C &amp; E &amp; F &amp; G \\
+\hline
+ 0, \emptyset &amp; 14, D &amp; 13, D &amp; 21, B &amp; 38, B &amp; +\infty, \emptyset &amp;  +\infty, \emptyset \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'étape 2}
+\]</div>
+<h4>Etape 3</h4>
+<ul>
+<li>on choisit le sommet <span class="arithmatex">\(A\)</span>, non visité car il a le coût minimal parmi l'ensemble des sommets non visités,</li>
+<li>on met à jour les coûts des voisins de <span class="arithmatex">\(A\)</span> en ajoutant le coût de <span class="arithmatex">\(A\)</span> au poids des arêtes de  <span class="arithmatex">\(F\)</span> </li>
+<li>on marque <span class="arithmatex">\(A\)</span> comme prédécesseur de <span class="arithmatex">\(F\)</span> car son coût a été mis à jour</li>
+<li>on marque <span class="arithmatex">\(A\)</span> comme sommet visité</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+{\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; C &amp; E &amp; F &amp; G \\
+\hline
+ 0, \emptyset &amp; 14, D &amp; 13, D &amp; 21, B &amp; 38, B &amp; 29, A &amp;  +\infty, \emptyset \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'étape 3}
+\]</div>
+<h4>Etape 4</h4>
+<ul>
+<li>on choisit le sommet <span class="arithmatex">\(C\)</span>, non visité car il a le coût minimal parmi l'ensemble des sommets non visités,</li>
+<li>on met à jour les coûts des voisins de <span class="arithmatex">\(C\)</span> en ajoutant le coût de <span class="arithmatex">\(C\)</span> au poids des arêtes de  <span class="arithmatex">\(E\)</span> </li>
+<li>on marque <span class="arithmatex">\(C\)</span> comme prédécesseur de <span class="arithmatex">\(E\)</span> car son coût a été mis à jour</li>
+<li>on marque <span class="arithmatex">\(C\)</span> comme sommet visité</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+{\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; E &amp; F &amp; G \\
+\hline
+ 0, \emptyset &amp; 14, D &amp; 13, D &amp; 21, B &amp; 26, C &amp; 29, A &amp;  +\infty, \emptyset \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'étape 4}
+\]</div>
+<h4>Etape 5</h4>
+<ul>
+<li>on choisit le sommet <span class="arithmatex">\(E\)</span>, non visité car il a le coût minimal parmi l'ensemble des sommets non visités,</li>
+<li>on met à jour les coûts des voisins de <span class="arithmatex">\(E\)</span> en ajoutant le coût de <span class="arithmatex">\(E\)</span> au poids des arêtes de <span class="arithmatex">\(G\)</span> </li>
+<li>on marque <span class="arithmatex">\(E\)</span> comme prédécesseur de <span class="arithmatex">\(G\)</span> car son coût a été mis à jour</li>
+<li>on marque <span class="arithmatex">\(E\)</span> comme sommet visité</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+{\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; {\color{red} E} &amp; F &amp; G \\
+\hline
+ 0, \emptyset &amp; 14, D &amp; 13, D &amp; 21, B &amp; 26, C &amp; 29, A &amp;  29, E \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'étape 5}
+\]</div>
+<h4>Etape 6</h4>
+<ul>
+<li>on choisit le sommet <span class="arithmatex">\(F\)</span>, non visité car il a le coût minimal parmi l'ensemble des sommets non visités,</li>
+<li>on ne met à jour aucun coût des voisins de <span class="arithmatex">\(F\)</span></li>
+<li>on marque <span class="arithmatex">\(F\)</span> comme sommet visité</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+{\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; {\color{red} E} &amp; {\color{red} F} &amp; G \\
+\hline
+ 0, \emptyset &amp; 14, D &amp; 13, D &amp; 21, B &amp; 26, C &amp; 29, A &amp;  29, E \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'étape 6}
+\]</div>
+<h4>Etape 7</h4>
+<ul>
+<li>on choisit le sommet <span class="arithmatex">\(G\)</span>, non visité car il a le coût minimal parmi l'ensemble des sommets non visités,</li>
+<li>on ne met à jour aucun coût des voisins de <span class="arithmatex">\(G\)</span></li>
+<li>on marque <span class="arithmatex">\(G\)</span> comme sommet visité</li>
+</ul>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c |}
+\hline
+{\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; {\color{red} E} &amp; {\color{red} F} &amp; {\color{red} G} \\
+\hline
+ 0, \emptyset &amp; 14, D &amp; 13, D &amp; 21, B &amp; 26, C &amp; 29, A &amp;  29, E \\
+ \hline
+\end{array} \\
+\mbox{Etat du tableau des coûts à l'étape 7}
+\]</div>
+<h4>Fin de l'algorithme</h4>
+<p>L'algorithme de Dijsktra renvoie le tableau des coûts des distances entre le sommet de départ et le sommet <span class="arithmatex">\(i\)</span>.</p>
+<p>Le coût de la chaine la plus courte entre le sommet de départ et le sommet <span class="arithmatex">\(i\)</span> est la valeur du coût du sommet <span class="arithmatex">\(i\)</span> </p>
+<blockquote>
+<p><strong><em>Exemple sur la Figure 1</em></strong> : le coût de la chaine la plus courte entre <span class="arithmatex">\(D\)</span> et <span class="arithmatex">\(G\)</span> est égale à <strong>29</strong> (coût de <span class="arithmatex">\(G\)</span> dans le tableau des coûts)</p>
+</blockquote>
+<p>La chaine entre le sommet de départ et le sommet <span class="arithmatex">\(i\)</span> est la liste inversée des prédécesseurs successifs du tableau des coûts en partant du sommet <span class="arithmatex">\(i\)</span>.</p>
+<blockquote>
+<p><strong><em>Exemple sur la Figure 1</em></strong> : La liste des prédécesseurs successifs en partant de <span class="arithmatex">\(G\)</span> est : <span class="arithmatex">\(E \rightarrow C \rightarrow B \rightarrow D\)</span></p>
+<p>La chaine la plus courte entre <span class="arithmatex">\(D\)</span> et <span class="arithmatex">\(G\)</span> est la liste inversée : <span class="arithmatex">\(D \rightarrow B \rightarrow C \rightarrow E \rightarrow G\)</span></p>
+</blockquote>
+<h2 id="exercices">Exercices</h2>
+<ol>
+<li>Appliquer l'algorithme de Dijkstra tel que décrit précédemment pour obtenir le tableau de coûts tel que le sommet de départ est le sommet <span class="arithmatex">\(G\)</span>. En déduire la chaine la plus courte entre les sommets <span class="arithmatex">\(G\)</span> et <span class="arithmatex">\(A\)</span>,</li>
+<li>Écrire l'algorithme <code>obtenir_chaine</code> qui prend en paramètre un tableau <span class="arithmatex">\(T\)</span> de coûts de distance, un sommet <span class="arithmatex">\(x\)</span> de départ et un sommet d'arrivée <span class="arithmatex">\(y\)</span> et renvoie la chaine la plus courte entre <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> sous la forme d'une liste de sommets,</li>
+<li>Écrire l'algorithme <code>initialisation</code>, tel que décrit précédemment, qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span> et qui renvoie un tableau de coût initialisé,</li>
+<li>Écrire l'algorithme <code>mettre_a_jour_voisins</code> qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span>, un tableau de coût <span class="arithmatex">\(T\)</span> et un sommet <span class="arithmatex">\(s\)</span> et a pour effet de bord de mettre à jour les voisins de <span class="arithmatex">\(s\)</span> tel que décrit précédemment,</li>
+<li>Écrire l'algorithme <code>dijkstra</code>, tel que décrit précédemment, qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span> et un sommet <span class="arithmatex">\(s\)</span> de départ et renvoie le tableau des coûts de distance.  </li>
+</ol>
+<h2 id="solutions">Solutions</h2>
+<ol>
+<li>Le chemin le plus court entre <span class="arithmatex">\(G\)</span> et <span class="arithmatex">\(A\)</span> est : <span class="arithmatex">\(G \rightarrow E \rightarrow C \rightarrow A\)</span> et vaut 18. Les états successifs du tableau des coûts sont :</li>
+</ol>
+<div class="arithmatex">\[
+\begin{array}{| c | c | c | c | c | c | c |}
+\hline
+ G &amp; A &amp; B &amp; C &amp; D &amp; E &amp; F &amp; \mbox{noeud choisi} \\
+\hline
+0, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp;  +\infty, \emptyset &amp; -\\
+\hline
+0, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; G\\
+\hline
+0, \emptyset &amp; +\infty, \emptyset &amp; 28, E &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; E\\
+\hline
+0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; C\\
+\hline
+0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; F\\
+\hline
+0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; B\\
+\hline
+0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; A\\
+\hline
+0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; D\\
+\hline
+\end{array} \\
+\mbox{Tableau des coûts pour le sommet de départ $G$}
+\]</div>
+<ol>
+<li><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">obtenir_chaine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">Entrées</span> <span class="p">:</span> 
+  <span class="o">-</span> <span class="n">T</span> <span class="p">:</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coûts</span> <span class="n">de</span> <span class="n">distance</span>
+  <span class="o">-</span> <span class="n">x</span> <span class="p">:</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">départ</span>
+  <span class="o">-</span> <span class="n">y</span> <span class="p">:</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">d</span><span class="s1">&#39;arrivée</span>
+<span class="n">Sortie</span> <span class="p">:</span> <span class="n">la</span> <span class="n">chaine</span> <span class="n">la</span> <span class="n">plus</span> <span class="n">courte</span> <span class="n">entre</span> <span class="n">x</span> <span class="n">et</span> <span class="n">y</span> <span class="n">sous</span> <span class="n">la</span> <span class="n">forme</span> <span class="n">d</span><span class="s1">&#39;une liste de sommets</span>
+<span class="n">Début</span>
+    <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[]</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="n">y</span>
+  <span class="n">Tant</span> <span class="n">que</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">x</span> <span class="n">faire</span>
+    <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">chaine</span>
+    <span class="n">s</span> <span class="o">&lt;-</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">predecesseur</span>
+  <span class="n">FinTantQue</span>
+  <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">chaine</span>
+  <span class="n">Renvoyer</span> <span class="n">chaine</span>
+<span class="n">Fin</span>
+</code></pre></div>
+</td></tr></table></li>
+<li><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">initialisation</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">Entrées</span> <span class="p">:</span> 
+ <span class="o">-</span> <span class="n">G</span><span class="p">,</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
+ <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">départ</span>
+<span class="n">Sortie</span> <span class="p">:</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coût</span> <span class="n">initialisé</span>
+<span class="n">Début</span>
+    <span class="n">T</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="o">|</span><span class="n">G</span><span class="o">.</span><span class="n">sommets</span><span class="o">|</span><span class="p">]</span>     <span class="c1"># un tableau de taille égale à l&#39;ordre de G</span>
+    <span class="n">Pour</span> <span class="n">tout</span> <span class="n">sommet</span> <span class="n">s</span> <span class="n">de</span> <span class="n">G</span><span class="o">.</span><span class="n">sommets</span> <span class="n">faire</span>
+        <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">cout</span> <span class="o">=</span> <span class="o">+</span><span class="err">∞</span>
+        <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">predecesseur</span> <span class="o">=</span> <span class="n">Ø</span>
+    <span class="n">FinPour</span>
+    <span class="n">T</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">cout</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">Renvoyer</span> <span class="n">T</span>
+<span class="n">Fin</span>
+</code></pre></div>
+</td></tr></table></li>
+<li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">mettre_a_jour_voisins</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Entrées</span> <span class="p">:</span>
+  <span class="o">-</span> <span class="n">G</span><span class="p">,</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
+  <span class="o">-</span> <span class="n">T</span><span class="p">,</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coût</span>
+  <span class="o">-</span> <span class="n">s</span><span class="p">,</span> <span class="n">un</span> <span class="n">sommet</span>
+<span class="n">Sortie</span> <span class="p">:</span> <span class="n">Aucune</span>
+<span class="n">Effet</span> <span class="n">de</span> <span class="n">bord</span> <span class="p">:</span> <span class="n">Les</span> <span class="n">coûts</span> <span class="n">des</span> <span class="n">voisins</span> <span class="n">de</span> <span class="n">s</span> <span class="n">sont</span> <span class="n">mis</span> <span class="n">à</span> <span class="n">jour</span>
+<span class="n">Début</span>
+    <span class="n">Pour</span> <span class="n">tout</span> <span class="n">voisin</span> <span class="n">v</span> <span class="n">de</span> <span class="n">G</span><span class="o">.</span><span class="n">voisins</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="n">Si</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">G</span><span class="o">.</span><span class="n">poids</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="n">alors</span>
+        <span class="n">T</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">G</span><span class="o">.</span><span class="n">poids</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+    <span class="n">Finsi</span>
+  <span class="n">FinPour</span>
+<span class="n">Fin</span>
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+<span class="n">Entrées</span> <span class="p">:</span>
+  <span class="o">-</span> <span class="n">G</span> <span class="p">:</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
+  <span class="o">-</span> <span class="n">s</span> <span class="p">:</span> <span class="n">un</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">G</span>
+<span class="n">Sortie</span> <span class="p">:</span> <span class="n">le</span> <span class="n">tableau</span> <span class="n">des</span> <span class="n">coûts</span> <span class="n">des</span> <span class="n">distances</span> <span class="n">entre</span> <span class="n">s</span> <span class="n">et</span> <span class="n">les</span> <span class="n">sommets</span> <span class="n">de</span> <span class="n">G</span>
+<span class="n">Début</span>
+    <span class="n">T</span> <span class="o">&lt;-</span> <span class="n">initialisation</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+  <span class="n">non_visite</span> <span class="o">&lt;-</span> <span class="n">G</span><span class="o">.</span><span class="n">sommets</span>
+  <span class="n">Tant</span> <span class="n">que</span> <span class="n">non_visite</span> <span class="n">est</span> <span class="n">non</span> <span class="n">vide</span> <span class="n">faire</span>
+    <span class="n">noeud</span> <span class="o">&lt;-</span> <span class="n">choisir_min</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+    <span class="n">non_visite</span> <span class="o">&lt;-</span> <span class="n">non_visite</span> <span class="o">-</span> <span class="n">noeud</span>
+    <span class="n">mettre_a_jour_voisins</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">noeud</span><span class="p">)</span>
+  <span class="n">FinTantQue</span>
+  <span class="n">Renvoyer</span> <span class="n">T</span>
+<span class="n">Fin</span>
+</code></pre></div>
+</td></tr></table>
+</li>
+</ol>
+<h2 id="analyse-de-lalgorithme-de-dijkstra">Analyse de l'algorithme de Dijkstra</h2>
+<h3 id="terminaison">Terminaison</h3>
+<p>L'algorithme <code>dijkstra</code> termine si la boucle <code>Tant que</code> principale termine.</p>
+<p>Le variant de boucle est la taille de l'ensemble des sommets non visités.</p>
+<p>Soit <span class="arithmatex">\(v_i\)</span>, la taille de l'ensemble des sommets non visités à l'itération <span class="arithmatex">\(i\)</span> de la boucle <code>Tant que</code>, <span class="arithmatex">\(v\)</span> décrit une suite entière, positive et strictement décroissante qui se définie par :</p>
+<div class="arithmatex">\[
+v_i = \left\{
+\begin{array}{l l}
+ |\mbox{non_visite}| &amp; i = 0\\
+ v_{i - 1} -1 &amp; \forall i &gt; 0
+ \end{array}
+\right.
+\]</div>
+<p>Par définition, <strong><em>une suite strictement décroissante d’entiers naturels est toujours finie</em></strong> (il n’y a pas de suite infinie strictement décroissante).</p>
+<p>Ainsi, la boucle <code>Tant que</code> se termine et l'algorithme <code>dijkstra</code> également.</p>
+<h3 id="correction">Correction</h3>
+<p>Pour la preuve, on va procéder par récurrence avec l'invariant suivante : “Tous les sommets ayant été visités sont tels que leurs distances au sommet initial ont été calculées et enregistrées, et les sommets restants s’il en est sont à des distances toutes plus grandes”.</p>
+<h3 id="complexite">Complexité</h3>
+<p>Soient :</p>
+<ul>
+<li><span class="arithmatex">\(n\)</span>, le nombre de sommets du graphe <span class="arithmatex">\(G\)</span></li>
+<li><span class="arithmatex">\(m\)</span>, le nombre d'arêtes du graphe G</li>
+</ul>
+<p>Soit <span class="arithmatex">\(C_{dijkstra}\)</span> la complexité de l'algorithme de Dijkstra </p>
+<h2 id="cas-dun-graphe-pondere-avec-poids-negatif">Cas d'un graphe pondéré avec poids négatif</h2>
+<p>Les données du problème du livreur évoluent.</p>
+<p>Au lieu de considérer la distance, on considère le dénivelé des pistes cyclables.</p>
+<p>Ci-dessous, le graphe non orienté pondéré où le poids des arêtes correspond au dénivelé des pistes cyclables.</p>
+<p><img alt="Alt text" src="https://g.gravizo.com/svg?
+graph G {
+graph [pad=&quot;1&quot;, ranksep=&quot;0.5&quot;, nodesep=&quot;1&quot;];
+labelloc=&quot;b&quot;;
+label=&quot;Fig 2.Graphe non orienté pondéré négativement.&quot;;
+node [width=0.5, shape=circle]
+{rank=min B E}
+{rank = same D C G}
+{rank = same A F}
+D -- A [label=&quot;10&quot;];
+D -- B [label=&quot;1&quot;];
+A -- C [label=&quot;-1000&quot;];
+A -- F [label=&quot;15&quot;];
+B -- C [label=&quot;-100&quot;];
+B -- E [label=&quot;25&quot;];
+C -- E [label=&quot;5&quot;];
+C -- F [label=&quot;9&quot;];
+E -- G [label=&quot;3&quot;];
+F -- G [label=&quot;12&quot;];
+}" /></p>
+<blockquote>
+<p>Quel est le chemin présentant le moins de dénivelé, que doit emprunter le livreur pour effectuer sa livraison ?</p>
+</blockquote>
+<h2 id="ressources">Ressources</h2>
+<p>[1] Utiliser l'algorithme de Dijkstra, Yvan Monka, <a href="https://www.youtube.com/watch?v=rHylCtXtdNs">Youtube</a>, 25/12/2014</p>
+<p>[2] <a href="https://graphonline.ru/fr/">Éditeur en ligne de graphe et exécution de l'algorithme de Dijsktra</a></p>
+<h2 id="pour-aller-plus-loin">Pour aller plus loin</h2>
+<ul>
+<li>Algorithme de recherche de plus court chemin de Bellman-Ford (Gère les graphes pondérés de poids négatifs)</li>
+<li>Algorithme de recherche de plus court chemin A* (Amélioration de Dijkstra lors de la sélection du prochain noeud à visiter)</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../../bloc4/chapitre-05/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Précédent
+                </span>
+                Mise au point de programme / Gestion des bugs
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <p><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Cc-by-nc-sa_euro_icon.svg" /></a> - Philippe Boddaert</p>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="mailto:boddaert.philippe@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../../..",
+          features: ['search.suggest', 'navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

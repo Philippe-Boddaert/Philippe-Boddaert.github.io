@@ -1,0 +1,49 @@
+body {
+  background-color: #32851D;
+}
+
+html {
+  font-family: "Press Start 2P";
+  font-size: 1em;
+  width : 100vw;
+  height : 100vh;
+  margin : 0;
+}
+
+h1 {
+  text-align: center;
+  background-color: #FE0002;;
+  color : white;
+  text-shadow: 1px 1px 2px black;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: #0001FC;
+  color : white;
+}
+
+a {
+  text-decoration: none;
+  color : #ffff00;
+  font-size: 0.8em;
+}
+
+a[href^='mailto']::before {
+  content : '\2709';
+  margin-right: 5px;
+  font-size: 2em;
+}
+
+a[href^='tel']::before {
+  content : '\260E';
+  margin-right: 5px;
+  font-size: 2em;
+}
+
+ul {
+  list-style : '\2606';
+}

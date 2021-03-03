@@ -1,0 +1,2719 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>Récursivité - NSI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#recursivite" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="NSI" class="md-header-nav__button md-logo" aria-label="NSI">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            NSI
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Récursivité
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Accueil
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../memento/" class="md-tabs__link">
+        Memento
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../premie%CC%80re/" class="md-tabs__link">
+        Première
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Terminale
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NSI" class="md-nav__button md-logo" aria-label="NSI">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M622.34 153.2L343.4 67.5c-15.2-4.67-31.6-4.67-46.79 0L17.66 153.2c-23.54 7.23-23.54 38.36 0 45.59l48.63 14.94c-10.67 13.19-17.23 29.28-17.88 46.9C38.78 266.15 32 276.11 32 288c0 10.78 5.68 19.85 13.86 25.65L20.33 428.53C18.11 438.52 25.71 448 35.94 448h56.11c10.24 0 17.84-9.48 15.62-19.47L82.14 313.65C90.32 307.85 96 298.78 96 288c0-11.57-6.47-21.25-15.66-26.87.76-15.02 8.44-28.3 20.69-36.72L296.6 284.5c9.06 2.78 26.44 6.25 46.79 0l278.95-85.7c23.55-7.24 23.55-38.36 0-45.6zM352.79 315.09c-28.53 8.76-52.84 3.92-65.59 0l-145.02-44.55L128 384c0 35.35 85.96 64 192 64s192-28.65 192-64l-14.18-113.47-145.03 44.56z"/></svg>
+
+    </a>
+    NSI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+      
+      <label class="md-nav__link" for="nav-2">
+        Memento
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Memento" data-md-level="1">
+        <label class="md-nav__title" for="nav-2">
+          <span class="md-nav__icon md-icon"></span>
+          Memento
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memento/" class="md-nav__link">
+        Avant-Propos
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memento/COMBINATOIRE/" class="md-nav__link">
+        Dénombrement
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memento/PUISSANCE/" class="md-nav__link">
+        Puissances
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../memento/SUITE/" class="md-nav__link">
+        Les suites
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+      
+      <label class="md-nav__link" for="nav-3">
+        Première
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Première" data-md-level="1">
+        <label class="md-nav__title" for="nav-3">
+          <span class="md-nav__icon md-icon"></span>
+          Première
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/" class="md-nav__link">
+        Organisation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-2">
+        Bloc1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc1" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/" class="md-nav__link">
+        Bloc 1 - Représentation des données : types et valeurs de base
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-2" type="checkbox" id="nav-3-2-2" >
+      
+      <label class="md-nav__link" for="nav-3-2-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-01/" class="md-nav__link">
+        Numération et Représentation des nombres
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-01/COURS/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-01/DEBRANCHE/" class="md-nav__link">
+        DEBRANCHE
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-3" type="checkbox" id="nav-3-2-3" >
+      
+      <label class="md-nav__link" for="nav-3-2-3">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-03/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-4" type="checkbox" id="nav-3-2-4" >
+      
+      <label class="md-nav__link" for="nav-3-2-4">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-04/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-5" type="checkbox" id="nav-3-2-5" >
+      
+      <label class="md-nav__link" for="nav-3-2-5">
+        Chapitre 05
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 05" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-05/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-05/PROJET/" class="md-nav__link">
+        Qui est-ce ?
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-05/TP/" class="md-nav__link">
+        Mystère
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2-6" type="checkbox" id="nav-3-2-6" >
+      
+      <label class="md-nav__link" for="nav-3-2-6">
+        Chapitre 06
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 06" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-2-6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-06/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc1/chapitre-06/TP/" class="md-nav__link">
+        TP - Détective oulipien
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3">
+        Bloc2
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc2" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc2/" class="md-nav__link">
+        Bloc 2 - Représentation des données : types construits
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-2" type="checkbox" id="nav-3-3-2" >
+      
+      <label class="md-nav__link" for="nav-3-3-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc2/chapitre-01/" class="md-nav__link">
+        Tableau
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc2/chapitre-01/COURS/" class="md-nav__link">
+        Tableaux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc2/chapitre-01/TP/" class="md-nav__link">
+        TP : Les Tableaux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-3" type="checkbox" id="nav-3-3-3" >
+      
+      <label class="md-nav__link" for="nav-3-3-3">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc2/chapitre-02/" class="md-nav__link">
+        Tuple
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-4" type="checkbox" id="nav-3-3-4" >
+      
+      <label class="md-nav__link" for="nav-3-3-4">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc2/chapitre-03/" class="md-nav__link">
+        Dictionnaire
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-3-5" type="checkbox" id="nav-3-3-5" >
+      
+      <label class="md-nav__link" for="nav-3-3-5">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-3-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc2/chapitre-04/" class="md-nav__link">
+        Traitement des données en Table
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+      
+      <label class="md-nav__link" for="nav-3-4">
+        Bloc3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc3" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-4">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc3/" class="md-nav__link">
+        Bloc 3 - Réseau et Web
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-2" type="checkbox" id="nav-3-4-2" >
+      
+      <label class="md-nav__link" for="nav-3-4-2">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc3/chapitre-02/" class="md-nav__link">
+        Cours
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc3/chapitre-02/HTML/" class="md-nav__link">
+        HTML
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" >
+      
+      <label class="md-nav__link" for="nav-3-5">
+        Bloc4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc4" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-5">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc4/" class="md-nav__link">
+        Bloc 4 - Architectures matérielles et systèmes d'exploitation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5-2" type="checkbox" id="nav-3-5-2" >
+      
+      <label class="md-nav__link" for="nav-3-5-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-5-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc4/chapitre-01/COURS/" class="md-nav__link">
+        COURS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6" >
+      
+      <label class="md-nav__link" for="nav-3-6">
+        Bloc5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc5" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-6">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc5/" class="md-nav__link">
+        Bloc 5 - Langages et Programmation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-2" type="checkbox" id="nav-3-6-2" >
+      
+      <label class="md-nav__link" for="nav-3-6-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc5/chapitre-01/" class="md-nav__link">
+        Les Variables
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-3" type="checkbox" id="nav-3-6-3" >
+      
+      <label class="md-nav__link" for="nav-3-6-3">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc5/chapitre-02/" class="md-nav__link">
+        Structures conditionnelles
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-4" type="checkbox" id="nav-3-6-4" >
+      
+      <label class="md-nav__link" for="nav-3-6-4">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc5/chapitre-03/" class="md-nav__link">
+        Fonction
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-5" type="checkbox" id="nav-3-6-5" >
+      
+      <label class="md-nav__link" for="nav-3-6-5">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc5/chapitre-04/" class="md-nav__link">
+        Structures itératives
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6-6" type="checkbox" id="nav-3-6-6" >
+      
+      <label class="md-nav__link" for="nav-3-6-6">
+        Chapitre 07
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 07" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-6-6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 07
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc5/chapitre-07/" class="md-nav__link">
+        Pygame
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7" >
+      
+      <label class="md-nav__link" for="nav-3-7">
+        Bloc6
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc6" data-md-level="2">
+        <label class="md-nav__title" for="nav-3-7">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/" class="md-nav__link">
+        Bloc 6 - Algorithmique
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-2" type="checkbox" id="nav-3-7-2" >
+      
+      <label class="md-nav__link" for="nav-3-7-2">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-02/" class="md-nav__link">
+        Preuve de programme
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-3" type="checkbox" id="nav-3-7-3" >
+      
+      <label class="md-nav__link" for="nav-3-7-3">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-03/" class="md-nav__link">
+        Les tris
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-03/AUTRE/" class="md-nav__link">
+        Autres tris
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-03/INSERTION/" class="md-nav__link">
+        Tri par Insertion
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-03/SELECTION/" class="md-nav__link">
+        Tri par Sélection
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-4" type="checkbox" id="nav-3-7-4" >
+      
+      <label class="md-nav__link" for="nav-3-7-4">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-04/" class="md-nav__link">
+        Algorithme des $k$ plus proches voisins
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-04/choixpeau/" class="md-nav__link">
+        Le Choixpeau magique d'Harry Potter
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-04/pokemon/" class="md-nav__link">
+        Pokemon
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-5" type="checkbox" id="nav-3-7-5" >
+      
+      <label class="md-nav__link" for="nav-3-7-5">
+        Chapitre 05
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 05" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-05/" class="md-nav__link">
+        Recherche dichotomique
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-05/Le%20tr%C3%A9sor%20et%20la%20pi%C3%A8ce/" class="md-nav__link">
+        Le trésor et la fausse pièce
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7-6" type="checkbox" id="nav-3-7-6" >
+      
+      <label class="md-nav__link" for="nav-3-7-6">
+        Chapitre 06
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 06" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-7-6">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 06
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premie%CC%80re/bloc6/chapitre-06/" class="md-nav__link">
+        Algorithmes gloutons
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      
+      <label class="md-nav__link" for="nav-4">
+        Terminale
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Terminale" data-md-level="1">
+        <label class="md-nav__title" for="nav-4">
+          <span class="md-nav__icon md-icon"></span>
+          Terminale
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        Organisation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
+      
+      <label class="md-nav__link" for="nav-4-2">
+        Bloc1
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc1" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc1/" class="md-nav__link">
+        Bloc 1 - Structures de données
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2-2" type="checkbox" id="nav-4-2-2" >
+      
+      <label class="md-nav__link" for="nav-4-2-2">
+        Chapitre 01
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 01" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-2-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 01
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc1/chapitre-01/FILE/" class="md-nav__link">
+        Structure : File
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc1/chapitre-01/LISTE/" class="md-nav__link">
+        Structure : Liste
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc1/chapitre-01/PILE/" class="md-nav__link">
+        Structure : Pile
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3" type="checkbox" id="nav-4-3" >
+      
+      <label class="md-nav__link" for="nav-4-3">
+        Bloc3
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc3" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc3/" class="md-nav__link">
+        Bloc 3 - Architectures matérielles, systèmes d’exploitation et réseaux
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3-2" type="checkbox" id="nav-4-3-2" >
+      
+      <label class="md-nav__link" for="nav-4-3-2">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-3-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc3/chapitre-03/" class="md-nav__link">
+        Protocoles de routage
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc3/chapitre-03/COURS/" class="md-nav__link">
+        Protocoles de routage
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-3-3" type="checkbox" id="nav-4-3-3" >
+      
+      <label class="md-nav__link" for="nav-4-3-3">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-3-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc3/chapitre-04/COURS/" class="md-nav__link">
+        Sécurité des communications
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4" type="checkbox" id="nav-4-4" checked>
+      
+      <label class="md-nav__link" for="nav-4-4">
+        Bloc4
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc4" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-4">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Bloc 4 - Langages et Programmation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-2" type="checkbox" id="nav-4-4-2" >
+      
+      <label class="md-nav__link" for="nav-4-4-2">
+        Chapitre 02
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 02" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-2">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 02
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapitre-02/" class="md-nav__link">
+        Calculabilité / Décidabilité
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapitre-02/COURS/" class="md-nav__link">
+        Calculabilité / Décidabilité
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapitre-02/TURING/" class="md-nav__link">
+        Machine de Turing
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-3" type="checkbox" id="nav-4-4-3" checked>
+      
+      <label class="md-nav__link" for="nav-4-4-3">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Récursivité
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Récursivité
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Définition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustrations" class="md-nav__link">
+    Illustrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Illustrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factorielle-dun-entier-naturel" class="md-nav__link">
+    Factorielle d'un entier naturel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#somme-des-premiers-termes" class="md-nav__link">
+    Somme des premiers termes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parite-imparite-dun-entier-naturel" class="md-nav__link">
+    Parité / Imparité d'un entier naturel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proprietes" class="md-nav__link">
+    Propriétés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derecursivite" class="md-nav__link">
+    Dérecursivité
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-probleme-des-tours-de-hanoi" class="md-nav__link">
+    Exercice : Problème des tours de Hanoi
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-4" type="checkbox" id="nav-4-4-4" >
+      
+      <label class="md-nav__link" for="nav-4-4-4">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-4">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapitre-04/" class="md-nav__link">
+        Programmation Orientée Objet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapitre-04/COURS/" class="md-nav__link">
+        Programmation Orientée Objet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapitre-04/PRECIEUX/" class="md-nav__link">
+        Mon précieux
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-4-5" type="checkbox" id="nav-4-4-5" >
+      
+      <label class="md-nav__link" for="nav-4-4-5">
+        Chapitre 05
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 05" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-4-5">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 05
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapitre-05/" class="md-nav__link">
+        Mise au point de programme / Gestion des bugs
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5" >
+      
+      <label class="md-nav__link" for="nav-4-5">
+        Bloc5
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Bloc5" data-md-level="2">
+        <label class="md-nav__title" for="nav-4-5">
+          <span class="md-nav__icon md-icon"></span>
+          Bloc5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-5-1" type="checkbox" id="nav-4-5-1" >
+      
+      <label class="md-nav__link" for="nav-4-5-1">
+        Chapitre 03
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 03" data-md-level="3">
+        <label class="md-nav__title" for="nav-4-5-1">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 03
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc5/chapitre-03/DIJKSTRA/" class="md-nav__link">
+        Algorithme de Dijsktra
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Définition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#illustrations" class="md-nav__link">
+    Illustrations
+  </a>
+  
+    <nav class="md-nav" aria-label="Illustrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factorielle-dun-entier-naturel" class="md-nav__link">
+    Factorielle d'un entier naturel
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#somme-des-premiers-termes" class="md-nav__link">
+    Somme des premiers termes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parite-imparite-dun-entier-naturel" class="md-nav__link">
+    Parité / Imparité d'un entier naturel
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proprietes" class="md-nav__link">
+    Propriétés
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#derecursivite" class="md-nav__link">
+    Dérecursivité
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercice-probleme-des-tours-de-hanoi" class="md-nav__link">
+    Exercice : Problème des tours de Hanoi
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="recursivite">Récursivité</h1>
+<figure style="display: inline;">
+    <img src="./assets/vache_qui_rit.jpg" style="display: inline; width : 32%;" />
+    <img src="./assets/poupee_russe.jpg" style="display: inline; width : 32%;" />
+    <img src="./assets/droste.jpg" style="display: inline; width : 32%;" />
+</figure>
+
+<p>Point commun entre ces 3 photos : elles comportent toutes une structure <strong><em>récursive</em></strong>.</p>
+<ul>
+<li>Une poupée russe, c’est une poupée avec une poupée russe à l’intérieur.</li>
+<li>Une boite de vache qui rit c'est une boite qui contient une photo de vache qui a une boucle d'oreille en forme de boite qui contient une photo de vache qui a une boucle d'oreille...</li>
+</ul>
+<p>En programmation, nombreux sont les problèmes qu’on résout en répétant plusieurs fois des séquences d’instructions (par le biais de boucles bornées ou non).</p>
+<p>Mais certains problèmes se résolvent simplement en résolvant un sous problème de même nature, mais plus simple.</p>
+<p>Cette méthode de résolution s’appelle la récursivité.</p>
+<h2 id="definition">Définition</h2>
+<div class="admonition info">
+<p class="admonition-title">Définition</p>
+<p>Propriété que possède une règle ou un élément constituant de pouvoir se répéter de manière théoriquement indéfinie.</p>
+</div>
+<h2 id="illustrations">Illustrations</h2>
+<h3 id="factorielle-dun-entier-naturel">Factorielle d'un entier naturel</h3>
+<p>La fonction mathématique factorielle de <span class="arithmatex">\(n\)</span> s'exprime par :</p>
+<div class="arithmatex">\[
+\begin{align*}
+    n! = \prod _{1\leqslant i\leqslant n}i &amp; = n \times (n - 1) \times (n - 2) ... \times 1\\ &amp; = n \times \underbrace{{\color{red}{(n - 1) \times (n - 2) ... \times 1}}}_{(n - 1)!}\\&amp; = n \times (n - 1) !
+    \end{align*}
+\]</div>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Travail</label><div class="tabbed-content">
+<p>Écrire l'algorithme récursif <code>factorielle</code>, qui prend en paramètre un entier <span class="arithmatex">\(n\)</span>, et renvoie la factorielle de <span class="arithmatex">\(n\)</span>.</p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Réponse</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">factorielle</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorielle</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h3 id="somme-des-premiers-termes">Somme des premiers termes</h3>
+<p>La fonction mathématique Somme des <span class="arithmatex">\(n\)</span> premiers termes, pour <span class="arithmatex">\(n \in \mathbb{N}\)</span> s'exprime par :</p>
+<div class="arithmatex">\[
+  \begin{align*}
+    \sum_{i=1}^{n} i &amp; =  1 + 2 + 3 + ... + n \\
+    &amp; = 1 + \underbrace{{\color{red}{2 + 3 + ... + n}}}_{\sum_{i=2}^{n} i } \\
+    &amp; = 1 + 2 + \underbrace{{\color{red}{3 + ... + n}}}_{\sum_{i=3}^{n} i }
+    \end{align*}
+\]</div>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Travail</label><div class="tabbed-content">
+<p>Écrire l'algorithme récursif <code>somme</code>, qui prend en paramètre un entier <span class="arithmatex">\(n\)</span>, et renvoie la somme des entiers jusque <span class="arithmatex">\(n\)</span>.</p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Réponse</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">n</span> <span class="o">+</span> <span class="n">somme</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h3 id="parite-imparite-dun-entier-naturel">Parité / Imparité d'un entier naturel</h3>
+<p>Sachant que 0 est pair, et 1 impair. Pour tout <span class="arithmatex">\(n \geq 2\)</span>, que peut-on dire de :</p>
+<ul>
+<li>pair(<span class="arithmatex">\(n\)</span>) par rapport à pair(<span class="arithmatex">\(n - 2\)</span>), de pair (<span class="arithmatex">\(n - 4\)</span>) ...?</li>
+<li>impair(<span class="arithmatex">\(n\)</span>) par rapport à de impair(<span class="arithmatex">\(n - 2\)</span>), de impair (<span class="arithmatex">\(n - 4\)</span>) ...?</li>
+</ul>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Travail</label><div class="tabbed-content">
+<ol>
+<li>Écrire un algorithme récursif <code>pair</code>, prenant un entier <span class="arithmatex">\(n\)</span> en paramètre, et renvoie Vrai si <span class="arithmatex">\(n\)</span> est pair, Faux sinon.</li>
+<li>Écrire un algorithme récursif <code>impair</code>, prenant un entier <span class="arithmatex">\(n\)</span> en paramètre, et renvoie Vrai si <span class="arithmatex">\(n\)</span> est impair, Faux sinon.</li>
+</ol>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Réponse 1</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pair</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">Réponse 2</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">impair</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">impair</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Question</label><div class="tabbed-content">
+<p>Que peut-on dire de :</p>
+<ul>
+<li>pair(12) par rapport à impair(11) ?</li>
+<li>impair(7) par rapport à pair(6) ?</li>
+<li>pair(<span class="arithmatex">\(n\)</span>) par rapport à impair(<span class="arithmatex">\(n - 1\)</span>) ?</li>
+<li>impair(<span class="arithmatex">\(n\)</span>) par rapport à pair(<span class="arithmatex">\(n - 1\)</span>) ?</li>
+</ul>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Réponse</label><div class="tabbed-content">
+<ul>
+<li>pair(<span class="arithmatex">\(n\)</span>) = impair(<span class="arithmatex">\(n - 1\)</span>)</li>
+<li>impair(<span class="arithmatex">\(n\)</span>) = pair(<span class="arithmatex">\(n - 1\)</span>)</li>
+</ul>
+</div>
+</div>
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Travail</label><div class="tabbed-content">
+<ol>
+<li>Modifier l'algorithme récursif <code>pair</code>, afin ne d'utiliser que l'algorithme <code>impair</code>.</li>
+<li>Modifier l'algorithme récursif <code>impair</code>, afin ne d'utiliser que l'algorithme <code>pair</code>.</li>
+</ol>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Réponse</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pair</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="n">impair</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">impair</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="n">pair</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
+<h2 id="proprietes">Propriétés</h2>
+<p>Des travaux précédents, on peut tirer 2 règles pour écrire un algorithme récursif :</p>
+<p>1.Tout algorithme récursif doit distinguer plusieurs cas dont l’un au moins ne doit pas contenir d’appels récursifs. Sinon, il y a risque de cercle vicieux et de calcul infini.</p>
+<p>2.Tout appel récursif doit se faire avec des données plus proches de données satisfaisant les conditions de terminaison.</p>
+<p>3.Deux algorithmes sont mutuellement récursifs si l’un fait appel à l’autre et l’autre à l’un.</p>
+<div class="arithmatex">\[
+\begin{align*}
+fact(4) &amp; = 4 \times fact(3) \\
+&amp; = 4 \times 3 \times fact(2) \\
+&amp; = 4 \times 3 \times 2 \times fact(1) \\
+&amp; = 4 \times 3 \times 2 \times 1 \times fact(0) \\
+&amp; = 4 \times 3 \times 2 \times 1 \times 1 \\
+&amp; = 24
+\end{align*}
+\]</div>
+<p>On note que des calculs restent en attente, jusqu’à ce qu’on atteigne le cas où il ne reste plus d’appel à la fonction 𝚏𝚊𝚌𝚝 dans l’expression à calculer.</p>
+<h2 id="derecursivite">Dérecursivité</h2>
+<h2 id="exercice-probleme-des-tours-de-hanoi">Exercice : Problème des tours de Hanoi</h2>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Travail</label><div class="tabbed-content">
+<p>Regarder et répondre aux questions posées durant la vidéo.
+<video style="width: 100%;" controls="true" src="./assets/enigmatique-les-tours-dhanoi.mp4" type="video/mp4"></video></p>
+</div>
+</div>
+<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Travail</label><div class="tabbed-content">
+<p>Écrire l'algorithme récursif hanoi, qui prend en paramètres :</p>
+<ul>
+<li><span class="arithmatex">\(n\)</span> : le nombre de disques à déplacer,</li>
+<li><span class="arithmatex">\(d\)</span> : le numéro de disque de départ,</li>
+<li><span class="arithmatex">\(i\)</span> : le numéro de disque intermédiaire,</li>
+<li><span class="arithmatex">\(a\)</span> : le numéro de dique d'arrivée.</li>
+</ul>
+<p>Et a pour effet de bord de déplacer tous les disques dans le bon ordre sur le disque d'arrivée.</p>
+</div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapitre-02/TURING/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Précédent
+                </span>
+                Machine de Turing
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../chapitre-04/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Suivant
+                </span>
+                Programmation Orientée Objet
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            <p><a href="https://creativecommons.org/licenses/by-nc-sa/3.0/fr/"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Cc-by-nc-sa_euro_icon.svg" /></a> - Philippe Boddaert</p>
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+      <a href="mailto:boddaert.philippe@gmail.com" target="_blank" rel="noopener" title="" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copier dans le presse-papier", "clipboard.copied": "Copi\u00e9 dans le presse-papier", "search.config.lang": "fr", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Rechercher", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['search.suggest', 'navigation.tabs'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
