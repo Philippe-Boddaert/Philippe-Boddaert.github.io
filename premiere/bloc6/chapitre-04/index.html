@@ -644,6 +644,18 @@
   
     <li class="md-nav__item">
       <a href="../../bloc1/chapitre-06/" class="md-nav__link">
+        Représentation d'un texte en machine
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc1/chapitre-06/COURS/" class="md-nav__link">
         Cours
       </a>
     </li>
@@ -973,6 +985,46 @@
     <li class="md-nav__item">
       <a href="../../bloc3/chapitre-02/HTML/" class="md-nav__link">
         HTML
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4-3" type="checkbox" id="nav-3-4-3" >
+      
+      <label class="md-nav__link" for="nav-3-4-3">
+        Chapitre 04
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Chapitre 04" data-md-level="3">
+        <label class="md-nav__title" for="nav-3-4-3">
+          <span class="md-nav__icon md-icon"></span>
+          Chapitre 04
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bloc3/chapitre-04/" class="md-nav__link">
+        Protocole HTTP
       </a>
     </li>
   
@@ -1520,13 +1572,6 @@
       Table des matières
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#avant-propos" class="md-nav__link">
-    Avant propos
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#exemple-introductif" class="md-nav__link">
@@ -2400,13 +2445,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#avant-propos" class="md-nav__link">
-    Avant propos
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#exemple-introductif" class="md-nav__link">
     Exemple introductif
   </a>
@@ -2530,16 +2568,14 @@
                 
                 
                 <h1 id="algorithme-des-k-plus-proches-voisins">Algorithme des <span class="arithmatex">\(k\)</span> plus proches voisins</h1>
-<h2 id="avant-propos">Avant propos</h2>
+<div class="admonition info">
+<p class="admonition-title">Avant-propos</p>
 <ul>
 <li>Cet algorithme a été introduit en 1951 par Fix et Hodges dans un rapport de la faculté de médecine aéronautique de la US Air Force.</li>
-<li>
-<p>Le <strong>machine learning</strong> est un concept utilisé en <strong>intelligence artificielle</strong>. Il s'agit d'entraîner une machine à apprendre à reconnaitre certaines formes. L'algorithme des <strong><em><span class="arithmatex">\(k\)</span> plus proches voisins (</em>knn : k-nearest neighbors*)</strong>* donne une méthode qui permet la mise en place de l'entrainement.</p>
-</li>
-<li>
-<p>Son principe peut être résumé par cette phrase : <strong><em>Dis-moi qui sont tes amis et je te dirai qui tu es</em></strong>.</p>
-</li>
+<li>Le <strong>machine learning</strong> est un concept utilisé en <strong>intelligence artificielle</strong>. Il s'agit d'entraîner une machine à apprendre à reconnaitre certaines formes. L'algorithme des <strong><em><span class="arithmatex">\(k\)</span> plus proches voisins (knn : k-nearest neighbors)</em></strong> donne une méthode qui permet la mise en place de l'entrainement.</li>
+<li>Son principe peut être résumé par cette phrase : <strong><em>Dis-moi qui sont tes amis et je te dirai qui tu es</em></strong>.</li>
 </ul>
+</div>
 <h2 id="exemple-introductif">Exemple introductif</h2>
 <p>Dans cette introduction, nous considérons un jeu de données constitué de la façon suivante :</p>
 <ul>
@@ -2629,12 +2665,14 @@
 </figure>
 
 <p>Parmi ses 7 voisins, il y a 2 voisins de type "chevalier" et 5 voisins de type "fantassin", Il est donc probable que notre cible soit de type "fantassin".</p>
-<h4>Remarques</h4>
+<div class="admonition note">
+<p class="admonition-title">Remarques</p>
 <ol>
 <li>La valeur <span class="arithmatex">\(k=7\)</span> est ici un choix arbitraire. Cette valeur doit néanmoins être choisie judicieusement : trop faible, la qualité de la prédiction diminue ; trop grande, la qualité de la prédiction diminue aussi. Il suffit d'imaginer qu'il existe une classe prédominante en nombre. Avec une grande valeur de <span class="arithmatex">\(k\)</span>, cette classe remporterait la prédiction à chaque fois.</li>
 <li>Nous avons utilisé une distance schématisée par un disque. Ce choix est discutable. Il faut faire attention à la distance Euclidienne qui n'a de sens que dans un repère orthonormé. Nous aurions pu choisir une autre distance.</li>
 <li>Il est facile de représenter les données avec 1 à 3 caractéristiques. Nous ne pouvons pas représenter des données avec des caractéristiques supérieures à 3 mais l'algorithme reste opérationnel.</li>
 </ol>
+</div>
 <h3 id="algorithme">Algorithme</h3>
 <h4>Remarques</h4>
 <p>Pour prédire la classe d’un nouvel élément, il faut des données :</p>
@@ -2655,10 +2693,12 @@
 <li>un entier <span class="arithmatex">\(k\)</span> plus petit que <span class="arithmatex">\(n\)</span>;</li>
 <li>une règle permettant de calculer la <code>distance</code> entre deux données.</li>
 </ul>
-<p>Algorithme :
-1. Trier les données de la table selon la <code>distance</code> croissante avec la donnée cible.
-2. Créer la liste des <span class="arithmatex">\(k\)</span> premières données de la table triée.
-3. Renvoyer la classe majoritaire de cette liste.</p>
+<p>Algorithme :</p>
+<ol>
+<li>Trier les données de la table selon la <code>distance</code> croissante avec la donnée cible.</li>
+<li>Créer la liste des <span class="arithmatex">\(k\)</span> premières données de la table triée.</li>
+<li>Renvoyer la classe majoritaire de cette liste.</li>
+</ol>
 <h3 id="exercice-1">Exercice 1</h3>
 <p>Nous reprenons le même ensemble de données :</p>
 <figure>
@@ -2677,9 +2717,19 @@
   </center>
 </figure>
 
-<p>​       a. Quel est le type de notre donnée cible ? Quel est le problème ?
-​       b. Donner une valeur de <span class="arithmatex">\(k\)</span> qui permette de décider du type de notre donnée cible.
-​       c. Donner pour cette valeur de <span class="arithmatex">\(k\)</span> le type de la donnée cible.</p>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Travail</label><div class="tabbed-content">
+<ol>
+<li>Quel est le type de notre donnée cible ?</li>
+<li>Donner une valeur de <span class="arithmatex">\(k\)</span> qui permette de décider du type de notre donnée cible. Donner pour cette valeur de <span class="arithmatex">\(k\)</span> le type de la donnée cible.</li>
+</ol>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Solution 1</label><div class="tabbed-content">
+<p>Le type de la donnée ne peut être déterminé. Il y a autant de voisins chevaliers et fantassins.</p>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Solution 2</label><div class="tabbed-content">
+<p>Pour <span class="arithmatex">\(k = 5\)</span>, le type peut être déterminé. La cible est un chevalier.</p>
+</div>
+</div>
 <ol>
 <li>On choisit <span class="arithmatex">\(k=9\)</span>. Pour la distance, on décide que les valeurs de la force n'ont pas d'importance. La distance dépend du courage. </li>
 </ol>
@@ -2689,7 +2739,8 @@
      </center>
    </figure>
 
-<p>Quel est le type de notre donnée cible ?</p>
+<details class="question"><summary>Quel est le type de notre donnée cible ?</summary><p>Parmi les 9 voisins, il y a 4 chevaliers et 5 fantassins. Selon le critère de la force et <span class="arithmatex">\(k = 9\)</span>, la cible peut être assimilé à un fantassin.</p>
+</details>
 <ol>
 <li>On choisit <span class="arithmatex">\(k=5\)</span>. Pour la distance, on décide que les valeurs du courage n'ont pas d'importance. La distance dépend de la force.</li>
 </ol>
@@ -2699,7 +2750,8 @@
      </center>
    </figure>
 
-<p>Quel est le type de notre donnée cible ?</p>
+<details class="question"><summary>Quel est le type de notre donnée cible ?</summary><p>Parmi les 5 voisins, il y a 2 chevaliers et 3 fantassins. Selon le critère du courage et <span class="arithmatex">\(k = 5\)</span>, la cible peut être assimilé à un fantassin.</p>
+</details>
 <h3 id="exercice-2">Exercice 2</h3>
 <p>Sur un champ de bataille de la Première Guerre Mondiale un mémorial a été construit. Afin de réaliser une extension, des fouilles préventives ont été réalisées par l'INRAP (Institut National de Recherches Archéologiques Préventives).
 Au cours de ces fouilles, différents objets ou éléments de squelettes humains ont été trouvés. L'étude de ces découvertes a permis d'identifier la nationalité de nombreux artéfacts retrouvés : soit allemand, anglais ou français.
@@ -2717,19 +2769,17 @@ Ce que vous devez seulement savoir sur cette distance pour cet exercice c'est qu
 <p>Sur le graphique ci-dessus, le carré dessiné :</p>
 <ul>
 <li>en <strong>rouge</strong> correspond ainsi à l'ensemble des points se trouvant à <strong>3</strong> mètres.</li>
-<li>
-<p>en <strong>noir</strong> correspond ainsi à l'ensemble des points se trouvant à <strong>1</strong> mètre.</p>
-</li>
-<li>
-<ol>
-<li>A quelle valeur de <span class="arithmatex">\(k\)</span> correspond le carré noir ?</li>
-</ol>
-</li>
-<li>Quelle serait l'origine de l'élément de squelette en considérant cette valeur de <span class="arithmatex">\(k\)</span> ?</li>
-<li>On choisit <span class="arithmatex">\(k=9\)</span>. Quelle serait l'origine de l'élément de squelette en considérant cette valeur de <span class="arithmatex">\(k\)</span> ?</li>
-<li>On choisit <span class="arithmatex">\(k=11\)</span>. Quelle serait l'origine de l'élément de squelette en considérant cette valeur de <span class="arithmatex">\(k\)</span> ?</li>
-<li>Peut-on savoir à coup sûr, en prenant une valeur de <span class="arithmatex">\(k\)</span> inférieure au égale à 11, si le combattant dont on a trouvé un élément de squelette était un combattant de la Triple-Entente (France + Royaume-Uni + Russie) ou de la Triple-Alliance (Allemagne + Autriche-Hongrie + Italie) ?</li>
+<li>en <strong>noir</strong> correspond ainsi à l'ensemble des points se trouvant à <strong>1</strong> mètre.</li>
 </ul>
+<details class="question"><summary>A quelle valeur de <span class="arithmatex">\(k\)</span> correspond le carré noir ?</summary><p>Le carré noir correspond à une valeur de <span class="arithmatex">\(k = 3\)</span>.</p>
+</details>
+<details class="question"><summary>Quelle serait l'origine de l'élément de squelette en considérant cette valeur de <span class="arithmatex">\(k\)</span> ?</summary><p>Pour <span class="arithmatex">\(k = 3\)</span>, le squelette a 2 voisins français et 1 voisin anglais. L'origine du squelette peut être déterminée comme française.</p>
+</details>
+<details class="question"><summary>Quelle serait l'origine de l'élément de squelette en considérant cette valeur de <span class="arithmatex">\(k = 9\)</span> ?</summary><p>Pour <span class="arithmatex">\(k = 9\)</span>, le squelette a 4 voisins anglais, 3 voisins français et 2 voisins allemands. On peut considérer que l'origine est anglaise pour cette valeur de <span class="arithmatex">\(k\)</span>.</p>
+</details>
+<details class="question"><summary>Quelle serait l'origine de l'élément de squelette en considérant cette valeur de <span class="arithmatex">\(k = 11\)</span> ?</summary><p>Pour <span class="arithmatex">\(k = 11\)</span>, le squelette a 5 voisins allemands, 4 voisins anglais et 2 voisins français. On peut considérer que l'origine est allemande pour cette valeur de <span class="arithmatex">\(k\)</span>.</p>
+</details>
+<details class="question"><summary>Peut-on savoir à coup sûr, en prenant une valeur de <span class="arithmatex">\(k\)</span> inférieure au égale à 11, si le combattant dont on a trouvé un élément de squelette était un combattant de la Triple-Entente (France + Royaume-Uni + Russie) ou de la Triple-Alliance (Allemagne + Autriche-Hongrie + Italie) ?</summary></details>
 <h2 id="implementation-de-lalgorithme-des-k-plus-proches-voisins">Implémentation de l'algorithme des <span class="arithmatex">\(k\)</span> plus proches voisins</h2>
 <p>Pour implémenter cet algorithme, il nous faut :</p>
 <ul>
@@ -2850,7 +2900,37 @@ Ce que vous devez seulement savoir sur cette distance pour cet exercice c'est qu
 <li>entre <span class="arithmatex">\(210510\)</span> et <span class="arithmatex">\(201511\)</span></li>
 <li>entre "maille" et "paille"</li>
 </ul>
-<p>Écrire, en langage python, une fonction hamming qui renvoie la distance de Hamming entre deux éléments.</p>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Travail</label><div class="tabbed-content">
+<p>Écrire une fonction <code>hamming</code> qui renvoie la distance de Hamming entre deux éléments (passés sous forme de chaine de caractères de même taille).</p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Solution</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">hamming</span><span class="p">(</span><span class="n">element1</span><span class="p">,</span> <span class="n">element2</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Calcule la distance de hamming entre 2 éléments</span>
+<span class="sd">    :param element1: (str) Un élément</span>
+<span class="sd">    :param element2: (str) Un élément</span>
+<span class="sd">    :return: (int) La distance de Hamming entre les 2 éléments</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">element1</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">element1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">element2</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">distance</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">distance</span>
+</code></pre></div>
+</td></tr></table>
+</div>
+</div>
 <h2 id="exercices-dapplication">Exercices d'application</h2>
 <ul>
 <li><a href="choixpeau/">Choixpeau Magique d'Harry Potter</a></li>
