@@ -2173,8 +2173,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#derecursivite" class="md-nav__link">
-    Dérecursivité
+  <a href="#derecursiver" class="md-nav__link">
+    Dérecursiver
   </a>
   
 </li>
@@ -2457,8 +2457,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#derecursivite" class="md-nav__link">
-    Dérecursivité
+  <a href="#derecursiver" class="md-nav__link">
+    Dérecursiver
   </a>
   
 </li>
@@ -2661,15 +2661,15 @@ fact(4) &amp; = 4 \times fact(3) \\
 \end{align*}
 \]</div>
 <p>On note que des calculs restent en attente, jusqu’à ce qu’on atteigne le cas où il ne reste plus d’appel à la fonction 𝚏𝚊𝚌𝚝 dans l’expression à calculer.</p>
-<h2 id="derecursivite">Dérecursivité</h2>
+<h2 id="derecursiver">Dérecursiver</h2>
 <h2 id="exercice-probleme-des-tours-de-hanoi">Exercice : Problème des tours de Hanoi</h2>
 <div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Travail</label><div class="tabbed-content">
 <p>Regarder et répondre aux questions posées durant la vidéo.
 <video style="width: 100%;" controls="true" src="./assets/enigmatique-les-tours-dhanoi.mp4" type="video/mp4"></video></p>
 </div>
 </div>
-<div class="tabbed-set" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Travail</label><div class="tabbed-content">
-<p>Écrire l'algorithme récursif hanoi, qui prend en paramètres :</p>
+<div class="tabbed-set" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Travail</label><div class="tabbed-content">
+<p>Écrire l'algorithme récursif <code>hanoi</code>, qui prend en paramètres :</p>
 <ul>
 <li><span class="arithmatex">\(n\)</span> : le nombre de disques à déplacer,</li>
 <li><span class="arithmatex">\(d\)</span> : le numéro de disque de départ,</li>
@@ -2677,6 +2677,21 @@ fact(4) &amp; = 4 \times fact(3) \\
 <li><span class="arithmatex">\(a\)</span> : le numéro de dique d'arrivée.</li>
 </ul>
 <p>Et a pour effet de bord de déplacer tous les disques dans le bon ordre sur le disque d'arrivée.</p>
+</div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Réponse</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+    <span class="n">Si</span> <span class="n">n</span> <span class="o">!=</span> <span class="mi">0</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+        <span class="n">deplacer</span> <span class="n">d</span> <span class="n">vers</span> <span class="n">a</span>
+        <span class="n">hanoi</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+    <span class="n">FinSi</span>
+</code></pre></div>
+</td></tr></table>
 </div>
 </div>
                 

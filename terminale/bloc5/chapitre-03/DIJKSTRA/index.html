@@ -2358,13 +2358,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#solutions" class="md-nav__link">
-    Solutions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#analyse-de-lalgorithme-de-dijkstra" class="md-nav__link">
     Analyse de l'algorithme de Dijkstra
   </a>
@@ -2531,13 +2524,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#solutions" class="md-nav__link">
-    Solutions
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#analyse-de-lalgorithme-de-dijkstra" class="md-nav__link">
     Analyse de l'algorithme de Dijkstra
   </a>
@@ -2666,13 +2652,16 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>L'ensemble des sommets <span class="arithmatex">\(s_i\)</span> sont marqués non visités</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{|c | c | c | c | c | c |}
 \hline
  D &amp; A &amp; B &amp; C &amp; E &amp; F &amp; G \\
 \hline
  0, \emptyset&amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp;  +\infty, \emptyset \\
+\hline
 \end{array} \\
 \mbox{Tableau à l'initialisation}
+\end{align}
 \]</div>
 <h2 id="deroule">Déroulé</h2>
 <p>A chaque étape, </p>
@@ -2684,6 +2673,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 </ul>
 <h3 id="exemple-sur-le-graphe-de-la-figure-1">Exemple sur le graphe de la Figure 1</h3>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
  D &amp; A &amp; B &amp; C &amp; E &amp; F &amp; G \\
@@ -2692,6 +2682,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'initialisation}
+\end{align}
 \]</div>
 <h4>Etape 1</h4>
 <ul>
@@ -2701,6 +2692,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>on marque <span class="arithmatex">\(D\)</span> comme sommet visité</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
 {\color{red} D} &amp; A &amp; B &amp; C &amp; E &amp; F &amp; G \\
@@ -2709,6 +2701,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'étape 1}
+\end{align}
 \]</div>
 <h4>Etape 2</h4>
 <ul>
@@ -2718,6 +2711,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>on marque <span class="arithmatex">\(B\)</span> comme sommet visité</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
 {\color{red} D} &amp; A &amp; {\color{red} B} &amp; C &amp; E &amp; F &amp; G \\
@@ -2726,6 +2720,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'étape 2}
+\end{align}
 \]</div>
 <h4>Etape 3</h4>
 <ul>
@@ -2735,6 +2730,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>on marque <span class="arithmatex">\(A\)</span> comme sommet visité</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
 {\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; C &amp; E &amp; F &amp; G \\
@@ -2743,6 +2739,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'étape 3}
+\end{align}
 \]</div>
 <h4>Etape 4</h4>
 <ul>
@@ -2752,6 +2749,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>on marque <span class="arithmatex">\(C\)</span> comme sommet visité</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
 {\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; E &amp; F &amp; G \\
@@ -2760,6 +2758,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'étape 4}
+\end{align}
 \]</div>
 <h4>Etape 5</h4>
 <ul>
@@ -2769,6 +2768,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>on marque <span class="arithmatex">\(E\)</span> comme sommet visité</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
 {\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; {\color{red} E} &amp; F &amp; G \\
@@ -2777,6 +2777,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'étape 5}
+\end{align}
 \]</div>
 <h4>Etape 6</h4>
 <ul>
@@ -2785,6 +2786,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>on marque <span class="arithmatex">\(F\)</span> comme sommet visité</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
 {\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; {\color{red} E} &amp; {\color{red} F} &amp; G \\
@@ -2793,6 +2795,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'étape 6}
+\end{align}
 \]</div>
 <h4>Etape 7</h4>
 <ul>
@@ -2801,6 +2804,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <li>on marque <span class="arithmatex">\(G\)</span> comme sommet visité</li>
 </ul>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c |}
 \hline
 {\color{red} D} &amp; {\color{red} A} &amp; {\color{red} B} &amp; {\color{red} C} &amp; {\color{red} E} &amp; {\color{red} F} &amp; {\color{red} G} \\
@@ -2809,6 +2813,7 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
  \hline
 \end{array} \\
 \mbox{Etat du tableau des coûts à l'étape 7}
+\end{align}
 \]</div>
 <h4>Fin de l'algorithme</h4>
 <p>L'algorithme de Dijsktra renvoie le tableau des coûts des distances entre le sommet de départ et le sommet <span class="arithmatex">\(i\)</span>.</p>
@@ -2822,43 +2827,45 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 <p>La chaine la plus courte entre <span class="arithmatex">\(D\)</span> et <span class="arithmatex">\(G\)</span> est la liste inversée : <span class="arithmatex">\(D \rightarrow B \rightarrow C \rightarrow E \rightarrow G\)</span></p>
 </blockquote>
 <h2 id="exercices">Exercices</h2>
-<ol>
-<li>Appliquer l'algorithme de Dijkstra tel que décrit précédemment pour obtenir le tableau de coûts tel que le sommet de départ est le sommet <span class="arithmatex">\(G\)</span>. En déduire la chaine la plus courte entre les sommets <span class="arithmatex">\(G\)</span> et <span class="arithmatex">\(A\)</span>,</li>
-<li>Écrire l'algorithme <code>obtenir_chaine</code> qui prend en paramètre un tableau <span class="arithmatex">\(T\)</span> de coûts de distance, un sommet <span class="arithmatex">\(x\)</span> de départ et un sommet d'arrivée <span class="arithmatex">\(y\)</span> et renvoie la chaine la plus courte entre <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> sous la forme d'une liste de sommets,</li>
-<li>Écrire l'algorithme <code>initialisation</code>, tel que décrit précédemment, qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span> et qui renvoie un tableau de coût initialisé,</li>
-<li>Écrire l'algorithme <code>mettre_a_jour_voisins</code> qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span>, un tableau de coût <span class="arithmatex">\(T\)</span> et un sommet <span class="arithmatex">\(s\)</span> et a pour effet de bord de mettre à jour les voisins de <span class="arithmatex">\(s\)</span> tel que décrit précédemment,</li>
-<li>Écrire l'algorithme <code>dijkstra</code>, tel que décrit précédemment, qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span> et un sommet <span class="arithmatex">\(s\)</span> de départ et renvoie le tableau des coûts de distance.  </li>
-</ol>
-<h2 id="solutions">Solutions</h2>
-<ol>
-<li>Le chemin le plus court entre <span class="arithmatex">\(G\)</span> et <span class="arithmatex">\(A\)</span> est : <span class="arithmatex">\(G \rightarrow E \rightarrow C \rightarrow A\)</span> et vaut 18. Les états successifs du tableau des coûts sont :</li>
-</ol>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Question 1</label><div class="tabbed-content">
+<p>Appliquer l'algorithme de Dijkstra tel que décrit précédemment pour obtenir le tableau de coûts tel que le sommet de départ est le sommet <span class="arithmatex">\(G\)</span>. En déduire la chaine la plus courte entre les sommets <span class="arithmatex">\(G\)</span> et <span class="arithmatex">\(A\)</span>.</p>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Solution</label><div class="tabbed-content">
+<p>Le chemin le plus court entre <span class="arithmatex">\(G\)</span> et <span class="arithmatex">\(A\)</span> est : <span class="arithmatex">\(G \rightarrow E \rightarrow C \rightarrow A\)</span> et vaut 18. </p>
+<p>Les états successifs du tableau des coûts sont :</p>
 <div class="arithmatex">\[
+\begin{align}
 \begin{array}{| c | c | c | c | c | c | c |}
 \hline
- G &amp; A &amp; B &amp; C &amp; D &amp; E &amp; F &amp; \mbox{noeud choisi} \\
+    G &amp; A &amp; B &amp; C &amp; D &amp; E &amp; F &amp; \mbox{noeud choisi} \\
 \hline
-0, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp;  +\infty, \emptyset &amp; -\\
+    0, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp;  +\infty, \emptyset &amp; -\\
 \hline
-0, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; G\\
+    0, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; G\\
 \hline
-0, \emptyset &amp; +\infty, \emptyset &amp; 28, E &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; E\\
+    0, \emptyset &amp; +\infty, \emptyset &amp; 28, E &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; E\\
 \hline
-0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; C\\
+    0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; C\\
 \hline
-0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; F\\
+    0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; +\infty, \emptyset &amp; 3, G &amp;  12, G &amp; F\\
 \hline
-0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; B\\
+    0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; B\\
 \hline
-0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; A\\
+    0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; A\\
 \hline
-0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; D\\
+    0, \emptyset &amp;18, C &amp; 16, C &amp; 8, E &amp; 29, D &amp; 3, G &amp;  12, G &amp; D\\
 \hline
 \end{array} \\
 \mbox{Tableau des coûts pour le sommet de départ $G$}
+\end{align}
 \]</div>
-<ol>
-<li><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+</div>
+</div>
+<div class="tabbed-set" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Question 2</label><div class="tabbed-content">
+<p>Écrire l'algorithme <code>obtenir_chaine</code> qui prend en paramètre un tableau <span class="arithmatex">\(T\)</span> de coûts de distance, un sommet <span class="arithmatex">\(x\)</span> de départ et un sommet d'arrivée <span class="arithmatex">\(y\)</span> et renvoie la chaine la plus courte entre <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> sous la forme d'une liste de sommets,</p>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Solution</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2875,23 +2882,29 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 15
 16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">obtenir_chaine</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 <span class="n">Entrées</span> <span class="p">:</span> 
-  <span class="o">-</span> <span class="n">T</span> <span class="p">:</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coûts</span> <span class="n">de</span> <span class="n">distance</span>
-  <span class="o">-</span> <span class="n">x</span> <span class="p">:</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">départ</span>
-  <span class="o">-</span> <span class="n">y</span> <span class="p">:</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">d</span><span class="s1">&#39;arrivée</span>
+    <span class="o">-</span> <span class="n">T</span> <span class="p">:</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coûts</span> <span class="n">de</span> <span class="n">distance</span>
+    <span class="o">-</span> <span class="n">x</span> <span class="p">:</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">départ</span>
+    <span class="o">-</span> <span class="n">y</span> <span class="p">:</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">d</span><span class="s1">&#39;arrivée</span>
 <span class="n">Sortie</span> <span class="p">:</span> <span class="n">la</span> <span class="n">chaine</span> <span class="n">la</span> <span class="n">plus</span> <span class="n">courte</span> <span class="n">entre</span> <span class="n">x</span> <span class="n">et</span> <span class="n">y</span> <span class="n">sous</span> <span class="n">la</span> <span class="n">forme</span> <span class="n">d</span><span class="s1">&#39;une liste de sommets</span>
 <span class="n">Début</span>
     <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[]</span>
-  <span class="n">s</span> <span class="o">=</span> <span class="n">y</span>
-  <span class="n">Tant</span> <span class="n">que</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">x</span> <span class="n">faire</span>
-    <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">chaine</span>
-    <span class="n">s</span> <span class="o">&lt;-</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">predecesseur</span>
-  <span class="n">FinTantQue</span>
-  <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">chaine</span>
-  <span class="n">Renvoyer</span> <span class="n">chaine</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">Tant</span> <span class="n">que</span> <span class="n">s</span> <span class="o">!=</span> <span class="n">x</span> <span class="n">faire</span>
+        <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">chaine</span>
+        <span class="n">s</span> <span class="o">&lt;-</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">.</span><span class="n">predecesseur</span>
+    <span class="n">FinTantQue</span>
+    <span class="n">chaine</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">+</span> <span class="n">chaine</span>
+    <span class="n">Renvoyer</span> <span class="n">chaine</span>
 <span class="n">Fin</span>
 </code></pre></div>
-</td></tr></table></li>
-<li><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+</td></tr></table>
+</div>
+</div>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Question 3</label><div class="tabbed-content">
+<p>Écrire l'algorithme <code>initialisation</code>, tel que décrit précédemment, qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span> et qui renvoie un tableau de coût initialisé,</p>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Solution</label><div class="tabbed-content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
  4
@@ -2906,8 +2919,8 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 13
 14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">initialisation</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">Entrées</span> <span class="p">:</span> 
- <span class="o">-</span> <span class="n">G</span><span class="p">,</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
- <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">départ</span>
+    <span class="o">-</span> <span class="n">G</span><span class="p">,</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
+    <span class="o">-</span> <span class="n">x</span><span class="p">,</span> <span class="n">le</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">départ</span>
 <span class="n">Sortie</span> <span class="p">:</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coût</span> <span class="n">initialisé</span>
 <span class="n">Début</span>
     <span class="n">T</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="o">|</span><span class="n">G</span><span class="o">.</span><span class="n">sommets</span><span class="o">|</span><span class="p">]</span>     <span class="c1"># un tableau de taille égale à l&#39;ordre de G</span>
@@ -2919,8 +2932,13 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
     <span class="n">Renvoyer</span> <span class="n">T</span>
 <span class="n">Fin</span>
 </code></pre></div>
-</td></tr></table></li>
-<li>
+</td></tr></table>
+</div>
+</div>
+<div class="tabbed-set" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Question 4</label><div class="tabbed-content">
+<p>Écrire l'algorithme <code>mettre_a_jour_voisins</code> qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span>, un tableau de coût <span class="arithmatex">\(T\)</span> et un sommet <span class="arithmatex">\(s\)</span> et a pour effet de bord de mettre à jour les voisins de <span class="arithmatex">\(s\)</span> tel que décrit précédemment,</p>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Solution</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2936,22 +2954,26 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 13
 14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">mettre_a_jour_voisins</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 <span class="n">Entrées</span> <span class="p">:</span>
-  <span class="o">-</span> <span class="n">G</span><span class="p">,</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
-  <span class="o">-</span> <span class="n">T</span><span class="p">,</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coût</span>
-  <span class="o">-</span> <span class="n">s</span><span class="p">,</span> <span class="n">un</span> <span class="n">sommet</span>
+    <span class="o">-</span> <span class="n">G</span><span class="p">,</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
+    <span class="o">-</span> <span class="n">T</span><span class="p">,</span> <span class="n">un</span> <span class="n">tableau</span> <span class="n">de</span> <span class="n">coût</span>
+    <span class="o">-</span> <span class="n">s</span><span class="p">,</span> <span class="n">un</span> <span class="n">sommet</span>
 <span class="n">Sortie</span> <span class="p">:</span> <span class="n">Aucune</span>
 <span class="n">Effet</span> <span class="n">de</span> <span class="n">bord</span> <span class="p">:</span> <span class="n">Les</span> <span class="n">coûts</span> <span class="n">des</span> <span class="n">voisins</span> <span class="n">de</span> <span class="n">s</span> <span class="n">sont</span> <span class="n">mis</span> <span class="n">à</span> <span class="n">jour</span>
 <span class="n">Début</span>
     <span class="n">Pour</span> <span class="n">tout</span> <span class="n">voisin</span> <span class="n">v</span> <span class="n">de</span> <span class="n">G</span><span class="o">.</span><span class="n">voisins</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
         <span class="n">Si</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">G</span><span class="o">.</span><span class="n">poids</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">T</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="n">alors</span>
-        <span class="n">T</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">G</span><span class="o">.</span><span class="n">poids</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
-    <span class="n">Finsi</span>
-  <span class="n">FinPour</span>
+            <span class="n">T</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+</span> <span class="n">G</span><span class="o">.</span><span class="n">poids</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+        <span class="n">Finsi</span>
+    <span class="n">FinPour</span>
 <span class="n">Fin</span>
 </code></pre></div>
 </td></tr></table>
-</li>
-<li>
+</div>
+</div>
+<div class="tabbed-set" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Question 5</label><div class="tabbed-content">
+<p>Écrire l'algorithme <code>dijkstra</code>, tel que décrit précédemment, qui prend en paramètre un graphe <span class="arithmatex">\(G\)</span> et un sommet <span class="arithmatex">\(s\)</span> de départ et renvoie le tableau des coûts de distance.  </p>
+</div>
+<input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><label for="__tabbed_5_2">Solution</label><div class="tabbed-content">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3
@@ -2968,23 +2990,23 @@ Pour résoudre ce problème, une solution est d'appliquer l'algorithme de <stron
 14
 15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">Algorithme</span> <span class="n">dijkstra</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
 <span class="n">Entrées</span> <span class="p">:</span>
-  <span class="o">-</span> <span class="n">G</span> <span class="p">:</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
-  <span class="o">-</span> <span class="n">s</span> <span class="p">:</span> <span class="n">un</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">G</span>
+    <span class="o">-</span> <span class="n">G</span> <span class="p">:</span> <span class="n">un</span> <span class="n">graphe</span> <span class="n">pondéré</span>
+    <span class="o">-</span> <span class="n">s</span> <span class="p">:</span> <span class="n">un</span> <span class="n">sommet</span> <span class="n">de</span> <span class="n">G</span>
 <span class="n">Sortie</span> <span class="p">:</span> <span class="n">le</span> <span class="n">tableau</span> <span class="n">des</span> <span class="n">coûts</span> <span class="n">des</span> <span class="n">distances</span> <span class="n">entre</span> <span class="n">s</span> <span class="n">et</span> <span class="n">les</span> <span class="n">sommets</span> <span class="n">de</span> <span class="n">G</span>
 <span class="n">Début</span>
     <span class="n">T</span> <span class="o">&lt;-</span> <span class="n">initialisation</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-  <span class="n">non_visite</span> <span class="o">&lt;-</span> <span class="n">G</span><span class="o">.</span><span class="n">sommets</span>
-  <span class="n">Tant</span> <span class="n">que</span> <span class="n">non_visite</span> <span class="n">est</span> <span class="n">non</span> <span class="n">vide</span> <span class="n">faire</span>
-    <span class="n">noeud</span> <span class="o">&lt;-</span> <span class="n">choisir_min</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">non_visite</span> <span class="o">&lt;-</span> <span class="n">non_visite</span> <span class="o">-</span> <span class="n">noeud</span>
-    <span class="n">mettre_a_jour_voisins</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">noeud</span><span class="p">)</span>
-  <span class="n">FinTantQue</span>
-  <span class="n">Renvoyer</span> <span class="n">T</span>
+    <span class="n">non_visite</span> <span class="o">&lt;-</span> <span class="n">G</span><span class="o">.</span><span class="n">sommets</span>
+    <span class="n">Tant</span> <span class="n">que</span> <span class="n">non_visite</span> <span class="n">est</span> <span class="n">non</span> <span class="n">vide</span> <span class="n">faire</span>
+        <span class="n">noeud</span> <span class="o">&lt;-</span> <span class="n">choisir_min</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+        <span class="n">non_visite</span> <span class="o">&lt;-</span> <span class="n">non_visite</span> <span class="o">-</span> <span class="n">noeud</span>
+        <span class="n">mettre_a_jour_voisins</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">noeud</span><span class="p">)</span>
+    <span class="n">FinTantQue</span>
+    <span class="n">Renvoyer</span> <span class="n">T</span>
 <span class="n">Fin</span>
 </code></pre></div>
 </td></tr></table>
-</li>
-</ol>
+</div>
+</div>
 <h2 id="analyse-de-lalgorithme-de-dijkstra">Analyse de l'algorithme de Dijkstra</h2>
 <h3 id="terminaison">Terminaison</h3>
 <p>L'algorithme <code>dijkstra</code> termine si la boucle <code>Tant que</code> principale termine.</p>
@@ -3033,9 +3055,10 @@ C -- F [label=&quot;9&quot;];
 E -- G [label=&quot;3&quot;];
 F -- G [label=&quot;12&quot;];
 }" /></p>
-<blockquote>
-<p>Quel est le chemin présentant le moins de dénivelé, que doit emprunter le livreur pour effectuer sa livraison ?</p>
-</blockquote>
+<div class="tabbed-set" data-tabs="6:1"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Question</label><div class="tabbed-content">
+<p>Quel est le chemin, présentant le moins de dénivelé, que doit emprunter le livreur pour effectuer sa livraison ?</p>
+</div>
+</div>
 <h2 id="ressources">Ressources</h2>
 <p>[1] Utiliser l'algorithme de Dijkstra, Yvan Monka, <a href="https://www.youtube.com/watch?v=rHylCtXtdNs">Youtube</a>, 25/12/2014</p>
 <p>[2] <a href="https://graphonline.ru/fr/">Éditeur en ligne de graphe et exécution de l'algorithme de Dijsktra</a></p>

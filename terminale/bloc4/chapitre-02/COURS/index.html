@@ -2683,13 +2683,14 @@
 </code></pre></div>
 </td></tr></table>
 <p>Dans l'exemple ci-dessus, vous pouvez constater que le <strong>programme</strong> et les <strong>données</strong> sur lesquelles il agit sont de même nature : ce sont 3 variables passées en paramètres à ma fonction universelle.</p>
-<div class="boiteAttention">
-    <p>Un programme est aussi une donnée.</p>
+<div class="admonition tip">
+<p class="admonition-title">Important</p>
+<p>Un programme est aussi une donnée.</p>
 </div>
-<div class="boiteQuestions">
-    <p>Citez d'autres exemples où un programme est considéré comme donnée ?</p>
+<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Question</label><div class="tabbed-content">
+<p>Citez d'autres exemples où un programme est considéré comme donnée ?</p>
 </div>
-
+</div>
 <h2 id="preambule">Préambule</h2>
 <p>Face à un problème ou une question, nous avons l'habitude de :</p>
 <ul>
@@ -2699,22 +2700,24 @@
 <li>puis de faire exécuter ce programme par une machine pour obtenir la solution.</li>
 </ul>
 <p>Une question (sous différentes formulations) émerge alors :</p>
-<div class="boiteQuestions">
-    <p>Peut-on tout programmer ?</p>
-  <p>Pour tout problème, est-il possible d'écrire un programme qui permette de calculer une solution ?</p>
-  <p>Tout problème a-t-il une solution ?</p>
+<div class="tabbed-set" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Questions</label><div class="tabbed-content">
+<ul>
+<li>Peut-on tout programmer ?</li>
+<li>Pour tout problème, est-il possible d'écrire un programme qui permette de calculer une solution ?</li>
+<li>Tout problème a-t-il une solution ?</li>
+</ul>
 </div>
-
+</div>
 <h2 id="le-probleme-du-barbier">Le problème du Barbier</h2>
-<div class="boiteQuestions">
-  <p>Dans une ville où les gens : </p>
-  <ul>
-    <li>soit se rasent eux-mêmes, </li>
-    <li>soit se font raser par le barbier.</li>
-  </ul>
-  <p>Qui rase le barbier ?</p>
+<div class="tabbed-set" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Question</label><div class="tabbed-content">
+<p>Dans une ville où les gens : </p>
+<ul>
+<li>soit se rasent eux-mêmes,</li>
+<li>soit se font raser par le barbier.</li>
+</ul>
+<p><strong><em>Qui rase le barbier ?</em></strong></p>
 </div>
-
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Réponse</label><div class="tabbed-content">
 <p>Pour répondre à cette question, on peut raisonner ainsi :</p>
 <ul>
 <li>Soit le barbier se rase lui-même et, dans ce cas, il n'est pas rasé par le barbier,</li>
@@ -2722,25 +2725,31 @@
 </ul>
 <p>&rArr; Contradiction ! Soit le barbier se rase lui-même et donc le barbier ne le rase pas, soit il ne se rase pas lui-même et donc il se rase lui-même.</p>
 <p>On doit conclure que l'hypothèse de départ est fausse. Une ville avec de tels habitants ne peut exister et, de la même manière que l'algorithme qui permette de calculer la solution à ce problème n'existe pas non plus.</p>
-<p>Ce problème connu sous le nom du <strong>paradoxe du Barbier</strong> nous permet déjà de répondre aux questions posées en préambule :</p>
-<div class="boiteReponses">
-    <p>Peut-on tout programmer ? <b>NON</b></p>
-  <p>Pour tout problème, est-il possible d'écrire un programme qui permette de calculer une solution ? <b>NON</b></p>
-  <p>Tout problème a-t-il une solution ? <b>NON</b></p>
 </div>
-
+</div>
+<p>Ce problème connu sous le nom du <strong>paradoxe du Barbier</strong> nous permet déjà de répondre aux questions posées en préambule :</p>
+<div class="tabbed-set" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Questions</label><div class="tabbed-content">
+<ul>
+<li>Peut-on tout programmer ? <strong>NON</strong></li>
+<li>Pour tout problème, est-il possible d'écrire un programme qui permette de calculer une solution ? <strong>NON</strong></li>
+<li>Tout problème a-t-il une solution ? <strong>NON</strong></li>
+</ul>
+</div>
+</div>
 <h2 id="definition">Définition</h2>
-<div class="boiteDefinition">
-  <p>Un problème de décision est dit <b>décidable</b> s'il existe un algorithme, une procédure mécanique qui se termine en un nombre <b><i>fini</i></b> d'étapes, qui le décide, c'est-à-dire qui réponde par <b><i>oui</i></b> ou par <b><i>non</i></b> à la question posée par le problème. </p>
-<p>S'il n'existe pas de tels algorithmes, le problème est dit <b>indécidable</b>.</p>
+<div class="admonition info">
+<p class="admonition-title">Définition</p>
+<p>Un problème de décision est dit <strong>décidable</strong> s'il existe un algorithme, une procédure mécanique qui se termine en un nombre <strong><em>fini</em></strong> d'étapes, qui le décide, c'est-à-dire qui réponde par <strong><em>oui</em></strong> ou par <strong><em>non</em></strong> à la question posée par le problème.</p>
+<p>S'il n'existe pas de tels algorithmes, le problème est dit <strong>indécidable</strong></p>
 </div>
 <p>Illustration :</p>
 <ul>
 <li>Un problème <strong>décidable</strong> : Soit <span class="arithmatex">\(x \in \mathbb{N}\)</span>, le problème "<span class="arithmatex">\(x\)</span> est-il pair ?" est décidable. Il existe un algorithme qui se termine en un temps fini qui décide si oui ou non <span class="arithmatex">\(x\)</span> est pair.</li>
 <li>Un problème <strong>indécidable</strong> : "Le barbier se rase-t-il ?" du paradoxe du barbier.</li>
 </ul>
-<div class="boiteDefinition">
-  <p>Une fonction &fnof;  est une fonction <b>calculable</b> s'il existe une méthode précise qui, étant donné un argument <i>x</i>, permet d'obtenir l'image &fnof;<i>(x)</i> en un nombre <b><i>fini</i></b> d'étapes.</p>  
+<div class="admonition info">
+<p class="admonition-title">Définition</p>
+<p>Une fonction &fnof;  est une fonction <strong>calculable</strong> s'il existe une méthode précise qui, étant donné un argument <span class="arithmatex">\(x\)</span>, permet d'obtenir l'image <span class="arithmatex">\(f(x)\)</span> en un nombre <strong><em>fini</em></strong> d'étapes.</p>
 </div>
 <p>Illustration :</p>
 <ul>
@@ -2748,10 +2757,10 @@
 <li>Une fonction <strong>non calculable</strong> : "Qui rase le barbier ?" du paradoxe du barbier.</li>
 </ul>
 <p>Les notions de <strong>décidabilité</strong> et de <strong>calculabilité</strong> sont étroitement liées, mais cela sort du cadre de ce cours.</p>
-<div class="boiteAttention">
-  <p>Si un problème est indécidable cela ne veut pas dire que l’on n’est pas capable de résoudre ce problème, cela veut juste dire qu’il n’existe pas d’algorithme capable de résoudre ce problème.</p>
+<div class="admonition tip">
+<p class="admonition-title">Attention</p>
+<p>Si un problème est indécidable cela ne veut pas dire que l’on n’est pas capable de résoudre ce problème, cela veut juste dire qu’il n’existe pas d’algorithme capable de résoudre ce problème.</p>
 </div>
-
 <h2 id="un-point-historique">Un point historique</h2>
 <table style="text-align : center;">
   <caption style="caption-side : bottom;">Alonzo Church (à gauche) et Alan Turing (à droite)</caption>
@@ -2766,14 +2775,15 @@
 </table>
 
 <p>L'existence des problèmes indécidables a été prouvé en 1937 par Alonzo Church et Alan Turing.</p>
-<div class="boiteDefinition">
-  <p><b>Théorème fondamental de la calculabilité</b> : Il existe des problèmes non calculables par des fonctions.</p>
+<div class="admonition info">
+<p class="admonition-title">Définition</p>
+<p><strong>Théorème fondamental de la calculabilité</strong> : Il existe des problèmes non calculables par des fonctions.</p>
 </div>
-<div class="boiteQuestions">
-  <p>Est-ce que la non calculabilité d'une fonction est liée au langage de programmation utilisé ?</p>
-  <p>Autrement dit, est-ce que Python (idem pour les autres langages de programmation) n'est tout simplement pas assez "puissant" pour écrire ces fonctions ?</p>
+<div class="tabbed-set" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><label for="__tabbed_5_1">Question</label><div class="tabbed-content">
+<p>Est-ce que la non calculabilité d'une fonction est liée au langage de programmation utilisé ?</p>
+<p>Autrement dit, est-ce que Python (idem pour les autres langages de programmation) n'est tout simplement pas assez "puissant" pour écrire ces fonctions ?</p>
 </div>
-
+</div>
 <figure>
     <center>
         <img src="./assets/equivalence.png" width="100%"/>
@@ -2809,12 +2819,16 @@ Source : <a href="https://www.youtube.com/embed/Kf-IHn1PvaQ">Youtube</a>
   <span class="k">return</span> <span class="n">n</span>
 </code></pre></div>
 </td></tr></table>
-<div class="boiteQuestions">
-  <p><i>ma_fonction</i> termine-t-elle ? Si oui, dans quels cas ? Si non, dans quels autres cas ?</p>
+<div class="tabbed-set" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><label for="__tabbed_6_1">Question</label><div class="tabbed-content">
+<p><code>ma_fonction</code> termine-t-elle ? </p>
+<p>Si oui, dans quels cas ? Si non, dans quels autres cas ?</p>
 </div>
-
-<p><code>ma_fonction</code> traduit le "cauchemar" de tout programmeur. Dans certains cas, une fonction "tombe" dans une boucle infinie et ne s'arrête jamais. Dans ce cas, le logiciel est incapable de fournir la réponse attendue par l'utilisateur. Un programme qui permettrait de tester si un autre programme va finir par s'arrêter, quel que soit le cas traité, serait d'une grande aide pour tous les développeurs du monde !</p>
-<p>Si on pouvait utiliser les instructions suivantes, nous sortirions de ce "cauchemar" !</p>
+<input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><label for="__tabbed_6_2">Réponse</label><div class="tabbed-content">
+<p><code>ma_fonction</code> traduit le "cauchemar" de tout programmeur. Dans certains cas, une fonction "tombe" dans une boucle infinie et ne s'arrête jamais. Dans ce cas, le logiciel est incapable de fournir la réponse attendue par l'utilisateur. </p>
+<p>Un programme qui permettrait de tester si un autre programme va finir par s'arrêter, quel que soit le cas traité, serait d'une grande aide pour tous les développeurs du monde !</p>
+</div>
+</div>
+<p>Si on pouvait utiliser les instructions suivantes, nous aurions des éléments de réponses !</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2
 3
@@ -2857,16 +2871,21 @@ arret(f, n) = \left\{
     <span class="k">return</span> <span class="mi">1</span>
 </code></pre></div>
 </td></tr></table>
-<div class="boiteQuestions">
-  <p>Que vaut <i>une_fonction(1)</i> ?</p>
+<div class="tabbed-set" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><label for="__tabbed_7_1">Question</label><div class="tabbed-content">
+<p>Que vaut <code>une_fonction(1)</code> ?</p>
 </div>
+<input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><label for="__tabbed_7_2">Analyse</label><div class="tabbed-content">
 <p>2 cas sont possibles :</p>
 <ol>
 <li><code>arret(une_fonction, 1)</code> renvoie <code>True</code>, alors par l'instruction 3, <code>une_fonction(1)</code>est appelé par récursion, de manière successive et...sans se terminer ; ce qui est en contradiction avec le fait que <code>arret(une_fonction, 1)</code> renvoie <code>True</code> &rArr; Le calcul de <code>une_fonction(1)</code> ne s'arrête pas si et seulement si il s'arrête.</li>
 <li><code>arret(une_fonction, 1)</code> renvoie <code>False</code>, alors par l'instruction 5, <code>une_fonction(1)</code> se termine et renvoie 1; ce qui est une contraction avec le fait que <code>arret(une_fonction, 1)</code>renvoie <code>False</code> &rArr; Le calcul de <code>une_fonction(1)</code> s'arrête si et seulement si il ne s'arrête pas.</li>
 </ol>
+</div>
+<input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><label for="__tabbed_7_3">Conclusion</label><div class="tabbed-content">
 <p>Ainsi, dans l'ensemble des cas possibles, l'hypothèse que la fonction <code>arret</code> existe mène à une situation contradictoire. Nous pouvons donc conclure notre raisonnement par l’absurde et affirmer que l'hypothèse de départ, à savoir qu'il existe une fonction <code>arret</code> telle que définie ci-dessus est fausse.</p>
 <p>Le programme <code>arret</code> n'est pas programmable !</p>
+</div>
+</div>
 <p>Une ressource vidéo qui illustre cette démonstration :
 <center></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/92WHN-pAFCs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -2876,15 +2895,17 @@ Source : <a href="https://www.youtube.com/watch?v=92WHN-pAFCs">Youtube</a>
 </p>
 <p></center></p>
 <h2 id="autres-problemes">Autres problèmes</h2>
-<div class="boiteDefinition">
-  <p><b>Théorème de H.G.Rice (1951)</b> : Toute propriété <i>non triviale</i> (c.-à-d. qui n'est pas toujours vraie ou toujours fausse) des programmes est indécidable.</p>
+<div class="admonition info">
+<p class="admonition-title">Définition</p>
+<p><strong>Théorème de H.G.Rice (1951)</strong> : Toute propriété <em>non triviale</em> (c.-à-d. qui n'est pas toujours vraie ou toujours fausse) des programmes est indécidable.</p>
 </div>
-
-<p>Concrètement, les problèmes suivants sont indécidables :
-- décider si un programme est conforme à une spécification,
-- décider si deux programmes sont égaux, i.e ont les mêmes comportements pour les mêmes entrées,
-- corriger automatiquement des projets d'élèves,
-- ... et bien d'autres !</p>
+<p>Concrètement, les problèmes suivants sont indécidables :</p>
+<ul>
+<li>décider si un programme est conforme à une spécification,</li>
+<li>décider si deux programmes sont égaux, i.e ont les mêmes comportements pour les mêmes entrées,</li>
+<li>corriger automatiquement des projets d'élèves,</li>
+<li>... et bien d'autres !</li>
+</ul>
 <h2 id="exercices-correspondance-de-post">Exercices - Correspondance de Post</h2>
 <p>Le problème de Post est un problème de décision.
 On se fixe un alphabet <span class="arithmatex">\(A\)</span>.
@@ -2892,72 +2913,72 @@ On définit un ensemble <span class="arithmatex">\(D\)</span> de « dominos » s
 Une instance du problème est ainsi une suite finie <span class="arithmatex">\((u_1, v_1), (u_2, v_2), . . . , (u_n, v_n)\)</span> de couples de mots.
 Le problème consiste à savoir si on peut aligner des dominos de sorte que les mots résultant sur chaque moitié sont les mêmes : existe-t-il une suite <span class="arithmatex">\(k_1, k_2, ..., k_p\)</span> d’indices à prendre dans <span class="arithmatex">\([1, n]\)</span> (on peut choisir plusieurs fois le même indice) telle que les mots <span class="arithmatex">\(u_{k_1}u_{k_2} ...u_{k_p}\)</span> et <span class="arithmatex">\(v_{k_1}v_{k_2} ...v_{k_p}\)</span> soient identiques.</p>
 <h4>Exemple 1</h4>
-<p>On fixe l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble de dominos <span class="arithmatex">\(D\)</span> suivant :
-$$
+<p>On fixe l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble de dominos <span class="arithmatex">\(D\)</span> suivant :</p>
+<div class="arithmatex">\[
 \begin{matrix}
 \boxed{
     \begin{matrix}
-    ab\
+    ab\\
   \hline
     aa
     \end{matrix}
-} \
+} \\
 1
 \end{matrix}
 \;
 \begin{matrix}
 \boxed{
     \begin{matrix}
-    a\
+    a\\
   \hline
     baa
     \end{matrix}
-} \
+} \\
 2
 \end{matrix}
 \;
 \begin{matrix}
 \boxed{
     \begin{matrix}
-    bba\
+    bba\\
   \hline
     bb
     \end{matrix}
-} \
+} \\
 3
 \end{matrix}
-$$</p>
-<p>Cette instance admet la solution <span class="arithmatex">\((3, 1, 3, 2)\)</span>
-$$
+\]</div>
+<p>Cette instance admet la solution <span class="arithmatex">\((3, 1, 3, 2)\)</span></p>
+<div class="arithmatex">\[
 \boxed{
     \begin{matrix}
-    bba\
+    bba\\
   \hline
     bb
     \end{matrix}
 }
 \boxed{
     \begin{matrix}
-    ab\
+    ab\\
   \hline
     aa
     \end{matrix}
 }
 \boxed{
     \begin{matrix}
-    bba\
+    bba\\
   \hline
     bb
     \end{matrix}
 }
 \boxed{
     \begin{matrix}
-    a\
+    a\\
   \hline
     baa
     \end{matrix}
 }
-$$</p>
+\]</div>
 <p>En effet, si on prend les mots <span class="arithmatex">\(u\)</span> (concaténation des mots du haut des dominos) et <span class="arithmatex">\(v\)</span> (concaténation des mots du bas des dominos), on trouve :</p>
 <div class="arithmatex">\[
 \begin{align*}
@@ -2966,13 +2987,11 @@ u_3 u_1 u_3 u_2 &amp;= v_3 v_1 v_3 v_2 \\
 bba\,ab\,bba\,a &amp;= bb\,aa\,bb\,baa
 \end{align*}
 \]</div>
-<div class="boiteQuestions">
-  <p>Existe-t-il une solution aux instances suivantes du problème de correspondance de Post ?</p>
+<div class="tabbed-set" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><label for="__tabbed_8_1">Question</label><div class="tabbed-content">
+<p>Existe-t-il une solution aux instances suivantes du problème de correspondance de Post ?</p>
 </div>
-
-<ol>
-<li>Soit l'alphabet <span class="arithmatex">\(A = \{a, b, c\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</li>
-</ol>
+</div>
+<p>1 - Soit l'alphabet <span class="arithmatex">\(A = \{a, b, c\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</p>
 <div class="arithmatex">\[
 \begin{matrix}
 \boxed{
@@ -3007,9 +3026,7 @@ bba\,ab\,bba\,a &amp;= bb\,aa\,bb\,baa
 3
 \end{matrix}
 \]</div>
-<ol>
-<li>Soit l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</li>
-</ol>
+<p>2 - Soit l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</p>
 <div class="arithmatex">\[
 \begin{matrix}
 \boxed{
@@ -3044,9 +3061,7 @@ bba\,ab\,bba\,a &amp;= bb\,aa\,bb\,baa
 3
 \end{matrix}
 \]</div>
-<ol>
-<li>Soit l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</li>
-</ol>
+<p>3 - Soit l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</p>
 <div class="arithmatex">\[
 \begin{matrix}
 \boxed{
@@ -3081,9 +3096,7 @@ bba\,ab\,bba\,a &amp;= bb\,aa\,bb\,baa
 3
 \end{matrix}
 \]</div>
-<ol>
-<li>Soit l'alphabet <span class="arithmatex">\(A = \{a, b, c\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</li>
-</ol>
+<p>4 - Soit l'alphabet <span class="arithmatex">\(A = \{a, b, c\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</p>
 <div class="arithmatex">\[
 \begin{matrix}
 \boxed{
@@ -3118,9 +3131,7 @@ bba\,ab\,bba\,a &amp;= bb\,aa\,bb\,baa
 3
 \end{matrix}
 \]</div>
-<ol>
-<li>Soit l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</li>
-</ol>
+<p>5 - Soit l'alphabet <span class="arithmatex">\(A = \{a, b\}\)</span> et l'ensemble <span class="arithmatex">\(D\)</span> de dominos :</p>
 <div class="arithmatex">\[
 \begin{matrix}
 \boxed{
