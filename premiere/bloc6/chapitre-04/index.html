@@ -14,7 +14,7 @@
     
     
       
-        <title>Algorithme des $k$ plus proches voisins - NSI</title>
+        <title>Cours - NSI</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#algorithme-des-k-plus-proches-voisins" class="md-skip">
+        <a href="#cours" class="md-skip">
           Aller au contenu
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Algorithme des $k$ plus proches voisins
+              Cours
             
           </span>
         </div>
@@ -1564,12 +1564,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Algorithme des $k$ plus proches voisins
+          Cours
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Algorithme des $k$ plus proches voisins
+        Cours
       </a>
       
         
@@ -1584,6 +1584,13 @@
       Table des matières
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#algorithme-des-k-plus-proches-voisins" class="md-nav__link">
+    Algorithme des k plus proches voisins
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#exemple-introductif" class="md-nav__link">
@@ -1628,10 +1635,10 @@
       
         <li class="md-nav__item">
   <a href="#implementation-de-lalgorithme-des-k-plus-proches-voisins" class="md-nav__link">
-    Implémentation de l'algorithme des \(k\) plus proches voisins
+    Implémentation de l'algorithme des k​ plus proches voisins
   </a>
   
-    <nav class="md-nav" aria-label="Implémentation de l'algorithme des \(k\) plus proches voisins">
+    <nav class="md-nav" aria-label="Implémentation de l'algorithme des k​ plus proches voisins">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1657,7 +1664,7 @@
         
           <li class="md-nav__item">
   <a href="#structure-globale-de-lalgorithme-des-k-plus-proches-voisins" class="md-nav__link">
-    Structure globale de l'algorithme des \(k\) plus proches voisins
+    Structure globale de l'algorithme des k​ plus proches voisins
   </a>
   
 </li>
@@ -2457,6 +2464,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#algorithme-des-k-plus-proches-voisins" class="md-nav__link">
+    Algorithme des k plus proches voisins
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exemple-introductif" class="md-nav__link">
     Exemple introductif
   </a>
@@ -2499,10 +2513,10 @@
       
         <li class="md-nav__item">
   <a href="#implementation-de-lalgorithme-des-k-plus-proches-voisins" class="md-nav__link">
-    Implémentation de l'algorithme des \(k\) plus proches voisins
+    Implémentation de l'algorithme des k​ plus proches voisins
   </a>
   
-    <nav class="md-nav" aria-label="Implémentation de l'algorithme des \(k\) plus proches voisins">
+    <nav class="md-nav" aria-label="Implémentation de l'algorithme des k​ plus proches voisins">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2528,7 +2542,7 @@
         
           <li class="md-nav__item">
   <a href="#structure-globale-de-lalgorithme-des-k-plus-proches-voisins" class="md-nav__link">
-    Structure globale de l'algorithme des \(k\) plus proches voisins
+    Structure globale de l'algorithme des k​ plus proches voisins
   </a>
   
 </li>
@@ -2579,7 +2593,8 @@
               
                 
                 
-                <h1 id="algorithme-des-k-plus-proches-voisins">Algorithme des <span class="arithmatex">\(k\)</span> plus proches voisins</h1>
+                <h1 id="cours">Cours</h1>
+<h2 id="algorithme-des-k-plus-proches-voisins">Algorithme des <em>k</em> plus proches voisins</h2>
 <div class="admonition info">
 <p class="admonition-title">Avant-propos</p>
 <ul>
@@ -2792,7 +2807,7 @@ Ce que vous devez seulement savoir sur cette distance pour cet exercice c'est qu
 <details class="question"><summary>Quelle serait l'origine de l'élément de squelette en considérant cette valeur de <span class="arithmatex">\(k = 11\)</span> ?</summary><p>Pour <span class="arithmatex">\(k = 11\)</span>, le squelette a 5 voisins allemands, 4 voisins anglais et 2 voisins français. On peut considérer que l'origine est allemande pour cette valeur de <span class="arithmatex">\(k\)</span>.</p>
 </details>
 <details class="question"><summary>Peut-on savoir à coup sûr, en prenant une valeur de <span class="arithmatex">\(k\)</span> inférieure au égale à 11, si le combattant dont on a trouvé un élément de squelette était un combattant de la Triple-Entente (France + Royaume-Uni + Russie) ou de la Triple-Alliance (Allemagne + Autriche-Hongrie + Italie) ?</summary></details>
-<h2 id="implementation-de-lalgorithme-des-k-plus-proches-voisins">Implémentation de l'algorithme des <span class="arithmatex">\(k\)</span> plus proches voisins</h2>
+<h2 id="implementation-de-lalgorithme-des-k-plus-proches-voisins">Implémentation de l'algorithme des <em>k​</em> plus proches voisins</h2>
 <p>Pour implémenter cet algorithme, il nous faut :</p>
 <ul>
 <li>Une table de données. Cette table peut être une liste ou un dictionnaire.</li>
@@ -2809,7 +2824,7 @@ Ce que vous devez seulement savoir sur cette distance pour cet exercice c'est qu
 <h3 id="la-distance-de-tchebychev">La distance de Tchebychev</h3>
 <p>Soient deux données <span class="arithmatex">\(d_1\)</span> et <span class="arithmatex">\(d_2\)</span> de coordonnées respectives <span class="arithmatex">\((x_1,y_1)\)</span> et <span class="arithmatex">\((x_2,y_2)\)</span>.</p>
 <p><span class="arithmatex">\(distance(d_1, d_2) = max(|x_1-x_2|, |y_1 - y_2|)\)</span></p>
-<h3 id="structure-globale-de-lalgorithme-des-k-plus-proches-voisins">Structure globale de l'algorithme des <span class="arithmatex">\(k\)</span> plus proches voisins</h3>
+<h3 id="structure-globale-de-lalgorithme-des-k-plus-proches-voisins">Structure globale de l'algorithme des <em>k​</em> plus proches voisins</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
  2
  3

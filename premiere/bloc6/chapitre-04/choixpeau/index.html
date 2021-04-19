@@ -1556,7 +1556,7 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        Algorithme des $k$ plus proches voisins
+        Cours
       </a>
     </li>
   
@@ -2558,16 +2558,19 @@
 <h2 id="partie-1-modeliser-un-eleve">Partie 1 - Modéliser un élève</h2>
 <p>On modélise un élève par un dictionnaire.</p>
 <p>Exemple pour l'élève Bellatrix :</p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Bellatrix&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Loyauté&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Sagesse&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Malice&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Serpentard&#39;</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Bellatrix&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Loyauté&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Sagesse&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Malice&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Serpentard&#39;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-1. Donner la modélisation de l'élève Anthony.</p>
-<p>On utilise la distance de <code>Manhattan</code> (Cf. <a href="../">Cours sur l'algorithme KNN</a>).
-2. Vérifier que la distance entre Hermione et Adrian est égale à 8.
-3. Quelle est la distance entre Arthur et Drago ?
-4. Écrire la fonction <code>distance</code> qui prend deux élèves en paramètre et renvoie la distance entre ces deux élèves. Ne pas oublier de préciser la documentation et donner au moins un test.</p>
+<ol>
+<li>Donner la modélisation de l'élève Anthony.</li>
+<li>En utilisant la distance de <code>Manhattan</code> (Cf. <a href="../">Cours sur l'algorithme KNN</a>), Vérifier que la distance entre Hermione et Adrian est égale à 8.</li>
+<li>Quelle est la distance entre Arthur et Drago ?</li>
+<li>Écrire la fonction <code>distance</code> qui prend deux élèves en paramètre et renvoie la distance entre ces deux élèves. Ne pas oublier de préciser la documentation et donner au moins un test.</li>
+</ol>
 <h2 id="partie-2-charger-les-donnees-de-la-table">Partie 2 - Charger les données de la table</h2>
-<p>Se reporter au chapitre sur les tables afin d'écrire une fonction qui permet de récupérer les données des élèves d'un fichier CSV pour les stocker dans une liste. On doit obtenir une liste de dictionnaires.</p>
+<ol>
+<li>Se reporter au chapitre sur les tables afin d'écrire une fonction qui permet de récupérer les données des élèves d'un fichier CSV pour les stocker dans une liste. On doit obtenir une liste de dictionnaires.</li>
+</ol>
 <h2 id="partie-3-trouver-la-maison-majoritaire">Partie 3 - Trouver la maison majoritaire</h2>
 <ol>
 <li>Écrire une fonction <code>frequence_des_maisons(table)</code> qui prend en paramètre une table d'élèves et qui renvoie le dictionnaire des fréquences des maisons. Vous devez obtenir :
@@ -2590,10 +2593,10 @@
 <li>Parmi ces proches voisins, trouver la maison majoritaire.</li>
 <li>Renvoyer la maison majoritaire.</li>
 </ol>
-<p>Faire un test avec 'Hermione'. Vous devez obtenir les 7 voisins suivants :
+<p>Faire un test avec 'Hermione'. Vous devez obtenir les 7 voisins suivants :</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">[{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Cormac&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Loyauté&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;sagesse&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;malice&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Gryffondor&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Milicent&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Loyauté&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sagesse&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;malice&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Serpentar&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Neville&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Loyauté&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Sagesse&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Malice&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Gryffondor&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Padma&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Loyauté&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Sagesse&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Malice&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Serdaigle&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Susan&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;loyauté&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Sagesse&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;malice&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Poufsouffle&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Angelina&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;loyauté&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;Sagesse&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;Malice&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;Maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Gryffondor&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Colin&#39;</span><span class="p">,</span> <span class="s1">&#39;Courage&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;Loyauté&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Sagesse&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;Malice&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;Maison&#39;</span><span class="p">:</span> <span class="s1">&#39;Gryffondor&#39;</span><span class="p">}]</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <p>La maison attribuée pour 'Hermione' est 'Gryffondor'.</p>
 <h2 id="partie-6-pour-aller-plus-loin">Partie 6 - Pour aller plus loin</h2>
 <ol>
@@ -2627,7 +2630,7 @@
                 <span class="md-footer-nav__direction">
                   Précédent
                 </span>
-                Algorithme des $k$ plus proches voisins
+                Cours
               </div>
             </div>
           </a>

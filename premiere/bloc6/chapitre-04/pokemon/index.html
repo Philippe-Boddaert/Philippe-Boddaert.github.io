@@ -1556,7 +1556,7 @@
   
     <li class="md-nav__item">
       <a href="../" class="md-nav__link">
-        Algorithme des $k$ plus proches voisins
+        Cours
       </a>
     </li>
   
@@ -2445,7 +2445,14 @@
                 
                 <h1 id="pokemon">Pokemon</h1>
 <h2 id="description">Description</h2>
-<p>Le nom Pokémon est issu de la contraction de <strong>Poke</strong>tto <strong>Mon</strong>sutā, romanisation du japonais ポケットモンスター1 traduisant l'anglais Pocket Monsters.</p>
+<p>Le nom Pokémon est issu de la contraction de <strong>Poke</strong>tto <strong>Mon</strong>sutā, romanisation du japonais ポケットモンスター1 traduisant l'anglais <strong>Pocket Monsters</strong>.</p>
+<figure>
+  <center>
+  <img width="50%" src="https://cdn.pixabay.com/photo/2016/07/13/08/31/pokemon-1513925_960_720.jpg"/>
+  <figcaption>Source : Pixabay</figcaption>
+  </center>
+</figure>
+
 <p>Dans l'univers des Pokémon, les animaux du monde réel n'existent pas (ou très peu). Le monde est peuplé de Pokémon, des créatures qui vivent en harmonie avec les humains, mais possèdent des aptitudes quasiment impossibles pour des animaux du monde réel, telles que cracher du feu ou encore générer de grandes quantités d'électricité.</p>
 <p>Chaque espèce de Pokémon se voit attribuer un type parmi les dix-huit existants, qui définissent ses forces et faiblesses aux attaques qu'il peut subir.</p>
 <p>Le fichier <a href="../assets/pokemon.csv">pokemon.csv</a> contient une liste de près de 400 pokemons, dont voici un extrait :</p>
@@ -2555,16 +2562,19 @@
 <h2 id="partie-1-modeliser-un-pokemon">Partie 1 - Modéliser un Pokemon</h2>
 <p>On modélise un Pokemon par un dictionnaire.</p>
 <p>Exemple pour le 'Mucuscule' :</p>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Mucuscule&#39;</span><span class="p">,</span> <span class="s1">&#39;Vie&#39;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;Attaque&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;Défense&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;Vitesse&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Dragon&#39;</span><span class="p">}</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;Nom&#39;</span><span class="p">:</span> <span class="s1">&#39;Mucuscule&#39;</span><span class="p">,</span> <span class="s1">&#39;Vie&#39;</span><span class="p">:</span> <span class="mi">45</span><span class="p">,</span> <span class="s1">&#39;Attaque&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="s1">&#39;Défense&#39;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span> <span class="s1">&#39;Vitesse&#39;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">:</span> <span class="s1">&#39;Dragon&#39;</span><span class="p">}</span>
 </code></pre></div>
 </td></tr></table>
-1. Donner la modélisation du Pokémon Pikachu.</p>
-<p>On utilise la distance de <code>Euclidienne</code> (Cf. <a href="../">Cours sur l'algorithme KNN</a>).
-2. Vérifier que la distance entre ... et  ...est égale à ....
-3. Quelle est la distance entre ... et ... ?
-4. Écrire la fonction <code>distance</code> qui prend deux élèves en paramètre et renvoie la distance entre ces deux Pokemon. Ne pas oublier de préciser la documentation et donner au moins un test.</p>
+<ol>
+<li>Donner la modélisation du Pokémon Pikachu.</li>
+<li>En utilisant la distance de <code>Euclidienne</code> (Cf. <a href="../">Cours sur l'algorithme KNN</a>), vérifier que la distance entre ... et  ... est égale à ....</li>
+<li>Quelle est la distance entre ... et ... ?</li>
+<li>Écrire la fonction <code>distance</code> qui prend deux élèves en paramètre et renvoie la distance entre ces deux Pokemon. Ne pas oublier de préciser la documentation et donner au moins un test.</li>
+</ol>
 <h2 id="partie-2-charger-les-donnees-de-la-table">Partie 2 - Charger les données de la table</h2>
-<p>Se reporter au chapitre sur les tables afin d'écrire une fonction qui permet de récupérer les données des Pokemon d'un fichier CSV pour les stocker dans une liste. On doit obtenir une liste de dictionnaires.</p>
+<ol>
+<li>Se reporter au chapitre sur les tables afin d'écrire une fonction qui permet de récupérer les données des Pokemon d'un fichier CSV pour les stocker dans une liste. On doit obtenir une liste de dictionnaires.</li>
+</ol>
 <h2 id="partie-3-trouver-le-type-majoritaire">Partie 3 - Trouver le Type majoritaire</h2>
 <ol>
 <li>Écrire une fonction <code>frequence_des_types(table)</code> qui prend en paramètre une table de Pkemon et qui renvoie le dictionnaire des fréquences des types. Vous devez obtenir : 
