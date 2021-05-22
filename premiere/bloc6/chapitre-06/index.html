@@ -2585,9 +2585,9 @@
 </div>
 <input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Analyse</label><div class="tabbed-content">
 <p>En généralisant le résultat obtenu, soit <span class="arithmatex">\(C_{sac}\)</span>, le nombre de combinaisons à tester pour le problème du sac à objets avec <span class="arithmatex">\(n\)</span> objets est définit par :</p>
-<div class="arithmatex">\[C_{sac} = \sum_{i = 0}^{n} C_{i}^{n} = \sum_{i = 0}^{n} \dfrac{n!}{i!\,(n - i)!}\]</div>
+<div class="arithmatex">\[C_{sac} = \sum_{i = 0}^{n} C_{n}^{i} = \sum_{i = 0}^{n} \dfrac{n!}{i!\,(n - i)!}\]</div>
 <p>Or, d'après la formule du binôme de Newton,</p>
-<div class="arithmatex">\[ \sum_{i = 0}^{n} C_i^n = a^n \mbox{, où } a \mbox{ est une constante.}\]</div>
+<div class="arithmatex">\[ \sum_{i = 0}^{n} C_n^i = a^n \mbox{, où } a \mbox{ est une constante.}\]</div>
 <p>Autrement dit, un algorithme qui testerait toutes les combinaisons possibles aurait une complexité en <span class="arithmatex">\(\mathcal{O}(a^n)\)</span>, ce qui est inefficace dans la pratique.</p>
 </div>
 </div>
