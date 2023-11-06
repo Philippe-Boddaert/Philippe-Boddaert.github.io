@@ -1,0 +1,114 @@
+/* BASE QUIZ STYLES */
+/* These styles ensure that the necessary elements are hidden for toggling */
+
+/* DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING!! */
+
+.startQuiz,
+.nextQuestion,
+.backToQuestion,
+.questions li.question,
+.questions li.question .responses,
+.questions li.question .responses .correct,
+.questions li.question .responses .incorrect,
+.quizResults {
+    display: none;
+}
+
+/* If response messages are disabled or only shown on quiz completion,
+   nextQuestion button IS checkAnswer button - so it must be displayed */
+.nextQuestion.checkAnswer {
+    display: block;
+}
+
+ol.questions,
+ul.answers,
+ul.responses,
+ol.questions li,
+ul.answers li,
+ul.responses li {
+    list-style-type: none;
+}
+
+/* Accessibility */
+.quizName span:first-child {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+label p, label pre {
+    display: inline;
+    cursor: pointer;
+}
+
+.correct, .incorrect{
+    font-weight: bolder;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+table {
+    border: 1px solid black;
+    margin: auto;
+}
+
+tr:nth-child(odd) {
+    background: #FFF;
+}
+
+tr:nth-child(even) {
+    background: #f3f3f3;
+}
+
+thead tr:nth-child(1) {
+    background: #CCC;
+}
+
+td, th {
+    border: 1px solid black;
+    padding: 0.33em;
+}
+
+th {
+    font-weight: bold;
+}
+
+p:has(img) {
+    text-align: center;
+}
+
+.questionCount {
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    border-bottom: 2px solid #007bff;
+    margin-bottom: 20px;
+}
+
+ol.answers {
+    border-top: 2px solid #007bff;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+ol.answers li, ul.answers li {
+    display: list-item;
+    list-style: upper-alpha !important;
+}
+
+li.question ol:not(.answers), li.question li, li.question ul:not(.responses) {
+    margin: 0px 0px 0px 20px;
+}

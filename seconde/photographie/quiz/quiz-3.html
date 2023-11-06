@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz PN-Q3</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz PN-Q3 - Photographie numérique",
+        "main": "Sujet : La couleur dans les images"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition d'un photosite",
+            "q": "Un __photosite__, c'est :",
+            "a": [
+                {
+                    "option": "Un site de partage de photos",
+                    "correct": false
+                },
+                {
+                    "option": "Un composant élémentaire d'une image",
+                    "correct": false
+                },
+                {
+                    "option": "Un site de production photovoltaïque",
+                    "correct": false
+                },
+                {
+                    "option": "Un composant élémentaire d'un capteur",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Couleurs primaires",
+            "q": "Quelles sont les trois couleurs qui, ensemble, permettent de déterminer la couleur finale d'un pixel ?",
+            "a": [
+                {
+                    "option": "noir, gris, blanc",
+                    "correct": false
+                },
+                {
+                    "option": "rouge, vert, beige",
+                    "correct": false
+                },
+                {
+                    "option": "rouge, vert, bleu",
+                    "correct": true
+                },
+                {
+                    "option": "cyan, jaune, magenta",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Couleur d'un pixel",
+            "q": "Pour reconstituer la couleur d'un pixel, le cerveau réalise :",
+            "a": [
+                {
+                    "option": "une synthèse soustractive des 3 composantes du pixel",
+                    "correct": false
+                },
+                {
+                    "option": "une sélection de la couleur dominante des 3 composantes du pixel",
+                    "correct": false
+                },
+                {
+                    "option": "une synthèse additive des 3 composantes du pixel",
+                    "correct": true
+                },
+                {
+                    "option": "un calcul de la moyenne des 3 composantes du pixel",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Codage RGB",
+            "q": "Soit le code RGB (127, 25, 0) d'un pixel, quelles affirmations sont vraies ?",
+            "a": [
+                {
+                    "option": "La couleur du pixel s'approche du rouge",
+                    "correct": true
+                },
+                {
+                    "option": "La valeur 25 correspond à la composante verte",
+                    "correct": true
+                },
+                {
+                    "option": "La couleur du pixel s'approche du bleu",
+                    "correct": false
+                },
+                {
+                    "option": "La valeur 0 correspond à la composante rouge",
+                    "correct": false
+                },
+                {
+                    "option": "La valeur 0 correspond à la composante bleue",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Codage RGB",
+            "q": "Dans le codage RGB, à quoi correspond les valeurs de chaque composante ?",
+            "a": [
+                {
+                    "option": "l'intensité lumineuse à appliquer lors de l’affichage.",
+                    "correct": true
+                },
+                {
+                    "option": "la coordonnée du pixel dans l'image",
+                    "correct": false
+                },
+                {
+                    "option": "des nombres aléatoires",
+                    "correct": false
+                },
+                {
+                    "option": "le nombre de pixels de la même couleur",
+                    "correct": false
+                },
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nombre de nuances de couleur",
+            "q": "Avec 256 nuances de rouge, 256 nuances de vert et 256 nuances de bleu, le nombre possible de nuances produites est :",
+            "a": [
+                {
+                    "option": "16",
+                    "correct": false
+                },
+                {
+                    "option": "256",
+                    "correct": false
+                },
+                {
+                    "option": "768",
+                    "correct": false
+                },
+                {
+                    "option": "plus de 16 millions",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Codage des couleurs",
+            "q": "Les couleurs sont codées habituellement avec des nombres compris entre 0 et 1 000.",
+            "a": [
+                {
+                    "option": "Faux",
+                    "correct": true
+                },
+                {
+                    "option": "Vrai",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Profondeur de couleur",
+            "q": "La __profondeur de couleur__ est le nombre de bits associés à chaque pixel.\n\nDans le cas du codage RGB, la profondeur de couleur est de :",
+            "a": [
+                {
+                    "option": "8",
+                    "correct": false
+                },
+                {
+                    "option": "16",
+                    "correct": false
+                },
+                {
+                    "option": "24",
+                    "correct": true
+                },
+                {
+                    "option": "32",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Codage en nuance de gris",
+            "q": "Coder une image en nuance (ou niveau) de gris nécessite de représenter l’information de luminosité sur un octet.\n\nCombien de niveaux de gris est-il possible d’obtenir avec ce codage ?",
+            "a": [
+                {
+                    "option": "8",
+                    "correct": false
+                },
+                {
+                    "option": "16",
+                    "correct": false
+                },
+                {
+                    "option": "24",
+                    "correct": true
+                },
+                {
+                    "option": "32",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Profondeur de couleur",
+            "q": "La __profondeur de couleur__ est le nombre de bits associés à chaque pixel.\n\nDans le cas du codage en nuance de gris, la profondeur de couleur est de :",
+            "a": [
+                {
+                    "option": "8",
+                    "correct": true
+                },
+                {
+                    "option": "16",
+                    "correct": false
+                },
+                {
+                    "option": "24",
+                    "correct": false
+                },
+                {
+                    "option": "32",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz IN-Q1</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz IN-Q1 - Introduction",
+        "main": "Sujet : Qu'est-ce qu'un ordinateur ?",
+        "token": "1d46f2"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Création du premier ordinateur",
+            "q": "Quelle est la date de création du premier ordinateur ?",
+            "a": [
+                {
+                    "option": "1945",
+                    "correct": true
+                },
+                {
+                    "option": "1955",
+                    "correct": false
+                },
+                {
+                    "option": "1842",
+                    "correct": false
+                },
+                {
+                    "option": "1973",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nom du premier ordinateur",
+            "q": "Quel est le nom du premier ordinateur ?",
+            "a": [
+                {
+                    "option": "ENIAC",
+                    "correct": true
+                },
+                {
+                    "option": "BRAINIAC",
+                    "correct": false
+                },
+                {
+                    "option": "IPAD",
+                    "correct": false
+                },
+                {
+                    "option": "WINDOWS",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition d'un ordinateur",
+            "q": "Pourquoi peut-on considérer une console de jeux, un téléphone portable ou encore une tablette comme un ordinateur ?",
+            "a": [
+                {
+                    "option": "Car ce sont tous des machines qui traitent l'information par le biais de programmes.",
+                    "correct": true
+                },
+                {
+                    "option": "Car ils permettent d'afficher de l'information sur un écran.",
+                    "correct": false
+                },
+                {
+                    "option": "Car ils s'achètent tous au rayon électronique d'un magasin.",
+                    "correct": false
+                },
+                {
+                    "option": "Car ils permettent de jouer à des jeux vidéos.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Composant d'un ordinateur : Mémoire vive",
+            "q": "Quelles affirmations sont vraies, concernant la __mémoire vive__ d'un ordinateur ?",
+            "a": [
+                {
+                    "option": "Elle stocke les informations de manière temporaire",
+                    "correct": true
+                },
+                {
+                    "option": "Elle s'appelle Random Access Memory (RAM) en anglais",
+                    "correct": true
+                },
+                {
+                    "option": "Elle stocke les informations de manière permanente",
+                    "correct": false
+                },
+                {
+                    "option": "Elle s'appelle Hard Disk Drive (HDD) en anglais",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Composant d'un ordinateur : Processeur",
+            "q": "Quelles affirmations sont vraies, concernant le __processeur__ d'un ordinateur ?",
+            "a": [
+                {
+                    "option": "Il a pour utilité de transférer les informations entre les différents composants",
+                    "correct": false
+                },
+                {
+                    "option": "Il a pour utilité de traiter les informations et effectuer les calculs de base",
+                    "correct": true
+                },
+                {
+                    "option": "Il s'appelle Central Processing Unit (CPU) en anglais",
+                    "correct": true
+                },
+                {
+                    "option": "Il est spécialisé dans le calcul graphique (vidéo, image...)",
+                    "correct": false
+                },
+                {
+                    "option": "Il s'appelle Control Performing Usage (CPU) en anglais",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition d'un composant",
+            "q": "Un composant pouvant se connecter à l’ordinateur et compléter ses fonctions (claviers, souris, modem, imprimante, ...) s’appelle ?",
+            "a": [
+                {
+                    "option": "un pilote",
+                    "correct": false
+                },
+                {
+                    "option": "une connexion",
+                    "correct": false
+                },
+                {
+                    "option": "un élément branché",
+                    "correct": false
+                },
+                {
+                    "option": "un périphérique",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Périphérique de sortie",
+            "q": "Les __périphériques de sortie__ permettent à l’utilisateur de",
+            "a": [
+                {
+                    "option": "choisir un logiciel",
+                    "correct": false
+                },
+                {
+                    "option": "fournir des informations à l'ordinateur",
+                    "correct": false
+                },
+                {
+                    "option": "recevoir des informations venant de l'ordinateur",
+                    "correct": true
+                },
+                {
+                    "option": "vider la mémoire de l'ordinateur",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition d'un composant",
+            "q": "Comment s’appelle le composant principal de l’ordinateur qui permet de relier tous les composants entre eux ?",
+            "a": [
+                {
+                    "option": "carte père",
+                    "correct": false
+                },
+                {
+                    "option": "carte mère",
+                    "correct": true
+                },
+                {
+                    "option": "carte interne",
+                    "correct": false
+                },
+                {
+                    "option": "carte maître",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition Logiciel",
+            "q": "Qu'est-ce qu'un logiciel ?",
+            "a": [
+                {
+                    "option": "Un langage de programmation",
+                    "correct": false
+                },
+                {
+                    "option": "Une application qui indique à l'ordinateur ce qu'il doit faire pour réaliser une tâche",
+                    "correct": true
+                },
+                {
+                    "option": "Une partie du processeur qui traite les informations",
+                    "correct": false
+                },
+                {
+                    "option": "Un programme informatique",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Système d'exploitation",
+            "q": "Quelles affirmations sont vraies, concernant le __système d'exploitation__ d'un ordinateur ?",
+            "a": [
+                {
+                    "option": "Un système d'exploitation est un logiciel",
+                    "correct": true
+                },
+                {
+                    "option": "Il permet de faire le lien entre les ressources matérielles, les applications et l'utilisateur",
+                    "correct": true
+                },
+                {
+                    "option": "C’est le nom du processeur central de l’ordinateur",
+                    "correct": false
+                },
+                {
+                    "option": "Il permet de gérer les comptes utilisateurs",
+                    "correct": true
+                },
+                {
+                    "option": "Il s'agit d'un composant électronique qui envoie les données au processeur",
+                    "correct": false
+                },
+                {
+                    "option": "Un système uniquement destiné à gérer les connexions à Internet",
+                    "correct": false
+                },
+                {
+                    "option": "Il permet d'installer et lancer les autres logiciels",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

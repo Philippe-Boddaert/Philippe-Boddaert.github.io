@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz WE-Q1</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz WE-Q1 - Le Web",
+        "main": "Sujet : Qu’est-ce le Web ?"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Année de création du Web",
+            "q": "En quelle année est né le Web ?",
+            "a": [
+                {
+                    "option": "1965",
+                    "correct": false
+                },
+                {
+                    "option": "1998",
+                    "correct": false
+                },
+                {
+                    "option": "1989",
+                    "correct": true
+                },
+                {
+                    "option": "2000",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Inventeur du Web",
+            "q": "Qui a inventé le Web ?",
+            "a": [
+                {
+                    "option": "Tim Berners-Lee",
+                    "correct": true
+                },
+                {
+                    "option": "Bill Gates",
+                    "correct": false
+                },
+                {
+                    "option": "Bruce Lee",
+                    "correct": false
+                },
+                {
+                    "option": "John Lurl",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Modèle Client / Serveur",
+            "q": "L’ordinateur qui détient une ressource Web est : ",
+            "a": [
+                {
+                    "option": "Le poste Client",
+                    "correct": false
+                },
+                {
+                    "option": "Le poste Serveur",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Web",
+            "q": "Qu'est-ce que le Web ?",
+            "a": [
+                {
+                    "option": "Le réseau qui connecte physiquement l'ensemble des ordinateurs entre eux.",
+                    "correct": false
+                },
+                {
+                    "option": "Le réseau composé de l’ensemble des ressources Web (page, image...).",
+                    "correct": true
+                },
+                {
+                    "option": "La page de recherche de Google.",
+                    "correct": false
+                },
+                {
+                    "option": "Le navigateur qui permet d'afficher une page Web.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Lien Hypertexte",
+            "q": "À quoi sert un lien hypertexte ?",
+            "a": [
+                {
+                    "option": "Indiquer que 2 documents sont égaux",
+                    "correct": false
+                },
+                {
+                    "option": "Accéder à un document numérique",
+                    "correct": true
+                },
+                {
+                    "option": "Mettre un texte en Majuscule",
+                    "correct": false
+                },
+                {
+                    "option": "Relier des documents numériques entre eux",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "URL",
+            "q": "Le sigle URL, pour Uniform Ressource Locator, désigne :",
+            "a": [
+                {
+                    "option": "Le format d'adressage d'une machine sur le réseau Internet",
+                    "correct": false
+                },
+                {
+                    "option": "Le format d'adressage d'une ressource sur le Web.",
+                    "correct": true
+                },
+                {
+                    "option": "Un protocole d'échange sur le Web concurrent de HTTP",
+                    "correct": false
+                },
+                {
+                    "option": "Un langage de programmation pour un navigateur Web",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Syntaxe d'une URL",
+            "q": "Parmi ces quatre adresses Web, laquelle a la bonne syntaxe ?",
+            "a": [
+                {
+                    "option": "https://www.instagram.com",
+                    "correct": true
+                },
+                {
+                    "option": "https:/www.instagram.com",
+                    "correct": false
+                },
+                {
+                    "option": "https//www.instagram.com",
+                    "correct": false
+                },
+                {
+                    "option": "https://com.instagram.www",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Décomposition d'une URL",
+            "q": "Dans l’URL https://fr.wikipedia.org/wiki/Ada_Lovelace, wikipedia.org est :",
+            "a": [
+                {
+                    "option": "le protocole",
+                    "correct": false
+                },
+                {
+                    "option": "le chemin",
+                    "correct": false
+                },
+                {
+                    "option": "le nom de domaine",
+                    "correct": true
+                },
+                {
+                    "option": "le sous-domaine",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Composants d'une URL",
+            "q": "Que peut-on dire des URL suivantes :\n\n- https://www.google.com\n- https://drive.google.com\n- https://maps.google.com\n\n",
+            "a": [
+                {
+                    "option": "Elles ont le même nom de domaine",
+                    "correct": true
+                },
+                {
+                    "option": "Elles ont des noms de domaine différents",
+                    "correct": false
+                },
+                {
+                    "option": "Elles ont le même sous-domaine",
+                    "correct": false
+                },
+                {
+                    "option": "Elles ont des sous-domaines différents",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - HTTP",
+            "q": "Qu'est-ce que le protocole HTTP ?",
+            "a": [
+                {
+                    "option": "Le langage de programmation des pages Web.",
+                    "correct": false
+                },
+                {
+                    "option": "Le procédé qui permet de trouver une page Web en fonction de mots clés.",
+                    "correct": false
+                },
+                {
+                    "option": "Le mécanisme qui permet de mettre en évidence les liens dans les pages Web.",
+                    "correct": false
+                },
+                {
+                    "option": "Il s’agit d'un procédé de communication qui permet à un hôte client du réseau de demander et de recevoir une ressource Web localisée sur un serveur",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Site sécurisé",
+            "q": "Comment peut-on voir si un site est sécurisé ?",
+            "a": [
+                {
+                    "option": "Le protocole est http",
+                    "correct": false
+                },
+                {
+                    "option": "L'extension du site est .com",
+                    "correct": false
+                },
+                {
+                    "option": "Le protocole est https",
+                    "correct": true
+                },
+                {
+                    "option": "Tous les les sites sont sécurisés",
+                    "correct": false
+                },
+                {
+                    "option": "Il y a un cadenas qui apparait dans la barre de navigation",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

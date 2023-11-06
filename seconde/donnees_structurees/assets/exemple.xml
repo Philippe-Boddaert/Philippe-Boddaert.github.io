@@ -1,0 +1,22 @@
+<data>
+	<row>
+		<prenom>John</prenom>
+		<nom>Doe</nom>
+		<numero>0600000000</numero>
+	</row>
+	<row>
+		<prenom>Martin</prenom>
+		<nom>Lopez</nom>
+		<numero>0700000000</numero>
+	</row>
+	<row>
+		<prenom>Devi</prenom>
+		<nom>Singh</nom>
+		<numero>0123456789</numero>
+	</row>
+	<row>
+		<prenom>Wang</prenom>
+		<nom>Liu</nom>
+		<numero>0987654321</numero>
+	</row>
+</data>

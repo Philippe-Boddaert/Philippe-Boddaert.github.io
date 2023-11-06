@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz DO-Q1</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz DO-Q1 - Données structurées",
+        "main": "Sujet : Quels traitements élémentaires peut-on faire sur des données ?",
+        "token": "b591c5"
+    },
+    "questions": [
+        {"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Définition - Descripteur","q":"Qu'est-ce qu'un __descripteur__ dans une table de données ?","a":[{"option":"Le nom d'une colonne de la table de données","correct":true},{"option":"Une caractéristique d'une propriété d'un objet","correct":true},{"option":"Une ligne de la table de données","correct":false},{"option":"Le titre de la table de données","correct":false}]},
+        {"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Définition - Enregistrement","q":"Qu'est-ce qu'un __enregistrement__ dans une table de données ?","a":[{"option":"Le nom d'une colonne de la table de données","correct":false},{"option":"Une caractéristique d'une propriété d'un objet","correct":false},{"option":"Une ligne de la table de données","correct":true},{"option":"Le titre de la table de données","correct":false}]},
+        {"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Opération de tri","q":"À quoi correspond l'opération de __tri__ sur une table de données ?","a":[{"option":"Réduire le nombre de colonnes de la table de données","correct":false},{"option":"Sélectionner uniquement les lignes de la table selon un ou plusieurs critères","correct":false},{"option":"\n\nChanger l'ordre des lignes de la table selon un ou plusieurs critères","correct":true},{"option":"Garder que la première ligne de la table de données","correct":false}]},
+        {"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Opération de filtre","q":"À quoi correspond l'opération de __filtre__ sur une table de données ?","a":[{"option":"Réduire le nombre de colonnes de la table de données","correct":false},{"option":"Sélectionner uniquement les lignes de la table selon un ou plusieurs critères","correct":true},{"option":"\n\nChanger l'ordre des lignes de la table selon un ou plusieurs critères","correct":false},{"option":"Garder que la première ligne de la table de données","correct":false}]},
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Descripteur de données",
+            "q": "Dans ce tableau, un exemple de __descripteur__ est:\n\n| Puissance souscrite | Règle disjoncteur | Abonnement mensuel TTC | Prix du Kwh |\n| :--: | :--: | :--: | :--: |\n|  3  | 15  |  65,64  | 0,1181  |\n|  6   |  30 |  78,25  | 0,1188 |\n|  9   |  45  | 91,25   |  0,1211    |\n|  12 |  60 |  144,37  |  0,1211 |\n|  15  |  75   | 166,67  |   0,1211  |\n\n",
+            "a": [
+                {
+                    "option": "78,25",
+                    "correct": false
+                },
+                {
+                    "option": "Le prix du kWh",
+                    "correct": true
+                },
+                {
+                    "option": "Les tarifs en métropole",
+                    "correct": false
+                },
+                {
+                    "option": "Une puissance souscrite de 12 kVA",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Descripteur de données",
+            "q": "Dans ce tableau, un exemple de __données__ est:\n\n| Puissance souscrite | Règle disjoncteur | Abonnement mensuel TTC | Prix du Kwh |\n| :--: | :--: | :--: | :--: |\n|  3  | 15  |  65,64  | 0,1181  |\n|  6   |  30 |  78,25  | 0,1188 |\n|  9   |  45  | 91,25   |  0,1211    |\n|  12 |  60 |  144,37  |  0,1211 |\n|  15  |  75   | 166,67  |   0,1211  |\n\n",
+            "a": [
+                {
+                    "option": "30",
+                    "correct": true
+                },
+                {
+                    "option": "L'abonnement annuel",
+                    "correct": false
+                },
+                {
+                    "option": "Les tarifs en métropole",
+                    "correct": false
+                },
+                {
+                    "option": "Une puissance souscrite de 15 kVA pour 166,67 euros",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Comparaison de données",
+            "q": "À quelle condition peut-on comparer des données ?",
+            "a": [
+                {
+                    "option": "On peut comparer des données seulement si ce sont des nombres.",
+                    "correct": false
+                },
+                {
+                    "option": "On peut comparer des données si elles ne sont pas trop nombreuses.",
+                    "correct": false
+                },
+                {
+                    "option": "On peut comparer des données si elles sont du même type.",
+                    "correct": true
+                },
+                {
+                    "option": "On peut toujours comparer des données.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Tri de données",
+            "q": "Un tri permet de sélectionner un sous-ensemble des données d'une table.",
+            "a": [
+                {
+                    "option": "Faux",
+                    "correct": true
+                },
+                {
+                    "option": "Vrai",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

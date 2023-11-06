@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz IN-Q2</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz IN-Q2 - Introduction",
+        "main": "Sujet : Comment une information est-elle stockée dans un ordinateur ?",
+        "token": "ffa669"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Codage des informations",
+            "q": "Dans une mémoire informatique, les mots, les images et les sons sont exprimés sous la forme de 0 et de 1.",
+            "a": [
+                {
+                    "option": "Vrai",
+                    "correct": true
+                },
+                {
+                    "option": "Faux",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition",
+            "q": "Qu'est-ce qu'un __octet__ ?",
+            "a": [
+                {
+                    "option": "Il s'agit de l'unité de base généralement utilisée par les machines pour lire et écrire les données.",
+                    "correct": true
+                },
+                {
+                    "option": "Il est composé de 8 bits.",
+                    "correct": true
+                },
+                {
+                    "option": "Il s'agit du composant permettant d'effectuer les calculs dans un ordinateur.",
+                    "correct": false
+                },
+                {
+                    "option": "Il s'agit d'une série de disque dur.",
+                    "correct": false
+                },
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Unité de mesure",
+            "q": "Classez les unités de mesure de la __plus petite__ à la __plus grande__ :\n\nMégaoctet -- Téraoctet -- Octet -- Kilooctet -- Gigaoctet",
+            "a": [
+                {
+                    "option": "Octet -- Kilooctet -- Mégaoctet -- Gigaoctet -- Téraoctet",
+                    "correct": true
+                },
+                {
+                    "option": "Kilooctet -- Téraoctet -- Octet -- Gigaoctet -- Mégaoctet",
+                    "correct": false
+                },
+                {
+                    "option": "Téraoctet -- Kilooctet -- Gigaoctet -- Mégaoctet -- Octet",
+                    "correct": false
+                },
+                {
+                    "option": "Gigaoctet -- Kilooctet -- Mégaoctet -- Octet -- Téraoctet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Unité de mesure",
+            "q": "Considérons un fichier d'une taille d'1 Ko (Kilooctet), quelles affirmations sont vraies ?",
+            "a": [
+                {
+                    "option": "sa taille équivaut à 1000 octets.",
+                    "correct": true
+                },
+                {
+                    "option": "sa taille équivaut à 0,1 Mo (Mégaoctet).",
+                    "correct": false
+                },
+                {
+                    "option": "sa taille équivaut à 8000 bits.",
+                    "correct": true
+                },
+                {
+                    "option": "sa taille varie selon le type de mémoire",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Représentation binaire",
+            "q": "Quel nombre a pour représentation binaire __0 0 0 0 0 0 1 0__ ?",
+            "a": [
+                {
+                    "option": "10",
+                    "correct": false
+                },
+                {
+                    "option": "2",
+                    "correct": true
+                },
+                {
+                    "option": "21",
+                    "correct": false
+                },
+                {
+                    "option": "49",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Représentation binaire",
+            "q": "Quel nombre a pour représentation binaire __0 0 0 0 1 1 0 1__ ?",
+            "a": [
+                {
+                    "option": "1101",
+                    "correct": false
+                },
+                {
+                    "option": "13",
+                    "correct": true
+                },
+                {
+                    "option": "21",
+                    "correct": false
+                },
+                {
+                    "option": "8",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Représentation binaire",
+            "q": "Combien de nombres est-il possible de représenter sur 3 bits ?",
+            "a": [
+                {
+                    "option": "$2 + 2 + 2$, soit 6 nombres",
+                    "correct": false
+                },
+                {
+                    "option": "$2 \\times 2 \\times 2$, soit 8 nombres",
+                    "correct": true
+                },
+                {
+                    "option": "$1 + 1 + 1$, soit 3 nombres",
+                    "correct": false
+                },
+                {
+                    "option": "Cela dépend du type d'ordinateur",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

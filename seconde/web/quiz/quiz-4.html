@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz WE-Q4</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz WE-Q4 - Le Web",
+        "main": "Sujet : Comment fonctionne un moteur de recherche ?"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Moteur de recherche",
+            "q": "Quels sont les moteurs de recherche parmi les noms suivants ?",
+            "a": [
+                {
+                    "option": "Qwant",
+                    "correct": true
+                },
+                {
+                    "option": "Firefox",
+                    "correct": false
+                },
+                {
+                    "option": "Bing",
+                    "correct": true
+                },
+                {
+                    "option": "Chrome",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Phase moteur de recherche",
+            "q": "Comment appelle-ton la phase grâce à laquelle les moteurs de recherche visitent automatiquement les pages web ?",
+            "a": [
+                {
+                    "option": "L'indexation",
+                    "correct": false
+                },
+                {
+                    "option": "L'exploration",
+                    "correct": true
+                },
+                {
+                    "option": "La navigation",
+                    "correct": false
+                },
+                {
+                    "option": "La fixation",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Référencement",
+            "q": "Faut-il payer pour être référencé sur un moteur de recherche comme Bing ou Google ?",
+            "a": [
+                {
+                    "option": "Oui",
+                    "correct": false
+                },
+                {
+                    "option": "Non",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Classement des pages",
+            "q": "Lors du classement des résultats, quel est le critère le plus important pour Google ?",
+            "a": [
+                {
+                    "option": "La pertinence",
+                    "correct": false
+                },
+                {
+                    "option": "La fiabilité",
+                    "correct": false
+                },
+                {
+                    "option": "La popularité",
+                    "correct": false
+                },
+                {
+                    "option": "C'est tout cela à la fois",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Phase moteur de recherche",
+            "q": "Comment appelle-ton la phase grâce à laquelle les moteurs de recherche enregistrent et analysent les pages web qu'ils ont visitées ?",
+            "a": [
+                {
+                    "option": "L'exploration",
+                    "correct": false
+                },
+                {
+                    "option": "Le stockage",
+                    "correct": false
+                },
+                {
+                    "option": "L'indexation",
+                    "correct": true
+                },
+                {
+                    "option": "La structuration",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Popularité d'une page",
+            "q": "Comment Google mesure-t-il la popularité d'un site web ?",
+            "a": [
+                {
+                    "option": "Au nombre de visites",
+                    "correct": false
+                },
+                {
+                    "option": "À partir d'un vote annuel des internautes",
+                    "correct": false
+                },
+                {
+                    "option": "En fonction du nombre de liens qui renvoient vers une page web",
+                    "correct": true
+                },
+                {
+                    "option": "En fonction du nombre de fois où Justin Bieber apparaît sur le site",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Revenus moteur de recherche",
+            "q": "Comment les moteurs de recherche gagnent-ils de l'argent ?",
+            "a": [
+                {
+                    "option": " Ils font payer les créateurs de sites web",
+                    "correct": false
+                },
+                {
+                    "option": "Ils reçoivent une taxe de la part des Fournisseurs d'accès (Orange, SFR...)",
+                    "correct": false
+                },
+                {
+                    "option": "Ils perçoivent une partie des revenus des sites commerciaux",
+                    "correct": false
+                },
+                {
+                    "option": "Grâce à la publicité",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Index moteur de recherche",
+            "q": "Qu'est-ce que l'index d'un moteur de recherche ?",
+            "a": [
+                {
+                    "option": "L'ensemble des mots-clés connus par le moteur de recherche",
+                    "correct": false
+                },
+                {
+                    "option": "L'ensemble des résultats d'un moteur de recherche",
+                    "correct": false
+                },
+                {
+                    "option": "L'ensemble des pages web visitées et analysées par un moteur de recherche",
+                    "correct": true
+                },
+                {
+                    "option": "Le doigt utilisé par l'utilisateur pour appeler le moteur de recherche",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Robot moteur de recherche",
+            "q": "Quel nom les américains donnent-ils aux robots d'indexation des moteurs de recherche ?",
+            "a": [
+                {
+                    "option": "Crawlers",
+                    "correct": true
+                },
+                {
+                    "option": "Spiders",
+                    "correct": true
+                },
+                {
+                    "option": "Indexators",
+                    "correct": false
+                },
+                {
+                    "option": "Rampers",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Deep Web",
+            "q": "Qu'est-ce que le web invisible (Deep Web) ?",
+            "a": [
+                {
+                    "option": "L'ensemble des pages web qu'un moteur de recherche ne peut pas visiter",
+                    "correct": true
+                },
+                {
+                    "option": "Les pages web qui sont cachées aux internautes",
+                    "correct": false
+                },
+                {
+                    "option": "Les pages web qui ne sont pas encore terminées ou incomplètes",
+                    "correct": false
+                },
+                {
+                    "option": "Les pages web trop volumineuses pour être affichées",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

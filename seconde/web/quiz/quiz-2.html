@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz WE-Q2</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz WE-Q2 - Le Web",
+        "main": "Sujet : Comment créer une page Web ?"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition",
+            "q": "Le langage HTML est ...",
+            "a": [
+                {
+                    "option": "Un langage de programmation permettant de faire des calculs",
+                    "correct": false
+                },
+                {
+                    "option": "Un langage parlé par les geeks et nerds",
+                    "correct": false
+                },
+                {
+                    "option": "Un langage qui décrit la structure et le contenu d'une page Web",
+                    "correct": true
+                },
+                {
+                    "option": "Un langage qui crypte les données échangées sur le Web",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Constituants d'une page Web",
+            "q": "Dans le code HTML, les délimiteurs tels que `<html>` et `</html>` s’appellent ?",
+            "a": [
+                {
+                    "option": "des bornes",
+                    "correct": false
+                },
+                {
+                    "option": "des balises",
+                    "correct": true
+                },
+                {
+                    "option": "des paragraphes",
+                    "correct": false
+                },
+                {
+                    "option": "des liens",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Composant d'une page HTML",
+            "q": "Un fichier HTML est composé de deux parties :",
+            "a": [
+                {
+                    "option": "```html\n<every> et <body>\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<body> et <foot>\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<title> et <body>\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<head> et <body>\n```",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Syntaxe d'une balise",
+            "q": "La balise `<title>` se ferme avec la balise :",
+            "a": [
+                {
+                    "option": "```html\n</title>\n```",
+                    "correct": true
+                },
+                {
+                    "option": "```html\n<end title>\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<fin title>\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<title>\n```",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Balise H1",
+            "q": "À quoi correspond une balise de type `<h1>...</h1>`?",
+            "a": [
+                {
+                    "option": "Une liste à puces",
+                    "correct": false
+                },
+                {
+                    "option": "Un paragraphe",
+                    "correct": false
+                },
+                {
+                    "option": "Un texte en gras",
+                    "correct": false
+                },
+                {
+                    "option": "Un titre",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Syntaxe d'un lien",
+            "q": "Pour réaliser un lien vers la page d’accueil de Wikipedia, on écrit :",
+            "a": [
+                {
+                    "option": "```html\n<a href=\"https://wikipedia.org\">Wikipedia</a>\n```",
+                    "correct": true
+                },
+                {
+                    "option": "```html\n<a target=\"https://wikipedia.org\">Wikipedia</a>\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<a href=\"https://wikipedia.org\">\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<a link=\"https://wikipedia.org\">\n```",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Syntaxe d'une image",
+            "q": "On souhaite ajouter une image. Quelle est la bonne syntaxe ?",
+            "a": [
+                {
+                    "option": "```html\n<img src=\"https://www.cern.ch/tim.jpg\" />\n```",
+                    "correct": true
+                },
+                {
+                    "option": "```html\n<img href=\"https://www.cern.ch/tim.jpg\" />\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<img>https://www.cern.ch/tim.jpg</img>\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```html\n<image src=\"https://www.cern.ch/tim.jpg\" />\n```",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Syntaxe d'une liste non ordonnée",
+            "q": "Quelle balise permet de créer une liste non ordonnée ?",
+            "a": [
+                {
+                    "option": "ul",
+                    "correct": true
+                },
+                {
+                    "option": "ol",
+                    "correct": false
+                },
+                {
+                    "option": "li",
+                    "correct": false
+                },
+                {
+                    "option": "nl",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Syntaxe d'une balise",
+            "q": "Soit la balise suivante :\n\n```html\n<h1 style=\"text-align:center;\">Historique du Web</h1>\n```\n\nL'élément __style__ de cette balise est :",
+            "a": [
+                {
+                    "option": "un attribut",
+                    "correct": true
+                },
+                {
+                    "option": "une propriété",
+                    "correct": false
+                },
+                {
+                    "option": "un type de balise",
+                    "correct": false
+                },
+                {
+                    "option": "un contenu de balise",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

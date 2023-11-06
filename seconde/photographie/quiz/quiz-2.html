@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz PN-Q2</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz PN-Q2 - Photographie numérique",
+        "main": "Sujet : Caractéristiques d'une image"
+    },
+    "questions": [
+        {   
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Élement d'une image numérique",
+            "q": "Comment appelle-t-on le plus petit élément qui constitue une image numérique ?",
+            "a": [{
+                "option": "Une particule",
+                "correct": false
+            },
+            {
+                "option": "Un pixel",
+                "correct": true
+            },
+            {
+                "option": "Un point",
+                "correct": false
+            },
+            {
+                "option": "Un photosite",
+                "correct": false
+            }]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition d'une image",
+            "q": "Qu'est-ce que la __définition__ d'une image ?",
+            "a": [
+                {
+                    "option": "La taille en centimètres de l'image",
+                    "correct": false
+                },
+                {
+                    "option": "La netteté de l'image",
+                    "correct": false
+                },
+                {
+                    "option": "Le nombre de pixels qu'elle contient",
+                    "correct": true
+                },
+                {
+                    "option": "Les différentes couleurs des pixels",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Résolution d'un écran",
+            "q": "La __résolution__ d'un écran correspond :",
+            "a": [
+                {
+                    "option": "le nombre de pixels disponibles sur une longueur donnée",
+                    "correct": true
+                },
+                {
+                    "option": "les dimensions de l'écran",
+                    "correct": false
+                },
+                {
+                    "option": "le nombre de pixels que composent l'écran",
+                    "correct": false
+                },
+                {
+                    "option": "la taille de l'écran en pouces",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Dimension d'une image",
+            "q": "Qu'est-ce que la __dimension__ d'une image ?",
+            "a": [
+                {
+                    "option": "La largeur et hauteur de l’image affichée sur un support (écran, impression...)",
+                    "correct": true
+                },
+                {
+                    "option": "La netteté de l'image",
+                    "correct": false
+                },
+                {
+                    "option": "Le nombre de pixels qu'elle contient",
+                    "correct": false
+                },
+                {
+                    "option": "Les différentes couleurs des pixels",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Caractéristiques d'une image numérique",
+            "q": "Soit l'image numérique suivante :\n\n![](./assets/641342dd722ded060d2eb057)\n\nQuelle est la définition, résolution et dimension de cette image ?",
+            "a": [
+                {
+                    "option": "définition : 12 x 8 pixels. Résolution : 6 ppp. Dimension : 2 x 1,33 pouce.",
+                    "correct": true
+                },
+                {
+                    "option": "définition : 6 ppp. Résolution : 2 x 1,33 pouce. Dimension : 12 x 8 pixels.",
+                    "correct": false
+                },
+                {
+                    "option": "définition : 2 x 1,33 pouce. Résolution : 12 x 8 pixels. Dimension : 6 ppp.",
+                    "correct": false
+                },
+                {
+                    "option": "définition : 8 x 12 pixels. Résolution : 6 ppp. Dimension : 1,33 x 2 pouce.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Dimension de l'Iphone 13",
+            "q": "L'écran de l’Iphone 13 a une résolution de 460 ppp.\n\nIl affiche des images de définition 2 532 x 1 170.\n\nCalculer la dimension de cet écran (largeur, hauteur) en pouces, puis en cm :",
+            "a": [
+                {
+                    "option": "Largeur = 2 532 / 460 = 5.50 pouces = 13,98 cm. Hauteur = 1 170 / 460 = 2.54 pouces = 6,46 cm",
+                    "correct": true
+                },
+                {
+                    "option": "Largeur = 460 / 2 532 = 0.18 pouces = 0.45 cm. Hauteur =  460 / 1 170 = 0.39 pouces = 1 cm",
+                    "correct": false
+                },
+                {
+                    "option": "Largeur = 2 532 * 460 = 1 164 720 pouces = 458 551 cm. Hauteur = 1 170 * 460 = 538 200 pouces = 538 200 cm",
+                    "correct": false
+                },
+                {
+                    "option": "Largeur = 1 170 / 460 = 2.54 pouces = 6,46 cm. Hauteur = 2 532 / 460 = 5.50 pouces = 13,98 cm",
+                    "correct": false
+                },
+            ]
+        },
+        { "correct": "Réponse correcte", "incorrect": "Réponse incorrecte", "n": "Résolution d'un macbook", "q": "L’écran d'un ordinateur macbook a une définition de 1280 x 800 et voici ses dimensions (en cm) :\n\n![](./assets/644e71fb0b842267fc90f46c)\n\nQuelle est la résolution de l’écran ?", "a": [{ "option": "résolution = 1280 / (28,5 / 2,54) = 114 ppp", "correct": true },
+        { "option": "résolution = 1280 / (28,5 * 2,54) = 17.68 ppp", "correct": false },
+        { "option": "résolution = 1280 * (28,5 / 2,54) = 14362 ppp", "correct": false },
+        { "option": "résolution = 1280 * (28,5 * 2,54) = 92659 ppp", "correct": false }] },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Profondeur de couleur d'une image",
+            "q": "Qu'est-ce que la __profondeur de couleur__ d'une image ?",
+            "a": [
+                {
+                    "option": "Le nombre de bits nécessaires pour représenter la couleur d'un pixel de l'image",
+                    "correct": true
+                },
+                {
+                    "option": "La netteté de l'image",
+                    "correct": false
+                },
+                {
+                    "option": "Le nombre de pixels qu'elle contient",
+                    "correct": false
+                },
+                {
+                    "option": "Les différentes couleurs des pixels",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

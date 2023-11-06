@@ -1,0 +1,508 @@
+name;classification;attack;defense;mystere
+Aggron;Iron Armor Pokémon;140;230;E
+Shuckle;Mold Pokémon;10;230;D
+Steelix;Iron Snake Pokémon;125;230;E
+Avalugg;Iceberg Pokémon;117;184;N
+Cloyster;Bivalve Pokémon;95;180;C
+Slowbro;Hermit Crab Pokémon;75;180;I
+Groudon;Continent Pokémon;180;160;L
+Onix;Rock Snake Pokémon;45;160;P
+Doublade;Sword Pokémon;110;150;C
+Metagross;Iron Leg Pokémon;145;150;X
+Cofagrigus;Coffin Pokémon;50;145;Y
+Probopass;Compass Pokémon;55;145;E
+Forretress;Bagworm Pokémon;90;140;A
+Golisopod;Hard Scale Pokémon;125;140;J
+Lairon;Iron Armor Pokémon;90;140;M
+Skarmory;Armor Bird Pokémon;80;140;S
+Torkoal;Coal Pokémon;85;140;U
+Buzzwole;Swollen Pokémon;139;139;J
+Dusknoir;Gripper Pokémon;100;135;T
+Nosepass;Compass Pokémon;45;135;U
+Turtonator;Blast Turtle Pokémon;78;135;N
+Kartana;Drawn Sword Pokémon;181;131;I
+Dusclops;Beckon Pokémon;70;130;E
+Pyukumuku;Sea Cucumber Pokémon;60;130;W
+Uxie;Knowledge Pokémon;75;130;U
+Crustle;Stone Home Pokémon;105;125;Z
+Gliscor;Fang Scorp Pokémon;95;125;O
+Kommo-o;Scaly Pokémon;110;125;F
+Omastar;Spiral Pokémon;60;125;M
+Tangrowth;Vine Pokémon;100;125;O
+Chesnaught;Spiny Armor Pokémon;107;122;A
+Gourgeist;Pumpkin Pokémon;100;122;D
+Blastoise;Shellfish Pokémon;103;120;E
+Dialga;Temporal Pokémon;120;120;D
+Donphan;Armor Pokémon;120;120;J
+Latias;Eon Pokémon;100;120;I
+Magcargo;Lava Pokémon;50;120;C
+Pinsir;Stagbeetle Pokémon;155;120;T
+Rhydon;Drill Pokémon;130;120;S
+Weezing;Poison Gas Pokémon;90;120;A
+Zekrom;Deep Black Pokémon;150;120;F
+Tyrantrum;Despot Pokémon;121;119;G
+Hippowdon;Heavyweight Pokémon;112;118;T
+Bronzong;Bronze Bell Pokémon;89;116;P
+Barbaracle;Collective Pokémon;105;115;Q
+Garchomp;Mach Pokémon;170;115;E
+Heracross;Singlehorn Pokémon;185;115;V
+Scrafty;Hoodlum Pokémon;90;115;S
+Suicune;Aurora Pokémon;75;115;S
+Tangela;Vine Pokémon;55;115;E
+Tapu Bulu;Land Spirit Pokémon;130;115;Q
+Durant;Iron Ant Pokémon;109;112;V
+Altaria;Humming Pokémon;110;110;M
+Glaceon;Fresh Snow Pokémon;60;110;L
+Palossand;Sand Castle Pokémon;75;110;J
+Regigigas;Colossal Pokémon;160;110;U
+Umbreon;Moonlight Pokémon;65;110;I
+Gyarados;Atrocious Pokémon;155;109;L
+Spiritomb;Forbidden Pokémon;92;108;S
+Rotom;Plasma Pokémon;65;107;X
+Heatran;Lava Dome Pokémon;90;106;C
+Ampharos;Light Pokémon;95;105;M
+Boldore;Ore Pokémon;105;105;S
+Gligar;Flyscorpion Pokémon;75;105;K
+Gorebyss;South Sea Pokémon;84;105;G
+Huntail;Deep Sea Pokémon;104;105;R
+Kabutops;Shellfish Pokémon;115;105;V
+Mandibuzz;Bone Vulture Pokémon;65;105;R
+Mesprit;Emotion Pokémon;105;105;T
+Miltank;Milk Cow Pokémon;80;105;Q
+Necrozma;Prism Pokémon;107;101;X
+Armaldo;Plate Pokémon;125;100;Z
+Aron;Iron Armor Pokémon;70;100;E
+Articuno;Freeze Pokémon;85;100;W
+Bisharp;Sword Blade Pokémon;125;100;B
+Camerupt;Eruption Pokémon;120;100;L
+Feraligatr;Big Jaw Pokémon;105;100;U
+Giratina;Renegade Pokémon;120;100;M
+Jirachi;Wish Pokémon;100;100;W
+Kangaskhan;Parent Pokémon;125;100;Y
+Latios;Eon Pokémon;130;100;G
+Manaphy;Seafaring Pokémon;100;100;N
+Meganium;Herb Pokémon;82;100;O
+Mew;New Species Pokémon;100;100;E
+Mudsdale;Draft Horse Pokémon;125;100;B
+Omanyte;Spiral Pokémon;40;100;C
+Palkia;Spatial Pokémon;120;100;Z
+Pelipper;Water Bird Pokémon;50;100;A
+Rayquaza;Sky High Pokémon;180;100;R
+Regice;Iceberg Pokémon;50;100;F
+Reshiram;Vast White Pokémon;120;100;L
+Shelgon;Endurance Pokémon;95;100;R
+Slaking;Lazy Pokémon;160;100;D
+Tsareena;Fruit Pokémon;120;98;X
+Bouffalant;Bash Buffalo Pokémon;110;95;A
+Charjabug;Battery Pokémon;82;95;Q
+Conkeldurr;Muscular Pokémon;140;95;F
+Cubone;Lonely Pokémon;50;95;V
+Dragonite;Dragon Pokémon;134;95;D
+Gallade;Blade Pokémon;165;95;E
+Genesect;Paleozoic Pokémon;120;95;E
+Hitmontop;Handstand Pokémon;95;95;G
+Koffing;Poison Gas Pokémon;65;95;M
+Lickilicky;Licking Pokémon;85;95;B
+Magneton;Magnet Pokémon;60;95;Z
+Quilladin;Spiny Armor Pokémon;78;95;K
+Silvally;Synthetic Pokémon;95;95;I
+Tauros;Wild Bull Pokémon;100;95;V
+Type: Null;Synthetic Pokémon;95;95;R
+Wormadam;Bagworm Pokémon;69;95;Q
+Lopunny;Rabbit Pokémon;136;94;G
+Araquanid;Water Bubble Pokémon;70;92;U
+Ferroseed;Thorn Seed Pokémon;50;91;S
+Chandelure;Luring Pokémon;55;90;O
+Comfey;Posy Picker Pokémon;52;90;B
+Deoxys;DNA Pokémon;95;90;A
+Druddigon;Cave Pokémon;120;90;X
+Duskull;Requiem Pokémon;40;90;N
+Hakamo-o;Scaly Pokémon;75;90;E
+Houndoom;Dark Pokémon;90;90;H
+Incineroar;Heel Pokémon;115;90;R
+Kabuto;Shellfish Pokémon;80;90;S
+Kyogre;Sea Basin Pokémon;150;90;F
+Kyurem;Boundary Pokémon;120;90;A
+Lurantis;Bloom Sickle Pokémon;105;90;K
+Meloetta;Melody Pokémon;128;90;U
+Moltres;Flame Pokémon;100;90;B
+Passimian;Teamwork Pokémon;120;90;U
+Pineco;Bagworm Pokémon;65;90;W
+Porygon2;Virtual Pokémon;80;90;C
+Terrakion;Cavern Pokémon;129;90;S
+Vikavolt;Stag Beetle Pokémon;70;90;E
+Walrein;Ice Break Pokémon;80;90;D
+Lunala;Moone Pokémon;113;89;J
+Clawitzer;Howitzer Pokémon;73;88;Q
+Nidoqueen;Drill Pokémon;92;87;O
+Yanmega;Ogre Darner Pokémon;76;86;D
+Aerodactyl;Fossil Pokémon;135;85;Z
+Crawdaunt;Rogue Pokémon;120;85;I
+Drampa;Placid Pokémon;60;85;Y
+Grotle;Grove Pokémon;89;85;U
+Gurdurr;Muscular Pokémon;105;85;R
+Medicham;Meditate Pokémon;100;85;N
+Musharna;Drowsing Pokémon;55;85;G
+Quagsire;Water Fish Pokémon;85;85;D
+Roggenrola;Mantle Pokémon;75;85;T
+Samurott;Formidable Pokémon;100;85;B
+Shelmet;Snail Pokémon;40;85;M
+Starmie;Mysterious Pokémon;75;85;V
+Togetic;Happiness Pokémon;40;85;H
+Vanilluxe;Snowstorm Pokémon;95;85;X
+Vileplume;Flower Pokémon;80;85;L
+Stunfisk;Trap Pokémon;66;84;Y
+Garbodor;Trash Heap Pokémon;95;82;B
+Alomomola;Caring Pokémon;75;80;G
+Arcanine;Legendary Pokémon;110;80;D
+Azumarill;Aquarabbit Pokémon;50;80;B
+Bayleef;Leaf Pokémon;62;80;K
+Beartic;Freezing Pokémon;130;80;Z
+Beldum;Iron Ball Pokémon;55;80;I
+Bewear;Strong Arm Pokémon;125;80;H
+Blaziken;Blaze Pokémon;160;80;T
+Breloom;Mushroom Pokémon;130;80;W
+Chimecho;Wind Chime Pokémon;50;80;K
+Crobat;Bat Pokémon;90;80;Y
+Croconaw;Big Jaw Pokémon;80;80;K
+Dewgong;Sea Lion Pokémon;70;80;M
+Exeggcute;Egg Pokémon;40;80;U
+Flygon;Mystic Pokémon;100;80;Q
+Gengar;Shadow Pokémon;65;80;S
+Glalie;Face Pokémon;120;80;Z
+Golurk;Automaton Pokémon;124;80;A
+Krookodile;Intimidation Pokémon;117;80;C
+Lapras;Transport Pokémon;85;80;N
+Mimikyu;Disguise Pokémon;90;80;Q
+Parasect;Mushroom Pokémon;95;80;W
+Phione;Sea Drifter Pokémon;80;80;M
+Piloswine;Swine Pokémon;100;80;N
+Scyther;Mantis Pokémon;110;80;H
+Shiinotic;Illuminating Pokémon;45;80;Z
+Unfezant;Proud Pokémon;115;80;F
+Wartortle;Turtle Pokémon;63;80;H
+Hitmonchan;Punching Pokémon;105;79;P
+Luxray;Gleam Eyes Pokémon;120;79;R
+Milotic;Tender Pokémon;60;79;I
+Charizard;Flame Pokémon;104;78;A
+Hippopotas;Hippo Pokémon;72;78;Q
+Pangoro;Daunting Pokémon;124;78;B
+Typhlosion;Volcano Pokémon;84;78;L
+Crabominable;Woolly Crab Pokémon;132;77;W
+Lileep;Sea Lily Pokémon;41;77;S
+Tyrunt;Royal Heir Pokémon;89;77;Z
+Trevenant;Elder Tree Pokémon;110;76;E
+Banette;Marionette Pokémon;165;75;S
+Beheeyem;Cerebral Pokémon;75;75;Z
+Granbull;Fairy Pokémon;120;75;Z
+Hawlucha;Wrestling Pokémon;92;75;E
+Illumise;Firefly Pokémon;47;75;T
+Lickitung;Licking Pokémon;55;75;T
+Politoed;Frog Pokémon;75;75;C
+Seismitoad;Vibration Pokémon;95;75;J
+Servine;Grass Snake Pokémon;60;75;F
+Shaymin;Gratitude Pokémon;103;75;M
+Tapu Lele;Land Spirit Pokémon;85;75;R
+Toucannon;Cannon Pokémon;120;75;C
+Ursaring;Hibernator Pokémon;130;75;H
+Vullaby;Diapered Pokémon;55;75;N
+Clefable;Fairy Pokémon;70;73;W
+Aurorus;Tundra Pokémon;77;72;Q
+Carnivine;Bug Catcher Pokémon;100;72;W
+Delphox;Fox Pokémon;69;72;M
+Virizion;Grassland Pokémon;90;72;G
+Infernape;Flame Pokémon;104;71;F
+Talonflame;Scorching Pokémon;81;71;I
+Xurkitree;Glowing Pokémon;89;71;Q
+Amoonguss;Mushroom Pokémon;85;70;P
+Ariados;Long Leg Pokémon;90;70;U
+Azelf;Willpower Pokémon;125;70;N
+Cherrim;Blossom Pokémon;60;70;K
+Dodrio;Triple Bird Pokémon;110;70;L
+Dunsparce;Land Snake Pokémon;70;70;P
+Dustox;Poison Moth Pokémon;50;70;H
+Eelektrik;EleFish Pokémon;85;70;W
+Electrode;Ball Pokémon;50;70;R
+Fraxure;Axe Jaw Pokémon;117;70;P
+Froslass;Snow Land Pokémon;80;70;Z
+Golbat;Bat Pokémon;80;70;T
+Goodra;Dragon Pokémon;100;70;Q
+Horsea;Dragon Pokémon;40;70;Z
+Jellicent;Floating Pokémon;60;70;Z
+Jumpluff;Cottonweed Pokémon;55;70;W
+Kecleon;Color Swap Pokémon;90;70;N
+Klink;Gear Pokémon;55;70;X
+Machoke;Superpower Pokémon;100;70;L
+Magnemite;Magnet Pokémon;35;70;J
+Mantine;Kite Pokémon;40;70;X
+Marshtomp;Mud Fish Pokémon;85;70;J
+Oricorio;Dancing Pokémon;70;70;G
+Pachirisu;EleSquirrel Pokémon;45;70;E
+Porygon-Z;Virtual Pokémon;80;70;X
+Sawsbuck;Season Pokémon;100;70;X
+Scraggy;Shedding Pokémon;75;70;N
+Sewaddle;Sewing Pokémon;53;70;W
+Staraptor;Predator Pokémon;120;70;I
+Xatu;Mystic Pokémon;75;70;D
+Zweilous;Hostile Pokémon;85;70;T
+Brionne;Pop Star Pokémon;69;69;R
+Florges;Garden Pokémon;65;68;N
+Gastrodon;Sea Slug Pokémon;83;68;S
+Binacle;Two-Handed Pokémon;52;67;I
+Electivire;Thunderbolt Pokémon;123;67;S
+Floette;Fairy Pokémon;65;67;R
+Greninja;Ninja Pokémon;145;67;R
+Magmortar;Blast Pokémon;95;67;F
+Maractus;Cactus Pokémon;86;67;O
+Nidorina;Poison Pin Pokémon;62;67;M
+Skuntank;Skunk Pokémon;93;67;C
+Ambipom;Long Tail Pokémon;100;66;C
+Swirlix;Cotton Candy Pokémon;48;66;A
+Alakazam;Psi Pokémon;50;65;U
+Archeops;First Bird Pokémon;140;65;V
+Basculin;Hostile Pokémon;92;65;L
+Chespin;Spiky Nut Pokémon;61;65;D
+Chikorita;Leaf Pokémon;49;65;L
+Corphish;Ruffian Pokémon;80;65;X
+Emboar;Mega Fire Pig Pokémon;123;65;S
+Fearow;Beak Pokémon;90;65;Z
+Gabite;Cave Pokémon;90;65;G
+Gardevoir;Embrace Pokémon;85;65;Q
+Girafarig;Long Neck Pokémon;80;65;F
+Grumpig;Manipulate Pokémon;45;65;Z
+Komala;Drowsing Pokémon;115;65;O
+Mr. Mime;Barrier Pokémon;45;65;N
+Poliwhirl;Tadpole Pokémon;65;65;T
+Roserade;Bouquet Pokémon;70;65;D
+Seaking;Goldfish Pokémon;92;65;F
+Slowpoke;Dopey Pokémon;65;65;Q
+Squirtle;Tiny Turtle Pokémon;48;65;Z
+Sylveon;Intertwining Pokémon;65;65;R
+Tentacruel;Jellyfish Pokémon;70;65;R
+Togepi;Spike Ball Pokémon;20;65;P
+Toxicroak;Toxic Mouth Pokémon;106;65;Y
+Vanillish;Icy Snow Pokémon;65;65;W
+Victreebel;Flycatcher Pokémon;105;65;O
+Volcarona;Sun Pokémon;60;65;N
+Purugly;Tiger Cat Pokémon;82;64;R
+Exploud;Loud Noise Pokémon;91;63;L
+Simisear;Ember Pokémon;98;63;H
+Swanna;White Bird Pokémon;87;63;Q
+Togedemaru;Roly-Poly Pokémon;98;63;H
+Zebstrika;Thunderbolt Pokémon;100;63;S
+Clauncher;Water Gun Pokémon;53;62;Z
+Gogoat;Mount Pokémon;100;62;V
+Masquerain;Eyeball Pokémon;60;62;H
+Pancham;Playful Pokémon;82;62;N
+Stantler;Big Horn Pokémon;95;62;H
+Tranquill;Wild Pigeon Pokémon;77;62;A
+Absol;Disaster Pokémon;150;60;I
+Bagon;Rock Head Pokémon;75;60;Y
+Cinccino;Scarf Pokémon;95;60;Q
+Combusken;Young Fowl Pokémon;85;60;B
+Cottonee;Cotton Puff Pokémon;27;60;Y
+Espeon;Sun Pokémon;65;60;T
+Excadrill;Subterrene Pokémon;135;60;H
+Furfrou;Poodle Pokémon;80;60;C
+Galvantula;EleSpider Pokémon;77;60;A
+Goldeen;Goldfish Pokémon;67;60;H
+Gumshoos;Stakeout Pokémon;110;60;T
+Jolteon;Lightning Pokémon;65;60;W
+Lampent;Lamp Pokémon;40;60;Q
+Misdreavus;Screech Pokémon;60;60;R
+Mismagius;Magical Pokémon;60;60;O
+Phanpy;Long Nose Pokémon;60;60;J
+Ribombee;Bee Fly Pokémon;55;60;C
+Shiftry;Wickid Pokémon;100;60;H
+Shroomish;Mushroom Pokémon;40;60;J
+Slakoth;Slacker Pokémon;60;60;H
+Spewpa;Scatterdust Pokémon;22;60;W
+Spinda;Spot Panda Pokémon;60;60;I
+Spritzee;Perfume Pokémon;52;60;Y
+Swablu;Cotton Bird Pokémon;40;60;Z
+Swellow;Swallow Pokémon;85;60;B
+Venomoth;Poison Moth Pokémon;65;60;G
+Zangoose;Cat Ferret Pokémon;115;60;E
+Zoroark;Illusion Fox Pokémon;105;60;P
+Venipede;Centipede Pokémon;45;59;Z
+Braixen;Fox Pokémon;59;58;O
+Quilava;Volcano Pokémon;64;58;C
+Wobbuffet;Patient Pokémon;33;58;C
+Crabrawler;Boxing Pokémon;82;57;A
+Electabuzz;Electric Pokémon;83;57;U
+Nidorino;Poison Pin Pokémon;72;57;X
+Finneon;Wing Fish Pokémon;49;56;H
+Aipom;Long Tail Pokémon;70;55;Y
+Baltoy;Clay Doll Pokémon;40;55;I
+Elgyem;Cerebral Pokémon;55;55;K
+Farfetch'd;Wild Duck Pokémon;90;55;Q
+Flaaffy;Wool Pokémon;55;55;Q
+Floatzel;Sea Weasel Pokémon;105;55;H
+Larvesta;Torch Pokémon;85;55;J
+Litwick;Candle Pokémon;30;55;Y
+Magikarp;Fish Pokémon;10;55;F
+Meditite;Meditate Pokémon;40;55;H
+Metapod;Cocoon Pokémon;20;55;Z
+Morelull;Illuminating Pokémon;35;55;Q
+Oddish;Weed Pokémon;50;55;V
+Ponyta;Fire Horse Pokémon;85;55;M
+Rowlet;Grass Quill Pokémon;55;55;F
+Silcoon;Cocoon Pokémon;35;55;F
+Snivy;Grass Snake Pokémon;45;55;E
+Swoobat;Courting Pokémon;57;55;H
+Espurr;Restraint Pokémon;48;54;L
+Popplio;Sea Lion Pokémon;54;54;Y
+Gulpin;Stomach Pokémon;43;53;Y
+Hitmonlee;Kicking Pokémon;120;53;O
+Inkay;Revolving Pokémon;54;53;Z
+Frogadier;Bubble Frog Pokémon;63;52;D
+Heliolisk;Generator Pokémon;55;52;F
+Honchkrow;Big Boss Pokémon;125;52;I
+Monferno;Playful Pokémon;78;52;Z
+Nidoran♀;Poison Pin Pokémon;47;52;Y
+Amaura;Tundra Pokémon;59;50;B
+Anorith;Old Shrimp Pokémon;95;50;F
+Beautifly;Butterfly Pokémon;70;50;W
+Butterfree;Butterfly Pokémon;45;50;P
+Chingling;Bell Pokémon;30;50;T
+Deerling;Season Pokémon;60;50;F
+Deino;Irate Pokémon;65;50;T
+Ducklett;Water Bird Pokémon;44;50;Y
+Eevee;Evolution Pokémon;55;50;C
+Frillish;Floating Pokémon;40;50;G
+Golett;Automaton Pokémon;74;50;N
+Joltik;Attaching Pokémon;47;50;L
+Ledian;Five Star Pokémon;35;50;V
+Machop;Superpower Pokémon;80;50;B
+Mantyke;Kite Pokémon;20;50;W
+Marill;Aquamouse Pokémon;20;50;Q
+Mienfoo;Martial Arts Pokémon;85;50;V
+Minun;Cheering Pokémon;40;50;J
+Mudkip;Mud Fish Pokémon;70;50;V
+Noctowl;Owl Pokémon;50;50;W
+Rufflet;Eaglet Pokémon;83;50;N
+Snorunt;Snow Hat Pokémon;50;50;R
+Snubbull;Fairy Pokémon;80;50;O
+Spheal;Clap Pokémon;40;50;U
+Staravia;Starling Pokémon;75;50;Q
+Stufful;Flailing Pokémon;75;50;M
+Teddiursa;Little Bear Pokémon;80;50;D
+Trumbeak;Bugle Beak Pokémon;85;50;Q
+Vanillite;Fresh Snow Pokémon;50;50;A
+Venonat;Insect Pokémon;55;50;W
+Vibrava;Vibration Pokémon;70;50;P
+Voltorb;Ball Pokémon;30;50;C
+Weepinbell;Flycatcher Pokémon;90;50;U
+Luxio;Spark Pokémon;85;49;G
+Clefairy;Fairy Pokémon;45;48;O
+Ditto;Transform Pokémon;48;48;P
+Pansage;Grass Monkey Pokémon;53;48;U
+Pansear;High Temp Pokémon;53;48;T
+Phantump;Stump Pokémon;70;48;L
+Psyduck;Duck Pokémon;52;48;T
+Skiddo;Mount Pokémon;65;48;H
+Steenee;Fruit Pokémon;40;48;G
+Unown;Symbol Pokémon;72;48;S
+Wynaut;Bright Pokémon;23;48;V
+Nihilego;Parasite Pokémon;53;47;U
+Stunky;Skunk Pokémon;63;47;A
+Archen;First Bird Pokémon;112;45;O
+Burmy;Bagworm Pokémon;29;45;U
+Cherubi;Cherry Pokémon;35;45;A
+Darumaka;Zen Charm Pokémon;90;45;H
+Doduo;Twin Bird Pokémon;85;45;G
+Dratini;Dragon Pokémon;64;45;M
+Foongus;Mushroom Pokémon;55;45;J
+Grovyle;Wood Gecko Pokémon;65;45;Y
+Growlithe;Puppy Pokémon;70;45;L
+Grubbin;Larva Pokémon;62;45;P
+Karrablast;Clamping Pokémon;75;45;Z
+Lillipup;Puppy Pokémon;60;45;B
+Munna;Dream Eater Pokémon;25;45;R
+Oshawott;Sea Otter Pokémon;55;45;A
+Roselia;Thorn Pokémon;60;45;B
+Shedinja;Shed Pokémon;90;45;P
+Skitty;Kitten Pokémon;45;45;D
+Wigglytuff;Balloon Pokémon;70;45;S
+Wooper;Water Fish Pokémon;45;45;E
+Chimchar;Chimp Pokémon;58;44;X
+Drifblim;Blimp Pokémon;80;44;D
+Barboach;Whiskers Pokémon;48;43;C
+Cyndaquil;Fire Mouse Pokémon;52;43;Y
+Fletchling;Tiny Robin Pokémon;50;43;V
+Loudred;Big Voice Pokémon;71;43;Q
+Combee;Tiny Bee Pokémon;30;42;Q
+Murkrow;Darkness Pokémon;85;42;N
+Kricketot;Cricket Pokémon;25;41;X
+Accelgor;Shell Out Pokémon;70;40;W
+Bidoof;Plump Mouse Pokémon;45;40;D
+Cranidos;Head Butt Pokémon;125;40;U
+Croagunk;Toxic Mouth Pokémon;61;40;Z
+Cutiefly;Bee Fly Pokémon;45;40;W
+Drilbur;Mole Pokémon;85;40;G
+Electrike;Lightning Pokémon;45;40;U
+Fennekin;Fox Pokémon;45;40;A
+Litten;Fire Cat Pokémon;65;40;B
+Minccino;Chinchilla Pokémon;50;40;S
+Munchlax;Big Eater Pokémon;85;40;J
+Nidoran♂;Poison Pin Pokémon;57;40;T
+Numel;Numb Pokémon;60;40;Q
+Pikachu;Mouse Pokémon;55;40;D
+Poliwag;Tadpole Pokémon;50;40;E
+Riolu;Emanation Pokémon;70;40;E
+Slugma;Lava Pokémon;40;40;Y
+Solosis;Cell Pokémon;30;40;S
+Spinarak;String Spit Pokémon;60;40;U
+Swinub;Pig Pokémon;50;40;C
+Torchic;Chick Pokémon;60;40;A
+Tynamo;EleFish Pokémon;55;40;B
+Wimpod;Turn Tail Pokémon;35;40;M
+Zorua;Tricky Fox Pokémon;65;40;T
+Flabébé;Single Bloom Pokémon;38;39;E
+Patrat;Scout Pokémon;55;39;Q
+Bounsweet;Fruit Pokémon;30;38;P
+Chinchou;Angler Pokémon;38;38;G
+Elekid;Electric Pokémon;63;37;S
+Magby;Live Coal Pokémon;75;37;W
+Purrloin;Devious Pokémon;50;37;X
+Budew;Bud Pokémon;30;35;H
+Buizel;Sea Weasel Pokémon;65;35;H
+Caterpie;Worm Pokémon;30;35;A
+Goomy;Soft Tissue Pokémon;50;35;P
+Jynx;Humanshape Pokémon;50;35;U
+Kirlia;Emotion Pokémon;35;35;Y
+Mankey;Pig Monkey Pokémon;80;35;A
+Noibat;Sound Wave Pokémon;30;35;G
+Poochyena;Bite Pokémon;55;35;H
+Remoraid;Jet Pokémon;65;35;T
+Sandile;Desert Croc Pokémon;72;35;R
+Shuppet;Puppet Pokémon;75;35;M
+Spoink;Bounce Pokémon;25;35;L
+Tentacool;Jellyfish Pokémon;40;35;A
+Treecko;Wood Gecko Pokémon;45;35;T
+Wailmer;Ball Whale Pokémon;70;35;A
+Zubat;Bat Pokémon;45;35;Q
+Sentret;Scout Pokémon;46;34;H
+Helioptile;Generator Pokémon;38;33;V
+Blitzle;Electrified Pokémon;60;32;K
+Cosmog;Nebula Pokémon;29;31;S
+Gastly;Gas Pokémon;35;30;O
+Hoothoot;Owl Pokémon;30;30;T
+Kadabra;Psi Pokémon;35;30;G
+Ledyba;Five Star Pokémon;20;30;Y
+Lotad;Water Weed Pokémon;30;30;F
+Makuhita;Guts Pokémon;60;30;Y
+Pikipek;Woodpecker Pokémon;75;30;B
+Spearow;Tiny Bird Pokémon;60;30;G
+Starly;Starling Pokémon;55;30;I
+Sunkern;Seed Pokémon;30;30;H
+Taillow;TinySwallow Pokémon;55;30;V
+Yungoos;Loitering Pokémon;70;30;P
+Cleffa;Star Shape Pokémon;25;28;T
+Ralts;Feeling Pokémon;25;25;T
+Whismur;Whisper Pokémon;51;23;U
+Carvanha;Savage Pokémon;90;20;U
+Feebas;Fish Pokémon;15;20;Y
+Abra;Psi Pokémon;20;15;X
+Smoochum;Kiss Pokémon;30;15;C
+Happiny;Playhouse Pokémon;5;5;X

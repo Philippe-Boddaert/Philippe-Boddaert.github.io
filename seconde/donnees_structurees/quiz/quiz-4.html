@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz DO-Q4</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz DO-Q4 - Données structurées",
+        "main": "Sujet : Métadonnées d'un fichier.",
+        "token": "915229"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Donnée à caractère personnel",
+            "q": "Qu'est-ce qu'une __donnée à caractère personnel__ ?",
+            "a": [
+                {
+                    "option": "Une information partagée gratuitement sur le Web",
+                    "correct": false
+                },
+                {
+                    "option": "Une information relative à une personne physique identifiée ou qui peut être identifiée, directement ou indirectement",
+                    "correct": true
+                },
+                {
+                    "option": "Une information anonymisée utilisée à des fins de statistique",
+                    "correct": false
+                },
+                {
+                    "option": "Une information sur le comportement d'une personne",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Identifiant",
+            "q": "Un descripteur est dit __identifiant__ si ...",
+            "a": [
+                {
+                    "option": "les valeurs sont uniques.",
+                    "correct": true
+                },
+                {
+                    "option": "une valeur se retrouve dans plusieurs lignes.",
+                    "correct": false
+                },
+                {
+                    "option": "pour chaque ligne, la valeur est différente.",
+                    "correct": true
+                },
+                {
+                    "option": "qu'importe...Un descripteur est nécessairement un identifiant.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Anonymisation",
+            "q": "En quoi consiste la technique d'__anonymisation__ des données d'une table ?",
+            "a": [
+                {
+                    "option": "L'anonymisation est un technique consistant à supprimer les identifiants, c'est-à-dire rendre difficile l'identification d'une personne à partir des données.",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Protection des données",
+            "q": "Quel est l’organisme français qui veille à la protection des données à caractère personnel ?",
+            "a": [
+                {
+                    "option": "Commission Nationale de l’Informatique et des Libertés",
+                    "correct": true
+                },
+                {
+                    "option": "Autorité de régulation des communications électroniques et des Postes",
+                    "correct": false
+                },
+                {
+                    "option": "Haute Autorité pour la diffusion des œuvres et la protection des droits sur internet",
+                    "correct": false
+                },
+                {
+                    "option": "Conseil supérieur de l'audiovisuel",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Identifiant d'une table de données",
+            "q": "Soit la table de données relatives à des Pokemon :\n\n| N* | Nom | Type | PV |\n| :--: | :--: | :--: | :--: |\n| 004 | Salamèche | Feu | 65 |\n| 050 | Taupiqueur | Sol | 81 |\n| 387 | Tortipouss | Plante | 54 |\n| 059 | Arcanin | Feu | 213 |\n| 265 | Chenipotte | Insecte | 54 |\n\nQuels descripteurs sont identifiants ?",
+            "a": [
+                {
+                    "option": "Nom",
+                    "correct": true
+                },
+                {
+                    "option": "Type",
+                    "correct": false
+                },
+                {
+                    "option": "PV",
+                    "correct": false
+                },
+                {
+                    "option": "N°",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "RGPD",
+            "q": "Quel est l'enjeu du RGPD ?",
+            "a": [
+                {
+                    "option": "Faciliter l'accès aux données personnelles aux études scientifiques.",
+                    "correct": false
+                },
+                {
+                    "option": "Garantir l'accès des données personnelles aux entreprises privées.",
+                    "correct": false
+                },
+                {
+                    "option": "Lutter contre les copies illicites d'oeuvres musicales.",
+                    "correct": false
+                },
+                {
+                    "option": "Mieux protéger les données personnelles des citoyens européens.",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
