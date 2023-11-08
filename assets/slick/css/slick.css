@@ -88,6 +88,10 @@ p:has(img) {
     text-align: center;
 }
 
+img {
+    max-width: -webkit-fill-available;
+}
+
 .questionCount {
     text-align: center;
     font-size: 14px;

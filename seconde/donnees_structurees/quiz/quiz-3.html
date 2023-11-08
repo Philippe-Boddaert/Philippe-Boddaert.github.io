@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz DO-Q3</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz DO-Q3 - Données structurées",
+        "main": "Sujet : Les tableurs",
+        "token": "83495b"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nom de tableur",
+            "q": "Parmi les logiciels, lesquels sont des __tableurs__ ?",
+            "a": [
+                {
+                    "option": "Excel",
+                    "correct": true
+                },
+                {
+                    "option": "Word",
+                    "correct": false
+                },
+                {
+                    "option": "LibreOffice Calc",
+                    "correct": true
+                },
+                {
+                    "option": "Chrome",
+                    "correct": false
+                },
+                {
+                    "option": "Google Sheets",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Utilité d'un tableur",
+            "q": "À quoi sert un __tableur__ ?",
+            "a": [
+                {
+                    "option": "représenter des données",
+                    "correct": true
+                },
+                {
+                    "option": "traiter des données",
+                    "correct": true
+                },
+                {
+                    "option": "interroger des données",
+                    "correct": true
+                },
+                {
+                    "option": "compresser des données",
+                    "correct": false
+                },
+                {
+                    "option": "télecharger des données",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Format de fichier d'un tableur",
+            "q": "Quelles affirmations sont vraies concernant les fichiers d'un __tableur__ ?",
+            "a": [
+                {
+                    "option": "Il peut être au format .csv",
+                    "correct": true
+                },
+                {
+                    "option": "Il peut être au format .xls",
+                    "correct": true
+                },
+                {
+                    "option": "Il peut être au format .exe",
+                    "correct": false
+                },
+                {
+                    "option": "Le fichier est un classeur de données",
+                    "correct": true
+                },
+                {
+                    "option": "Le fichier est un cahier de données",
+                    "correct": false
+                },
+                {
+                    "option": "Le fichier contient une ou plusieurs feuilles de données",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Représentation des données dans un tableur",
+            "q": "Quelles affirmations sont vraies concernant la représentation des données dans un tableur ?",
+            "a": [
+                {
+                    "option": "Une ligne correspond à un enregistrement de données",
+                    "correct": true
+                },
+                {
+                    "option": "Une colonne correspond à un descripteur de données",
+                    "correct": true
+                },
+                {
+                    "option": "Une ligne correspond à un descripteur de données",
+                    "correct": false
+                },
+                {
+                    "option": "Une ligne correspond à un enregistrement de données",
+                    "correct": false
+                },
+                {
+                    "option": "Une cellule correspond à une valeur de données",
+                    "correct": true
+                },
+                {
+                    "option": "Une cellule correspond à un enregistrement de données",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Opération avec un tableur",
+            "q": "Soit la feuille de données suivante :\n\n![](./assets/654baed9df2d1f1d9ca0a7bb)\n\nQuelle opération faut-il effectuer pour obtenir __tous les titres de Bob Dylan__ ?",
+            "a": [
+                {
+                    "option": "Un filtre sur le descripteur \"Artiste\" avec pour valeur \"Bob Dylan\"",
+                    "correct": true
+                },
+                {
+                    "option": "Un tri sur le descripteur \"Artiste\" avec pour valeur \"Bob Dylan\"",
+                    "correct": false
+                },
+                {
+                    "option": "Un filtre sur le descripteur \"Titre\" avec pour valeur \"Bob Dylan\"",
+                    "correct": false
+                },
+                {
+                    "option": "Un tri sur le descripteur \"Titre\" avec pour valeur \"Bob Dylan\"",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Opération avec un tableur",
+            "q": "Soit la feuille de données suivante :\n\n![](./assets/654baed9df2d1f1d9ca0a7bb)\n\nQuelle opération faut-il effectuer pour obtenir le titre __le plus récent__ ?",
+            "a": [
+                {
+                    "option": "Un filtre sur le descripteur \"Année\" par ordre croissant",
+                    "correct": false
+                },
+                {
+                    "option": "Un tri sur le descripteur \"Année\" par ordre croissant et lire la 1ère ligne",
+                    "correct": false
+                },
+                {
+                    "option": "Un tri sur le descripteur \"Année\" par ordre croissant et lire la dernière ligne",
+                    "correct": true
+                },
+                {
+                    "option": "Un tri sur le descripteur \"Année\" par ordre décroissant et lire la 1ère ligne",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Opération avec un tableur",
+            "q": "Soit la feuille de données suivante :\n\n![](./assets/654baed9df2d1f1d9ca0a7bb)\n\nQuelle opération faut-il effectuer pour obtenir __le plus long__ titre de __Pop__ ?",
+            "a": [
+                {
+                    "option": "Un filtre sur le descripteur \"Genre\" avec pour valeur \"Pop\" et un tri sur le descripteur \"Durée\" par ordre décroissant.",
+                    "correct": true
+                },
+                {
+                    "option": "Un filtre sur le descripteur \"Durée\" par ordre décroissant et un tri sur le descripteur \"Genre\" avec pour valeur \"Pop\" .",
+                    "correct": false
+                },
+                {
+                    "option": "Un filtre sur le descripteur \"Artiste\" avec pour valeur \"Pop\" et un tri sur le descripteur \"Durée\" par ordre croissant.",
+                    "correct": false
+                },
+                {
+                    "option": "Un filtre sur le descripteur \"Genre\" avec pour valeur \"Pop\" et un tri sur le descripteur \"Année\" par ordre décroissant.",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
