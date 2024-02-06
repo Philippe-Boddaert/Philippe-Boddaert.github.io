@@ -1,3 +1,7 @@
 .md-sidebar--secondary {
     order: 0;
   }
+
+img {
+  background-color: white;
+}
