@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz SE-Q1</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz SE-Q1 - Système embarqué",
+        "main": "Sujet : Définition d'un système embarqué",
+        "token": "c2ec21"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition Système embarqué",
+            "q": "Qu'est-ce qu'un __système embarqué__ ?",
+            "a": [
+                {
+                    "option": "un système de traitement de l’information autonome ne possédant pas d’entrée et sortie standard comme le clavier et l’écran",
+                    "correct": true
+                },
+                {
+                    "option": "un système doté d'intelligence artificielle qui ne nécessite aucun codage de programme",
+                    "correct": false
+                },
+                {
+                    "option": "un système similaire à un ordinateur portable transportable dans un sac",
+                    "correct": false
+                },
+                {
+                    "option": "un système de traitement de l'information répondant exclusivement à des ordres donnés par synthèse vocale",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Système embarqué",
+            "q": "Sélectionner les éléments constitutifs d'un système informatique embarqué",
+            "a": [
+                {
+                    "option": "Clavier",
+                    "correct": false
+                },
+                {
+                    "option": "Écran",
+                    "correct": false
+                },
+                {
+                    "option": "Actionneur",
+                    "correct": true
+                },
+                {
+                    "option": "Souris",
+                    "correct": false
+                },
+                {
+                    "option": "Processeur",
+                    "correct": true
+                },
+                {
+                    "option": "Capteur",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Composant d'un système embarqué",
+            "q": "Un composant qui doit émettre un signal sonore est :",
+            "a": [
+                {
+                    "option": "un opérateur",
+                    "correct": false
+                },
+                {
+                    "option": "un capteur",
+                    "correct": false
+                },
+                {
+                    "option": "un actionneur",
+                    "correct": true
+                },
+                {
+                    "option": "un valideur",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition d'un capteur",
+            "q": "Quelles affirmations sont vraies concernant la notion de __capteur__ d'un système embarqué ?",
+            "a": [
+                {
+                    "option": "Un capteur permet acquérir une grandeur physique pour la transformer en grandeur utilisable, exploitable par un système",
+                    "correct": true
+                },
+                {
+                    "option": "Un capteur constitue l'entrée d'un système embarqué",
+                    "correct": true
+                },
+                {
+                    "option": "Un capteur constitue la sortie d'un système embarqué",
+                    "correct": false
+                },
+                {
+                    "option": "Un capteur nécessite une intervention humaine pour obtenir une donnée de son environnement",
+                    "correct": false
+                },
+                {
+                    "option": "Aucune de ces réponses",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition d'un actionneur",
+            "q": "Quelles affirmations sont vraies concernant la notion d'__actionneur__ d'un système embarqué ?",
+            "a": [
+                {
+                    "option": "Un actionneur transforme l’énergie reçue en un phénomène physique pour répondre à un besoin donné",
+                    "correct": true
+                },
+                {
+                    "option": "Un actionneur constitue l'entrée d'un système embarqué",
+                    "correct": false
+                },
+                {
+                    "option": "Un actionneur constitue la sortie d'un système embarqué",
+                    "correct": true
+                },
+                {
+                    "option": "Un actionneur nécessite une intervention humaine pour interagir avec son environnement",
+                    "correct": false
+                },
+                {
+                    "option": "Aucune de ces réponses",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition Objet Connecté",
+            "q": "Quelles affirmations sont vraies concernant la notion d'__objet connecté__ ?",
+            "a": [
+                {
+                    "option": "Un objet connecté est un système informatique embarqué",
+                    "correct": true
+                },
+                {
+                    "option": "Un objet connecté est plus petit qu'un système embarqué",
+                    "correct": false
+                },
+                {
+                    "option": "Un objet connecté nécessite une connexion à un réseau local ou à Internet pour fonctionner",
+                    "correct": true
+                },
+                {
+                    "option": "Un objet connecté est plus performant qu'un système embarqué",
+                    "correct": false
+                },
+                {
+                    "option": "Aucune de ces réponses",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - IOT",
+            "q": "Qu'est-ce que l'__Internet des objets__, aussi appelé _Internet of Things_ ?",
+            "a": [
+                {
+                    "option": "Le réseau liant différents objets connectés entre eux.",
+                    "correct": true
+                },
+                {
+                    "option": "L'endroit où sont stockées les données de toutes les intelligences artificielles.",
+                    "correct": false
+                },
+                {
+                    "option": "Un réseau internet généré par les objets connectés, qui permet de se connecter au wifi n'importe où.",
+                    "correct": false
+                },
+                {
+                    "option": "L'ensemble des smartphones pouvant se connecter à Internet.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Dates clés - Système embarqué",
+            "q": "Soit les événements clés suivant concernant les systèmes embarqués :\n\n| | Evenement |\n| :--: | :-- | \n| A | Inauguration du premier métro automatique |\n| B | Introduction de l'expression \"Internet des Objets\"  | \n| C | Création du premier processeur | \n| D | Premier système embarqué dans la mission Apollo | \n| E | Sortie du 1er smartphone | \n| F | Sortie de l'A320, 1er avion doté de commandes informatisées  |  \n\nQuelle est la bonne association de dates à ces événements ?\n",
+            "a": [
+                {
+                    "option": "A: 1983, B: 1999, C: 1971, D: 1967, E: 2007, F: 1984",
+                    "correct": true
+                },
+                {
+                    "option": "A: 1971, B: 1967, C: 1984, D: 1999, E: 1983, F: 2007",
+                    "correct": false
+                },
+                {
+                    "option": "A: 1999, B: 1983, C: 2007, D: 1967, E: 1984, F: 1971",
+                    "correct": false
+                },
+                {
+                    "option": "A: 1967, B: 1971, C: 1983, D: 1984,  E: 1999, F: 2007",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Analyse d'un programme d'un système embarqué",
+            "q": "L'assistance électrique d’un vélo doit être constamment modulée.\n\nOn peut décrire ce comportement sous la forme de l’algorithme de contrôle suivant :\n\n```txt\n1. Faire tant que l'assistance électrique est activée\n2.    vitesse <- grandeur physique fournie par un composant fixé sur la roue\n3.    Si vitesse < 25 alors\n4.        activer le moteur électrique\n5.    Sinon\n6.        arrêter le moteur électrique\n```\n\nQuelles affirmations sont vraies concernant cet algorithme ?",
+            "a": [
+                {
+                    "option": "La ligne 2 met en oeuvre un capteur",
+                    "correct": true
+                },
+                {
+                    "option": "Les lignes 4 et 6 mettent en oeuvre un actionneur",
+                    "correct": true
+                },
+                {
+                    "option": "La ligne 2 met en oeuvre un actionneur",
+                    "correct": false
+                },
+                {
+                    "option": "Les lignes 4 et 6 mettent en oeuvre un capteur",
+                    "correct": false
+                },
+                {
+                    "option": "Il possible d’avoir le moteur électrique actif si l’on roule à plus de 25Km/h",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

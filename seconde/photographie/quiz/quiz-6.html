@@ -4,7 +4,7 @@
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="content-type">
 
-        <title>Quiz PN-Q4</title>
+        <title>Quiz PN-Q6</title>
     
         <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
@@ -45,31 +45,31 @@
         <script type="text/javascript">
 let quizJSON = {
     "info": {
-        "name": "Quiz PN-Q4 - Photographie numérique",
-        "main": "Sujet : Le stockage des images numériques",
-        "token": "389b8f"
+        "name": "Quiz PN-Q6 - Photographie numérique",
+        "main": "Sujet : La compression d'image numérique",
+        "token": "fdb33a",
     },
     "questions": [
-        {
+    {
             "correct": "Réponse correcte",
             "incorrect": "Réponse incorrecte",
-            "n": "Définition - Encodage",
-            "q": "À quoi correspond l'__encodage__ d'une image numérique ?",
+            "n": "Compression",
+            "q": "Une photo compressée ...",
             "a": [
                 {
-                    "option": "La manière de stocker les valeurs des pixels dans un ordinateur",
+                    "option": "est nécessairement en noir et blanc",
+                    "correct": false
+                },
+                {
+                    "option": "prend moins d’espace mémoire que la photo originale non compressée",
                     "correct": true
                 },
                 {
-                    "option": "Le chiffrement de l'image pour éviter que quelqu'un puisse voir son contenu",
+                    "option": "présente des couleurs plus vives que la photo originale non compressée",
                     "correct": false
                 },
                 {
-                    "option": "Le mot de passe nécessaire à la visualisation de l'image",
-                    "correct": false
-                },
-                {
-                    "option": "Le mécanisme qui permet de zoomer/dézoomer dans l'image",
+                    "option": "est nécessairement au format JPG",
                     "correct": false
                 }
             ]
@@ -77,27 +77,23 @@ let quizJSON = {
         {
             "correct": "Réponse correcte",
             "incorrect": "Réponse incorrecte",
-            "n": "Encodage - PBM",
-            "q": "Quelles affirmations sont vraies concernant l'encodage PBM ?",
+            "n": "Compression RLE",
+            "q": "Soit l'encodage RLE suivant : `031242`.\n\nQuelle est l'image correspondante ?\n\n![](./assets/645a4c54d18bf7ae71bbf326.png)",
             "a": [
                 {
-                    "option": "PBM veut dire \"Portable Bit Map\"",
-                    "correct": true
-                },
-                {
-                    "option": "PBM veut dire \"Pixel Best Mapping\"",
+                    "option": "![](./assets/6-A-3.png)",
                     "correct": false
                 },
                 {
-                    "option": "Il permet d'encoder les images en noir et blanc",
-                    "correct": true
-                },
-                {
-                    "option": "Il permet d'encoder les images en nuance de gris",
+                    "option": "![](./assets/6-A-1.png)",
                     "correct": false
                 },
                 {
-                    "option": "Il permet d'encoder les images en couleur",
+                    "option": "![](./assets/6-A-2.png)",
+                    "correct": true
+                },
+                {
+                    "option": "![](./assets/6-A-4.png)",
                     "correct": false
                 }
             ]
@@ -105,27 +101,23 @@ let quizJSON = {
         {
             "correct": "Réponse correcte",
             "incorrect": "Réponse incorrecte",
-            "n": "Encodage - PGM",
-            "q": "Quelles affirmations sont vraies concernant l'encodage PGM ?",
+            "n": "Compression RLE",
+            "q": "Soit l'image en noir et blanc suivante : \n\n![](./assets/645a4931d18bf7ae71bbf2f1.png)\n\nDonner l'encodage en RLE de cette image.",
             "a": [
                 {
-                    "option": "PGM veut dire \"Portable Gray Map\"",
+                    "option": "213111312",
                     "correct": true
                 },
                 {
-                    "option": "PGM veut dire \"Pixel Gris Mapping\"",
+                    "option": "0213111312",
                     "correct": false
                 },
                 {
-                    "option": "Il permet d'encoder les images en noir et blanc",
+                    "option": "001000101000100",
                     "correct": false
                 },
                 {
-                    "option": "Il permet d'encoder les images en nuance de gris",
-                    "correct": true
-                },
-                {
-                    "option": "Il permet d'encoder les images en couleur",
+                    "option": "110111010111011",
                     "correct": false
                 }
             ]
@@ -133,91 +125,51 @@ let quizJSON = {
         {
             "correct": "Réponse correcte",
             "incorrect": "Réponse incorrecte",
-            "n": "Encodage - PPM",
-            "q": "Quelles affirmations sont vraies concernant l'encodage PPM ?",
+            "n": "Format de compression",
+            "q": "Parmi les extensions de fichier ci-dessous, lesquelles sont des extensions d’image numérique compressée :",
             "a": [
                 {
-                    "option": "PPM veut dire \"Portable Pix Map\"",
+                    "option": "jpg",
                     "correct": true
                 },
                 {
-                    "option": "PPM veut dire \"Pixel Precised Mapping\"",
-                    "correct": false
-                },
-                {
-                    "option": "Il permet d'encoder les images en noir et blanc",
-                    "correct": false
-                },
-                {
-                    "option": "Il permet d'encoder les images en nuance de gris",
-                    "correct": false
-                },
-                {
-                    "option": "Il permet d'encoder les images en couleur",
+                    "option": "png",
                     "correct": true
+                },
+                {
+                    "option": "pbm",
+                    "correct": false
+                },
+                {
+                    "option": "ppm",
+                    "correct": false
+                },
+                {
+                    "option": "csv",
+                    "correct": false
                 }
             ]
         },
         {
             "correct": "Réponse correcte",
             "incorrect": "Réponse incorrecte",
-            "n": "Image Noir et Blanc",
-            "q": "Soit une image stocké dans un fichier numérique :\n\n```txt\nP1\n5 4\n11111\n10000\n10000\n11111\n```\n\nQuelles affirmations sont vraies ?",
+            "n": "Compression d'image",
+            "q": "Quelles affirmations sont vraies concernant la compression d'image ?",
             "a": [
                 {
-                    "option": "Il s'agit d'un fichier PBM",
+                    "option": "Les méthodes de compression sans perte d'information permettent de retrouver exactement les pixels de l'image d'origine.",
                     "correct": true
                 },
                 {
-                    "option": "Il s'agit d'un fichier PPM",
-                    "correct": false
-                },
-                {
-                    "option": "La 2ème ligne `5 4` indique que l'image fait 5 pixels de largeur et 4 de hauteur",
+                    "option": "Les méthodes de compression avec perte d'information, avec lesquelles retrouver l'image d'origine n'est pas possible.",
                     "correct": true
                 },
                 {
-                    "option": "La 2ème ligne `5 4` indique que l'image fait 5 pixels de hauteur et 4 de largeur",
+                    "option": "Quelque soit la méthode de compression, il est possible de retrouver exactement les pixels de l'image d'origine.",
                     "correct": false
                 },
                 {
-                    "option": "Il s'agir d'un fichier PGM",
-                    "correct": false
-                },
-                {
-                    "option": "À partir de la 3ème ligne, il est possible de mettre n'importe quelle valeur numérique ",
-                    "correct": false
-                },
-                {
-                    "option": "À partir de la 3ème ligne, il n'est possible de mettre que les valeurs 0 ou 1",
-                    "correct": true
-                }
-            ]
-        },
-        {
-            "correct": "Réponse correcte",
-            "incorrect": "Réponse incorrecte",
-            "n": "Encodage d'une image en noir et blanc",
-            "q": "Soit un fichier contenant  les données suivantes :\n\n```txt\nP1\n5 4\n11111\n10000\n10000\n11111\n```\n\nÀ quelle image correspond ce fichier ?",
-            "a": [
-                {
-                    "option": "![](./assets/4-A-1.png)",
-                    "correct": true
-                },
-                {
-                    "option": "![](./assets/4-A-2.png)",
-                    "correct": false
-                },
-                {
-                    "option": "![](./assets/4-A-3.png)",
-                    "correct": false
-                },
-                {
-                    "option": "![](./assets/4-A-4.png)",
-                    "correct": false
-                },
-                {
-                    "option": "![](./assets/4-A-5.png)",
+                    "option": "Plus une image est compressée, plus elle est de meilleure qualité.",
                     "correct": false
                 }
             ]

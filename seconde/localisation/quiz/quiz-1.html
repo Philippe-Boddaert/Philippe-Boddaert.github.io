@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz LO-Q1</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz LO-Q1 - Localisation",
+        "main": "Sujet : Déterminer la position d'un point sur Terre",
+        "token": "28a47e"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - GPS",
+            "q": "Que signifie l'abréviation __GPS__ ?",
+            "a": [
+                {
+                    "option": "Giga Photonic Survey",
+                    "correct": false
+                },
+                {
+                    "option": "Global Positioning System",
+                    "correct": true
+                },
+                {
+                    "option": "Geo Planning Software",
+                    "correct": false
+                },
+                {
+                    "option": "General Pointing Synthesis",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Données du satellite GPS",
+            "q": "Quelles informations envoient les satellites GPS ?",
+            "a": [
+                {
+                    "option": "position du satellite et heure d'envoi",
+                    "correct": true
+                },
+                {
+                    "option": "position et vitesse du satellite",
+                    "correct": false
+                },
+                {
+                    "option": "vitesse du satellite et heure d'envoi",
+                    "correct": false
+                },
+                {
+                    "option": "vitesse et âge du satellite",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Concurrent du GPS",
+            "q": "Quel est le nom du __système européen__ concurrent du GPS ?",
+            "a": [
+                {
+                    "option": "Galileo",
+                    "correct": true
+                },
+                {
+                    "option": "Rafaello",
+                    "correct": false
+                },
+                {
+                    "option": "Donatello",
+                    "correct": false
+                },
+                {
+                    "option": "Ferrero",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Coordonnées géographiques",
+            "q": "Les coordonnées géographiques permettent de connaitre :",
+            "a": [
+                {
+                    "option": "La trilateration",
+                    "correct": false
+                },
+                {
+                    "option": "La longitude",
+                    "correct": true
+                },
+                {
+                    "option": "La latitude",
+                    "correct": true
+                },
+                {
+                    "option": "La profondeur",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Lecture de coordonnées géographiques",
+            "q": "Les coordonnées 4631.35N, 634.44E sont :",
+            "a": [
+                {
+                    "option": "Dans l'hémisphère Nord",
+                    "correct": true
+                },
+                {
+                    "option": "Dans l'hémisphère Sud",
+                    "correct": false
+                },
+                {
+                    "option": "à droite du méridien de Greenwich",
+                    "correct": true
+                },
+                {
+                    "option": "à gauche du méridien de Greenwich",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Lecture de coordonnées géographiques",
+            "q": "Dans les coordonnées d'un lieu de type 15°N 30°E, le premier nombre sert à",
+            "a": [
+                {
+                    "option": "repérer la latitude",
+                    "correct": true
+                },
+                {
+                    "option": "repérer la longitude",
+                    "correct": false
+                },
+                {
+                    "option": "repérer l'altitude",
+                    "correct": false
+                },
+                {
+                    "option": "repérer la distance depuis Paris",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Équateur",
+            "q": "Qu'est ce que l'__équateur__ ?",
+            "a": [
+                {
+                    "option": "Un autre nom du pôle Sud",
+                    "correct": false
+                },
+                {
+                    "option": "Une ligne imaginaire qui sépare la moitié Ouest de la moitié Est",
+                    "correct": false
+                },
+                {
+                    "option": "Une ligne imaginaire qui sépare l'hémisphère Nord de l'Hémisphère Sud",
+                    "correct": true
+                },
+                {
+                    "option": "La dernière couche de l'atmosphère terrestre.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Latitude",
+            "q": "La __latitude__ d'un point sur Terre est :",
+            "a": [
+                {
+                    "option": "Une mesure d'angle entre l'équateur et le parallèle sur lequel est situé le point",
+                    "correct": true
+                },
+                {
+                    "option": "Une mesure d'angle entre le méridien de Greenwich et le méridien sur lequel est situé le point",
+                    "correct": false
+                },
+                {
+                    "option": "Une mesure en mètre entre le niveau moyen de la mer et le niveau où est situé le point",
+                    "correct": false
+                },
+                {
+                    "option": "Une mesure d'angle entre l'équateur et le méridien sur lequel est situé le point",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Longitude",
+            "q": "La __longitude__ d'un point sur Terre est :",
+            "a": [
+                {
+                    "option": "Une mesure d'angle entre l'équateur et le parallèle sur lequel est situé le point",
+                    "correct": false
+                },
+                {
+                    "option": "Une mesure d'angle entre le méridien de Greenwich et le méridien sur lequel est situé le point",
+                    "correct": true
+                },
+                {
+                    "option": "Une mesure en mètre entre le niveau moyen de la mer et le niveau où est situé le point",
+                    "correct": false
+                },
+                {
+                    "option": "Une mesure d'angle entre l'équateur et le méridien sur lequel est situé le point",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Méridien de Greenwich",
+            "q": "Qu'est ce que le __méridien de Greenwich__ ?",
+            "a": [
+                {
+                    "option": "un autre nom de l'équateur",
+                    "correct": false
+                },
+                {
+                    "option": "Une ligne imaginaire qui sépare la moitié Ouest de la moitié Est",
+                    "correct": true
+                },
+                {
+                    "option": "Une ligne imaginaire qui sépare l'hémisphère Nord de l'Hémisphère Sud",
+                    "correct": false
+                },
+                {
+                    "option": "La dernière couche de l'atmosphère terrestre.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Trilatération",
+            "q": "Quelles affirmations sont vraies concernant la __trilatération__ ? ",
+            "a": [
+                {
+                    "option": "C'est une méthode de calcul basée sur une mesure de distances",
+                    "correct": true
+                },
+                {
+                    "option": "C'est une méthode de calcul basée sur une mesure d'angle",
+                    "correct": false
+                },
+                {
+                    "option": "Nécessite au moins les données de 3 satellites",
+                    "correct": true
+                },
+                {
+                    "option": "Nécessite les données d'un ou 2 satellites",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
