@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz IT-Q1</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz IT-Q1 - Internet",
+        "main": "Sujet : Composants d'un réseau et d'Internet",
+        "token": "cfcefd"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Interconnexions",
+            "q": "Pourquoi a-t-on besoin de faire des __interconnexions__ ?",
+            "a": [
+                {
+                    "option": "pour faciliter le stockage d'informations",
+                    "correct": false
+                },
+                {
+                    "option": "pour connecter le maximum d'appareils entre eux sans multiplier les fils",
+                    "correct": true
+                },
+                {
+                    "option": "pour faciliter les impressions et le stockage sur des périphériques",
+                    "correct": false
+                },
+                {
+                    "option": "pour multiplier les types de média",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Switch",
+            "q": "Un réseau local passe par un switch (commutateur).",
+            "a": [
+                {
+                    "option": "Vrai",
+                    "correct": true
+                },
+                {
+                    "option": "Faux",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Routeur",
+            "q": "Un routeur ...",
+            "a": [
+                {
+                    "option": "interconnecte des réseaux",
+                    "correct": true
+                },
+                {
+                    "option": "répond aux requêtes HTTP envoyées par les navigateurs clients",
+                    "correct": false
+                },
+                {
+                    "option": "contient la correspondance entre des noms de machine et des adresses IP",
+                    "correct": false
+                },
+                {
+                    "option": "achemine les paquets en fonction de l'adresse IP de destination",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Modèle réseau",
+            "q": "Sur quelle relation fondamentale reposent les interconnexions au sein d'un réseau ?",
+            "a": [
+                {
+                    "option": "la relation client-serveur",
+                    "correct": true
+                },
+                {
+                    "option": "la relation de Chasles",
+                    "correct": false
+                },
+                {
+                    "option": "la relation d'Einstein",
+                    "correct": false
+                },
+                {
+                    "option": "la relation de Berner Lee",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Client / Serveur",
+            "q": "Quelles affirmation sont vraies concernant les notions d'__hôte client__ et __hôte serveur__ ?",
+            "a": [
+                {
+                    "option": "Un hôte client utilise un logiciel pour envoyer des\nrequêtes.",
+                    "correct": true
+                },
+                {
+                    "option": "Un hôte serveur utilise un logiciel pour traiter des\nrequêtes et envoyer une réponse.",
+                    "correct": true
+                },
+                {
+                    "option": "Ce sont 2 notions équivalentes, seule la vitesse du réseau est différente.",
+                    "correct": false
+                },
+                {
+                    "option": "Un hôte serveur utilise un logiciel pour envoyer des\nrequêtes.",
+                    "correct": false
+                },
+                {
+                    "option": "Un hôte client utilise un logiciel pour traiter des\nrequêtes et envoyer une réponse.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Internet",
+            "q": "Pourquoi parle-t-on d'Internet comme le réseau des réseaux ?",
+            "a": [
+                {
+                    "option": "Parce que c'est un réseau qui interconnecte des réseaux entre eux.",
+                    "correct": true
+                },
+                {
+                    "option": "Parce que c'est le réseau le plus important.",
+                    "correct": false
+                },
+                {
+                    "option": "Parce que c'est grâce à lui que la notion de réseau a été définie.",
+                    "correct": false
+                },
+                {
+                    "option": "Parce qu'il est interne à la planète Terre",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Internet",
+            "q": "Que signifie \"Internet\" ?",
+            "a": [
+                {
+                    "option": "Interconnexion de réseaux",
+                    "correct": true
+                },
+                {
+                    "option": "Réseau international",
+                    "correct": false
+                },
+                {
+                    "option": "Filet international",
+                    "correct": false
+                },
+                {
+                    "option": "Réseau interne",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Date de création Internet",
+            "q": "Quelle est la date de création du réseau Internet ?",
+            "a": [
+                {
+                    "option": "1969",
+                    "correct": false
+                },
+                {
+                    "option": "1989",
+                    "correct": false
+                },
+                {
+                    "option": "1983",
+                    "correct": true
+                },
+                {
+                    "option": "1971",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Ancêtre d'Internet",
+            "q": "Qui est l'ancêtre d'Internet ?\n\n![Ancêtre d'Internet](./assets/reseau.png)",
+            "a": [
+                {
+                    "option": "Arpanet",
+                    "correct": true
+                },
+                {
+                    "option": "Intranet",
+                    "correct": false
+                },
+                {
+                    "option": "Extranet",
+                    "correct": false
+                },
+                {
+                    "option": "Cyclade",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Internet = Web ?",
+            "q": "Le terme Web est-il synonyme d'Internet ?",
+            "a": [
+                {
+                    "option": "Non, le Web est l'un des usages d'Internet mais il en existe beaucoup d'autres.",
+                    "correct": true
+                },
+                {
+                    "option": "Oui, Internet, c'est le Web.",
+                    "correct": false
+                },
+                {
+                    "option": "Non, ce n'est pas un synonyme, mais pour l'essentiel, c'est la même chose.",
+                    "correct": false
+                },
+                {
+                    "option": "Oui, Web est le terme anglais pour Internet",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

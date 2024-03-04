@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz IT-Q2</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz IT-Q2 - Internet",
+        "main": "Sujet : Les protocoles d'Internet",
+        "token": "5a66d4"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Protocoles d'Internet",
+            "q": "Sélectionner des protocoles d'Internet",
+            "a": [
+                {
+                    "option": "TCP",
+                    "correct": true
+                },
+                {
+                    "option": "UDP",
+                    "correct": true
+                },
+                {
+                    "option": "IP",
+                    "correct": true
+                },
+                {
+                    "option": "UMP",
+                    "correct": false
+                },
+                {
+                    "option": "PSG",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Protocole IP",
+            "q": "Que définit le protocole IP (« Internet Protocol ») ?",
+            "a": [
+                {
+                    "option": "La procédure de standardisation de l'internet",
+                    "correct": false
+                },
+                {
+                    "option": "Les autorisations légales des échanges au niveau international sur l'internet  ",
+                    "correct": false
+                },
+                {
+                    "option": "Le fonctionnement de l'internet dans son ensemble",
+                    "correct": false
+                },
+                {
+                    "option": "Le format des paquets échangés et des adresses des ordinateurs sur l'internet",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Format adresse IPv4",
+            "q": "Sur combien d'octets les adresses en IPv4 sont-elles codées ?",
+            "a": [
+                {
+                    "option": "4 octets",
+                    "correct": true
+                },
+                {
+                    "option": "256 octets",
+                    "correct": false
+                },
+                {
+                    "option": "32 octets",
+                    "correct": false
+                },
+                {
+                    "option": "8 octets",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Adresse IP",
+            "q": "En Ip (version 4), de combien d'adresses IP différentes dispose-t-on ?",
+            "a": [
+                {
+                    "option": "1024 = 256 + 256 + 256 + 256",
+                    "correct": false
+                },
+                {
+                    "option": "256",
+                    "correct": false
+                },
+                {
+                    "option": "4 294 967 296 = 256 * 256 * 256 * 256",
+                    "correct": true
+                },
+                {
+                    "option": "Une infinité",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Validité de l'adresse IP",
+            "q": "Sélectionner les adresses IP syntaxiquement correctes",
+            "a": [
+                {
+                    "option": "172.16.0.5",
+                    "correct": true
+                },
+                {
+                    "option": "89.301.20.10",
+                    "correct": false
+                },
+                {
+                    "option": "256.10.11.12",
+                    "correct": false
+                },
+                {
+                    "option": "192.168.220.10",
+                    "correct": true
+                },
+                {
+                    "option": "255.255.255.0",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Envoi de message",
+            "q": "Pour qu'un message puisse être envoyé, il faut qu'il transite par plusieurs nœuds nommés routeurs.",
+            "a": [
+                {
+                    "option": "Vrai",
+                    "correct": true
+                },
+                {
+                    "option": "Faux",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Transmission dans un réseau",
+            "q": "Comment les informations sont-elles transmises dans un réseau, notamment Internet ?",
+            "a": [
+                {
+                    "option": "par paquets numérotés",
+                    "correct": true
+                },
+                {
+                    "option": "par paquets non numérotés",
+                    "correct": false
+                },
+                {
+                    "option": "par unités entières",
+                    "correct": false
+                },
+                {
+                    "option": "par unités groupées d'un même réseau",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Découpage des données",
+            "q": "Pourquoi faut-il découper les données pour les envoyer sur Internet ?",
+            "a": [
+                {
+                    "option": "Pour empêcher les hackeurs d’accéder aux données et protéger la vie privée des internautes",
+                    "correct": false
+                },
+                {
+                    "option": "Pour fluidifier le trafic en évitant les paquets de données trop volumineux qui pourrait encombrer les routeur",
+                    "correct": true
+                },
+                {
+                    "option": "Pour tester tous les routeurs possible entre l’expéditeur est le destinataire",
+                    "correct": false
+                },
+                {
+                    "option": "Pour une raison historique liée aux câbles utilisés à l'époque de la création d'Internet",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Transmission d'un fichier",
+            "q": "Les fichiers envoyés sont divisés en paquets distincts en fonction du contenu.",
+            "a": [
+                {
+                    "option": "Vrai",
+                    "correct": false
+                },
+                {
+                    "option": "Faux",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Différences TCP et IP",
+            "q": "Quelle est la différence entre TCP et IP ?",
+            "a": [
+                {
+                    "option": "TCP définit les règles de transmission alors qu'IP définit des règles de communication.",
+                    "correct": true
+                },
+                {
+                    "option": "TCP établit des règles de communication et IP des règles de transmission.",
+                    "correct": false
+                },
+                {
+                    "option": "Il n'y a pas de différence entre les deux, on peut utiliser l'un à la place de l'autre.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Protocole TCP",
+            "q": "Le protocole TCP ...",
+            "a": [
+                {
+                    "option": "est défini dans la couche Physique du modèle  TCP/IP",
+                    "correct": false
+                },
+                {
+                    "option": "est défini dans la couche Transport du modèle TCP/IP",
+                    "correct": true
+                },
+                {
+                    "option": "n'utilise pas un système d'accusé réception des paquets entre les hôtes d'un réseau",
+                    "correct": false
+                },
+                {
+                    "option": "est une méthode fiable de transport des données sur un réseau",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Protocole UDP",
+            "q": "Le protocole UDP ...",
+            "a": [
+                {
+                    "option": "n'utilise pas un système d'accusé réception des paquets entre les hôtes d'un réseau",
+                    "correct": true
+                },
+                {
+                    "option": "est un mode de transport plus lent que le protocole TCP",
+                    "correct": false
+                },
+                {
+                    "option": "est un mode de transport plus rapide que le protocole TCP",
+                    "correct": true
+                },
+                {
+                    "option": "est une méthode fiable de transport des données sur un réseau",
+                    "correct": false
+                }
+            ]
+        }
+    ]};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
