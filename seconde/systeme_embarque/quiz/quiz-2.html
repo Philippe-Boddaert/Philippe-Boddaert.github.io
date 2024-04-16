@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz SE-Q2</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz SE-Q2 - Système embarqué",
+        "main": "Sujet : Manipulation d'un système embarqué",
+        "token": "56234b"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Carte micro:bit",
+            "q": "Pour quelles raisons est-il possible de considérer une carte micro:bit comme un système embarqué ?",
+            "a": [
+                {
+                    "option": "La carte comporte des capteurs permettant d'acquérir des données",
+                    "correct": true
+                },
+                {
+                    "option": "La carte comporte des actionneurs permettant d'enclencher un mécanisme physique",
+                    "correct": true
+                },
+                {
+                    "option": "La carte comporte un système d'exploitation",
+                    "correct": false
+                },
+                {
+                    "option": "La carte dispose d'un processeur permettant d'exécuter des programmes",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Capteurs d'une carte micro:bit",
+            "q": "Quels sont les __capteurs__ de la carte micro:bit ?\n\n![](./assets/microbit.png)",
+            "a": [
+                {
+                    "option": "25 LED lights",
+                    "correct": false
+                },
+                {
+                    "option": "2 buttons",
+                    "correct": true
+                },
+                {
+                    "option": "accelerometer",
+                    "correct": true
+                },
+                {
+                    "option": "compass",
+                    "correct": true
+                },
+                {
+                    "option": "processor",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Actionneurs d'une carte micro:bit",
+            "q": "Quels sont les __actionneurs__ de la carte micro:bit ?\n\n![](./assets/microbit.png)",
+            "a": [
+                {
+                    "option": "25 LED lights",
+                    "correct": true
+                },
+                {
+                    "option": "2 buttons",
+                    "correct": false
+                },
+                {
+                    "option": "accelerometer",
+                    "correct": false
+                },
+                {
+                    "option": "compass",
+                    "correct": false
+                },
+                {
+                    "option": "processor",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Programmation d'une carte micro:bit",
+            "q": "Quel effet du programme lors de son exécution sur une carte micro:bit ?\n\n```python\nfrom microbit import *\n\ndisplay.scroll(\"S.N.T\")\n```",
+            "a": [
+                {
+                    "option": "Le texte S.N.T défile une fois sur les LEDs de la carte et plus rien ne se passe",
+                    "correct": true
+                },
+                {
+                    "option": "Le texte S.N.T défile sur les LEDs de la carte en boucle infinie",
+                    "correct": false
+                },
+                {
+                    "option": "Le texte S.N.T s'affiche sur la console de l'éditeur Python",
+                    "correct": false
+                },
+                {
+                    "option": "Aucune de ces réponses",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Programmation d'une carte micro:bit",
+            "q": "Quel est l'effet du programme suivant lors de son exécution sur une carte micro:bit ?\n\n```python\nfrom microbit import *\nfor i in range(5):\n    x = str(i)\n    display.show(x)\n    sleep(500)\n    display.clear()\n    sleep(500)\n```\n",
+            "a": [
+                {
+                    "option": "Affiche un décompte de 0 à 4",
+                    "correct": true
+                },
+                {
+                    "option": "Affiche un décompte de 4 à 0",
+                    "correct": false
+                },
+                {
+                    "option": "Affiche un décompte de 0 à 5",
+                    "correct": false
+                },
+                {
+                    "option": "Affiche un décompte de 1 à 5",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Programmation d'une carte micro:bit",
+            "q": "Quelle est l'image affichée lors de l'exécution du programme suivant sur une carte micro:bit ?\n\n```python\nfrom microbit import *\nmystere = Image(\"00000:09090:00000:09990:90009\")\n\nwhile True:\n    display.show(mystere)\n```",
+            "a": [
+                {
+                    "option": "![](./assets/led_A.png)",
+                    "correct": true
+                },
+                {
+                    "option": "![](./assets/led_B.png)",
+                    "correct": false
+                },
+                {
+                    "option": "![](./assets/led_C.png)",
+                    "correct": false
+                },
+                {
+                    "option": "![](./assets/led_D.png)",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Programmation d'un système embarqué",
+            "q": "Que va faire le programme suivant une fois exécuté par une carte micro:bit ?\n\n```python\nfrom microbit import *\nlancer = True\nwhile lancer:\n    if button_a.is_pressed():\n        display.show(Image.HAPPY)\n    elif button_b.is_pressed():\n        lancer = False\n    else:\n        display.show(Image.SAD)\ndisplay.clear()\n```",
+            "a": [
+                {
+                    "option": "Si les boutons A et B sont pressés en même temps, alors l'image HAPPY apparaît.",
+                    "correct": false
+                },
+                {
+                    "option": "Si le bouton A est pressé, puis le bouton B est pressé, alors l'image HAPPY apparaît.",
+                    "correct": false
+                },
+                {
+                    "option": "Si le bouton A est pressé, alors l'image HAPPY apparaît.",
+                    "correct": true
+                },
+                {
+                    "option": "Si le bouton B est pressé, alors l'image SAD apparaît.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Programmation d'une carte micro:bit",
+            "q": "Quelles affirmations sont vraies concernant le programme suivant ?\n\n```python\nfrom microbit import *\n\nwhile True:\n    gesture = accelerometer.current_gesture()\n    if gesture == \"shake\":\n        display.show(\"X\")\n        sleep(100)\n    display.clear()\n```\n",
+            "a": [
+                {
+                    "option": "La 4ème ligne de code fait référence à un actionneur",
+                    "correct": false
+                },
+                {
+                    "option": "La 4ème ligne de code fait référence à un capteur",
+                    "correct": true
+                },
+                {
+                    "option": "Un X est affiché lorsque l'on secoue la carte micro:bit",
+                    "correct": true
+                },
+                {
+                    "option": "Un X est affiché lorsque l'on appuie sur le bouton A de la carte micro:bit",
+                    "correct": false
+                },
+                {
+                    "option": "La 7ème ligne indique que la carte fait une pause de 100 secondes",
+                    "correct": false
+                },
+                {
+                    "option": "La 7ème ligne indique que la carte fait une pause de 100 millisecondes",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Programmation d'un thermostat connecté",
+            "q": "Ci-dessous le programme gérant un thermostat connecté.\n\n```python\nwhile True :\n    tempExt = temperatureExterieure()\n    tempInt = temperatureInterieure()\n    ..........................................\n        radiateur.run()\n    else :\n        radiateur.sleep()\n```\n\nOn veut compléter le programme pour que le radiateur ne se mette en marche que dans le cas où la température extérieure est inférieure à 18°C et est supérieure à celle intérieur.\n\nQuelle instruction est correcte pour répondre au besoin ?",
+            "a": [
+                {
+                    "option": "if tempInt < 18 and tempInt > tempExt:",
+                    "correct": false
+                },
+                {
+                    "option": "if tempExt < 18 and tempExt > tempInt:",
+                    "correct": true
+                },
+                {
+                    "option": "if tempExt < 18 or tempExt < tempInt:",
+                    "correct": false
+                },
+                {
+                    "option": "if tempExt < 18 or tempExt > tempInt:",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
