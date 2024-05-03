@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz - Algorithmes gloutons</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz - Algorithmes gloutons",
+        "main": "Sujet : Principe de l'approche gloutonne",
+        "token": "abc4e6"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition",
+            "q": "Qu’est-ce qu’un algorithme glouton ?",
+            "a": [
+                {
+                    "option": "C’est un algorithme qui suit le principe de faire, étape par étape, un choix optimum local.",
+                    "correct": true
+                },
+                {
+                    "option": "C’est un algorithme qui tente de faire une optimisation globale.",
+                    "correct": false
+                },
+                {
+                    "option": "C’est un algorithme qui optimise les temps de calcul.",
+                    "correct": true
+                },
+                {
+                    "option": "C’est un algorithme qui prend la meilleure solution parmi toutes les solutions possibles.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Caractéristique Algorithme glouton",
+            "q": "Un algorithme glouton donne toujours :",
+            "a": [
+                {
+                    "option": "La solution optimale à un problème",
+                    "correct": false
+                },
+                {
+                    "option": "Une solution en un temps relativement court",
+                    "correct": true
+                },
+                {
+                    "option": "Toutes les solutions",
+                    "correct": false
+                },
+                {
+                    "option": "Une solution en un temps relativement long",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Problème du sac à dos",
+            "q": "Le problème du sac à dos modélise la situation où l'on souhaite remplir un sac à dos d’objets en __maximisant la valeur__ des objets et en ne dépassant pas la __capacité maximale__ du sac.\n\nConsidérons l'algorithme explorant l'ensemble des combinaisons possibles pour déterminer une solution optimale.\n\nQuelle est la __complexité__ de cet algorithme en considérant $n$ le nombre d'objets possibles ?",
+            "a": [
+                {
+                    "option": "$\\mathcal{O}(n!)$",
+                    "correct": false
+                },
+                {
+                    "option": "$\\mathcal{O}(n^2)$.",
+                    "correct": false
+                },
+                {
+                    "option": "$\\mathcal{O}(2^n)$",
+                    "correct": true
+                },
+                {
+                    "option": "$\\mathcal{O}(n)$.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Rendu de monnaie",
+            "q": "Pour le jeu de pièces de valeurs $(6,4,1)$ et pour une somme $S=8$ , choisir ce que renvoie l’algorithme glouton parmi les solution suivantes :",
+            "a": [
+                {
+                    "option": "6 + 1 + 1",
+                    "correct": true
+                },
+                {
+                    "option": "4 + 4",
+                    "correct": false
+                },
+                {
+                    "option": "1 + 1 + 1 + 1 + 1 + 1 + 1 + 1",
+                    "correct": false
+                },
+                {
+                    "option": "Rien",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Déménagement",
+            "q": "On remplit un camion de déménagement de 16 mètres cubes avec des palettes de volumes 10, 8, 5, 3, 1 mètres cubes. \n\nEn raisonnant suivant un algorithme glouton, choisissez la combinaison que vous obtenez.",
+            "a": [
+                {
+                    "option": "Des palettes de 8 $m^3$, 5 $m^3$, 3 $m^3$",
+                    "correct": false
+                },
+                {
+                    "option": "Des palettes de 10 $m^3$, 5 $m^3$, 1 $m^3$",
+                    "correct": true
+                },
+                {
+                    "option": "Des palettes de 10 $m^3$, 3 $m^3$, 3 $m^3$",
+                    "correct": false
+                },
+                {
+                    "option": "Des palettes de 5 $m^3$, 5 $m^3$, 3 $m^3$, 3 $m^3$",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz - Dichotomie</title>
+    
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+    
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+    
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+    
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+    
+            <!-- where the quiz gets built -->
+        </div>
+    
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+    
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+    
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz - Dichotomie",
+        "main": "Sujet : Principe de la recherche par dichotomie.",
+        "token": "2a8d14"
+    },
+    "questions": [
+    {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Dichotomie",
+            "q": "Pour pouvoir utiliser un algorithme de recherche par dichotomie dans un tableau, quelle précondition doit être vraie ?",
+            "a": [
+                {
+                    "option": "Le tableau doit être trié",
+                    "correct": true
+                },
+                {
+                    "option": "Le tableau ne doit pas comporter de doublons",
+                    "correct": false
+                },
+                {
+                    "option": "Le tableau doit comporter uniquement des entiers positifs",
+                    "correct": false
+                },
+                {
+                    "option": "Le tableau doit être de longueur inférieure à 1024",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nombre de comparaisons",
+            "q": "La fonction ci-dessous permet d’effectuer une recherche par dichotomie de l’index $m$ de l’élément $x$ dans un tableau $t$ de valeurs distinctes et triées.\n\n```python\ndef dicho(x,t):\n    g = 0\n    d = len(t)-1\n    while g <= d:\n        m = (g+d)//2\n        if t[m] == x:\n            return m\n        elif t[m] < x:\n            g = m+1\n        else:\n            d = m-1\n  return None\n```\n\nCombien de fois la cinquième ligne du code de la fonction (m = (g+d)//2) sera-t-elle exécutée dans l'appel dicho(32, [4, 5, 7, 25, 32, 50, 51, 60]) ?",
+            "a": [
+                {
+                    "option": "1",
+                    "correct": false
+                },
+                {
+                    "option": "2",
+                    "correct": false
+                },
+                {
+                    "option": "3",
+                    "correct": true
+                },
+                {
+                    "option": "4",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Opérations dichotomie",
+            "q": "En utilisant une recherche dichotomique, combien faut-il de comparaisons avec l'opérateur == pour trouver une valeur dans un tableau trié de 1000 nombres, dans le pire cas ?",
+            "a": [
+                {
+                    "option": "3",
+                    "correct": false
+                },
+                {
+                    "option": "10",
+                    "correct": true
+                },
+                {
+                    "option": "1000",
+                    "correct": false
+                },
+                {
+                    "option": "1024",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Dichotomie - Pire des cas",
+            "q": "Un algorithme de recherche dichotomique dans un tableau trié de taille $n$ nécessite, dans le pire des cas, exactement $k$ comparaisons.\n\nCombien cet algorithme va-t-il utiliser, dans le pire des cas, de comparaisons sur un tableau de taille $2n$ ?",
+            "a": [
+                {
+                    "option": "$k$",
+                    "correct": false
+                },
+                {
+                    "option": "$k + 1$",
+                    "correct": true
+                },
+                {
+                    "option": "$2k$",
+                    "correct": false
+                },
+                {
+                    "option": "$2k + 1$",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nombre de comparaisons",
+            "q": "Avec un algorithme de recherche par dichotomie, combien de comparaisons sont-elles nécessaires pour s’assurer que 22 n’est pas dans le tableau suivant :\n\n```python\n[1, 5, 9, 12, 20, 21, 24, 32, 35, 40, 41, 47, 53, 60, 70]\t\n```",
+            "a": [
+                {
+                    "option": "2",
+                    "correct": false
+                },
+                {
+                    "option": "4",
+                    "correct": true
+                },
+                {
+                    "option": "7",
+                    "correct": false
+                },
+                {
+                    "option": "13",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Trouver une date d'anniversaire",
+            "q": "Un professeur souhaite que ses élèves lui fassent un cadeau le jour de son anniversaire.\n\nPour connaitre cette date, il propose à ses élèves de la deviner grâce au procédé de recherche dichotomique.\n\nIl y a 365 jours dans une année et les jours peuvent être représentés comme un tableau, dont un extrait est reproduit ici :\n\n| Indice | Jour correspondant |\n| :--: | :--: |\n| 0 | 1er Janvier |\n| 1 | 2 Janvier |\n| 2 | 3 Janvier |\n| ... | ... |\n| 364 | 31 Décembre |\n\nTrouver la date d'anniversaire du professeur consiste à trouver le paramètre $x$ en entrée de l'algorithme.\n\nLes réponses du professeur sont reproduites dans le tableau de valeurs d'exécution de l'algorithme de recherche dichotomique :\n\n| debut | fin  |  m   |  Réponse du professeur   |\n| :---: | :--: | :--: | :----------------------: |\n| 0 | 364 | 182 | C'est moins que $m$ |\n| ... | ... | ... | C'est moins que $m$ |\n| ... | ... | ... | C'est plus que $m$ |\n| ... | ... | ... | C'est moins que $m$ |\n| ... | ... | ... | C'est plus que $m$ |\n| ... | ... | ... | C'est moins que $m$ |\n| ... | ... | ... | C'est plus que $m$ |\n| ... | ... | ... | $m$ est le bon indice !! |\n\n Quelle est la date d'anniversaire du professeur ?",
+            "a": [
+                {
+                    "option": "Le 60ème jour de l'année",
+                    "correct": true
+                },
+                {
+                    "option": "Le 59ème jour de l'année",
+                    "correct": false
+                },
+                {
+                    "option": "Le 1er jour de l'année",
+                    "correct": false
+                },
+                {
+                    "option": "Le 154ème jour de l'année",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
