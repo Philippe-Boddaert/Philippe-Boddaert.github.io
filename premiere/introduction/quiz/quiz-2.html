@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz Markdown</title>
+
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+
+            <!-- where the quiz gets built -->
+        </div>
+
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz Introduction - Langage Markdown",
+        "main": "Sujet : La syntaxe du Langage Markdown",
+        "token": "efa2b0"
+    },
+    "questions": [
+        {
+             "correct":"Réponse correcte",
+             "incorrect":"Réponse incorrecte",
+             "n":"Langage Markdown",
+             "q":"Markdown est un langage de balisage.\n\nQu'est-ce qu'un langage de balisage ?",
+             "a":[
+                {
+                   "option":"Un langage permettant de définir la mise en forme du texte",
+                   "correct":true
+                },
+                {
+                   "option":"Un langage permettant d'effectuer des calculs",
+                   "correct":false
+                },
+                {
+                   "option":"Un langage permettant de décrire des objets",
+                   "correct":false
+                },
+                {
+                   "option":"Un langage permettant de convertir tout document en document texte",
+                   "correct":false
+                }
+             ]
+          },
+          {
+             "correct":"Réponse correcte",
+             "incorrect":"Réponse incorrecte",
+             "n":"Balise de titre",
+             "q":"Soit la syntaxe en markdown suivante :\n\n```markdown\n# Sommaire\n## Définition\n## Exercices\n### Exercice 1\n### Exercice 2\n## Bilan\n```\n\nQuelles affirmations sont vraies ?",
+             "a":[
+                {
+                   "option":"Les textes sont affichés sous forme d'une liste ordonnée",
+                   "correct":false
+                },
+                {
+                   "option":"Les textes sont affichés sous forme de titres de niveaux différents",
+                   "correct":true
+                },
+                {
+                   "option":"Le texte `Exercice 1` est plus petit que le texte `Sommaire`",
+                   "correct":true
+                },
+                {
+                   "option":"Le texte `Exercice 1` est de même taille que le texte `Sommaire`",
+                   "correct":false
+                }
+             ]
+          },
+          {
+             "correct":"Réponse correcte",
+             "incorrect":"Réponse incorrecte",
+             "n":"Balise d'emphase",
+             "q":"Soit le texte suivant :\n\n\"L'Albatros est le deuxième poème de la deuxième édition du recueil Les Fleurs du mal de Charles Baudelaire.\"\n\nQuelle syntaxe permet de mettre _L'albatros_ en _italique_ ?",
+             "a":[
+                {
+                   "option":"`_L'albatros_`, (Soit entouré par un tiret bas)",
+                   "correct":true
+                },
+                {
+                   "option":"`__L'albatros__`, (Soit entouré par deux tirets bas)",
+                   "correct":false
+                },
+                {
+                   "option":"`#L'albatros`",
+                   "correct":false
+                },
+                {
+                   "option":"`<i>L'albatros</i>`",
+                   "correct":false
+                }
+             ]
+          },
+          {
+             "correct":"Réponse correcte",
+             "incorrect":"Réponse incorrecte",
+             "n":"Balise d'emphase",
+             "q":"Soit le texte suivant :\n\n\"L'Albatros est le deuxième poème de la deuxième édition du recueil Les Fleurs du mal de Charles Baudelaire.\"\n\nQuelle syntaxe permet de mettre __Charles Baudelaire__ en __gras__ ?\n",
+             "a":[
+                {
+                   "option":"`_Charles Baudelaire_`(Soit entouré par un tiret bas)",
+                   "correct":false
+                },
+                {
+                   "option":"`__Charles Baudelaire__`(Soit entouré par deux tirets bas)",
+                   "correct":true
+                },
+                {
+                   "option":"`#Charles Baudelaire`",
+                   "correct":false
+                },
+                {
+                   "option":"`<b>Charles Baudelaire</b>`",
+                   "correct":false
+                }
+             ]
+          },
+          {
+             "correct":"Réponse correcte",
+             "incorrect":"Réponse incorrecte",
+             "n":"Balise de liste",
+             "q":"Soit la liste de poèmes de Charles Baudelaire suivante :\n\n- Les Fleurs du mal\n- Le Spleen de Paris\n- Les paradis artificiels\n\nQuelle syntaxe en markdown permet d'obtenir ce résultat ?",
+             "a":[
+                {
+                   "option":"```markdown\n- Les Fleurs du mal\n- Le Spleen de Paris\n- Les paradis artificiels\n```",
+                   "correct":true
+                },
+                {
+                   "option":"```markdown\n_ Les Fleurs du mal\n_ Le Spleen de Paris\n_ Les paradis artificiels\n```",
+                   "correct":false
+                },
+                {
+                   "option":"```markdown\n$ Les Fleurs du mal\n$ Le Spleen de Paris\n$ Les paradis artificiels\n```",
+                   "correct":false
+                },
+                {
+                   "option":"```markdown\n1. Les Fleurs du mal\n2. Le Spleen de Paris\n3. Les paradis artificiels\n```",
+                   "correct":false
+                }
+             ]
+          },
+          {
+             "correct":"Réponse correcte",
+             "incorrect":"Réponse incorrecte",
+             "n":"Balise de tableaux",
+             "q":"Soit la syntaxe suivante permettant d'afficher un tableau :\n\n```markdown\n| Auteur | Oeuvre | Date de publication |\n| :-- | :-- | :--: |\n| Charles Baudelaire | Les Fleurs du mal | 1857 | \n| Paul Verlaine | Poèmes saturniens | 1866 | \n| René Barjavel | Ravage | 1943 |\n```\n\nQuelles affirmations sont vraies ?",
+             "a":[
+                {
+                   "option":"Le tableau contient 3 lignes de données",
+                   "correct":true
+                },
+                {
+                   "option":"Le tableau contient 5 lignes de données",
+                   "correct":false
+                },
+                {
+                   "option":"Les données de la colonne Oeuvre sont centrées",
+                   "correct":false
+                },
+                {
+                   "option":"Les données de la colonne Oeuvre sont alignées à gauche",
+                   "correct":true
+                },
+                {
+                   "option":"Les données de la colonne Oeuvre sont alignées à droite",
+                   "correct":false
+                }
+             ]
+          },
+          {
+             "correct":"Réponse correcte",
+             "incorrect":"Réponse incorrecte",
+             "n":"Balise de lien",
+             "q":"Quelle syntaxe permet d'établir un lien vers le site de l'ENT disponible à l'url https://enthdf.fr/ ?",
+             "a":[
+                {
+                   "option":"```markdown\n[ENT](https://enthdf.fr/)\n```",
+                   "correct":true
+                },
+                {
+                   "option":"```markdown\n(ENT)[https://enthdf.fr/]\n```",
+                   "correct":false
+                },
+                {
+                   "option":"```markdown\n[https://enthdf.fr/](ENT)\n```",
+                   "correct":false
+                },
+                {
+                   "option":"```markdown\n(https://enthdf.fr/)[ENT]\n```",
+                   "correct":false
+                }
+             ]
+          }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

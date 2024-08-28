@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz Histoire de l'Informatique</title>
+
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+
+            <!-- where the quiz gets built -->
+        </div>
+
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz Introduction - Histoire de l'informatique",
+        "main": "Sujet : Les événements liés à l'Informatique",
+        "token": "3ebb52"
+    },
+    "questions": [
+    {"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Machine analytique","q":"Quelles affirmations sont vraies concernant la __machine analytique__ ?","a":[{"option":"Elle date de 1834","correct":true},{"option":"Elle date de 1945","correct":false},{"option":"Elle fut imaginée par Charles Babbage","correct":true},{"option":"Elle fut imaginée par Alan Turing","correct":false},{"option":"C'est la première machine à calculer programmable","correct":true},{"option":"C'est la première machine électronique","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Premiers algorithmes","q":"De quand datent les premiers algorithmes ?","a":[{"option":"830","correct":true},{"option":"1834","correct":false},{"option":"1945","correct":false},{"option":"1642","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Contributions d'Alan Turing","q":"Quelles sont les contributions d'__Alan Turing__ en __1936__ ?","a":[{"option":"Création du modèle de machine universelle (Machine de Turing)","correct":true},{"option":"Prouver que tout ne peut être codé","correct":true},{"option":"Décrypter les messages de la machine Enigma","correct":false},{"option":"Proposer un test d’intelligence artificielle fondée sur la faculté d'une machine à imiter la conversation humaine","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Création de l'ENIAC","q":"Quand fut créé l'__ENIAC__, le premier ordinateur entièrement électronique ?","a":[{"option":"1945","correct":true},{"option":"1836","correct":false},{"option":"1973","correct":false},{"option":"1981","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Création d'Arpanet","q":"Quelle est la date de création du réseau __Arpanet__ ?","a":[{"option":"1969","correct":true},{"option":"1983","correct":false},{"option":"1990","correct":false},{"option":"1945","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Création d'Internet","q":"Quelle est la date de création du réseau __Internet__ ?","a":[{"option":"1969","correct":false},{"option":"1983","correct":true},{"option":"1990","correct":false},{"option":"1945","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Création du microprocesseur","q":"Quand fut créé le __premier microprocesseur__ ?","a":[{"option":"1971","correct":true},{"option":"1969","correct":false},{"option":"1983","correct":false},{"option":"1945","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Premier micro-ordinateur","q":"Quelles affirmations sont vraies concernant le __premier micro-ordinateur__ ?","a":[{"option":"Il fut créé en 1973","correct":true},{"option":"Il fut créé en 1945","correct":false},{"option":"Son nom est le Micral","correct":true},{"option":"Son nom est l'ENIAC","correct":false},{"option":"Son inventeur est François Grenelle","correct":true},{"option":"Son inventeur est Jacques Perret","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Premier site Web","q":"Qui a créé le __premier site Web__ ?","a":[{"option":"Tim Berners-Lee","correct":true},{"option":"Mark Zuckerberg","correct":false},{"option":"Bill Gates","correct":false},{"option":"Steve Jobs","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Premier ordinateur portable","q":"Quel est le nom du __premier ordinateur portable__ ?","a":[{"option":"Le Micral","correct":false},{"option":"L'Osborne 1","correct":true},{"option":"L'ENIAC","correct":false},{"option":"Le MacBook","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Création du langage Python","q":"Quand fut créé le langage __Python__ ?","a":[{"option":"1991","correct":true},{"option":"1983","correct":false},{"option":"1954","correct":false},{"option":"2001","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Découvert le premier Bug","q":"Quand fut découvert le __premier Bug informatique__ ?","a":[{"option":"1947","correct":true},{"option":"1954","correct":false},{"option":"1991","correct":false},{"option":"1986","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Premier programme informatique","q":"De quand date le __premier programme informatique__ ?","a":[{"option":"1842","correct":true},{"option":"1945","correct":false},{"option":"1936","correct":false},{"option":"1954","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Première machine à calculer mécanique","q":"De quand date la __première machine à calculer mécanique__ ?","a":[{"option":"1645","correct":true},{"option":"830","correct":false},{"option":"1836","correct":false},{"option":"1969","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Mot ordinateur","q":"Quand fut défini le __mot ordinateur__ ?","a":[{"option":"1945","correct":false},{"option":"1955","correct":true},{"option":"1962","correct":false},{"option":"1834","correct":false}]},{"correct":"Réponse correcte","incorrect":"Réponse incorrecte","n":"Mot informatique","q":"Quand fut défini le mot __informatique__ ?","a":[{"option":"1945","correct":false},{"option":"1955","correct":false},{"option":"1962","correct":true},{"option":"830","correct":false}]}
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
