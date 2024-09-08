@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz Programmation - Les instructions conditionnelles</title>
+
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+
+            <!-- where the quiz gets built -->
+        </div>
+
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz Programmation - Les instructions conditionnelles",
+        "main": "Sujet : Les instructions conditionnelles en programmation",
+        "token": "ef64b7"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Évaluation d'une expression",
+            "q": "Si a=31 et b=19 alors la condition logique a > b est :",
+            "a": [
+                {
+                    "option": "Vrai",
+                    "correct": true
+                },
+                {
+                    "option": "Faux",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Test d'égalité",
+            "q": "Soit le programme incomplet : \n\n```python\nscore = 14\n\nif score ... 30:\n    print(\"Le match est fini\")\n```\n\nPar quel instruction faut-il remplacer les ... pour tester l'égalité du score à la valeur indiquée ?",
+            "a": [
+                {
+                    "option": "=",
+                    "correct": false
+                },
+                {
+                    "option": "==",
+                    "correct": true
+                },
+                {
+                    "option": "equals",
+                    "correct": false
+                },
+                {
+                    "option": "←",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition - Else",
+            "q": "Dans une structure conditionnelle, que signifie l'instruction `else` ?",
+            "a": [
+                {
+                    "option": "Elle spécifie une nouvelle condition à tester si la première est vraie.",
+                    "correct": false
+                },
+                {
+                    "option": "Elle termine la structure conditionnelle.",
+                    "correct": false
+                },
+                {
+                    "option": "Elle exécute un bloc de code si aucune des conditions précédentes n'est vraie.",
+                    "correct": true
+                },
+                {
+                    "option": "Elle répète la condition jusqu'à ce qu'elle soit vraie.",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Évaluation de conditions",
+            "q": "Combien vaut la variable `x` à la fin de ce programme utilisant un test `if` ?\n\n```python\nx = 13\nif x < 4:\n    x = x + 1\nelse:\n    x = x + 5\n```",
+            "a": [
+                {
+                    "option": "14",
+                    "correct": false
+                },
+                {
+                    "option": "18",
+                    "correct": true
+                },
+                {
+                    "option": "5",
+                    "correct": false
+                },
+                {
+                    "option": "9",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Évaluation de conditions",
+            "q": "Combien vaut la variable `x` à la fin de ce programme utilisant un test `if` ?\n\n```python\nx = 15\nif x >= 3:\n    x = x + 5\nif x >= 12:\n    x = x + 5\n```",
+            "a": [
+                {
+                    "option": "15",
+                    "correct": false
+                },
+                {
+                    "option": "20",
+                    "correct": false
+                },
+                {
+                    "option": "25",
+                    "correct": true
+                },
+                {
+                    "option": "12",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Évaluation de conditions",
+            "q": "Combien vaut la variable `x` à la fin de ce programme utilisant un test `if` ?\n```python\nx=7\nif x >= 3:\n    x = x + 5\nif x > 8:\n    x = x + 2\n```",
+            "a": [
+                {
+                    "option": "14",
+                    "correct": true
+                },
+                {
+                    "option": "12",
+                    "correct": false
+                },
+                {
+                    "option": "11",
+                    "correct": false
+                },
+                {
+                    "option": "9",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Évaluation de conditions",
+            "q": "Soit le programme suivant :\n\n```python\na = 2\nb = 5\nif a > 8:\n    b = 10\nelif a > 6:\n    b = 3\n```\n\nQue vaut la valeur finale de la variable b ?",
+            "a": [
+                {
+                    "option": "3",
+                    "correct": false
+                },
+                {
+                    "option": "5",
+                    "correct": true
+                },
+                {
+                    "option": "10",
+                    "correct": false
+                },
+                {
+                    "option": "2",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Évaluation de conditions",
+            "q": "```python\na = 10\nif a < 5:\n    a = 20\nelif a < 100:\n    a = 500\nelif a < 1000:\n    a = 1\nelse:\n    a = 0\n```\n\nQue vaut la valeur finale de la variable a ?",
+            "a": [
+                {
+                    "option": "0",
+                    "correct": false
+                },
+                {
+                    "option": "1",
+                    "correct": false
+                },
+                {
+                    "option": "10",
+                    "correct": false
+                },
+                {
+                    "option": "20",
+                    "correct": false
+                },
+                {
+                    "option": "500",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Évaluation de conditions",
+            "q": "```python\na = 7\nb = 12\nif a > 5:\n    b = b - 4\nif b >= 10:\n    b = b + 1\n```\n\nQue vaut la valeur finale de la variable b ?",
+            "a": [
+                {
+                    "option": "8",
+                    "correct": false
+                },
+                {
+                    "option": "9",
+                    "correct": false
+                },
+                {
+                    "option": "12",
+                    "correct": false
+                },
+                {
+                    "option": "13",
+                    "correct": true
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
