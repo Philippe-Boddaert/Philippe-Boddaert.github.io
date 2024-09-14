@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz Définition Algorithmique</title>
+
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+
+            <!-- where the quiz gets built -->
+        </div>
+
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz Algorithmique - Définition",
+        "main": "Sujet : Définition et exécution d'algorithmes",
+        "token": "5df2de"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Premiers algorithmes",
+            "q": "De quand datent les premiers algorithmes ?",
+            "a": [
+                {
+                    "option": "830",
+                    "correct": true
+                },
+                {
+                    "option": "1834",
+                    "correct": false
+                },
+                {
+                    "option": "1945",
+                    "correct": false
+                },
+                {
+                    "option": "1642",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Définition Algorithme",
+            "q": "Qu'est-ce qu'un __algorithme__ ?",
+            "a": [
+                {
+                    "option": "Un algorithme est la description d'une suite d'étapes permettant d'obtenir un résultat à partir d'éléments fournis en entrée",
+                    "correct": true
+                },
+                {
+                    "option": "Un algorithme est un programme informatique dans un langage de programmation particulier",
+                    "correct": false
+                },
+                {
+                    "option": "Un algorithme est une technique utilisée par les mathématiciens pour résoudre uniquement les problèmes de géométrie",
+                    "correct": false
+                },
+                {
+                    "option": "Un algorithme est un graphique décrivant des valeurs particulières de variables utilisées par un programme informatique",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Affectation",
+            "q": "Soit l'extrait d'algorithme suivant :\n\n```txt\nDébut\n 1.  ...............\n 2. temperature <- 39.2\n 3.  ...............\nFin\n```\n\nQuelles affirmations sont vraies ?\n",
+            "a": [
+                {
+                    "option": "La ligne 2 est relative à une affectation",
+                    "correct": true
+                },
+                {
+                    "option": "La ligne 2 est relative à une attribution",
+                    "correct": false
+                },
+                {
+                    "option": "La ligne 2 est relative à une assignation",
+                    "correct": false
+                },
+                {
+                    "option": "A l'exécution de la ligne 2, la variable temperature vaut 39.2",
+                    "correct": true
+                },
+                {
+                    "option": "A l'exécution de la ligne 2, la variable temperature est comparée à la valeur 39.2",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Structure conditionnelle",
+            "q": "Soit l'extrait d'algorithme suivant :\n\n```txt\nDébut\n 1.  ...............\n 2.  ...............\n 3.  si temperature > 38 alors\n 4.   | prendre du paracétamol\n     fin\n 5.  ...............\n 6.  ...............\nFin\n```\n\nQuelle type de structure apparait entre les lignes 3 et 5 ?",
+            "a": [
+                {
+                    "option": "Une structure conditionnelle",
+                    "correct": true
+                },
+                {
+                    "option": "Une structure itérative",
+                    "correct": false
+                },
+                {
+                    "option": "Une affectation de variable",
+                    "correct": false
+                },
+                {
+                    "option": "Une structure circonstanciée",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Structure itérative",
+            "q": "Soit l'extrait d'algorithme suivant :\n\n```txt\nDébut\n 1.  ...............\n 2.  ...............\n 3.  pour i allant de 0 à 4 exclus faire\n 4.   | tourner la vis de 90°\n     fin\n 5.  ...............\n 6.  ...............\nFin\n```\n\nQuelle type de structure apparait entre les lignes 3 et 5 ?\n",
+            "a": [
+                {
+                    "option": "Une structure conditionnelle",
+                    "correct": false
+                },
+                {
+                    "option": "Une structure itérative bornée",
+                    "correct": true
+                },
+                {
+                    "option": "Une structure itérative non bornée",
+                    "correct": false
+                },
+                {
+                    "option": "\n\nUne structure circonstanciée",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Échange de 2 valeurs",
+            "q": "Soit l'algorithme __mystère__ suivant :\n\n```txt\nEntrées : a et b, deux réels\nSortie : ?\nDébut\n  c <- a\n  a <- b\n  b <- c\nFin\n``` \n\nPrenons a = 5 et b = 9 en entrées de l'algorithme.\n\nQuelles sont les valeurs de a et b à la fin de l'exécution de l'algorithme ?",
+            "a": [
+                {
+                    "option": "a = 5 et b = 9",
+                    "correct": false
+                },
+                {
+                    "option": "a = 9 et b = 5",
+                    "correct": true
+                },
+                {
+                    "option": "a = 5 et b = 5",
+                    "correct": false
+                },
+                {
+                    "option": "a = 9 et b = 9",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Suite d'opérations",
+            "q": "Soit l'algorithme mystère suivant :\n\n```txt\nEntrées : a, b et c trois réels\nSortie : ?\nDébut\n  c <- c + a\n  b <- c * b\n  a <- b - a\nFin\n```\n\nPrenons a = 1, b = 2 et c = 4 en entrées de l'algorithme.\n\nQuelles est la valeur de a à la fin de l'exécution de l'algorithme ?\n",
+            "a": [
+                {
+                    "option": "9",
+                    "correct": true
+                },
+                {
+                    "option": "1",
+                    "correct": false
+                },
+                {
+                    "option": "7",
+                    "correct": false
+                },
+                {
+                    "option": "3",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Échange de 2 valeurs",
+            "q": "Soit l'algorithme __mystère__ suivant :\n\n```txt\nEntrées : a et b, deux entiers positifs\nSortie : ?\nDébut\n  a <- a * b\n  b <- a / b\n  a <- a / b\nFin\n```\n\nPrenons a = 11 et b = 3 en entrées de l'algorithme.\n\nQuelles sont les valeurs de a et b à la fin de l'exécution de l'algorithme ?\n",
+            "a": [
+                {
+                    "option": "a = 11 et b = 3",
+                    "correct": false
+                },
+                {
+                    "option": "a = 3 et b = 11",
+                    "correct": true
+                },
+                {
+                    "option": "a = 33 et b = 33",
+                    "correct": false
+                },
+                {
+                    "option": "a = 3 / 11, soit 0,27 et b = 11 / 3, soit 3,66",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
