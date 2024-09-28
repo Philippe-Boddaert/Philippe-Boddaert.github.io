@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">
+
+        <title>Quiz Programmation - Les boucles bornées</title>
+
+        <link href="/assets/slick/css/reset.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/slick.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/assets/slick/css/master.css" media="screen" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markdown-it-texmath/css/texmath.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+        <script src="/assets/slick/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/markdown-it-texmath/texmath.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    </head>
+
+    <body id="slickQuiz">
+        <h1 class="quizName"><!-- where the quiz name goes --></h1>
+
+        <div class="quizArea">
+            <div class="quizHeader">
+                <!-- where the quiz main copy goes -->
+
+                <a class="button startQuiz" href="#">Démarrer</a>
+            </div>
+
+            <!-- where the quiz gets built -->
+        </div>
+
+        <div class="quizResults">
+            <h3 class="quizScore">Bonnes réponses : <span><!-- where the quiz score goes --></span></h3>
+
+            <h3 class="quizLevel"><strong>Rang:</strong> <span><!-- where the quiz ranking level goes --></span></h3>
+
+            <div class="quizResultsCopy">
+                <!-- where the quiz result copy goes -->
+            </div>
+        </div>
+        <script src="/assets/slick/js/slick.js"></script>
+        <script type="text/javascript">
+let quizJSON = {
+    "info": {
+        "name": "Quiz Programmation - Les boucles bornées",
+        "main": "Sujet : Les boucles bornées (FOR) en programmation",
+        "token": "c609f9"
+    },
+    "questions": [
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nombre d'itérations",
+            "q": "Combien de valeurs affiche ce programme ?\n\n```python\nfor i in range(4):\n    print(i)\n```",
+            "a": [
+                {
+                    "option": "4",
+                    "correct": true
+                },
+                {
+                    "option": "3",
+                    "correct": false
+                },
+                {
+                    "option": "1",
+                    "correct": false
+                },
+                {
+                    "option": "Aucune des réponses",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Affichage d'un programme",
+            "q": "Quelles sont les valeurs affichées par le programme suivant ?\n\n```python\nfor i in range(3):\n    print(i)\n```",
+            "a": [
+                {
+                    "option": "```python\ni\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```python\n0\n1\n2\n```",
+                    "correct": true
+                },
+                {
+                    "option": "```python\n1\n2\n3\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```python\n0\n1\n2\n3\n```",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nombre d'itérations",
+            "q": "Combien de valeurs affiche ce programme ?\n\n```python\nfor i in range(3, 6):\n    print(i)\n```",
+            "a": [
+                {
+                    "option": "1",
+                    "correct": false
+                },
+                {
+                    "option": "3",
+                    "correct": true
+                },
+                {
+                    "option": "4",
+                    "correct": false
+                },
+                {
+                    "option": "6",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Compteur",
+            "q": "Soit le programme incomplet suivant :\n\n```python\nfor i in ..............:\n    print(i)\n```\n\nQuel code permet d'afficher le résultat suivant ?\n```python\n0\n1\n2\n3\n4\n5\n```",
+            "a": [
+                {
+                    "option": "range(5)",
+                    "correct": false
+                },
+                {
+                    "option": "range(6)",
+                    "correct": true
+                },
+                {
+                    "option": "range(0, 5)",
+                    "correct": false
+                },
+                {
+                    "option": "6",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Accumulateur",
+            "q": "Combien vaudra la variable n à la fin de ce programme ?\n\n```python\nn = 0\nfor i in range(10):\n    n = n + 1\n```",
+            "a": [
+                {
+                    "option": "10",
+                    "correct": true
+                },
+                {
+                    "option": "9",
+                    "correct": false
+                },
+                {
+                    "option": "1",
+                    "correct": false
+                },
+                {
+                    "option": "11",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Accumulateur",
+            "q": "Combien vaudra la variable n à la fin de ce programme ?\n\n```python\nn = 4\nfor i in range(0, 8):\n    n = n + 1\n```",
+            "a": [
+                {
+                    "option": "5",
+                    "correct": false
+                },
+                {
+                    "option": "12",
+                    "correct": true
+                },
+                {
+                    "option": "11",
+                    "correct": false
+                },
+                {
+                    "option": "9",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Compte à rebours",
+            "q": "Quelles sont les valeurs affichées par le programme suivant ?\n\n```python\nfor i in range(3, -1, -1):\n    print(i)\n```\n",
+            "a": [
+                {
+                    "option": "```python\n3\n2\n1\n0\n```",
+                    "correct": true
+                },
+                {
+                    "option": "```python\n3\n2\n1\n0\n-1\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```python\n3\n2\n1\n```",
+                    "correct": false
+                },
+                {
+                    "option": "```python\n3\n2\n1\n0\n-1\n-2\n```",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Compte à rebours",
+            "q": "Soit le programme incomplet suivant :\n\n```python\nfor i in ..............:\n    print(i)\n```\n\nQuel code permet d'afficher le résultat suivant ?\n```python\n5\n4\n3\n2\n1\n```",
+            "a": [
+                {
+                    "option": "range(5, 1)",
+                    "correct": false
+                },
+                {
+                    "option": "range(5, 0)",
+                    "correct": false
+                },
+                {
+                    "option": "range(5, 0, -1)",
+                    "correct": true
+                },
+                {
+                    "option": "range(5, 1, -1)",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Affichage des nombres pairs",
+            "q": "On souhaite écrire un programme, utilisant une __boucle bornée__, permettant d'afficher les nombres __pairs__ de 0 à 10 inclus.\n\n```python\nfor i in ...................:\n    print(i)\n```\n\nLe résultat à obtenir est le suivant :\n\n```python\n0\n2\n4\n6\n8\n10\n```\n\nQuelle instruction permet d'obtenir le résultat ?",
+            "a": [
+                {
+                    "option": "range(0, 12, 2)",
+                    "correct": true
+                },
+                {
+                    "option": "range(0, 10, 2)",
+                    "correct": false
+                },
+                {
+                    "option": "range(12, 2)",
+                    "correct": false
+                },
+                {
+                    "option": "range(10, 2)",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Multiples de 3",
+            "q": "On souhaite écrire un programme, utilisant une __boucle bornée__, permettant d'afficher les __10 premiers multiples de 3__.\n\n```python\nfor i in ...................:\n    print(i)\n```\n\nLe résultat à obtenir est le suivant :\n\n```python\n0\n3\n6\n9\n12\n15\n18\n21\n24\n27\n```\n\nQuelle instruction permet d'obtenir le résultat ?",
+            "a": [
+                {
+                    "option": "range(0, 30, 3)",
+                    "correct": true
+                },
+                {
+                    "option": "range(0, 10, 3)",
+                    "correct": false
+                },
+                {
+                    "option": "range(30, 3)",
+                    "correct": false
+                },
+                {
+                    "option": "range(0, 30)",
+                    "correct": false
+                }
+            ]
+        }
+    ]
+};
+        </script>
+        <script src="/assets/slick/js/master.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
