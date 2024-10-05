@@ -47,10 +47,297 @@ let quizJSON = {
     "info": {
         "name": "Quiz Programmation - Les boucles non bornées",
         "main": "Sujet : Les boucles non bornées (WHILE) en programmation",
-        "token": ""
+        "token": "8dd13e"
     },
     "questions": [
-        
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Affichage d'un programme",
+            "q": "Quelles sont les valeurs affichées par le programme suivant ?\n\n```python\ni = 0\nwhile i <= 1:\n    print(i)\n    i = i + 1\n```\n\n",
+            "a": [
+                {
+                    "option": "\n```python\n0\n1\n2\n```\n",
+                    "correct": false
+                },
+                {
+                    "option": "\n```python\n0\n1\n```\n",
+                    "correct": true
+                },
+                {
+                    "option": "\n```python\n1\n```\n",
+                    "correct": false
+                },
+                {
+                    "option": "\n```python\ni\ni\n```\n",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nombre de valeurs affichées",
+            "q": "Soit le programme suivant :\n\n```python\ni = 0\nwhile i < 2:\n    print(i)\n    i = i + 2\n```\n\nCombien de valeurs sont affichées à la fin de l'exécution ?",
+            "a": [
+                {
+                    "option": "0",
+                    "correct": false
+                },
+                {
+                    "option": "1",
+                    "correct": true
+                },
+                {
+                    "option": "2",
+                    "correct": false
+                },
+                {
+                    "option": "Une infinité",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Valeur de variables",
+            "q": "Soit le programme suivant :\n\n```python\nn = 24\nwhile n >= 5:\n    print(n)\n    n = n - 1\n```\n\nQuelle est la valeur de n à la fin de l'exécution ?",
+            "a": [
+                {
+                    "option": "23",
+                    "correct": false
+                },
+                {
+                    "option": "5",
+                    "correct": false
+                },
+                {
+                    "option": "4",
+                    "correct": true
+                },
+                {
+                    "option": "18",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Nombre de valeurs affichées",
+            "q": "Soit le programme suivant :\n\n```python\ni = 0\nwhile i <= 3:\n    print(i)\n    i = i + 5\n```\n\nCombien de valeurs sont affichées à la fin de l'exécution ?",
+            "a": [
+                {
+                    "option": "0",
+                    "correct": false
+                },
+                {
+                    "option": "1",
+                    "correct": true
+                },
+                {
+                    "option": "3",
+                    "correct": false
+                },
+                {
+                    "option": "5",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Valeurs d'une variable",
+            "q": "Soit le programme suivant : \n\n```python\nn = 5\nwhile n <= 19:\n    print(n)\n    n = n + 3\n```\n\nQuelles sont les différentes valeurs de n affichées lors de l'exécution ?",
+            "a": [
+                {
+                    "option": "5, 8, 11, 14 et 17",
+                    "correct": true
+                },
+                {
+                    "option": "5, 8, 11, 14, 17 et 21",
+                    "correct": false
+                },
+                {
+                    "option": "De 5 à 19 inclus",
+                    "correct": false
+                },
+                {
+                    "option": "De 5 à 20 inclus",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Valeurs d'une variable",
+            "q": "Soit le programme suivant :\n\n```python\ni = 14\nwhile i >= 9:\n    i = i - 1\n    print(i)\n```\n\nQuelles sont les différentes valeurs de i affichées lors de l'exécution ?\n",
+            "a": [
+                {
+                    "option": "14, 13, 12, 11, 10, 9 et 8",
+                    "correct": true
+                },
+                {
+                    "option": "14, 13, 12, 11, 10 et 9",
+                    "correct": false
+                },
+                {
+                    "option": "De 14 à 0 inclus",
+                    "correct": false
+                },
+                {
+                    "option": "De 14 à 1 inclus",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Équivalence de programme",
+            "q": "Soit le programme suivant :\n\n```python\nfor i in range(3):\n    print(i)\n```\n\nQuel est le programme équivalent utilisant une __boucle non bornée (while)__.",
+            "a": [
+                {
+                    "option": "\n```python\nwhile i < 3:\n    print(i)\n```\n",
+                    "correct": false
+                },
+                {
+                    "option": "\n```python\ni = 0\nwhile i < 3:\n    print(i)\n```\n",
+                    "correct": false
+                },
+                {
+                    "option": "\n```python\ni = 0\nwhile i < 3:\n    print(i)\n    i = i + 1\n```\n",
+                    "correct": true
+                },
+                {
+                    "option": "\n```python\ni = 0\nwhile i <= 3:\n    print(i)\n    i = i + 1\n```\n",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Condition d'arrêt",
+            "q": "On considère l'extrait de code suivant : \n\n```python\nwhile (a < 20) or (b > 50):\n  ......\n  ......\n```\n\nQuelles conditions permettent de mettre fin à cette boucle ? ",
+            "a": [
+                {
+                    "option": "la boucle prend fin lorsque a < 20 ou b > 50",
+                    "correct": false
+                },
+                {
+                    "option": "la boucle prend fin lorsque a < 20 et b > 50",
+                    "correct": false
+                },
+                {
+                    "option": "la boucle prend fin lorsque a >= 20 ou b <= 50",
+                    "correct": false
+                },
+                {
+                    "option": "la boucle prend fin lorsque a >= 20 et b <= 50",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Valeur de fin de boucle",
+            "q": "Voici un programme comportant une boucle non bornée. Quelle est la valeur affichée à l'issue de l'exécution de ce programme ?\n\n```python\na = 5\nwhile a < 10:\n    a = a + 2\nprint(a)\n```",
+            "a": [
+                {
+                    "option": "5",
+                    "correct": false
+                },
+                {
+                    "option": "9",
+                    "correct": false
+                },
+                {
+                    "option": "11",
+                    "correct": true
+                },
+                {
+                    "option": "Aucune : la boucle ne termine pas",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Valeur de fin de boucle",
+            "q": "Voici un programme comportant une boucle non bornée. Quelle est la valeur affichée à l'issue de l'exécution de ce programme ?\n\n```python\na = 5\nwhile a < 10:\n    a = a - 2\nprint(a)\n```",
+            "a": [
+                {
+                    "option": "5",
+                    "correct": false
+                },
+                {
+                    "option": "3",
+                    "correct": false
+                },
+                {
+                    "option": "1",
+                    "correct": false
+                },
+                {
+                    "option": "Aucune : la boucle ne termine pas",
+                    "correct": true
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Condition d'arrêt / continuité",
+            "q": "Soit le programme suivant :\n\n```python\nn = 0\nwhile n < 10:\n    n = n + 1\n    print(n)\n```\n\nQuelles affirmations sont vraies concernant ce programme ?",
+            "a": [
+                {
+                    "option": "La boucle s'arrête lorsque n vaut 10",
+                    "correct": true
+                },
+                {
+                    "option": "Le boucle continue tant que n est inférieur à 10",
+                    "correct": true
+                },
+                {
+                    "option": "Le boucle continue tant que n est inférieur ou égal à 10",
+                    "correct": false
+                },
+                {
+                    "option": "Le boucle continue tant que n est supérieur à 10",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "correct": "Réponse correcte",
+            "incorrect": "Réponse incorrecte",
+            "n": "Boucle infinie",
+            "q": "Quel est le script qui boucle à l'infini ?",
+            "a": [
+                {
+                    "option": "\n```python\ni = 0 + 1\nwhile i < 0:\n    i = i - 1\n```\n",
+                    "correct": false
+                },
+                {
+                    "option": "\n```python\ni = 0 + 1\nwhile i < 0:\n    i = i + 1\n```\n",
+                    "correct": false
+                },
+                {
+                    "option": "\n```python\ni = 0 - 1\nwhile i < 0:\n    i = i - 1\n```\n",
+                    "correct": true
+                },
+                {
+                    "option": "\n```python\ni = 0 - 1\nwhile i < 0:\n    i = i + 1\n```\n",
+                    "correct": false
+                }
+            ]
+        }
     ]
 };
         </script>
